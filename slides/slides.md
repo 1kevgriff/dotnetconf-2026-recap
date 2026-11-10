@@ -576,6 +576,7 @@ time: "12:07"
 - Case types: any type convertible to object, incl. type parameters
 - Default union is a struct. Add [Union] to any class/struct to roll your own; the compiler lists what's missing (e.g. a Value property).
 - Under the hood: an object? Value plus one constructor per case type. Conversion calls the constructor; pattern matching reads Value.
+- Hand-write a [Union] (IUnion) to avoid boxing value types, or to adapt an existing union-like type.
 -->
 
 ---

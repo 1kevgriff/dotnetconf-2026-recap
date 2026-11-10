@@ -206,6 +206,7 @@ time: "11:26"
 - AsyncValidationAttribute (InStock example)
 - Blazor: spinner while the check runs
 - API: out of stock returns 400
+- Also new: IAsyncValidatableObject (Daniel Roth session, 12:46)
 -->
 
 ---

@@ -2606,7 +2606,24 @@ Decimal64.Quantize(value, cents);
 - Quantum: 1.0 and 1.00 are the same value but not the same quantum — "you want to keep track of the fact that you have at least a guaranteed zero digit"; it matters "when you have to worry about precision and tolerances"
 - Demo also showed IEEE divide by zero (Decimal64.One / Decimal64.Zero) and Decimal128.Acos near 1 vs Math.Acos on double
 - Why it matters: decimal values that remember their precision, with IEEE behavior for edge cases.
-- Source: 17:36–17:38 ET, transcript 20261110-173603, /shots/173753.jpg
+- Source: 17:36–17:40 ET, transcripts 20261110-173603, 20261110-173800, /shots/173753.jpg, /shots/174000.jpg
+-->
+
+---
+layout: "shot"
+image: "/shots/174113.jpg"
+time: "17:41"
+---
+
+# New in .NET 11: `BFloat16`
+
+<!--
+- Say: .NET 11 adds BFloat16, the 16-bit float format from Google that's common in AI.
+- "It's actually a type designed by Google. Its formal name is the Brainfloat 16-bit."
+- It takes float32 and "basically chops off the lower 16 bits", so it "has the same exponent range" as float "just with less precision"
+- vs Half (System.Half): both 16 bits. Half = more precision near one; BFloat16 = float-like exponent range (stream slide: "16 bits. Different priorities.")
+- Why it matters: a standard type for the 16-bit format many ML models use, instead of hand-rolled ushort tricks.
+- Source: 17:40–17:42 ET, transcript 20261110-174003, /shots/174113.jpg
 -->
 
 ---

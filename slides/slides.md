@@ -1527,6 +1527,36 @@ time: "15:43"
 -->
 
 ---
+layout: "default"
+codeSize: "19"
+---
+
+# Make a task `-mt`-ready: two changes
+
+```diff
+- public sealed class CountFileLines : Task
++ [MSBuildMultiThreadableTask]
++ public sealed class CountFileLines : Task, IMultiThreadableTask
+  {
++     public TaskEnvironment TaskEnvironment { get; set; } =
++         TaskEnvironment.Fallback;
+      public override bool Execute()
+      {
+-         LineCount = File.ReadLines(SourceFile).Count();
++         AbsolutePath path = TaskEnvironment.GetAbsolutePath(SourceFile);
++         LineCount = File.ReadLines(path).Count();
+          return true;
+      }
+  }
+```
+
+<!--
+- 15:47 ET. Inputs/outputs stay the same
+- 1) Add the marker attribute + interface. 2) Resolve relative paths through TaskEnvironment
+- Code copied from the stream slide (/shots/154714.jpg)
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

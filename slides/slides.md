@@ -2338,7 +2338,7 @@ AI isn't writing more bugs. It's finding the old ones.
 - Barry Dorrans (16:34): "not an increase in bugs. This is just an increase in bugs that people have discovered and pointed out to us. It could be in code that's 20 years old."
 - "It's not that LLMs are bad at writing code" — often it's stuff "unloved and untouched for 15 to 20 years"
 - Bounties broke $1M this year ($1,012,500 vs $635,500), and Microsoft runs "our own LLMs running over everything"
-- Why it matters: the same tools attackers use are now finding issues in your old code too — keep patching.
+- Why it matters: old code is getting a fresh security look; expect more patches and keep up with them.
 - Source: 16:34–16:35 ET, transcript 20261110-163403, /shots/163503.jpg
 -->
 

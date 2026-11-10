@@ -536,6 +536,19 @@ Unions: 18 years in the making.
 -->
 
 ---
+layout: "shot"
+image: "/shots/120317.jpg"
+time: "12:03"
+---
+
+# Before: `object`, and a switch that's never exhaustive
+
+<!--
+- List<object> accepts anything, so the switch warns CS8509
+- Fix: union Pet(Dog, Cat, Bird), then List<Pet>. A Shark no longer fits.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

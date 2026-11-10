@@ -2742,6 +2742,7 @@ time: "18:05"
 - First attempt failed on callbacks: "you couldn't generate the C# code from a TypeScript callback"
 - Pipeline (stream slide): WE WRITE C# API (extension methods and types marked [AspireExport]) → .NET PROVIDES Roslyn + runtime (reads types and docs) → WE DEFINE the ATS contract ("Aspire type system": capability IDs, type mappings, handle rules) → WE GENERATE guest language SDKs ("TypeScript is GA, more languages in preview") → WE EXECUTE capability calls (the .NET host runs each C# method, called over JSON-RPC)
 - Why it matters: TypeScript teams get a native-feeling Aspire SDK, while the logic stays in one C# codebase. (Inference: the same pattern could work for other .NET libraries.)
+- "Idiomatic in every language" (18:12–18:13): C# AddRedis → TypeScript addRedis → Python add_redis; typed clients with IntelliSense + LSP. "We want it to be idiomatic." They "work a bunch with the TypeScript team", and do "the same when it comes to Python and Go and Rust". Example of a mismatch: TypeScript has no overloads that "work the same way that overloads work in C#" (/shots/181302.jpg)
 - Source: 18:04–18:06 ET, transcript 20261110-180403, /shots/180518.jpg
 -->
 

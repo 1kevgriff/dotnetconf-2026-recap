@@ -1375,7 +1375,7 @@ The trick: cache the build's project info. `.lscache`.
 - 15:06 ET. The build's pre-compile step (evaluate + resolve inputs, globs, disk scans) is written to a .lscache file
 - "Not really that revolutionary to write a cache file to disk"
 - Reading it: "a few milliseconds". Asking MSBuild: "hundreds, maybe thousands of milliseconds"
-- This is the "how" behind the keynote's ~77% faster workspace load
+- (My inference, not stated on stream: likely a big part of the keynote's ~77% faster workspace load)
 -->
 
 ---

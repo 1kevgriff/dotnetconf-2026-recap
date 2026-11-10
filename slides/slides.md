@@ -836,6 +836,20 @@ speakers: "Chet Husk"
 -->
 
 ---
+layout: "shot"
+image: "/shots/130256.jpg"
+time: "13:02"
+---
+
+# `dotnet --version`: 118 ms → 33 ms
+
+<!--
+- Native AOT CLI vs managed, macOS arm64
+- tool list --local: 121 → 32 ms; user-secrets list: 142 → 54 ms
+- "Billions and billions of commands" run on the CLI every month
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

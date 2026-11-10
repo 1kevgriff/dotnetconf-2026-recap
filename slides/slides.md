@@ -2507,6 +2507,7 @@ AI coding benchmarks had "not a lick of .NET code." So .NET built one: 170+ C# s
 - "The Visual Studio team, the VS Code team, and the Copilot SDK team are all also utilizing this benchmark to ... catch any regressions"
 - Caught before release: a code-search speedup that "really increased token usage by way too much"
 - Reports showed "refactoring scenarios were struggling, especially with really large code bases" → that "led to the creation of the C# refactoring skill"
+- How it runs (Q&A, 17:26): checks are partly "deterministic like tests", partly "LLM as a judge"; run "on a nightly basis", rotating through "our top five models that users are using"; a report "at the end of the week". On auto model choice: "models are changing so fast"
 - Why it matters: Copilot's C# quality is now measured on C# scenarios, and regressions get caught before release.
 - Source: 17:12–17:16 ET, transcripts 20261110-171204, 20261110-171401
 -->

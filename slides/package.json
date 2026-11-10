@@ -1,0 +1,18 @@
+{
+  "name": "dotnetconf-2026-recap-slides",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "export": "npm run build && slidev export --wait 6000 --wait-until networkidle --timeout 600000"
+  },
+  "dependencies": {
+    "@slidev/cli": "^53.0.0",
+    "@slidev/theme-default": "latest",
+    "vue": "^3.5.33"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.63.0"
+  }
+}

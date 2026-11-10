@@ -1,0 +1,17 @@
+name: .NET Conf 2026 Recap
+processes:
+  Slidev:
+    command: npx slidev
+    working_dir: ./slides
+    auto_start: true
+    restart_when_changed:
+      - slides/package.json
+      - slides/setup/**
+  Build:
+    command: npm run build
+    working_dir: ./slides
+    auto_start: false
+  Export PDF:
+    command: npm run export
+    working_dir: ./slides
+    auto_start: false

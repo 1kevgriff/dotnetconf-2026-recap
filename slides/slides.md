@@ -1410,6 +1410,7 @@ time: "15:11"
 - Confirmed (15:12): BuildX is behind the keynote number. Aspire.slnx, 407 projects: single change 36.1 → 2.1 s (−94%), median of 5
 - No-op build: 34.4 → 0.9 s (−97%); the old 34.4 s was "almost entirely overhead"
 - Alt chart slide: /shots/151239.jpg
+- Demo (15:14): the agent's build already wrote the cache files, so VS Code opens with tests discovered and IntelliSense ready; the test re-run uses BuildX; ".lscaches are also shared across worktrees"
 -->
 
 ---

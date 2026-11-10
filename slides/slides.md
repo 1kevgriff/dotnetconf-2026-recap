@@ -724,6 +724,21 @@ time: "12:34"
 - Fetch Metadata (Sec-Fetch-Site), on by default
 - No tokens to generate or validate
 - ~4x requests/sec, ~65% less allocation per request vs antiforgery tokens
+- Demo: no antiforgery code in Program.cs
+-->
+
+---
+layout: "shot"
+image: "/shots/123740.jpg"
+time: "12:37"
+---
+
+# SignalR: refresh auth without reconnecting
+
+<!--
+- Long-lived connections can outlive their credentials
+- .NET 11: SignalR re-authenticates with fresh tokens on the same connection
+- Blazor Server uses the same machinery to keep auth state current
 -->
 
 ---

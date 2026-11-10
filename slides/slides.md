@@ -2174,6 +2174,24 @@ time: "16:06"
 -->
 
 ---
+layout: "shot"
+image: "/shots/160947.jpg"
+time: "16:09"
+---
+
+# Aspire this year: one-file AppHosts, AOT dashboard, `aspire deploy`
+
+<!--
+- Say: In one year Aspire got a single-file AppHost, a Native AOT dashboard, and a real deploy story.
+- Shipped for .NET devs (stream slide): file-based AppHosts (a single .cs file, no project); dashboard + DCP bundled in the CLI so every machine runs one version; Native AOT dashboard (faster startup, no separate runtime); Blazor WebAssembly in the AppHost (preview); EF Core migrations from the dashboard (preview)
+- Deploy (16:08): "This time last year, there really wasn't a deploy story like this." Now `aspire deploy` plus a pipeline model in the AppHost; steps run during publish, deploy, even run
+- Targets: Azure, Docker Compose, vanilla Kubernetes, "deploy via SSH to a VM"; "The Amazon folks ship the AWS support"
+- Agent support evolved: Copilot in the dashboard → an MCP → "replaced the MCP with skills"
+- Why it matters: one AppHost file now goes from local run to deployment, on many clouds.
+- Source: 16:08–16:10 ET, transcript 20261110-160802, /shots/160947.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

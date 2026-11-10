@@ -2746,6 +2746,36 @@ time: "18:05"
 -->
 
 ---
+layout: "default"
+codeSize: "19"
+---
+
+# The same AppHost, in TypeScript
+
+```ts
+import { createBuilder } from './.aspire/modules/aspire.mjs';
+
+const builder = await createBuilder();
+await builder.addRedis("cache");
+
+const worker = await builder.addExecutable("worker", "node", "../worker", ["worker.mjs"]);
+
+await worker.withEnvironmentCallback(async (context) => {
+  const environment = await context.environment();
+  await environment.set("DEMO_MESSAGE", "Hello from the shared Aspire engine");
+});
+```
+
+<!--
+- Say: For teams that say "I don't want to install .NET, I'm a TypeScript dev", the AppHost can be TypeScript — and .NET calls back into the TS callback.
+- Demo file apphost.mts (18:08–18:10); code simplified from /shots/180920.jpg (console.log lines removed, the joined string inlined; the stream builds it with ["Hello","from","the","shared","Aspire","engine"].join(" "))
+- Callback round trip: .NET calls the TS function, TS asks .NET for the environment, sets DEMO_MESSAGE, .NET acknowledges — over the JSON-RPC bridge from the previous slide
+- Also new: an Aspire tray app ("you probably noticed this tray icon ... the Aspire tray app, which you can run now")
+- Why it matters: mixed .NET/JS teams can share one Aspire setup, each in their own language.
+- Source: 18:08–18:10 ET, transcript 20261110-180800, /shots/180920.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -563,6 +563,20 @@ time: "12:05"
 -->
 
 ---
+layout: "shot"
+image: "/shots/120737.jpg"
+time: "12:07"
+---
+
+# Unions are real types
+
+<!--
+- Generic type parameters, function members (`this switch`)
+- No extra state: the value inside is the state
+- Case types: any type convertible to object, incl. type parameters
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

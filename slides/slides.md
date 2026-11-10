@@ -759,6 +759,21 @@ time: "12:41"
 -->
 
 ---
+layout: "shot"
+image: "/shots/124215.jpg"
+time: "12:42"
+---
+
+# Free, MIT-licensed Blazor components
+
+<!--
+- Infragistics: 50+ Ignite UI for Blazor components
+- Syncfusion Toolkit for Blazor
+- MIT, free for commercial use. Separate from their paid suites.
+- Both contributed to Blazor itself: new analyzers (Infragistics), framework + scaffolding (Syncfusion)
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

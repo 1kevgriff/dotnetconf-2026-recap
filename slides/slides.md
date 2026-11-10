@@ -2813,7 +2813,23 @@ Aspire no longer needs .NET installed.
 - Demo (18:24): `aspire new` with the TypeScript starter (Node.js app + Vite frontend) runs in the dashboard on a machine where running `dotnet` shows ".NET is not installed" (/shots/182550.jpg)
 - Install: get.aspire.dev (or the download icon on aspire.dev) — Brew, WinGet, Nix, Mise, NuGet, npm, or the scripts
 - Why it matters: Aspire's .NET version is no longer tied to what's installed on your machine.
-- Source: 18:18–18:20 ET, transcript 20261110-181804
+- Source: 18:18–18:26 ET, transcripts 20261110-181804, 20261110-182203, 20261110-182400, /shots/182550.jpg
+-->
+
+---
+layout: "statement"
+---
+
+Aspire is a .NET customer: Roslyn, Blazor, Native AOT.
+
+<!--
+- Say: Aspire runs any language, but it's built on .NET: Roslyn for cross-language contracts, Blazor for the live dashboard, Native AOT to ship it.
+- Stream slide (18:26) "Aspire is a .NET customer — And we love it!!!": 01 Compiler infrastructure for cross-language contracts; 02 Application framework for live experiences; 03 Native compilation for distribution (/shots/182657.jpg)
+- "Aspire is a .NET customer because it's the best."
+- "The best language will always be the best language for Aspire" — "what he meant was, the best language on Earth, C#, obviously, is the best language for building Aspire."
+- Links: aspire.dev, aka.ms/aspire-discord
+- Why it matters: a big .NET tool reaching non-.NET developers by leaning on .NET, not hiding it.
+- Source: 18:26–18:28 ET, transcript 20261110-182602, /shots/182657.jpg
 -->
 
 ---

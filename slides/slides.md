@@ -2645,6 +2645,23 @@ time: "17:42"
 -->
 
 ---
+layout: "shot"
+image: "/shots/174412.jpg"
+time: "17:44"
+---
+
+# Constrain the capability, not the concrete type
+
+<!--
+- Say: One generic Square<T> where T : INumberBase<T> works for Decimal128, Complex<float>, and Complex<Decimal128>.
+- Code on the stream slide: `static T Square<T>(T value) where T : INumberBase<T> => value * value;`
+- Inside .NET: generic math let the team write "many algorithms compressing the amount of code we have to maintain to a few hundred lines instead of several thousand"
+- Why so much: int, float, double, decimal, Decimal128/64/32, complex of all of them — "it starts out as 10 to 12 primitive types, and it quickly expands out to many times more than that"
+- Why it matters: in your own numeric code, constrain on the interface you need (INumberBase<T> etc.) and one method serves every type.
+- Source: 17:44 ET, transcript 20261110-174402, /shots/174412.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

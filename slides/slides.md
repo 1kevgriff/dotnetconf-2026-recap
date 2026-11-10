@@ -790,6 +790,21 @@ time: "12:48"
 -->
 
 ---
+layout: "shot"
+image: "/shots/125133.jpg"
+time: "12:51"
+---
+
+# Razor tooling: rename across C# and Razor
+
+<!--
+- Cross-language rename, faster Hot Reload
+- EditorConfig C# style in .razor files
+- ~/ asset paths instead of @Assets["..."]
+- Emmet support
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

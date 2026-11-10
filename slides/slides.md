@@ -2548,6 +2548,19 @@ One .NET bug, four Copilot products, end to end.
 -->
 
 ---
+layout: "session"
+num: 13
+time: "5:30 PM"
+speakers: "Tanner Gooding"
+---
+
+# .NET 11 Numerics
+
+<!--
+[Session 13]
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

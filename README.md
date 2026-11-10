@@ -44,6 +44,7 @@ npm install-scripts approve playwright-chromium
 | 10 | What's New in Aspire for .NET Developers | Maddy Montaquila, Damian Edwards |
 | 11 | 2 Secure 2 Curmudgeonly | Barry Dorrans |
 | 12 | Beyond Autocomplete: Getting the Most from GitHub Copilot for .NET | Wendy Breiding |
+| 13 | .NET 11 Numerics | Tanner Gooding |
 
 Later sessions are added as the stream continues.
 

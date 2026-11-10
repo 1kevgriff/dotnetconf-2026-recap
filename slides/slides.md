@@ -2270,6 +2270,7 @@ time: "16:19"
 - Your NuGet setup as is: inherited feeds, consistent restore; attach to running apps: debug a running service in VS Code from the Aspire view
 - Demo (16:20): `aspire update` offers to update all package versions and the NuGet config, running the CLI for each package; "the update was successful"
 - Why the AppHost SDK goes away: "we no longer need to use this very .NET specific mechanism to deliver things that we need behind the scenes, namely the dashboard and DCP" (the CLI bundles them now)
+- Migration demo (16:22): add the Aspire.Hosting.AppHost package plus a .NET hosting package; `AddProject<Projects.X>` is now flagged "obsolete, don't use this anymore" (the generated `Projects` types go away with projects-by-path). Check the Aspire 17 docs for the replacement API name.
 - Why it matters: fewer upgrade headaches and a faster F5 for Aspire apps.
 - Source: 16:18–16:22 ET, transcripts 20261110-161802, 20261110-162000, /shots/161922.jpg
 -->

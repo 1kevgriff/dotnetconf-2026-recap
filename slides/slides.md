@@ -2490,6 +2490,7 @@ time: "17:04"
 - VS Code (17:10): "Copilot Fusion ... looks at the complexity of the task that you've given it" and picks the model — here "GPT 6.1 Sol". The agent first read the .NET Web API skill, then the "handoff doc that the last agent made for it to understand what it did" — the Visual Studio agent left notes for the next agent
 - Result (17:16): after `aspire run` and one submit — "And woohoo! Only one." The duplicate purchase order bug is fixed across the WinForms UI and the API. Next: the "generate duplicate reports" button, which currently makes a text file
 - dotnet plugin (17:22): configures agents to use LSP as a tool, backed by Roslyn in the new daemon mode (shared across agents). "About a 50% reduction in memory usage when you're using it in that multi-agent scenario ... when I normally have three or four agents going at one time, my system can handle it now."
+- Q&A (17:28): Roslyn daemon mode "It's not a skill, it's a configuration" in the plugin; Claude Code uses a different LSP configuration than Copilot. Copilot Fusion can hand small steps (e.g. "validate this") "to one of the smaller, cheaper models" to save money
 - Why it matters: you get .NET-specific guidance without writing your own instructions.
 - Source: 17:04–17:11 ET, transcripts 20261110-170403, 20261110-170804, 20261110-171001, /shots/170443.jpg
 -->

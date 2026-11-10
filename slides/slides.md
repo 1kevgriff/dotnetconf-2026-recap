@@ -1213,6 +1213,8 @@ speakers: "Gerald Versluis"
 
 <!--
 [Session 7]
+- 14:34: 1,600 PRs last month, "an absolute record" (keynote stat slide)
+- Partners: Syncfusion (engineers fix issues in dotnet/maui + free toolkit), Uno Platform (Android API bindings, co-maintains SkiaSharp), Avalonia (MAUI on Linux)
 -->
 
 ---

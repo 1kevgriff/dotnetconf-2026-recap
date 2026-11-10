@@ -2529,6 +2529,23 @@ NuGet packages can now ship agent skills. `dotnet restore` delivers them.
 -->
 
 ---
+layout: "statement"
+---
+
+One .NET bug, four Copilot products, end to end.
+
+<!--
+- Say: Wendy fixed one real bug across Visual Studio, VS Code, the Copilot app, and the Copilot CLI — each agent picked up where the last one stopped.
+- Visual Studio: WinForms UI error handling (winforms-expert skill, Auto model)
+- VS Code: API resilience (dotnet-webapi skill, read the VS agent's handoff doc) → "Woohoo! Only one."
+- Copilot app: duplicate report changed to JSON (Markout skills from a NuGet package)
+- Copilot CLI (17:24): cleanup of the duplicates; "This one was medium complexity, so it's picked GPT-6 Luna." On-screen prompt: run the cleanup in preview first, then "execute against the disposable database only ... Do not commit or run cleanup against production." (/shots/172534.jpg)
+- "We were able to go from end to end through four different Copilot products"
+- Why it matters: use the tool that fits each part of the job; skills and handoff docs keep the context between them.
+- Source: 17:02–17:26 ET, transcripts 20261110-170200 … 20261110-172404
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

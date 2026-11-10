@@ -726,6 +726,7 @@ time: "12:34"
 - No tokens to generate or validate
 - ~4x requests/sec, ~65% less allocation per request vs antiforgery tokens
 - Demo: no antiforgery code in Program.cs
+- Q&A (13:00): falls back to Origin headers for older browsers; antiforgery middleware still composes if you want both
 -->
 
 ---
@@ -819,6 +820,19 @@ time: "12:54"
 - Also: Entra ID auth scaffolding (dotnet scaffold or VS); ASP.NET Core + Blazor plugins at github.com/dotnet/skills
 - Demo (12:57): analysis on the UI thread freezes the page; on a Web Worker it stays responsive. "Debug in Browser" button in the Aspire dashboard.
 - Caveat: the demo ran Aspire 17 daily builds
+-->
+
+---
+layout: "session"
+num: 4
+time: "1:00 PM"
+speakers: "Chet Husk"
+---
+
+# Moving `dotnet` Ahead (of Time)!
+
+<!--
+[Session 4]
 -->
 
 ---

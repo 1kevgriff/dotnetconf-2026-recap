@@ -970,6 +970,7 @@ time: "13:39"
 - New methods/properties on Application: one line changes the whole app's look
 - Visual styles mode is an enum: Net11 now, Net12 and Net13 planned
 - Same controls: modern Windows look, toggle switches, dark mode
+- GroupBox (13:40): flat style fixes the classic low-contrast frame
 -->
 
 ---

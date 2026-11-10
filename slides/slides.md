@@ -2741,7 +2741,7 @@ time: "18:05"
 - Say: Aspire writes its API once in C#, then generates SDKs for other languages. TypeScript is GA; the .NET host still runs every call.
 - First attempt failed on callbacks: "you couldn't generate the C# code from a TypeScript callback"
 - Pipeline (stream slide): WE WRITE C# API (extension methods and types marked [AspireExport]) → .NET PROVIDES Roslyn + runtime (reads types and docs) → WE DEFINE the ATS contract ("Aspire type system": capability IDs, type mappings, handle rules) → WE GENERATE guest language SDKs ("TypeScript is GA, more languages in preview") → WE EXECUTE capability calls (the .NET host runs each C# method, called over JSON-RPC)
-- Why it matters: a pattern for any .NET library that wants to reach non-.NET users without rewriting itself.
+- Why it matters: TypeScript teams get a native-feeling Aspire SDK, while the logic stays in one C# codebase. (Inference: the same pattern could work for other .NET libraries.)
 - Source: 18:04–18:06 ET, transcript 20261110-180403, /shots/180518.jpg
 -->
 

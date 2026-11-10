@@ -419,6 +419,20 @@ time: "11:47"
 -->
 
 ---
+layout: "shot"
+image: "/shots/114845.jpg"
+time: "11:48"
+---
+
+# dotnet/skills: −41% tokens, −73% time
+
+<!--
+- github.com/dotnet/skills, eval dashboard at dotnet.github.io/skills
+- csharp-expert skill on Claude Sonnet 5: -41% tokens, -73% time
+- Roslyn as an agent tool: up to 50% less memory
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

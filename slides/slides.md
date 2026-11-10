@@ -929,6 +929,21 @@ Ship your .NET tools Native AOT. Fast and easy — you don't have to choose.
 -->
 
 ---
+layout: "session"
+num: 5
+time: "1:30 PM"
+speakers: "Klaus Löffelmann"
+---
+
+# Why WinForms must not change — yet reinvented itself with .NET 11
+
+<!--
+[Session 5]
+- Theme: huge WinForms history vs constant renewal; "WinForms down the road its own migration tool"
+- Demo prop: a second laptop running Windows XP and Visual Studio 2005
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

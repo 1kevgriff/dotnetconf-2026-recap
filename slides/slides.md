@@ -741,6 +741,21 @@ time: "12:37"
 - Blazor Server uses the same machinery to keep auth state current
 - Opt in: enable authentication refresh on SignalR hub options; Blazor: withAuthenticationRefresh
 - Demo (12:39): admin revokes refund permission, open page updates live, typed form data kept
+- Caveat: refresh runs on an interval, when the token is about to expire. Not instant.
+-->
+
+---
+layout: "shot"
+image: "/shots/124137.jpg"
+time: "12:41"
+---
+
+# 5 developers, 11M page views a year
+
+<!--
+- Toscano Digital: real-estate portal + Blazor CRM
+- 4.6M sessions/year (speaker rounded to "about 5 million")
+- Customer-reported figures
 -->
 
 ---

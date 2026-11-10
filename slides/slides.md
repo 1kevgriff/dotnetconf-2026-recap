@@ -363,6 +363,20 @@ time: "11:41"
 -->
 
 ---
+layout: "shot"
+image: "/shots/114351.jpg"
+time: "11:43"
+---
+
+# Llama on Windows: local models, built on .NET
+
+<!--
+- Hugging Face + llama.cpp teams. .NET 10 + WinUI 3 tray app.
+- Open source, free at llama.app, in the Microsoft Store
+- Also: Jellyfin semantic search, RoutingChatClient routes local vs cloud models
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

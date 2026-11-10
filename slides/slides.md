@@ -2193,6 +2193,35 @@ time: "16:09"
 -->
 
 ---
+layout: "default"
+codeSize: "20"
+---
+
+# A whole AppHost in one `.cs` file
+
+```csharp
+#!/usr/bin/env dotnet
+#:sdk Aspire.AppHost.Sdk@13.6.4
+#:package Aspire.Hosting.Azure.PostgreSQL
+#:package Aspire.Hosting.Redis
+#:package Aspire.Hosting.JavaScript
+#:package Aspire.Hosting.Maui
+#:project ./BingoBoard.Admin
+#:include ./apphost/*.cs
+
+var builder = DistributedApplication.CreateBuilder(args);
+```
+
+<!--
+- Say: The AppHost doesn't need a project anymore. It's one apphost.cs file with directives at the top.
+- Demo: the "Aspire Fridays" bingo app (16:12 ET)
+- #:sdk picks the Aspire AppHost SDK; #:package pulls integrations; #:project references projects; #:include pulls in more .cs files (the file-based app #include from the keynote)
+- Excerpt: the stream file has more #:package lines (Azure.AppContainers, Azure.Redis, Docker, Yarp, DevTunnels, Browsers, EntityFrameworkCore) and a second #:project
+- Why it matters: less ceremony; the AppHost can sit at the repo root above everything it runs.
+- Source: 16:12 ET, transcript 20261110-161201, code copied from /shots/161241.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

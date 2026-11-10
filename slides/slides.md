@@ -1039,6 +1039,19 @@ Application.Run(new MainForm());
 -->
 
 ---
+layout: "statement"
+---
+
+Compiler errors written for Copilot to read.
+
+<!--
+- 13:56 ET. New WinForms analyzers keep designer code sound
+- Problem: Copilot puts for-loops or local functions in designer code, then the designer can't open the form
+- The analyzers emit build errors phrased as commands to Copilot ("unroll that, write it step-by-step")
+- Copilot compiles, reads the error, fixes it. Worked even with "the more capable local models"
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

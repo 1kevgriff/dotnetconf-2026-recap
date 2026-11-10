@@ -28,7 +28,12 @@ image: "/cast-kevin.jpg"
 - Microsoft MVP
 
 <!--
-[title]
+- [title]
+- Say: This is a recap of .NET Conf 2026 Day 1, captured live from the stream on 2026-11-10. We start with the keynote, where .NET 11 shipped, then the Day 1 sessions.
+- Coverage: the keynote (11:00 AM ET) and the Day 1 sessions so far (sessions 1-9), from transcripts and screenshots taken during the stream.
+- Every number on these slides came from a speaker or an on-screen slide. Experimental and preview items are marked as such.
+- Why it matters: you get the .NET 11 highlights in one pass, without watching the full day of stream.
+- Source: dotnetconf.net/agenda (Day 1 = 2026-11-10); stream transcripts from 10:55 AM ET.
 -->
 
 ---
@@ -46,7 +51,10 @@ image: "/kevin-griffin.png"
 - consultwithgriff.com  ·  @1kevgriff
 
 <!--
-[about me] 30 seconds max.
+- [about me] 30 seconds max.
+- Say: I'm Kevin Griffin: independent consultant, CTO at Shows On Sale, and a Microsoft MVP. Find me at consultwithgriff.com or @1kevgriff.
+- Keep it short. Use only what is on the slide.
+- Transition: I watched Day 1 live so you don't have to. Here's what shipped.
 -->
 
 ---
@@ -59,7 +67,13 @@ speakers: "Scott Hanselman, Damian Edwards + guests"
 # Keynote: .NET 11 ships
 
 <!--
-[Session 1 · Keynote] Scott Hanselman, Damian Edwards, Chet Husk, Daniel Roth, Gerald Versluis, Luis Quintanilla, Wendy Breiding, Drew Noakes.
+- [Session 1 · Keynote] Scott Hanselman, Damian Edwards, Chet Husk, Daniel Roth, Gerald Versluis, Luis Quintanilla, Wendy Breiding, Drew Noakes.
+- Say: The keynote was a one-hour tour of .NET 11. Scott Hanselman and Damian Edwards opened it, then a parade of team members each took a few minutes.
+- Time: 11:00 AM ET. Also on stage: Mads Torgersen (C# 15), Richard Lander (runtime), Kathy Sullivan and Maddy Montaquila (close). Video guests: Eric Guo (Windows 365), Jeff from Hugging Face.
+- Theme: Damian Edwards: "if you take anything away from .NET Conf this year, let it be that .NET is durable."
+- Next slides: .NET 11 GA, TinyOS, C# 15 and unions, CLI on Native AOT, MSBuild -mt, runtime async, memory safety; then Web, Mobile, AI, Agents, inner loop, and the close.
+- Why it matters: the keynote is the map for everything else this week. Most items get a deep-dive session later.
+- Source: 11:00-11:58 ET, transcripts 20261110-110004.txt through 20261110-115600.txt; agenda.md.
 -->
 
 ---
@@ -73,6 +87,13 @@ time: "11:09"
 <!--
 - Released today. get.dot.net
 - Damian Edwards: "five eras, one platform" (Windows, Web, Mobile, Cloud, AI)
+- Say: Damian Edwards made it official: .NET 11 is available today. Go to get.dot.net.
+- Verbatim (Damian): "I'd love to announce that .NET 11 is now available. It's rolling out now."
+- Verbatim (Damian): "if you take anything away from .NET Conf this year, let it be that .NET is durable."
+- The five-eras slide: 2002 Windows, 2008 Web, 2008 Mobile, 2016 Cloud, Today AI ("Agents write, test and review code alongside us").
+- Damian on the cloud era: performance became a feature because "It cost real money when you were running it on someone else's computer."
+- Why it matters: .NET 11 is the new current release. You can install it today.
+- Source: 11:07-11:09 ET, 20261110-110505.txt; shots 110705.jpg, 110905.jpg.
 -->
 
 ---
@@ -86,6 +107,13 @@ time: "11:04"
 <!--
 - Hanselman's TinyOS from .NET 1 days, updated and running on .NET 11
 - The point: .NET code is durable
+- Say: Scott Hanselman found the tiny operating system he wrote in .NET 1 as a college senior project, and brought it forward to .NET 11.
+- He showed the original slides from TechEd Malaysia 2002. He called it a "virtual operating system" "all written in .NET 1".
+- The "TinyOS Time Machine": power button, tiny floppy disks, live memory view, the original source, and a CRT glass effect. Verbatim: "still running my original homework."
+- Verbatim (Hanselman, on .NET): "It's there. It's reliable. It's fast as heck."
+- Fun extras: he has coded since 1984, his GitHub user ID is "under 3,000", and "It took me 11 years to get my four-year degree."
+- Why it matters: code you wrote 24 years ago can still run on the newest runtime.
+- Source: 11:02-11:06 ET, 20261110-110004.txt and 20261110-110505.txt; shot 110459.jpg.
 -->
 
 ---
@@ -100,6 +128,13 @@ time: "11:09"
 - Unions, closed hierarchies, collection arguments
 - Labeled break, extension indexers
 - Memory safety preview
+- Say: Mads Torgersen's slide title was "C# 15: Cleaner, safer, faster." Unions are the headline feature.
+- Union types: public union Pet(Dog, Cat); - exhaustive over the listed case types.
+- Closed hierarchies: public closed class Pet; - a subclass from another assembly is an error.
+- Collection arguments: HashSet<string> tags = [with(comparer), "one", "two", "three"]; - pass capacity or a comparer inline.
+- Labeled break and continue ("break outer", no flag variables); extension indexers (index into types you don't own); memory safety preview (unsafe calls explicit and auditable).
+- Why it matters: less boilerplate and more compiler checks in everyday C#.
+- Source: 11:09 ET, shot 110920.jpg; 20261110-110505.txt.
 -->
 
 ---
@@ -113,6 +148,13 @@ time: "11:12"
 <!--
 - union Pet(Dog, Cat, Bird, Hamster)
 - Add Hamster: every non-exhaustive switch is flagged
+- Say: Mads called unions "probably the most anticipated and requested" C# feature "for a long, long time." The demo shows why.
+- Before: pets in a List<object>. No type safety, a Shark can sneak in, and the switch warns it is not exhaustive with no good fix.
+- After: union Pet(Dog, Cat, Bird). The case types don't have to participate. Each case converts implicitly to Pet; other types don't. Matching on Shark is now an error, and the warning goes away.
+- Verbatim (Mads): "ironically, with that warning going away, It sort of makes the warning useful again." Add Hamster and every consuming switch warns again: "this is now actionable."
+- Verbatim (Mads): "clarity, safety, those are things that are great regardless of whether human or an agent are actually working on the code."
+- Why it matters: you can model "one of these types" without a fake base class, and the compiler finds every place to update.
+- Source: 11:10-11:13 ET, 20261110-110505.txt and 20261110-111004.txt; shot 111254.jpg. Deep dive: Mads + Dustin Campbell, 12:00 PM ET.
 -->
 
 ---
@@ -127,6 +169,13 @@ time: "11:17"
 - Chet Husk: CLI usage about 3x in the past year
 - File-based apps can #include other .cs files
 - dotnet run device prompts, dotnetup installer
+- Say: The .NET CLI itself is now a Native AOT app. Common commands start in about a quarter of the time.
+- Numbers (slide): dotnet --help 203.4 ms -> 51.4 ms (75% less); dotnet user-jwts 205.7 -> 69.5 ms (66%); dotnet tool list 188.3 -> 56.1 ms (70%).
+- Verbatim (Chet): usage "has roughly tripled in the past year alone" - from human and agent users.
+- File-based apps: also work with dotnet package add, dotnet reference add, and format. Chet: "we're really approaching parity" with projects.
+- Also: dotnet watch handles app crashes "much more gracefully"; container publish targets WSLC and macOS container runtimes natively; smaller SDK = smaller Docker images; new native dotnetup install manager.
+- Why it matters: agents call the CLI constantly. Hundreds of milliseconds saved per call add up.
+- Source: 11:13-11:17 ET, 20261110-111004.txt and 20261110-111503.txt; shots 111728.jpg, 111603.jpg. Deep dive: "Moving dotnet Ahead (of Time)!" 1:00 PM ET.
 -->
 
 ---
@@ -140,6 +189,12 @@ time: "11:18"
 <!--
 - Multithreaded MSBuild
 - Warm incremental build on OrchardCore
+- Say: MSBuild has a multithreaded mode in .NET 11. You opt in with one flag: -mt.
+- Numbers (slide): cold full build 104.7 s -> 92.4 s (12% less); warm incremental 28.4 s -> 17.9 s (37% less).
+- Test setup (slide): OrchardCore, Windows, 100 projects, ASP.NET's shared hardware.
+- Verbatim (Chet): important for "that iterative inner loop development that is so common with agents today."
+- Why it matters: faster incremental builds help both you and any agent that rebuilds after each edit.
+- Source: 11:18 ET, 20261110-111503.txt; shot 111823.jpg. Deep dive: "More Processes, More Problems - Multithreaded MSBuild" 3:30 PM ET.
 -->
 
 ---
@@ -154,6 +209,12 @@ time: "11:20"
 - No state machines, no ValueTask needed
 - 0 B per op vs 216–504 B with state machines
 - Default in .NET 12
+- Say: Richard Lander showed runtime async. Your async code stays the same, but the compiler stops generating state machines and the JIT does the work.
+- Opt in with an MSBuild Features property in .NET 11. Verbatim: "We expect it to be the default in .NET 12."
+- Verbatim: "near-synchronous performance for async code, which is a claim that we've never been able to make before."
+- Chart: 216 / 360 / 504 B per operation at 3 / 5 / 7 async frames with state machines; 0 B with runtime async. Synchronous-completion case. Benchmark: a C# port of Restic.
+- Why it matters: free allocation savings in hot async paths, with no code changes.
+- Source: 11:19-11:21 ET, 20261110-111503.txt and 20261110-112031.txt; shot 112046.jpg.
 -->
 
 ---
@@ -168,6 +229,13 @@ time: "11:22"
 - Unsafe is off by default
 - An unmarked unsafe call is an error
 - Preview in .NET 11, GA in .NET 12
+- Say: C# adopts the same unsafe-contract model as Rust and Swift, with near-identical syntax, but C# is the strictest of the three.
+- Slide table: unmarked unsafe call - C# Error, Rust 2024 Error, Swift Warning. Unmarked op inside an unsafe member - C# Error, Rust and Swift Warning. Unsafe allowed by default - C# No, Rust and Swift Yes.
+- Verbatim (Lander): "security is our top priority." He cited Microsoft's statement that "70% of vulnerabilities are due to memory safety issues."
+- AllowUnsafeBlocks stays false by default, as since C# 1.0. New: unsafe expressions, so a method can expose a safe facade over unsafe code.
+- Deep dive: Richard Lander + Andy Gocke. Agenda: 6:30 PM ET. (Lander said "3:30 PM" on stream; (Inference) that is Pacific time.)
+- Why it matters: unsafe code becomes explicit and auditable, which helps security reviews.
+- Source: 11:21-11:23 ET, 20261110-112031.txt and 20261110-112200.txt; shots 112116.jpg, 112220.jpg.
 -->
 
 ---
@@ -178,7 +246,12 @@ kicker: "ASP.NET Core 11"
 # Web
 
 <!--
-[Daniel Roth] ASP.NET Core and Blazor.
+- [Daniel Roth] ASP.NET Core and Blazor.
+- Say: Daniel Roth, the ASP.NET Core product manager, built one customer-service app to show what's new for web developers.
+- Time: about 11:23 ET. Demo: a service rep handles a USB-C docking station return as a refund or a replacement.
+- Theme (verbatim): businesses need "clear API contracts... rich, interactive user experiences... protected actions."
+- Next slides: unions end to end (JSON + OpenAPI 3.2), async validation in Blazor and APIs, built-in CSRF protection, and the "More in ASP.NET Core 11" grid.
+- Source: 20261110-112200.txt, 20261110-112401.txt. Deep dive: Daniel Roth, 12:30 PM ET.
 -->
 
 ---
@@ -192,6 +265,13 @@ time: "11:25"
 <!--
 - System.Text.Json writes only the active case. No wrapper, no type field.
 - OpenAPI 3.2: the union shows as anyOf
+- Say: The C# union from Mads's demo works all the way through ASP.NET Core: in the API, in the JSON, in the OpenAPI document, and in Razor.
+- Code: public union Resolution(RefundResolution, ReplacementResolution); Minimal APIs return the union directly.
+- Verbatim (Roth): "we don't have to take all those properties and stick them on the same C-sharp class and then remember which combinations are valid."
+- Verbatim: "There's no need for a union wrapper or any sort of type discriminator." .NET 11 uses OpenAPI 3.2.
+- Blazor: a Razor component switches on the union cases and renders the matching UI.
+- Why it matters: your API contract matches your domain model, with no hand-written discriminator code.
+- Source: 11:24-11:26 ET, 20261110-112401.txt; shots 112431.jpg, 112531.jpg.
 -->
 
 ---
@@ -207,6 +287,12 @@ time: "11:26"
 - Blazor: spinner while the check runs
 - API: out of stock returns 400
 - Also new: IAsyncValidatableObject (Daniel Roth session, 12:46)
+- Say: Async validation is new in .NET 11. One attribute checks inventory, and the same rule runs in the Blazor form and in the API.
+- InStockAttribute derives from the new AsyncValidationAttribute. The normal DataAnnotationsValidator component runs async rules.
+- EditContext exposes a validation-pending state, so the UI can show a spinner while the check runs.
+- API result (verbatim): "we got 400. Sorry, that model's not currently available." In stock: "200 OK."
+- Why it matters: no duplicate validation logic between front end and back end, even for checks that call a database or service.
+- Source: 11:26-11:28 ET, 20261110-112604.txt; shot 112649.jpg.
 -->
 
 ---
@@ -220,6 +306,12 @@ time: "11:28"
 <!--
 - Uses Fetch Metadata headers (Sec-Fetch-Site)
 - No antiforgery tokens
+- Say: ASP.NET Core 11 blocks cross-site request forgery automatically, using headers the browser already sends.
+- Demo: a page on the same host (localhost) but a different port posts to the app. That is same-site but not same-origin, so ASP.NET Core rejects it.
+- The same request from the app itself shows same-origin and goes through.
+- Verbatim (Roth): "It didn't have to do anything and it didn't have to mess around with anti-forgery tokens. So, it's secure and performant by default."
+- Why it matters: one less thing to wire up, and no token round-trips.
+- Source: 11:28-11:29 ET, 20261110-112800.txt; shot 112845.jpg.
 -->
 
 ---
@@ -232,6 +324,11 @@ time: "11:29"
 
 <!--
 - Feature grid. Pick 1–2 to call out.
+- Say: Dan said there are "tons of new features for web developers, for Blazor, minimal APIs, and SignalR." Here are the rest.
+- Grid items: Virtualize (variable heights, scroll to item); QuickGrid state in the URL; async validation; OpenAPI 3.2 on by default with Server-Sent Events; TempData in SSR.
+- More: circuit pause (server-triggered or on tab inactivity); relative navigation (NavigateTo and NavLink); SignalR auth refresh on live connections; Blazor WASM server (new lightweight Gateway host); localized validation.
+- Why it matters: many small Blazor and API quality-of-life fixes ship with no migration work.
+- Source: 11:29 ET, 20261110-112800.txt; shot 112950.jpg.
 -->
 
 ---
@@ -242,7 +339,11 @@ kicker: ".NET MAUI"
 # Mobile
 
 <!--
-[Gerald Versluis] .NET MAUI.
+- [Gerald Versluis] .NET MAUI.
+- Say: Gerald Versluis from the .NET MAUI team covered mobile and desktop.
+- Time: about 11:30 ET. Theme: .NET 11 is "coming full circle" - MAUI apps now run on CoreCLR.
+- Next slides: the team's PR volume with Copilot, MAUI 11 runtime and platforms, the paper-cut fixes, and the open-source .NET Conf app.
+- Source: 20261110-113003.txt. Deep dives: Gerald, 2:30 PM ET; Jonathan Peppers, 7:30 PM ET.
 -->
 
 ---
@@ -254,6 +355,11 @@ layout: "statement"
 <!--
 - MAUI team PR volume, about 4x what it was
 - 11:30 ET
+- Say: The MAUI team went agentic. A year ago they merged 400 to 500 PRs a month. Last month it was over 1,600.
+- Verbatim (Gerald): "last month it was 1600 right over 1600 so that's roughly four times as much just because of the power of copilot and 80% of that were even authored by copilot" (light cleanup).
+- Verbatim: "the quality is still the same."
+- Why it matters: this is a real team's numbers on agentic development, not a demo.
+- Source: 11:30 ET, 20261110-113003.txt.
 -->
 
 ---
@@ -269,6 +375,12 @@ time: "11:31"
 - Native AOT: 2.4x faster startup, 14% smaller on Android
 - Linux + WebAssembly via Avalonia (preview)
 - Team ships 1,600+ PRs/month, ~80% by Copilot
+- Say: MAUI apps now run on the same runtime as ASP.NET Core and Azure, and Native AOT makes Android apps start much faster.
+- AOT footnote (slide): vs .NET 10 Mono; .NET Conf app, median cold start to first frame and signed APK size, Samsung Galaxy A16, .NET 11 RC2, October 2026.
+- XAML source generation is on by default: XAML compiles at build time. Latest platforms: Android 17 (API 37) and Xcode 27.
+- maui-labs: the maui CLI, DevFlow app automation, and device testing.
+- Why it matters: one runtime across server and mobile means fewer platform-specific surprises.
+- Source: 11:31 ET, 20261110-113003.txt and 20261110-113200.txt; shot 113143.jpg.
 -->
 
 ---
@@ -284,6 +396,11 @@ time: "11:32"
 - C# UI template: dotnet new maui --ui csharp
 - Fixed with Copilot. DevFlow lets agents drive your app.
 - MAUI session (14:46): Material 3 on Android = set one property in your csproj
+- Say: With Copilot, the team finally fixed small "paper cuts" they never got to before.
+- Also on the grid: maps pin clustering, custom pin images, JSON styles; cancel one animation at a time; BoxView gradients; system bar colors; themed splash screens for light and dark.
+- Verbatim (Gerald): "our developer satisfaction has been at an all-time high even from the Xamarin days."
+- DevFlow (verbatim): "your agent can interact with it. It can inspect it. It can look at it, and it can self-iterate over your MAUI app."
+- Source: 11:32-11:33 ET, 20261110-113200.txt; shot 113240.jpg.
 -->
 
 ---
@@ -297,6 +414,11 @@ time: "11:34"
 <!--
 - github.com/jfversluis/dotnetconf-app
 - In the stores. Followed through every MAUI session this week.
+- Say: The official .NET Conf app is a MAUI app, open source, built with agents, and in the app stores now.
+- Live demo: the keynote showed as live in the app. Speakers, sessions, your own favorite schedule, and notifications.
+- Verbatim (Gerald): "there's no magic going on here this was not prepared" (light cleanup).
+- Why it matters: a real, shipping reference app you can read to see MAUI 11 features in use.
+- Source: 11:34 ET, 20261110-113401.txt; shots 113401.jpg, 113446.jpg.
 -->
 
 ---
@@ -307,7 +429,11 @@ kicker: "Modernization + AI"
 # AI
 
 <!--
-[Luis Quintanilla] Modernization and AI.
+- [Luis Quintanilla] Modernization and AI.
+- Say: Luis Quintanilla, who leads product for the .NET AI libraries, covered modernization and AI.
+- Time: about 11:35 ET. Theme (verbatim): "modernization means different things" and "it's not all or nothing."
+- Next slides: customer modernization results, the Windows 365 story (Aspire, then a bounded agent workflow), the .NET AI ecosystem, Llama on Windows, and what's new in .NET + AI.
+- Source: 20261110-113401.txt, 20261110-113603.txt. Deep dive: "The .NET AI Stack", Luis, 2:00 PM ET.
 -->
 
 ---
@@ -322,6 +448,12 @@ time: "11:36"
 - Ateleris / FHNW: 155x faster, 8 servers to 1
 - Intune: weeks saved with AI-assisted migration
 - Windows 365 runs 100+ .NET microservices
+- Say: Four customers, four different paths to modern .NET.
+- HttpMaster: modernized the foundations of a decades-old app. Visual Studio: modernized a select number of components and kept the core intact.
+- Ateleris / FHNW: a processing pipeline, "together with hardware and architecture changes" (Luis). The 155x and 8-to-1 numbers are from the slide.
+- Intune (verbatim): "you don't have to do it all yourself. They were able to save weeks off a library migration" with AI assistance.
+- Why it matters: modernization can be partial. Pick the component that hurts most.
+- Source: 11:35-11:36 ET, 20261110-113401.txt and 20261110-113603.txt; shot 113638.jpg.
 -->
 
 ---
@@ -336,6 +468,12 @@ time: "11:38"
 - Aspire AppHost composes 100+ microservices locally
 - Reliability first: readiness checks, same tooling on dev, CI, build
 - Then agentic AI on top
+- Say: Eric Guo, a Principal Group Engineering Manager on Windows 365, told how they made local dev work for a big microservice system.
+- Scale: over 100 microservices on ASP.NET Core and Azure Functions, over 4,000 scenario tests, used by tens of thousands of organizations.
+- Old pain: to run one service you had to reproduce cross-repo dependencies, Cosmos DB, Microsoft Entra, and test data.
+- Goal (verbatim): "clone the repo, press F5 for a fully configured manual testing environment." It "replaced hours or days spent recreating the system locally."
+- Readiness checks replaced fixed delays: Cosmos DB counts as ready only after its partitions are available.
+- Source: 11:37-11:39 ET, 20261110-113603.txt and 20261110-113801.txt; shots 113653.jpg, 113851.jpg.
 -->
 
 ---
@@ -351,6 +489,12 @@ time: "11:40"
 - One repo at a time, same test gate as human PRs
 - Humans approve every PR
 - Quote: "Passing tests is not the same as approving the change."
+- Say: Once the foundation was reliable, onboarding repos by hand became the bottleneck. So they gave the agent a fixed loop with C#-defined checks.
+- Slide subtitle: "C# defines the checks. The agent works inside them." Check uses a C# metric engine; Plan is written before any file changes; Learn proposes pattern updates for human review.
+- Verbatim (Eric Guo): agentic AI "not as a replacement for the engineering process, but as an accelerator for a process we already understood."
+- Verbatim: "every pull request remains human-reviewed before it proceeds." The quote above is on the slide "Checks first. People decide."
+- Why it matters: a practical pattern for agents at scale - deterministic gates first, humans approve.
+- Source: 11:40 ET, 20261110-114003.txt; shots 114038.jpg, 114053.jpg.
 -->
 
 ---
@@ -364,6 +508,12 @@ time: "11:41"
 <!--
 - Shared foundations: Microsoft.Extensions.AI, VectorData, DataIngestion (preview)
 - Agent Framework, MCP C# SDK, OpenAI and Anthropic SDKs, OllamaSharp
+- Say: The .NET team builds the shared AI foundations. The ecosystem on top of them passed 170 million package downloads.
+- Slide: "170M+ package downloads | Hundreds of dependent packages." Metrics as of Nov 3, 2026.
+- More on the slide: AG-UI for .NET, Blazor AI Components (experimental), GitHub Copilot SDK for .NET, Community Toolkit for .NET AI, Microsoft.Extensions.AI.Evaluation, AgentEval (community).
+- Demo: Jellyfin, an open-source .NET media server, got semantic search. Verbatim (Luis): "you don't need to go and rewrite your entire application."
+- Why it matters: code against one abstraction and swap model providers later.
+- Source: 11:41-11:42 ET, 20261110-114003.txt and 20261110-114201.txt; shot 114148.jpg.
 -->
 
 ---
@@ -378,6 +528,12 @@ time: "11:43"
 - Hugging Face + llama.cpp teams. .NET 10 + WinUI 3 tray app.
 - Open source, free at llama.app, in the Microsoft Store
 - Also: Jellyfin semantic search, RoutingChatClient routes local vs cloud models
+- Say: Jeff from Hugging Face announced Llama for Windows: a system-tray app to find, download, and chat with local models. It is built on .NET.
+- Verbatim (Jeff): "we built Llama for Windows on .NET 10 and WinUI 3 with llama.cpp powering inference under the hood" (STT fixed: "Lama CPP" = llama.cpp).
+- It exposes OpenAI-compatible APIs, so your own apps can call local models.
+- Store timing: the slide said "Now available in the Microsoft Store"; Jeff said it will be in the Windows Store "later this week."
+- Why it matters: free, private, local models with an OpenAI-style endpoint for dev and test.
+- Source: 11:43-11:45 ET, 20261110-114201.txt and 20261110-114400.txt; shot 114351.jpg.
 -->
 
 ---
@@ -395,6 +551,11 @@ time: "11:45"
 - AG-UI + Blazor AI Components (experimental)
 - MCP C# SDK 2.0
 - Caution: most are experimental. The stream slide said "DRAFT: confirm document-extraction package availability."
+- Say: Six new items for AI in .NET. Most are experimental, so treat them as previews.
+- Slide detail: MEAI integrations - "Try it | aka.ms/meai/start". Decisions API - "MEAI decision abstractions (coming soon)." MCP C# SDK - "2.0 major milestone."
+- RoutingChatClient (verbatim, Luis): it "lets you define policies that match the task to the right model capabilities" (STT fixed: "writing chat client").
+- Slide footer also said: "Experimental APIs may change."
+- Source: 11:45 ET, 20261110-114400.txt; shot 114545.jpg.
 -->
 
 ---
@@ -405,7 +566,11 @@ kicker: "Agentic development"
 # Agents
 
 <!--
-[Wendy Breiding] Agentic development.
+- [Wendy Breiding] Agentic development.
+- Say: Wendy Breiding, a PM for agentic development experiences, showed how to use agents on .NET code.
+- Time: about 11:46 ET. Demo app: a party RSVP app that overbooks when two users click at the same time.
+- Next slides: the GitHub Copilot app fixes the race; dotnet/skills and the skills evaluation dashboard.
+- Source: 20261110-114602.txt. Deep dive: "Beyond Autocomplete", Wendy, 5:00 PM ET.
 -->
 
 ---
@@ -420,6 +585,11 @@ time: "11:47"
 - Prompt: two people reserve the last RSVP spot, only one gets in
 - Reproduced with a file-based app
 - Copilot picks the model, loads a C# expert skill, uses LSP code search
+- Say: Wendy wrote a file-based app to reproduce the bug, then gave the fix to the GitHub Copilot app.
+- Verbatim (Wendy): "if two users happen to click at the same time, it confirms them both even if there's only one slot left."
+- She used "Copilot Fusion", which picks the model for you. It chose a model she called "GPT-6 Luna" (name as heard) for "a medium complexity type of problem."
+- Why it matters: file-based apps are a quick way to give an agent a repro it can run.
+- Source: 11:46-11:47 ET, 20261110-114602.txt; shot 114707.jpg.
 -->
 
 ---
@@ -434,6 +604,12 @@ time: "11:48"
 - github.com/dotnet/skills, eval dashboard at dotnet.github.io/skills
 - csharp-expert skill on Claude Sonnet 5: -41% tokens, -73% time
 - Roslyn as an agent tool: up to 50% less memory
+- Say: The .NET team publishes curated agent skills, and an evaluation dashboard that shows when a skill helps and when it does not.
+- Dashboard row: csharp-expert + claude-sonnet-5: tokens 129.1k -> 75.8k, time 41.0 s -> 11.0 s, verdict "Worth installing."
+- Honest results: csharp-expert + claude-haiku-4.5 showed -35% tokens and -42% time, but the verdict was "No clear result yet."
+- Verbatim (Wendy): "we don't want you to take our word for it." And: "up to 50% reduction in memory usage when you're using multiple agents at once" with the new Roslyn.
+- Why it matters: you can check the data before you install a skill for your team.
+- Source: 11:48-11:49 ET, 20261110-114800.txt; shots 114810.jpg, 114845.jpg.
 -->
 
 ---
@@ -444,8 +620,12 @@ kicker: "Next-gen inner loop"
 # Faster, by doing less
 
 <!--
-[Drew Noakes] Next-gen inner loop. 11:50 ET.
+- [Drew Noakes] Next-gen inner loop. 11:50 ET.
 - Copilot's RSVP race fix verified on stage
+- Say: After Wendy's fix ran ("one was confirmed and the other is told it was full"), Drew Noakes took over to talk about the inner loop.
+- Drew works on .NET developer tooling. Theme: tools must share the machine with agents.
+- Next slides: "Your machine has company", and the C# Dev Kit 11 numbers.
+- Source: 11:50-11:51 ET, 20261110-115003.txt; shot 115108.jpg. Deep dive: C# Dev Kit 11, Drew Noakes + Emanuel Fernandez Dell'Oca, 3:00 PM ET.
 -->
 
 ---
@@ -457,6 +637,11 @@ Your machine has company.
 <!--
 - With agents running, dev tools can't own the whole machine
 - C# Dev Kit 11 re-architected for performance
+- Say: Tools were built for one person in one IDE. Now agents edit, build, and test on the same machine at the same time.
+- Verbatim (Drew): "But now your machine has company."
+- Verbatim: "So our tools can't act like they own the whole machine anymore. The fewer resources each one needs, the more room there is for you and your agents to work side by side."
+- Why it matters: if you run agents locally, tool memory and CPU use now directly limit how much work you get done.
+- Source: 11:51 ET, 20261110-115003.txt; shot 115143.jpg.
 -->
 
 ---
@@ -473,6 +658,10 @@ time: "11:52"
 - 36s → 2s incremental build on Aspire's 407 projects
 - Pre-release channel today, stable "really soon"
 - Agents warm the build for your other tools
+- Say: Drew measured on three large test solutions. The headline: a one-change incremental build on Aspire dropped from 36 seconds to 2.
+- Verbatim (Drew): "you make just one change and build just that change across the whole solution, dropping from 36 seconds down to just two."
+- Also: faster worktree initialization; exploring an agent-oriented mode that detects agent callers.
+- Source: 11:52-11:53 ET, 20261110-115200.txt; shot 115215.jpg.
 -->
 
 ---
@@ -483,8 +672,13 @@ kicker: "Keynote close"
 # 4 days. 60+ sessions.
 
 <!--
-[Kathy Sullivan, Maddy Montaquila] 11:54 ET.
+- [Kathy Sullivan, Maddy Montaquila] 11:54 ET.
 - Ask the team live: dotnetconfquestions.com
+- Say: Kathy Sullivan from the .NET product team and Maddy Montaquila, the Aspire PM, closed the keynote.
+- Verbatim (Kathy): "We've got three more days after today. We've got over 60 sessions for you."
+- Plan: Day 1 = the team that built .NET; Day 2 = Visual Studio, Windows, Azure, and data; Days 3 and 4 = community, run with community folks.
+- Next slides: Microsoft products built on .NET, and the download link.
+- Source: 11:54-11:55 ET, 20261110-115402.txt; shots 115417.jpg, 115730.jpg.
 -->
 
 ---
@@ -498,6 +692,10 @@ time: "11:55"
 <!--
 - Copilot, Teams, Bing, Xbox, Azure, Exchange Online, Windows 365, Intune
 - aka.ms/dotnet-developer-stories
+- Say: Microsoft runs its own big products on .NET.
+- Full slide list: Microsoft Copilot, Teams, Bing, Copilot Studio, Intune, Azure, Xbox, Exchange Online, Windows 365, Azure Service Fabric.
+- Verbatim (Kathy): "if you're getting a Teams message on your phone, that's backed by a .NET service." Cloud PC is also .NET, "running Aspire on the back-end."
+- Source: 11:55 ET, 20261110-115402.txt; shot 115537.jpg.
 -->
 
 ---
@@ -510,6 +708,11 @@ time: "11:56"
 
 <!--
 - winget and other installers "soon"
+- Say: That's the keynote. .NET 11 is out now at get.dot.net.
+- Verbatim (close, light cleanup): "So, get.dot.net. I said the site correctly, get.dot.net. Soon it will be in winget, dotnetup, all the other places you can install it as well" (STT fixed: "winget.net up").
+- Also at the close: a 2026 developer survey (about 15 minutes) that feeds .NET 12 planning.
+- Why it matters: install it today, try the features you just saw.
+- Source: 11:56-11:58 ET, 20261110-115600.txt and 20261110-115802.txt; shot 115635.jpg.
 -->
 
 ---

@@ -1157,6 +1157,7 @@ time: "14:19"
 - Packages: Microsoft.Extensions.DocumentExtraction + CommunityToolkit.DocumentExtraction.{PdfPig, Mistral, VisionLanguageModel}
 - Keynote caveat still applies: experimental, confirm package availability
 - Also (14:18): MEAI "core foundations and abstractions for these decision-style models" coming
+- Flow (14:21): PDF → DocumentExtractionClient → IngestionDocument → chunks. Same whether the reader is Mistral, a chat client, or Azure Document Intelligence.
 -->
 
 ---

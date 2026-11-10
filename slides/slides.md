@@ -1564,6 +1564,19 @@ codeSize: "19"
 -->
 
 ---
+layout: "session"
+num: 10
+time: "4:00 PM"
+speakers: "Maddy Montaquila, Damian Edwards"
+---
+
+# What's New in Aspire for .NET Developers
+
+<!--
+[Session 10]
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

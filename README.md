@@ -41,6 +41,7 @@ npm install-scripts approve playwright-chromium
 | 07 | What's New in .NET MAUI in .NET 11 | Gerald Versluis |
 | 08 | C# Dev Kit 11 | Drew Noakes, Emanuel Fernandez Dell'Oca |
 | 09 | More Processes, More Problems: Multithreaded MSBuild | Chet Husk |
+| 10 | What's New in Aspire for .NET Developers | Maddy Montaquila, Damian Edwards |
 
 Later sessions are added as the stream continues.
 

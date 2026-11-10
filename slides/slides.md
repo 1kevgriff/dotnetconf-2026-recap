@@ -2980,6 +2980,7 @@ public static unsafe string PtrToStringAnsi(
 - "But we also have escape hatches" (pointers, P/Invoke) — and "we have no way of delivering that safety contract up to our callers." Now "the escape hatches can propagate that information up to the callers."
 - Example from the stream: Marshal.PtrToStringAnsi becomes a method-level `unsafe` member ("requires-unsafe")
 - Obligation model (18:50): "when you declare something to be unsafe, that means that there's additional rules that the caller has to" follow. A safe wrapper can satisfy them: `DecodeAnsi` "is a safe method with a usage of the unsafe method pointer to string ANSI inside it" — it takes a ReadOnlySpan ("a bounds check safe C# construct") and calls PtrToStringAnsi "inside an unsafe block", the point where "the caller has satisfied all the requirements". So unsafe doesn't have to spread to every caller.
+- More (18:52): unsafe on a method "means dragons may lie here"; a new "safety" documentation concept to describe the caller's obligation; "fields can have unsafe contracts"; and "we have unsafe expressions now" alongside unsafe blocks
 - Code copied from the stream slide "Unsafe is a contract"; the frame itself (/shots/184848.jpg) is NOT in the repo — it carries the "Microsoft Confidential" footer
 - Why it matters: you can see in code review which calls need care, instead of it hiding in a normal-looking API.
 - Source: 18:48–18:50 ET, transcript 20261110-184803

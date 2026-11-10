@@ -2187,6 +2187,7 @@ time: "16:09"
 - Deploy (16:08): "This time last year, there really wasn't a deploy story like this." Now `aspire deploy` plus a pipeline model in the AppHost; steps run during publish, deploy, even run
 - Targets: Azure, Docker Compose, vanilla Kubernetes, "deploy via SSH to a VM"; "The Amazon folks ship the AWS support"
 - Agent support evolved: Copilot in the dashboard → an MCP → "replaced the MCP with skills"
+- EF Core (16:10): the migrations integration "was actually contributed by the EF Core team". `aspire deploy` produces an EF bundle; locally you can run a migration or rollback from the dashboard
 - Why it matters: one AppHost file now goes from local run to deployment, on many clouds.
 - Source: 16:08–16:10 ET, transcript 20261110-160802, /shots/160947.jpg
 -->

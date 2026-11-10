@@ -1245,6 +1245,19 @@ time: "14:41"
 - Package: 45.65 MiB (Full R2R) → 30.40 MiB (NativeAOT)
 - "Android NativeAOT is experimental" (chart footnote)
 - Numbers from the chart only; not spoken in the transcript
+- iOS (iPhone 15 Pro, /shots/144228.jpg): MAUI median 490.3 → 321.8 ms with NativeAOT (C# UIKit 185.9); package 58.86 → 42.01 MiB
+-->
+
+---
+layout: "statement"
+---
+
+XAML source generation on by default: Debug behaves like Release.
+
+<!--
+- 14:42 ET. XAML compiles to C# at build time with source generators
+- No more "trimmed from the release build and boom, your app blows up in production"
+- Already listed on the keynote MAUI slide; this is the "why"
 -->
 
 ---

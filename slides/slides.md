@@ -1428,6 +1428,8 @@ time: "15:18"
 - "Cheaper instances help. Growing concurrency still needs a budget."
 - Opt-in, not default; participating builds only
 - This is the product version of the origin story's build queue
+- Also (15:20): "we want to prioritize the human" — the coordinator decides which builds go first. If an agent's build already produced the .lscache, the IDE can skip its own "design-time build".
+- BuildX CLI demo on OrchardCore follows
 -->
 
 ---

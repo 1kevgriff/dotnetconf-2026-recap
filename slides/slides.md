@@ -1500,7 +1500,7 @@ time: "15:33"
 layout: "statement"
 ---
 
-`-mt` becomes the default in SDK 11.0.200 — this winter.
+Target: `-mt` on by default in SDK 11.0.200 — this winter.
 
 <!--
 - 15:34 ET: "We are targeting making this behavior the default in 11.0.200. So this winter's build of .NET 11." (Targeting, not promised.)

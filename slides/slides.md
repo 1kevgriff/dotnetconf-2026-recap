@@ -2601,7 +2601,8 @@ Decimal64.Quantize(value, cents);
 
 <!--
 - Say: The classic 0.1 + 0.2 demo, side by side with double — plus "quantum", which keeps track of how many digits you actually meant.
-- Code copied from the stream demo (/shots/173753.jpg, DecimalDemo.cs); lines trimmed to fit. The run output was not captured here — run it yourself before quoting results.
+- Code copied from the stream demo (/shots/173753.jpg, DecimalDemo.cs); lines trimmed to fit.
+- Output on stream (17:40, Runtime .NET 11.0.0): Double sum 0.3000000000000000444089209850062616169452667236328125 · Decimal64 sum 0.3 · Same value: True · HaveSameQuantum: False · Quantum of 1.0: 0.1, of 1.00: 0.01 · Quantize 1.235 → 1.24, 1.245 → 1.24 · IEEE divide by zero: Infinity · Acos(1 − 1e-30): double input becomes 1, Double Acos 0; Decimal128 Acos 1.414213562373095048801688724209816E-15
 - Quantum: 1.0 and 1.00 are the same value but not the same quantum — "you want to keep track of the fact that you have at least a guaranteed zero digit"; it matters "when you have to worry about precision and tolerances"
 - Demo also showed IEEE divide by zero (Decimal64.One / Decimal64.Zero) and Decimal128.Acos near 1 vs Math.Acos on double
 - Why it matters: decimal values that remember their precision, with IEEE behavior for edge cases.

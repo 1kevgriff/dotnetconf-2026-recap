@@ -524,6 +524,18 @@ speakers: "Mads Torgersen, Dustin Campbell"
 -->
 
 ---
+layout: "statement"
+---
+
+Unions: 18 years in the making.
+
+<!--
+- 12:00 ET. Mads: "we were talking about it ... like 18 years ago"
+- C# version = .NET version + 4, so C# 15
+- Demo: Dog, Cat, Bird, Shark from libraries you don't own
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -2489,7 +2489,24 @@ time: "17:04"
 - VS Code too: "there were some specific skills that we shipped in box for you. We also do the same thing with C# Dev Kit."
 - VS Code (17:10): "Copilot Fusion ... looks at the complexity of the task that you've given it" and picks the model — here "GPT 6.1 Sol". The agent first read the .NET Web API skill, then the "handoff doc that the last agent made for it to understand what it did" — the Visual Studio agent left notes for the next agent
 - Why it matters: you get .NET-specific guidance without writing your own instructions.
-- Source: 17:04 ET, transcript 20261110-170403, /shots/170443.jpg
+- Source: 17:04–17:11 ET, transcripts 20261110-170403, 20261110-170804, 20261110-171001, /shots/170443.jpg
+-->
+
+---
+layout: "statement"
+---
+
+AI coding benchmarks had "not a lick of .NET code." So .NET built one: 170+ C# scenarios.
+
+<!--
+- Say: The public AI coding benchmarks don't test C#, so the .NET team built its own, and other Microsoft teams now use it.
+- Wendy Breiding (17:12): "you see SWE bench and deep SWE and all of these different benchmarks ... there's not a lick of .NET code"
+- "We've compiled a benchmark of 170 some scenarios that we run on a regular basis," based on the scenarios customers send
+- "The Visual Studio team, the VS Code team, and the Copilot SDK team are all also utilizing this benchmark to ... catch any regressions"
+- Caught before release: a code-search speedup that "really increased token usage by way too much"
+- Reports showed "refactoring scenarios were struggling, especially with really large code bases" → that "led to the creation of the C# refactoring skill"
+- Why it matters: Copilot's C# quality is now measured on C#, not inferred from Python/JS benchmarks.
+- Source: 17:12–17:16 ET, transcripts 20261110-171204, 20261110-171401
 -->
 
 ---

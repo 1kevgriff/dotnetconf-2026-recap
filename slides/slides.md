@@ -1415,6 +1415,22 @@ time: "15:11"
 -->
 
 ---
+layout: "shot"
+image: "/shots/151821.jpg"
+time: "15:18"
+---
+
+# MSBuild Coordinator: one build budget per machine
+
+<!--
+- 5, 10, 20 agent builds each asking for N nodes = more than the machine has
+- Coordinator: a shared node budget; some builds run, the rest queue
+- "Cheaper instances help. Growing concurrency still needs a budget."
+- Opt-in, not default; participating builds only
+- This is the product version of the origin story's build queue
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

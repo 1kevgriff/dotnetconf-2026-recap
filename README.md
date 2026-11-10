@@ -43,6 +43,7 @@ npm install-scripts approve playwright-chromium
 | 09 | More Processes, More Problems: Multithreaded MSBuild | Chet Husk |
 | 10 | What's New in Aspire for .NET Developers | Maddy Montaquila, Damian Edwards |
 | 11 | 2 Secure 2 Curmudgeonly | Barry Dorrans |
+| 12 | Beyond Autocomplete: Getting the Most from GitHub Copilot for .NET | Wendy Breiding |
 
 Later sessions are added as the stream continues.
 

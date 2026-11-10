@@ -2456,6 +2456,20 @@ time: "16:56"
 -->
 
 ---
+layout: "session"
+num: 12
+time: "5:00 PM"
+speakers: "Wendy Breiding"
+---
+
+# Beyond Autocomplete: Getting the Most from GitHub Copilot for .NET
+
+<!--
+[Session 12] Agenda time 5:00 PM ET; started ~5:01.
+- Keynote already covered Wendy's Copilot app demo (RSVP race fix) and dotnet/skills evals; add only new details here.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

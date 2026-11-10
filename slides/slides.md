@@ -1508,7 +1508,7 @@ Target: `-mt` on by default in SDK 11.0.200 — this winter.
 - Why faster: less duplicated engine work, fewer task handoffs, reusable server state
 - Built on a new long-lived MSBuild server daemon, to be reused for future caching
 - How (15:40): "each of the worker nodes is just a thread instead of an entire process." In-process messages replace IPC; runtime and task assemblies load and JIT once.
-- The catch: "Tasks today get to pretend like they are in completely separate processes that they own" (process state). Custom tasks must be made thread-safe.
+- The catch: "Tasks today get to pretend like they are in completely separate processes that they own" (process state). (My inference: custom tasks will need changes to be thread-safe.)
 -->
 
 ---

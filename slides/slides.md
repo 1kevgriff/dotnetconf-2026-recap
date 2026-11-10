@@ -2877,7 +2877,7 @@ time: "18:37"
 - Runtime async lowers to `[MethodImpl(MethodImplOptions.Async)]` + `AsyncHelpers.Await(Task.Delay(1))` (stream slide)
 - MethodImplOptions.Async "is actually this new calling convention ... so that each method can be optimized and do like interprocedural optimization to get the whole chain to behave as one"
 - AsyncHelpers.Await is "a JIT intrinsic" — no state machine transformation at C# compile time
-- Why it matters: the runtime, not the compiler, now owns async — which is where the allocation and speed wins come from.
+- Why it matters: the runtime, not the compiler, now owns async. (Inference: this is what enables the keynote's 0-byte allocation numbers.)
 - Source: 18:36–18:38 ET, transcript 20261110-183603, /shots/183743-compare.jpg
 -->
 

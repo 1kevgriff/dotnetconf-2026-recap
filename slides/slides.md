@@ -2901,6 +2901,21 @@ time: "18:39"
 -->
 
 ---
+layout: "statement"
+---
+
+Async exceptions: 2.5–3.4× faster with runtime async.
+
+<!--
+- Say: When things fail, async exceptions get expensive. Runtime async makes them 2.5 to 3.4 times faster at 8 frames.
+- Chart (18:42, ".NET 11 RC", mean time per op, lower is better): No suspension — 2.5× faster than compiler async at 8 frames. Suspended async — 3.4× faster at 8 frames. Compiler async climbs steeply with depth (to ~80+ µs at 32 frames); runtime async stays near the sync reference
+- Why it matters (speaker): when a service fails, "you get a lot of exceptions ... and just the exceptions start piling up" — "the async cost really flows through to exceptions"
+- Allocations: "even if you go down to 32 frames, it doesn't matter. It's all zero byte allocation all the way through."
+- Chart frame /shots/184254.jpg not added to the repo (it may carry the confidential footer).
+- Source: 18:42–18:44 ET, transcript 20261110-184204
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

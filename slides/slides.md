@@ -1433,6 +1433,28 @@ time: "15:18"
 -->
 
 ---
+layout: "default"
+codeSize: "20"
+---
+
+# `dotnet buildx` on OrchardCore
+
+```text
+$ dotnet buildx src/OrchardCore.Cms.Web/OrchardCore.Cms.Web.csproj
+buildx: all 215 projects up-to-date (388 ms). Nothing to build.
+
+# edit OrchardCoreConstants.cs (a core project), build again
+buildx: done in 13378 ms: 2 built, 201 accelerated (612 files copied), 12 skipped.
+```
+
+<!--
+- 15:22 ET. No-op build of 215 projects: 388 ms
+- One change in a core project: 2 projects built, 201 "accelerated" (outputs copied), 12 skipped
+- Caveat: that 13.4 s run included a NuGet restore and starting the buildx server
+- Output copied from the stream terminal (/shots/152232.jpg); a line with a local user path left out
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -549,6 +549,20 @@ time: "12:03"
 -->
 
 ---
+layout: "shot"
+image: "/shots/120500.jpg"
+time: "12:05"
+---
+
+# After: Shark is a compile error
+
+<!--
+- Case types convert implicitly to the union
+- Remove the Shark arm: the switch is exhaustive, no discard needed
+- Make a case nullable (Cat?) and you must add a null arm
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -924,6 +924,8 @@ Ship your .NET tools Native AOT. Fast and easy — you don't have to choose.
 - RID-specific Native AOT tools supported since .NET 10
 - Parity first: when unsure, fall back to the managed implementation
 - AOT payoff beyond startup: explicit, testable architecture
+- Q&A (13:28): dotnetup was the team's AOT practice project; Chet made it install .NET 11 "10 minutes before this talk"
+- No Rust/C++ comparison done. The win: speed without a rewrite or leaving .NET.
 -->
 
 ---

@@ -1407,7 +1407,9 @@ time: "15:11"
 <!--
 - New build integration in Dev Kit 11
 - Implementation-only edit, public API unchanged: build only H, skip unchanged projects, copy outputs where needed
-- (Likely what's behind the keynote's 36 s → 2 s incremental build; not stated directly here)
+- Confirmed (15:12): BuildX is behind the keynote number. Aspire.slnx, 407 projects: single change 36.1 → 2.1 s (−94%), median of 5
+- No-op build: 34.4 → 0.9 s (−97%); the old 34.4 s was "almost entirely overhead"
+- Alt chart slide: /shots/151239.jpg
 -->
 
 ---

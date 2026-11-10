@@ -1451,6 +1451,7 @@ buildx: done in 13378 ms: 2 built, 201 accelerated (612 files copied), 12 skippe
 - 15:22 ET. No-op build of 215 projects: 388 ms
 - One change in a core project: 2 projects built, 201 "accelerated" (outputs copied), 12 skipped
 - Caveat: that 13.4 s run included a NuGet restore and starting the buildx server
+- Q&A (15:28): buildx sits next to `dotnet build`, like `docker buildx` next to `docker build`. Starts as a separate tool, being moved into the SDK; "I do have a dream that it replaces it."
 - Output copied from the stream terminal (/shots/152232.jpg); a line with a local user path left out
 - Exploring, not committed (15:24): agents are trained on `dotnet build` / `dotnet test`, so if an agent is detected those commands could use the faster paths. Optimizations that might surprise a human are fine for an agent if a log message says "this optimization has been applied" — the agent will read the docs.
 -->

@@ -709,7 +709,7 @@ time: "12:32"
 - Malformed HTTP/1.1 requests: no more throw-and-propagate
 - Returns an error result and uses pre-allocated response fragments
 - ~30% higher bad-request throughput (single-core benchmark)
-- Helps under attack traffic
+- "Cycles that are free for your normal website traffic"
 -->
 
 ---

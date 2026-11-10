@@ -1553,6 +1553,7 @@ codeSize: "19"
 <!--
 - 15:47 ET. Inputs/outputs stay the same
 - 1) Add the marker attribute + interface. 2) Resolve relative paths through TaskEnvironment
+- Even simpler (15:48, "freshest" MSBuild bits): typed binding, e.g. ITaskItem<FileInfo>, so the engine resolves the path and the task code shrinks — "a more declarative path" for task authors
 - Code copied from the stream slide (/shots/154714.jpg)
 -->
 

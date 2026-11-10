@@ -900,6 +900,19 @@ No free lunch: AOT trades size for speed.
 -->
 
 ---
+layout: "statement"
+---
+
+XML parsing cost 5 MB: XSD → network → crypto.
+
+<!--
+- 13:22 ET. The BCL XML reader pulled in ~5 MB of a ~15 MB AOT binary per platform
+- Fix: a hand-written recursive-descent parser for one format, saved 5+ MB
+- Same idea for embedded resources: localization now read from existing satellite assemblies
+- Takeaway: check what your dependencies drag in
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

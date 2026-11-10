@@ -1098,6 +1098,7 @@ time: "14:11"
 - Existing: IChatClient, AIAgent, AIFunction, ITextToSpeechClient, IRealtimeClient, IImageGenerator
 - Demo mixed cloud (OpenAI, Anthropic Claude, Mistral OCR, GitHub Copilot SDK) and local (PdfPig, Kokoro, Whisper.net, ONNX) providers in one app
 - Shared: Microsoft.Extensions.AI, Microsoft.Extensions.DataIngestion
+- 14:13 "Follow one request. PDF in, film out: every hop is a .NET contract": DocumentExtractionClient → IngestionDocument → RoutingChatClient + IDecisionClient → AIAgent → AgentBoundary (you edit) → ITextToSpeechClient / IImageGenerator → film. Alt slide: /shots/141306.jpg
 -->
 
 ---

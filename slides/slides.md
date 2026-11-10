@@ -2561,6 +2561,23 @@ speakers: "Tanner Gooding"
 -->
 
 ---
+layout: "shot"
+image: "/shots/173229.jpg"
+time: "17:32"
+---
+
+# New in .NET 11: `Decimal32`, `Decimal64`, `Decimal128`
+
+<!--
+- Say: .NET 11 adds IEEE 754 decimal floating-point types in three sizes.
+- Decimal32 / Decimal64 / Decimal128: 7 / 16 / 34 significant decimal digits; 32 / 64 / 128 bits
+- "IEEE 754 semantics. Generic math. Your choice of representation." (stream slide)
+- vs System.Decimal: both base 10, but decimal "is primarily oriented around currency"; "the IEEE decimal types ... are designed for scientific computing"
+- Why it matters: exact base-10 math with standard IEEE behavior, usable in generic math code.
+- Source: 17:32 ET, transcript 20261110-173204, /shots/173229.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

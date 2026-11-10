@@ -1203,6 +1203,19 @@ layout: "statement"
 -->
 
 ---
+layout: "session"
+num: 7
+time: "2:30 PM"
+speakers: "Gerald Versluis"
+---
+
+# What's New in .NET MAUI in .NET 11
+
+<!--
+[Session 7]
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

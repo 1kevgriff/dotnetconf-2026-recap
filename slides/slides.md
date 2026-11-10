@@ -50,14 +50,16 @@ image: "/kevin-griffin.png"
 -->
 
 ---
-layout: "section"
-kicker: "Keynote"
+layout: "session"
+num: 1
+time: "11:00 AM"
+speakers: "Scott Hanselman, Damian Edwards + guests"
 ---
 
-# .NET 11 ships
+# Keynote: .NET 11 ships
 
 <!--
-[Keynote] Scott Hanselman, Damian Edwards, Chet Husk, Daniel Roth.
+[Session 1 · Keynote] Scott Hanselman, Damian Edwards, Chet Husk, Daniel Roth, Gerald Versluis, Luis Quintanilla, Wendy Breiding, Drew Noakes.
 -->
 
 ---
@@ -506,6 +508,19 @@ time: "11:56"
 
 <!--
 - winget and other installers "soon"
+-->
+
+---
+layout: "session"
+num: 2
+time: "12:00 PM"
+speakers: "Mads Torgersen, Dustin Campbell"
+---
+
+# What's new in C#
+
+<!--
+[Session 2]
 -->
 
 ---

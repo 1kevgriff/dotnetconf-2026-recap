@@ -2696,6 +2696,23 @@ Accuracy is part of performance: one path got slower on purpose.
 -->
 
 ---
+layout: "shot"
+image: "/shots/175703.jpg"
+time: "17:57"
+---
+
+# Parse "12.5ms": partial parsing, UTF-8, hex floats
+
+<!--
+- Say: New parsing building blocks — parse just the number out of "12.5ms", parse straight from UTF-8 bytes, and read hex floats.
+- Partial parsing: "I've got 12.5 milliseconds, I want to parse out just the number — we have new API TryParsePartial"; it stops at the first invalid character and "will then give you back how much it consumed", so you can validate the unit next
+- UTF-8: bytes ↔ BigInteger / Complex (stream slide)
+- Hexadecimal floats: 0x1.8p+1 → 3 (stream slide)
+- Why it matters: less string slicing and allocation when parsing numbers from logs, configs or network data.
+- Source: 17:56–17:58 ET, transcript 20261110-175603, /shots/175703.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

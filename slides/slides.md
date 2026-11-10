@@ -1218,6 +1218,19 @@ speakers: "Gerald Versluis"
 -->
 
 ---
+layout: "statement"
+---
+
+Mono → CoreCLR: "you won't really see, but you will feel."
+
+<!--
+- Gerald Versluis, 14:37 ET: "the biggest change to .NET MAUI"
+- Same runtime as ASP.NET Core and Azure on every MAUI platform
+- Benchmarked with David Ortinau's open-source Barista Notes app (screenshot /shots/143737.jpg)
+- Avalonia backend is now an option in the .NET MAUI templates for .NET 11
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

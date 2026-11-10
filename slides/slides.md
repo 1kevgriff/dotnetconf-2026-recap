@@ -1063,7 +1063,7 @@ speakers: "Luis Quintanilla"
 
 <!--
 [Session 6]
-- Layers: experiences, agents, tools, multimodal, context, sessions, models
+- Layers (from title slide): Experiences, Agents, Tools, Multimodal, Context, Decisions, Models
 - Foundations: Microsoft.Extensions.AI, VectorData, DataIngestion (170M+ downloads, see keynote slide)
 -->
 

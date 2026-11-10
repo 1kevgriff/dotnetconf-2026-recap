@@ -2714,6 +2714,20 @@ time: "17:57"
 -->
 
 ---
+layout: "session"
+num: 14
+time: "6:00 PM"
+speakers: "Maddy Montaquila, Jose Perez Rodriguez"
+---
+
+# How Aspire uses .NET to build an agent-first toolchain for any language
+
+<!--
+[Session 14] Agenda time 6:00 PM ET; started ~6:01.
+- Session 10 already covered Aspire 17; add only new details here.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

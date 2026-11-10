@@ -45,6 +45,7 @@ npm install-scripts approve playwright-chromium
 | 11 | 2 Secure 2 Curmudgeonly | Barry Dorrans |
 | 12 | Beyond Autocomplete: Getting the Most from GitHub Copilot for .NET | Wendy Breiding |
 | 13 | .NET 11 Numerics | Tanner Gooding |
+| 14 | How Aspire uses .NET to build an agent-first toolchain for any language | Maddy Montaquila, Jose Perez Rodriguez |
 
 Later sessions are added as the stream continues.
 

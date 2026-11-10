@@ -1322,6 +1322,21 @@ time: "14:54"
 -->
 
 ---
+layout: "shot"
+image: "/shots/145752.jpg"
+time: "14:57"
+---
+
+# Heads up: MAUI 10 support ends May 2027
+
+<!--
+- Each MAUI version is patched for 18 months: support ends 6 months after the next major ships
+- MAUI 10 → May 2027, even though .NET 10 itself is LTS. MAUI 11 → May 2028 (assumes .NET 12 ships Nov 2027)
+- aka.ms/maui-support-policy
+- Also (14:56): Essentials.AI uses on-device models (Apple Intelligence, Gemini Nano)
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

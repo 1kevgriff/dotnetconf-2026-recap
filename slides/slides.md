@@ -2730,6 +2730,22 @@ speakers: "Maddy Montaquila, Jose Perez Rodriguez"
 -->
 
 ---
+layout: "shot"
+image: "/shots/180518.jpg"
+time: "18:05"
+---
+
+# Aspire: one C# API, many languages
+
+<!--
+- Say: Aspire writes its API once in C#, then generates SDKs for other languages. TypeScript is GA; the .NET host still runs every call.
+- First attempt failed on callbacks: "you couldn't generate the C# code from a TypeScript callback"
+- Pipeline (stream slide): WE WRITE C# API (extension methods and types marked [AspireExport]) → .NET PROVIDES Roslyn + runtime (reads types and docs) → WE DEFINE the ATS contract ("Aspire type system": capability IDs, type mappings, handle rules) → WE GENERATE guest language SDKs ("TypeScript is GA, more languages in preview") → WE EXECUTE capability calls (the .NET host runs each C# method, called over JSON-RPC)
+- Why it matters: a pattern for any .NET library that wants to reach non-.NET users without rewriting itself.
+- Source: 18:04–18:06 ET, transcript 20261110-180403, /shots/180518.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

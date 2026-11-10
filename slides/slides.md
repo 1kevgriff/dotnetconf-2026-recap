@@ -2467,6 +2467,8 @@ speakers: "Wendy Breiding"
 <!--
 [Session 12] Agenda time 5:00 PM ET; started ~5:01.
 - Keynote already covered Wendy's Copilot app demo (RSVP race fix) and dotnet/skills evals; add only new details here.
+- Demo app (17:02): WinForms front end + ASP.NET Core API + Postgres, for purchase orders. Bug: "15 copies of the same purchase order in our database"
+- One bug, three tools: fix UI error handling in Visual Studio → API resilience in VS Code (so it "only submits one version of the purchase order") → a report of the duplicates in the Copilot app
 -->
 
 ---

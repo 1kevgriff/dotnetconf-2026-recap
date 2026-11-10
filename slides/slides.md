@@ -971,6 +971,7 @@ time: "13:39"
 - Visual styles mode is an enum: Net11 now, Net12 and Net13 planned
 - Same controls: modern Windows look, toggle switches, dark mode
 - GroupBox (13:40): flat style fixes the classic low-contrast frame
+- CAVEAT (13:50): new styles are "logically a lot larger"; pixel-perfect layouts won't work because control locations stay the same
 -->
 
 ---

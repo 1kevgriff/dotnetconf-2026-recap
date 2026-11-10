@@ -2378,7 +2378,25 @@ Add a guard? Apply it everywhere. Parse once. Check your complexity.
 - RCEs this year (16:48) cluster in the desktop runtime (WPF/XPS), MSDIA (the debugging component that enriches exceptions), and the .NET SDK itself ("not remotely though")
 - CVE-2026-50646 (System.Windows.Controls RCE): nested Frames from XPS lost the IsUnsafe marking → attacker XAML → ObjectDataProvider → Process.Start("calc.exe"). "XPS is like PDF. You can embed code and scripts in it ... It's quite undocumented." Barry: "my advice here would be stop using XPS for anything if you are using it." Stream takeaway: "Document your formats and fuzz them with purpose, not random data." (/shots/164829.jpg)
 - Why it matters: most of this year's CVEs were DoS — guards that miss one code path and quadratic work on untrusted input are the pattern.
-- Source: 16:42–16:46 ET, transcripts 20261110-164202, 20261110-164404, /shots/164332.jpg, /shots/164514.jpg
+- Source: 16:42–16:49 ET, transcripts 20261110-164202, 20261110-164404, 20261110-164601, 20261110-164804, /shots/164332.jpg, /shots/164514.jpg
+-->
+
+---
+layout: "shot"
+image: "/shots/165146.jpg"
+time: "16:51"
+---
+
+# An all-zero MAC that validated: ASP.NET Data Protection
+
+<!--
+- Say: In April there was an out-of-band patch for ASP.NET Data Protection. A payload with an all-zero MAC would validate.
+- CVE-2026-40372 (Security Bypass, ASP.NET Core Identity), OOB patch April 2026
+- Why: ComputeHash() allocates and returns a new byte[]; it doesn't write into an existing span. The correctHash span stayed all zeros from the stackalloc, so an all-zero MAC passed the check
+- Stream takeaway: "Spans are sometimes hard to use correctly."
+- Also (16:50): some SDK workloads didn't use NuGet package source mapping, so an attacker could plant files on your machine; and a fix strips headers on HTTP↔HTTPS redirects (the notes agent says Proxy-Authorization was leaking — not confirmed word-for-word in transcript)
+- Why it matters: if you use ASP.NET Data Protection, make sure that April patch is in; and when you use Span APIs, check which overload actually writes into your buffer.
+- Source: 16:50–16:52 ET, transcript 20261110-165001, /shots/165146.jpg
 -->
 
 ---

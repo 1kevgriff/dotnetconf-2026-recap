@@ -2776,7 +2776,25 @@ await worker.withEnvironmentCallback(async (context) => {
 - Under the hood (18:10): the TS `addRedis` "is all generated code" — "it's basically doing RPC, local RPC" into "what we call the app host server". Live log on stream: addRedis completed in 43ms; .NET called the TS callback; TS asked .NET to set DEMO_MESSAGE ("completed in 1ms"); the whole callback round trip ~0.039 s
 - "Shipping in a week": Aspire 17
 - Why it matters: mixed .NET/JS teams can share one Aspire setup, each in their own language.
-- Source: 18:08–18:10 ET, transcript 20261110-180800, /shots/180920.jpg
+- Source: 18:08–18:12 ET, transcripts 20261110-180800, 20261110-181004, /shots/180920.jpg
+-->
+
+---
+layout: "shot"
+image: "/shots/181759.jpg"
+time: "18:17"
+---
+
+# Blazor Server on Native AOT: Aspire dashboard 3x faster, 40% smaller
+
+<!--
+- Say: The Aspire dashboard is Blazor Server — and with a custom build made with the Blazor team, it now runs as Native AOT.
+- Startup: Native AOT 491 ms vs JIT + .NET runtime 1,429 ms. Deployment size incl. runtime: 110 MB vs 183 MB (stream slide)
+- "Custom Blazor build — built with the Blazor team to prove Blazor Server can compile with Native AOT"; source-generated JSON so trimming doesn't remove types reflection needs
+- Also: the dashboard moved to Fluent UI v5 with agents; James Newton-King "was saying it would be months of work without agents"
+- More: devblogs.microsoft.com/aspire/aspire-dashboard-native-aot (on the stream slide)
+- Why it matters: a real Blazor Server app shipping as Native AOT — a sign of where Blazor can go.
+- Source: 18:16–18:18 ET, transcript 20261110-181604, /shots/181759.jpg
 -->
 
 ---

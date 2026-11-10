@@ -283,6 +283,30 @@ time: "11:32"
 -->
 
 ---
+layout: "shot"
+image: "/shots/113401.jpg"
+time: "11:34"
+---
+
+# The .NET Conf app: open source, built with agents
+
+<!--
+- github.com/jfversluis/dotnetconf-app
+- In the stores. Followed through every MAUI session this week.
+-->
+
+---
+layout: "section"
+kicker: "Modernization + AI"
+---
+
+# AI
+
+<!--
+[Luis Quintanilla] Modernization and AI.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

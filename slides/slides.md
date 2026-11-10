@@ -433,6 +433,29 @@ time: "11:48"
 -->
 
 ---
+layout: "section"
+kicker: "Next-gen inner loop"
+---
+
+# Faster, by doing less
+
+<!--
+[Drew Noakes] Next-gen inner loop. 11:50 ET.
+- Copilot's RSVP race fix verified on stage
+-->
+
+---
+layout: "statement"
+---
+
+Your machine has company.
+
+<!--
+- With agents running, dev tools can't own the whole machine
+- C# Dev Kit 11 re-architected for performance
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

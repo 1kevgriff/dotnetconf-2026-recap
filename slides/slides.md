@@ -2485,6 +2485,8 @@ time: "17:04"
 - With the Auto model, Copilot "picked up that WinForms expert skill, identifying that this is a front-end change"
 - AI Customization → Skills shows them as Built-in (winforms-expert, dotnet-webapi, writing-mstest-tests, test-smell-detection, ...)
 - Same curated skills for other agents: github.com/dotnet/skills (see the keynote eval slide)
+- Result (17:08): the WinForms UI now retries "a few times, but at the end it says it failed, but you might want to confirm that it didn't actually save"; the app runs under Aspire
+- VS Code too: "there were some specific skills that we shipped in box for you. We also do the same thing with C# Dev Kit."
 - Why it matters: you get .NET-specific guidance without writing your own instructions.
 - Source: 17:04 ET, transcript 20261110-170403, /shots/170443.jpg
 -->

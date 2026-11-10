@@ -2809,7 +2809,8 @@ Aspire no longer needs .NET installed.
 - 18:18: "for a while, even though the app host was TypeScript, you still kind of had to install .NET." Now: "the latest few Aspire releases, you don't have to install .NET at all if you don't want to"
 - "Now you can tell your friends to install Aspire, whoever is still anti-.NET."
 - Why: Aspire "used to run on your .NET install itself"; "we were stuck on .NET 8 for a long time because we knew some of you might still be running .NET 8", and "the back compat was just getting kind of unmaintainable". So they created "what we called the bundle".
-- What's in the bundle (18:22): DCP (a Go app, "always been actually a native ... executable"), the dashboard, the AppHost server ("of course also native AOT"), the tray app, and the terminal host. Carrying these in the bundle is how "we can get rid of the Aspire SDK now"
+- What's in the bundle (18:22): DCP (a Go app, "always been actually a native ... executable"), the dashboard, the AppHost server (described as "of course also native AOT" — but see the correction below), the tray app, and the terminal host. Carrying these in the bundle is how "we can get rid of the Aspire SDK now"
+- CORRECTION on stream (18:28, David Fowler cameo): "I think the only thing left is the app host server itself ... It's just opt-in in Aspire 17." So the Native AOT AppHost server is opt-in in Aspire 17, not the default. "You only got one half a thing wrong."
 - Demo (18:24): `aspire new` with the TypeScript starter (Node.js app + Vite frontend) runs in the dashboard on a machine where running `dotnet` shows ".NET is not installed" (/shots/182550.jpg)
 - Install: get.aspire.dev (or the download icon on aspire.dev) — Brew, WinGet, Nix, Mise, NuGet, npm, or the scripts
 - Why it matters: Aspire's .NET version is no longer tied to what's installed on your machine.

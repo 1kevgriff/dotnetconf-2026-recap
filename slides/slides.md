@@ -1080,6 +1080,7 @@ time: "14:05"
 - "Media Studio": one .NET app (Blazor Hybrid), runs locally
 - 1 Bring the paper → 2 Read it → 3 Draft with an agent (typed, cited scenes) → 4 A person fixes and saves → 5 Produce (voice, cover, motion, film)
 - AI "goes beyond chat"
+- Demo (14:07): ask for a video "for beginners"; storyboard appears "after a few seconds"; side pane is an event log, "not quite a chat history"
 -->
 
 ---

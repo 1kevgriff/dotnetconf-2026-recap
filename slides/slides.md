@@ -739,6 +739,8 @@ time: "12:37"
 - Long-lived connections can outlive their credentials
 - .NET 11: SignalR re-authenticates with fresh tokens on the same connection
 - Blazor Server uses the same machinery to keep auth state current
+- Opt in: enable authentication refresh on SignalR hub options; Blazor: withAuthenticationRefresh
+- Demo (12:39): admin revokes refund permission, open page updates live, typed form data kept
 -->
 
 ---

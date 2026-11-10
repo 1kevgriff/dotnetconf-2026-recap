@@ -642,6 +642,20 @@ outer: for (int i = 0; i < 19; i++)
 -->
 
 ---
+layout: "shot"
+image: "/shots/122230.jpg"
+time: "12:22"
+---
+
+# Extension indexers
+
+<!--
+- Index into types you don't own
+- Builds on C# 14 extension blocks (properties came first)
+- The extension block syntax scales to new member kinds
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

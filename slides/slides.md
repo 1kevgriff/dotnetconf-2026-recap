@@ -1130,6 +1130,20 @@ var b = await claude.GetResponseAsync(prompt);
 -->
 
 ---
+layout: "shot"
+image: "/shots/141635.jpg"
+time: "14:16"
+---
+
+# `RoutingChatClient`: your policy picks the model
+
+<!--
+- NEW. The policy is a plain record (LocalOnly, RequireJson, AllowTools, MinimumProbability, ...)
+- 1 Policy filters the pool → 2 Decisions API scores what's left → 3 not sure enough: named fallback, or stop
+- The router is still just an IChatClient
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

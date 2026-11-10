@@ -1013,6 +1013,29 @@ layout: "statement"
 -->
 
 ---
+layout: "default"
+codeSize: "20"
+---
+
+# No more white flash in dark mode
+
+```csharp
+// Program.Main (from the demo)
+Application.SetColorMode(SystemColorMode.System);            // .NET 9+
+Application.SetDefaultVisualStylesMode(DemoConstants.StartupVisualStylesMode);
+Application.SetDefaultFormRevealMode(DemoConstants.StartupFormRevealMode);
+
+Application.Run(new MainForm());
+```
+
+<!--
+- 13:48 ET. "Pretty much all the apps that are providing dark mode have this flash."
+- Deferred reveal hides intermediate startup paints
+- DemoConstants are the demo's own values; the visual styles mode is the Net11 enum
+- Source: screenshot /shots/134952.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

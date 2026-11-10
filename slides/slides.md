@@ -1033,6 +1033,7 @@ Application.Run(new MainForm());
 <!--
 - 13:48 ET. "Pretty much all the apps that are providing dark mode have this flash."
 - Deferred reveal hides intermediate startup paints. Modes: Deferred and Classic. Deferred "cloaks" the window "like a Klingon ship" until it's built.
+- Effect (13:54): startup "feels like it's there instantly ... almost like it was written in C++". Demo code: planned for the .NET Conf repo.
 - DemoConstants are the demo's own values; the visual styles mode is the Net11 enum
 - Source: screenshot /shots/134952.jpg
 -->

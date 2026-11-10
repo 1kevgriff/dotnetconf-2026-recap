@@ -232,6 +232,32 @@ time: "11:29"
 -->
 
 ---
+layout: "section"
+kicker: ".NET MAUI"
+---
+
+# Mobile
+
+<!--
+[Gerald Versluis] .NET MAUI.
+-->
+
+---
+layout: "shot"
+image: "/shots/113143.jpg"
+time: "11:31"
+---
+
+# MAUI 11: one runtime, more platforms
+
+<!--
+- CoreCLR everywhere: Android, iOS, Mac Catalyst
+- Native AOT: 2.4x faster startup, 14% smaller on Android
+- Linux + WebAssembly via Avalonia (preview)
+- Team ships 1,600+ PRs/month, ~80% by Copilot
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

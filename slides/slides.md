@@ -2521,6 +2521,7 @@ NuGet packages can now ship agent skills. `dotnet restore` delivers them.
 - Wendy (17:18): "This is new very recently that allows for package maintainers to put their expertise right in the package ... ship that all as part of the package so that the user gets that package, does a .NET restore, those skills" are there
 - Demo: the Markout NuGet package ships markout, markout-build and shapes skills
 - Four ways to get .NET skills so far: built into Visual Studio, shipped with C# Dev Kit, the plugin method, and now inside NuGet packages
+- Read more (17:20): Rich Lander's blog post "Delivering Skills in NuGet packages" ("came out last week"), devblogs.microsoft.com/dotnet/delivering-skills-in-nuget-packages/. The `dotnet-package-skills` command copies a package's skills "in the appropriate folder so that the agents can recognize that they're there" (the blog example copies to .agents/skills)
 - Demo continues in the GitHub Copilot app to turn the duplicate report into JSON (/shots/171930.jpg)
 - Why it matters: if you maintain a library, you can teach agents how to use it correctly.
 - Source: 17:18–17:20 ET, transcript 20261110-171800

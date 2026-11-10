@@ -972,6 +972,7 @@ time: "13:39"
 - Same controls: modern Windows look, toggle switches, dark mode
 - GroupBox (13:40): flat style fixes the classic low-contrast frame
 - CAVEAT (13:50): new styles are "logically a lot larger"; pixel-perfect layouts won't work because control locations stay the same
+- Fix coming "very soon": Copilot skills in Visual Studio that move pixel-placed controls into a TableLayoutPanel
 -->
 
 ---
@@ -1031,7 +1032,7 @@ Application.Run(new MainForm());
 
 <!--
 - 13:48 ET. "Pretty much all the apps that are providing dark mode have this flash."
-- Deferred reveal hides intermediate startup paints
+- Deferred reveal hides intermediate startup paints. Modes: Deferred and Classic. Deferred "cloaks" the window "like a Klingon ship" until it's built.
 - DemoConstants are the demo's own values; the visual styles mode is the Net11 enum
 - Source: screenshot /shots/134952.jpg
 -->

@@ -1065,6 +1065,7 @@ speakers: "Luis Quintanilla"
 [Session 6]
 - Layers (from title slide): Experiences, Agents, Tools, Multimodal, Context, Decisions, Models
 - Foundations: Microsoft.Extensions.AI, VectorData, DataIngestion (170M+ downloads, see keynote slide)
+- 14:02: Luis added semantic search to Jellyfin on his home Raspberry Pi with .NET embedding generation. Demo app next: "Media Studio" (Blazor Hybrid) — AI "goes beyond chat".
 -->
 
 ---

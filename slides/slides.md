@@ -986,6 +986,20 @@ layout: "statement"
 -->
 
 ---
+layout: "shot"
+image: "/shots/134428.jpg"
+time: "13:44"
+---
+
+# Vendor gone? Built-in styles can replace it
+
+<!--
+- Cash register demo, all built-in WinForms .NET 11 controls
+- Old apps often use control libraries from vendors "probably no longer in business"
+- Revived FlatStyle options (Standard → Popup) give a similar look
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

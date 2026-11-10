@@ -1452,6 +1452,7 @@ buildx: done in 13378 ms: 2 built, 201 accelerated (612 files copied), 12 skippe
 - One change in a core project: 2 projects built, 201 "accelerated" (outputs copied), 12 skipped
 - Caveat: that 13.4 s run included a NuGet restore and starting the buildx server
 - Output copied from the stream terminal (/shots/152232.jpg); a line with a local user path left out
+- Exploring, not committed (15:24): agents are trained on `dotnet build` / `dotnet test`, so if an agent is detected those commands could use the faster paths. Optimizations that might surprise a human are fine for an agent if a log message says "this optimization has been applied" — the agent will read the docs.
 -->
 
 ---

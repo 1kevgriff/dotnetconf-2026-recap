@@ -2356,6 +2356,7 @@ time: "16:36"
 - DoS: "an awful lot of them in weird loopings or allocating too much and not limiting stuff"
 - Severity: "four criticals this year, most of them were high"
 - "The fix author may not have written the vulnerable code in the first place ... don't blame fix authors for writing vulnerabilities"
+- Out-of-band example (16:38): a Brotli bug from Google (copy embedded in .NET). In NPM it was remote code execution — NPM enables Brotli by default. In .NET "you would have got a denial of service", and HttpClient needed an opt-in to response decompression. It's still labeled RCE because Google classified it that way: "In theory, it can always go to remote code execution."
 - Why it matters: set limits on loops, input sizes and allocations in your own code — that's where most issues were.
 - Source: 16:36 ET, transcript 20261110-163600, /shots/163615.jpg
 -->

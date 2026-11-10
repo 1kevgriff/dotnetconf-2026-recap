@@ -910,6 +910,7 @@ XML parsing cost 5 MB: XSD → network → crypto.
 - Fix: a hand-written recursive-descent parser for one format, saved 5+ MB
 - Same idea for embedded resources: localization now read from existing satellite assemblies
 - Takeaway: check what your dependencies drag in
+- More tips (13:24): use narrow, purpose-built APIs (a Hex1b change saved the Aspire CLI "like 300 KB"); use runtime feature switches; test through a muxer-like harness (they built one called "DN")
 -->
 
 ---

@@ -2912,7 +2912,34 @@ Async exceptions: 2.5–3.4× faster with runtime async.
 - Why it matters (speaker): when a service fails, "you get a lot of exceptions ... and just the exceptions start piling up" — "the async cost really flows through to exceptions"
 - Allocations: "even if you go down to 32 frames, it doesn't matter. It's all zero byte allocation all the way through."
 - Chart frame /shots/184254.jpg not added to the repo (it may carry the confidential footer).
-- Source: 18:42–18:44 ET, transcript 20261110-184204
+- At depth (18:44): exception handling with runtime async "gets cheaper than sync when we get down to 32 frames ... actually outperforming fully synchronous code"; "almost all of that allocation is reduced or eliminated" (the notes agent's 77%/73% figures were not confirmed in the transcript)
+- Source: 18:42–18:45 ET, transcripts 20261110-184204, 20261110-184404
+-->
+
+---
+layout: "default"
+codeSize: "20"
+---
+
+# Memory safety v2: turn it on (preview)
+
+```xml
+<LangVersion>preview</LangVersion>
+<MemorySafetyRulesVersion>2</MemorySafetyRulesVersion>
+<AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+```
+
+```csharp
+var dotnet12 = unsafe(CodeHasASafetyContract());
+```
+
+<!--
+- Say: Memory safety v2 is a preview in .NET 11 and expected to GA in .NET 12. Here's how you opt in today.
+- "This feature is in preview in .NET 11 ... we expect it to be fully GA prod in .NET 12." (18:45)
+- Project properties copied from the stream slide "Making C# code safer" (/shots/184544.jpg); the `unsafe(...)` line is the stream's own joke-title code, not a real API to quote
+- Keynote recap: adopts the Rust/Swift unsafe model, stricter — unsafe off by default, unmarked unsafe calls are errors
+- Why it matters: try it on a branch now so you're ready when it becomes the default rules.
+- Source: 18:44–18:46 ET, transcript 20261110-184404, /shots/184544.jpg
 -->
 
 ---

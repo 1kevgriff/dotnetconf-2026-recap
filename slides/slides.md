@@ -775,6 +775,21 @@ time: "12:42"
 -->
 
 ---
+layout: "shot"
+image: "/shots/124850.jpg"
+time: "12:48"
+---
+
+# Blazor Virtualize: variable-height rows
+
+<!--
+- Rows grow with their content
+- Anchor modes: pin to start, end, both, or neither
+- ScrollToItemAsync(index); stable position as items change
+- Demo: ~10,000 items scroll smoothly, jump to item 5,000
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

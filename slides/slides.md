@@ -2674,6 +2674,7 @@ time: "17:47"
 - Tensors can have "dimensions or even gaps between the data. You can have non-linear slices of the data." (17:46)
 - Chart: Dense float Add 16.37 µs → 0.114 µs (~143×). Gapped-row FlattenTo 7.92 µs → 0.875 µs (~9×). 64×16 float inputs, Windows x64, Ryzen 9 7950X
 - Caveat: the chart compares a "Release baseline" with a ".NET 11 backport" — "Same .NET 11 runtime; baseline vs. backport assemblies." What ships where wasn't explained in this part; check before saying "in .NET 11 GA". Numbers come from the chart only (not spoken).
+- Correctness too (17:48 stream slide "Fast is only useful when it's right"): fixes for broadcasting, empty tensors, slice origins, overlap validation, NaNs/ties/signed zero, and Resize now zero-fills (`default(T)`, "not repeated input": [1,2] → [1,2,0,0,0]) (/shots/174852.jpg)
 - Why it matters: large speedups for common tensor operations like Add and FlattenTo.
 - Source: 17:46–17:48 ET, transcript 20261110-174604, /shots/174734.jpg
 -->

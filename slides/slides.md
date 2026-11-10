@@ -2622,7 +2622,7 @@ time: "17:41"
 - "It's actually a type designed by Google. Its formal name is the Brainfloat 16-bit."
 - It takes float32 and "basically chops off the lower 16 bits", so it "has the same exponent range" as float "just with less precision"
 - vs Half (System.Half): both 16 bits. Half = more precision near one; BFloat16 = float-like exponent range (stream slide: "16 bits. Different priorities.")
-- Why it matters: a standard type for the 16-bit format many ML models use, instead of hand-rolled ushort tricks.
+- Why it matters: pick Half for precision near one, BFloat16 when you need float's range in 16 bits.
 - Source: 17:40–17:42 ET, transcript 20261110-174003, /shots/174113.jpg
 -->
 

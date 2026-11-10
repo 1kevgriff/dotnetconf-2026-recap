@@ -580,6 +580,21 @@ time: "12:07"
 -->
 
 ---
+layout: "shot"
+image: "/shots/121715.jpg"
+time: "12:17"
+---
+
+# `closed`: only your assembly can inherit
+
+<!--
+- Setup: public abstract Operation, another project adds EvilAdd, so no exhaustive switch
+- `closed` makes the class implicitly abstract
+- Subclasses in other assemblies are errors
+- The switch is exhaustive again
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

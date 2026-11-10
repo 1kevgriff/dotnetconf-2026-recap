@@ -2268,8 +2268,10 @@ time: "16:19"
 - A plain .NET project: AppHosts use Microsoft.NET.Sdk — upgrade is "a package bump, not an SDK pin"
 - Projects by path: no project references, so the dashboard starts "without waiting on the MSBuild graph"
 - Your NuGet setup as is: inherited feeds, consistent restore; attach to running apps: debug a running service in VS Code from the Aspire view
+- Demo (16:20): `aspire update` offers to update all package versions and the NuGet config, running the CLI for each package; "the update was successful"
+- Why the AppHost SDK goes away: "we no longer need to use this very .NET specific mechanism to deliver things that we need behind the scenes, namely the dashboard and DCP" (the CLI bundles them now)
 - Why it matters: fewer upgrade headaches and a faster F5 for Aspire apps.
-- Source: 16:18–16:20 ET, transcript 20261110-161802, /shots/161922.jpg
+- Source: 16:18–16:22 ET, transcripts 20261110-161802, 20261110-162000, /shots/161922.jpg
 -->
 
 ---

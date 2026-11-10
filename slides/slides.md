@@ -2575,7 +2575,37 @@ time: "17:32"
 - vs System.Decimal: both base 10, but decimal "is primarily oriented around currency"; "the IEEE decimal types ... are designed for scientific computing"
 - "Not just a bigger decimal" (17:34 stream slide): System.Decimal = 28–29 significant digits, no NaN or infinity. IEEE decimals = 7/16/34 digits, NaNs, infinities, signed zero, floating-point math functions. "Same radix does not mean the same contract." (/shots/173455.jpg)
 - Why it matters: base-10 floating point with standard IEEE behavior, usable in generic math code.
-- Source: 17:32 ET, transcript 20261110-173204, /shots/173229.jpg
+- Source: 17:32–17:35 ET, transcripts 20261110-173204, 20261110-173405, /shots/173229.jpg
+-->
+
+---
+layout: "default"
+codeSize: "18"
+---
+
+# `Decimal64` in code
+
+```csharp
+Decimal64 a = Decimal64.Parse("0.1", CultureInfo.InvariantCulture);
+Decimal64 b = Decimal64.Parse("0.2", CultureInfo.InvariantCulture);
+output.WriteLine($"Double sum: {0.1 + 0.2:R}");
+output.WriteLine($"Decimal64 sum: {a + b}");
+
+Decimal64 oneDecimalPlace  = Decimal64.Parse("1.0",  CultureInfo.InvariantCulture);
+Decimal64 twoDecimalPlaces = Decimal64.Parse("1.00", CultureInfo.InvariantCulture);
+Decimal64.HaveSameQuantum(oneDecimalPlace, twoDecimalPlaces);
+
+Decimal64 cents = Decimal64.Parse("0.01", CultureInfo.InvariantCulture);
+Decimal64.Quantize(value, cents);
+```
+
+<!--
+- Say: The classic 0.1 + 0.2 demo, side by side with double — plus "quantum", which keeps track of how many digits you actually meant.
+- Code copied from the stream demo (/shots/173753.jpg, DecimalDemo.cs); lines trimmed to fit. The run output was not captured here — run it yourself before quoting results.
+- Quantum: 1.0 and 1.00 are the same value but not the same quantum — "you want to keep track of the fact that you have at least a guaranteed zero digit"; it matters "when you have to worry about precision and tolerances"
+- Demo also showed IEEE divide by zero (Decimal64.One / Decimal64.Zero) and Decimal128.Acos near 1 vs Math.Acos on double
+- Why it matters: decimal values that remember their precision, with IEEE behavior for edge cases.
+- Source: 17:36–17:38 ET, transcript 20261110-173603, /shots/173753.jpg
 -->
 
 ---

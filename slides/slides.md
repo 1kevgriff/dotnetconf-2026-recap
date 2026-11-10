@@ -2511,6 +2511,22 @@ AI coding benchmarks had "not a lick of .NET code." So .NET built one: 170+ C# s
 -->
 
 ---
+layout: "statement"
+---
+
+NuGet packages can now ship agent skills. `dotnet restore` delivers them.
+
+<!--
+- Say: Package authors can now put skills for AI agents inside their NuGet package; you get them on restore.
+- Wendy (17:18): "This is new very recently that allows for package maintainers to put their expertise right in the package ... ship that all as part of the package so that the user gets that package, does a .NET restore, those skills" are there
+- Demo: the Markout NuGet package ships markout, markout-build and shapes skills
+- Four ways to get .NET skills so far: built into Visual Studio, shipped with C# Dev Kit, the plugin method, and now inside NuGet packages
+- Demo continues in the GitHub Copilot app to turn the duplicate report into JSON (/shots/171930.jpg)
+- Why it matters: if you maintain a library, you can teach agents how to use it correctly.
+- Source: 17:18–17:20 ET, transcript 20261110-171800
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

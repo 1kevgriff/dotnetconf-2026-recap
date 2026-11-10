@@ -2324,7 +2324,22 @@ layout: "statement"
 - Why the jump (16:34): "AI is getting better at finding things, and researchers getting better at driving their AI ... So not an increase in bugs." Often in code "unloved and untouched for 15 to 20 years." "It's not that LLMs are bad at writing code."
 - Bounties paid: 2025 $635,500 → 2026 $1,012,500 ("This year we broke a million"). Not every valid report gets a CVE; CVEs are issued for medium CVSS and above; Microsoft also runs "our own LLMs running over everything" (/shots/163503.jpg)
 - Why it matters: expect more .NET security patches; read the advisory, not just the score.
-- Source: 16:32–16:34 ET, transcript 20261110-163200, /shots/163340.jpg
+- Source: 16:32–16:35 ET, transcripts 20261110-163200, 20261110-163403, /shots/163340.jpg
+-->
+
+---
+layout: "statement"
+---
+
+AI isn't writing more bugs. It's finding the old ones.
+
+<!--
+- Say: The jump in reports isn't new bugs. AI-assisted researchers are finding bugs in code that's 15 to 20 years old.
+- Barry Dorrans (16:34): "not an increase in bugs. This is just an increase in bugs that people have discovered and pointed out to us. It could be in code that's 20 years old."
+- "It's not that LLMs are bad at writing code" — often it's stuff "unloved and untouched for 15 to 20 years"
+- Bounties broke $1M this year ($1,012,500 vs $635,500), and Microsoft runs "our own LLMs running over everything"
+- Why it matters: the same tools attackers use are now finding issues in your old code too — keep patching.
+- Source: 16:34–16:35 ET, transcript 20261110-163403, /shots/163503.jpg
 -->
 
 ---

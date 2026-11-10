@@ -667,6 +667,8 @@ layout: "statement"
 - closed: the list is your direct descendants
 - union: types not in a hierarchy, or you don't control (e.g. data over the wire)
 - Generated unions are structs, so implicitly sealed
+- System.Text.Json supports unions (some cases still need attributes)
+- No new runtime needed: older consumers (e.g. .NET Framework 4.8) read .Value, without union pattern matching
 -->
 
 ---

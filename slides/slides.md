@@ -1352,6 +1352,19 @@ speakers: "Drew Noakes, Emanuel Fernandez Dell'Oca"
 -->
 
 ---
+layout: "statement"
+---
+
+"VS Code is terrible." It was 15 agents and hundreds of MSBuild workers.
+
+<!--
+- 15:03 ET. Dev Kit 11 origin story
+- An internal team kept saying VS Code + C# Dev Kit "were terrible"; their VP escalated; "crashing on their machine"
+- Reality: "5, 10, 15" agents solving GitHub issues on Macs with 256 GB RAM, and "hundreds and hundreds of MSBuild workers"
+- Why Dev Kit 11 was re-architected for many agents on one machine
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

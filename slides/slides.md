@@ -949,13 +949,27 @@ image: "/shots/133753.jpg"
 time: "13:37"
 ---
 
-# WinForms .NET 11: new visual styles, driven by accessibility
+# WinForms before: classic visual styles
 
 <!--
 - Old FlatStyle-era properties, unused since Windows XP took over rendering, are revived
 - Used to make styles close to today's Windows design language
 - "Primarily driven by accessibility"
 - Demo: a customer entry form in dark mode (VisualStylesModeDemo)
+-->
+
+---
+layout: "shot"
+image: "/shots/133906.jpg"
+time: "13:39"
+---
+
+# After: one line of code, `Net11` styles
+
+<!--
+- New methods/properties on Application: one line changes the whole app's look
+- Visual styles mode is an enum: Net11 now, Net12 and Net13 planned
+- Same controls: modern Windows look, toggle switches, dark mode
 -->
 
 ---

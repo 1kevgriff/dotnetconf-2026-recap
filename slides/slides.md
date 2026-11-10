@@ -2343,6 +2343,24 @@ AI isn't writing more bugs. It's finding the old ones.
 -->
 
 ---
+layout: "shot"
+image: "/shots/163615.jpg"
+time: "16:36"
+---
+
+# 97 CVEs: denial of service leads
+
+<!--
+- Say: Of this year's 97 .NET CVEs, denial of service was the biggest group — mostly loops and unbounded allocation.
+- By type (chart): Denial of Service 31, Elevation of Privilege 23, Remote Code Execution 19, Information Disclosure 9, Security Feature Bypass 7, Spoofing 4, Tampering 4
+- DoS: "an awful lot of them in weird loopings or allocating too much and not limiting stuff"
+- Severity: "four criticals this year, most of them were high"
+- "The fix author may not have written the vulnerable code in the first place ... don't blame fix authors for writing vulnerabilities"
+- Why it matters: set limits on loops, input sizes and allocations in your own code — that's where most issues were.
+- Source: 16:36 ET, transcript 20261110-163600, /shots/163615.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

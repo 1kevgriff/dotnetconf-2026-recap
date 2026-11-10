@@ -456,6 +456,22 @@ Your machine has company.
 -->
 
 ---
+layout: "shot"
+image: "/shots/115215.jpg"
+time: "11:52"
+---
+
+# C# Dev Kit 11: incremental build 36s → 2s
+
+<!--
+- ~77% lower workspace load times
+- 80%+ less server memory: Roslyn repo 2 GB → ~300 MB
+- 36s → 2s incremental build on Aspire's 407 projects
+- Pre-release channel today, stable "really soon"
+- Agents warm the build for your other tools
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

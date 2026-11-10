@@ -2793,7 +2793,7 @@ time: "18:17"
 - "Custom Blazor build — built with the Blazor team to prove Blazor Server can compile with Native AOT"; source-generated JSON so trimming doesn't remove types reflection needs
 - Also: the dashboard moved to Fluent UI v5 with agents; James Newton-King "was saying it would be months of work without agents"
 - More: devblogs.microsoft.com/aspire/aspire-dashboard-native-aot (on the stream slide)
-- Why it matters: a real Blazor Server app shipping as Native AOT — a sign of where Blazor can go.
+- Why it matters: a real Blazor Server app shipping as Native AOT — the stream slide calls it proof that "Blazor Server can compile with Native AOT".
 - Source: 18:16–18:18 ET, transcript 20261110-181604, /shots/181759.jpg
 -->
 

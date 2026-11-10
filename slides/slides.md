@@ -2415,6 +2415,28 @@ layout: "statement"
 -->
 
 ---
+layout: "shot"
+image: "/shots/165507.jpg"
+time: "16:55"
+---
+
+# Aspire's first CVEs shipped this morning — patch it
+
+<!--
+- Say: If you use Aspire, update today. Its first four CVEs were patched this morning.
+- "Those vulnerabilities were this morning." Barry: "they're not .NET ... but their security is still mine"
+- CVE-2026-120006: RCE from a cookie replay bypassing authentication
+- CVE-2026-120778: RCE from file planting a Directory.Build.rsp
+- CVE-2026-120792: info disclosure via a symlink race in /tmp on Linux
+- CVE-2026-118740: dashboard security bypass exposed the browser token and allows telemetry delete
+- Stream slide: "The Aspire dev manager told me two months [ago] how pleased they were that aspire had no CVEs …" (the notes agent said "two days"; the slide says two months)
+- Also (16:54): "faking Windows authentication on Linux" (Kerberos + LDAP lookups) — "Windows authentication really is for Windows hosts ... if you are using this right now please move to OAuth"
+- Microsoft is "thinking about providing more details" in CVEs, not just a commit link: "the code is out there so LLMs can reverse it anyway"
+- Why it matters: Aspire's dashboard and AppHost run on dev machines — patch them like anything else.
+- Source: 16:54–16:56 ET, transcript 20261110-165402, /shots/165507.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

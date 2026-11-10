@@ -1172,6 +1172,8 @@ time: "14:22"
 - Custom IImageGenerator backed by an IChatClient
 - Chat model returns SVG text → app validates it → renders to PNG
 - Satisfies the contract: text in, image out. A native image model can drop in later.
+- Voice (14:24): narration by Kokoro (local model); mic input transcribed locally with Whisper, or via OpenAI realtime
+- Tools: a C# method exposed as a tool; MCP C# SDK is the other way. Session later covers SDK 2.0 and "serving skills over MCP".
 -->
 
 ---

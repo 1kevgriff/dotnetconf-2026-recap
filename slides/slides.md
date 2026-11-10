@@ -595,6 +595,27 @@ time: "12:17"
 -->
 
 ---
+layout: "default"
+codeSize: "22"
+---
+
+# Collection expressions take constructor args
+
+```csharp
+// before
+var tags = new HashSet<string>(StringComparer.OrdinalIgnoreCase) { "one", "two" };
+
+// C# 15
+HashSet<string> tags = [with(StringComparer.OrdinalIgnoreCase), "one", "two"];
+```
+
+<!--
+- 12:20 ET. with(...) passes constructor args: a comparer, a capacity
+- Ctrl+. in the IDE offers the fix
+- Screenshot: /shots/122000.jpg (not shown)
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -616,6 +616,32 @@ HashSet<string> tags = [with(StringComparer.OrdinalIgnoreCase), "one", "two"];
 -->
 
 ---
+layout: "default"
+codeSize: "22"
+---
+
+# Labeled `break` and `continue`
+
+```csharp
+outer: for (int i = 0; i < 19; i++)
+{
+    for (int j = 0; j < 23; j++)
+    {
+        if ((i + j) % 2 == 0)
+        {
+            break outer;
+        }
+    }
+}
+```
+
+<!--
+- 12:21 ET. Replaces the "am I done yet" flag variable
+- Works with continue too
+- IDE refactoring: "use labeled jump statement"
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

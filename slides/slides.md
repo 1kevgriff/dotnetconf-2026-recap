@@ -1456,6 +1456,18 @@ buildx: done in 13378 ms: 2 built, 201 accelerated (612 files copied), 12 skippe
 -->
 
 ---
+layout: "statement"
+---
+
+20–40% of your agent loop is running .NET tools.
+
+<!--
+- 15:26 ET: "in your agent loop, 20 to 40% of that time is actually running .NET tools"
+- Ideas to shrink it: infer which tests actually need to run; get errors from a background LSP instead of a build
+- Worktrees: "Don't make the next person start over." A new worktree reuses the project data (and maybe binaries) an agent's build already wrote. Broader reuse is "direction", not shipped (/shots/152736.jpg)
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

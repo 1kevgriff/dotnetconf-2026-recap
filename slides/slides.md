@@ -2273,7 +2273,24 @@ time: "16:19"
 - Migration demo (16:22): add the Aspire.Hosting.AppHost package plus a .NET hosting package; `AddProject<Projects.X>` is now flagged "obsolete, don't use this anymore" (the generated `Projects` types go away with projects-by-path). Check the Aspire 17 docs for the replacement API name.
 - Why by path (16:24): Aspire can rebuild .NET projects when they change — and "a sneak peek, maybe hot reloading them" without a rebuild. "We already battle tested this with all the other languages ... Let's put .NET up to parity."
 - Why it matters: fewer upgrade headaches and a faster F5 for Aspire apps.
-- Source: 16:18–16:22 ET, transcripts 20261110-161802, 20261110-162000, /shots/161922.jpg
+- Source: 16:18–16:24 ET, transcripts 20261110-161802, 20261110-162000, 20261110-162202, 20261110-162401, /shots/161922.jpg
+-->
+
+---
+layout: "shot"
+image: "/shots/162753.jpg"
+time: "16:27"
+---
+
+# Aspire 17: a redesigned dashboard
+
+<!--
+- Say: Aspire 17 also brings a redesigned dashboard — same features, new layout, plus tags and pinning.
+- "All the dashboard functionality that you are obviously used to and you love is obviously still here"
+- New: "tags and pinning and all types of wonderful stuff that wasn't there before"; banner on stream: "Welcome to the new Aspire dashboard!"
+- Upgrading: "there's a skill too" — an update / breaking-changes skill that pulls in others, "including the very specific project resource V2 skill"
+- Why it matters: let an agent do the Aspire 17 migration with the provided skills.
+- Source: 16:26–16:28 ET, transcript 20261110-162603, /shots/162753.jpg
 -->
 
 ---

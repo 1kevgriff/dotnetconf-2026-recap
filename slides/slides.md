@@ -574,6 +574,7 @@ time: "12:07"
 - Generic type parameters, function members (`this switch`)
 - No extra state: the value inside is the state
 - Case types: any type convertible to object, incl. type parameters
+- Default union is a struct. Add [Union] to any class/struct to roll your own; the compiler lists what's missing (e.g. a Value property).
 -->
 
 ---

@@ -2859,6 +2859,7 @@ Runtime async is opt-in in .NET 11 — but the framework already uses it.
 - "We actually compiled much of the framework libraries with this feature enabled. So no matter what, you're going to be getting some benefit from this feature when you install and start using .NET 11."
 - Stream slide: "No IL state machines. No ValueTask. Near Synchronous Performance." (/shots/183325.jpg)
 - The exact MSBuild property wasn't readable in what I verified; the notes agent says `<Features>runtime-async=on</Features>` — check docs before quoting it.
+- Speed (18:40 chart, "The performance advantage grows with async depth", synchronous completion, modeled on a backup app): time per op state machines vs runtime async — 3 frames 1.487 vs 1.399 µs (1.06×), 5 frames 1.547 vs 1.431 µs (1.08×), 7 frames 1.621 vs 1.437 µs (1.13×). Allocations: see the keynote "0 bytes" slide. (Chart image not added to the repo: it carries a "Microsoft Confidential" footer.)
 - Why it matters: upgrade to .NET 11 for the framework win now; try opting in your own code before it becomes the default.
 - Source: 18:32–18:34 ET, transcript 20261110-183200, /shots/183325.jpg
 -->

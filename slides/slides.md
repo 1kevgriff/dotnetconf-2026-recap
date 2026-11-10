@@ -1508,6 +1508,8 @@ Target: `-mt` on by default in SDK 11.0.200 — this winter.
 - Console and library builds are already "enlightened" (multithread-compatible); next: pack, publish, web apps
 - Why faster: less duplicated engine work, fewer task handoffs, reusable server state
 - Built on a new long-lived MSBuild server daemon, to be reused for future caching
+- Real use (15:54): -mt has run on the .NET VMR (the monorepo that builds .NET) since .NET 10 — "upwards of 20 minutes of savings for some of our long pole builds just with this one flag"
+- Pattern: narrow agent inner loops + long exhaustive validation in CI; -mt helps both
 - How (15:40): "each of the worker nodes is just a thread instead of an entire process." In-process messages replace IPC; runtime and task assemblies load and JIT once.
 - The catch: "Tasks today get to pretend like they are in completely separate processes that they own" (process state). Custom tasks need changes — see next slide.
 -->

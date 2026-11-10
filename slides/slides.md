@@ -269,6 +269,20 @@ time: "11:31"
 -->
 
 ---
+layout: "shot"
+image: "/shots/113240.jpg"
+time: "11:32"
+---
+
+# MAUI 11: the paper cuts, fixed
+
+<!--
+- Passkeys, Material 3, long press, tab/toolbar badges
+- C# UI template: dotnet new maui --ui csharp
+- Fixed with Copilot. DevFlow lets agents drive your app.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

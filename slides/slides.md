@@ -726,6 +726,14 @@ speakers: "Mads Torgersen, Dustin Campbell"
 
 <!--
 [Session 2]
+- Say: Session 2 is Mads Torgersen and Dustin Campbell on C# 15. Most of it is unions, plus a few smaller features.
+- 12:00 PM ET. Speakers: Mads Torgersen, Dustin Campbell (both work on C#)
+- Version rule from the stream: C# version = .NET version + 4, so C# 15
+- Theme: let the compiler know the full set of types, so switches are exhaustive
+- Next slides: unions (before/after demo, how they work), `closed` classes, collection expression args (`with(...)`), labeled break/continue, extension indexers, Q&A on closed vs union
+- Wrap-up also named a memory safety preview and runtime async ("not different, just faster")
+- Why it matters: C# 15 gives you safe closed sets of types without a class hierarchy or a discard arm.
+- Source: 12:00–12:28 ET, transcripts 20261110-120000.txt to 20261110-122802.txt
 -->
 
 ---
@@ -735,9 +743,15 @@ layout: "statement"
 Unions: 18 years in the making.
 
 <!--
+- Say: Unions shipped in C# 15. Mads said the team talked about them when he joined Microsoft, about 18 years ago.
 - 12:00 ET. Mads: "we were talking about it ... like 18 years ago"
 - C# version = .NET version + 4, so C# 15
 - Demo: Dog, Cat, Bird, Shark from libraries you don't own
+- Verbatim (light cleanup): "when I joined Microsoft, now like 18 years ago or something like that, we were kind of talking about it then."
+- "A lot of designs came through, and I'm really excited about this one."
+- Demo types come from other libraries: "We don't own, this isn't a hierarchy that we have built ourselves."
+- Why it matters: a long-requested feature is now in the language, so plan where it replaces object or marker interfaces.
+- Source: 12:00 ET, transcripts/20261110-120000.txt
 -->
 
 ---
@@ -749,8 +763,14 @@ time: "12:03"
 # Before: `object`, and a switch that's never exhaustive
 
 <!--
+- Say: Before unions, the only common type for Dog, Cat, and Bird is object. So a Shark gets in, and the switch can never be exhaustive.
 - List<object> accepts anything, so the switch warns CS8509
 - Fix: union Pet(Dog, Cat, Bird), then List<Pet>. A Shark no longer fits.
+- Verbatim: "Yeah, object, all the way to object, just like .NET 1.0, except with generics"
+- The suggested fix is a discard pattern: "there is a way of doing it, but not a good way ... Because now you're just silencing everything that might come in."
+- Union syntax: `union Pet(Dog, Cat, Bird)`. Dog, Cat, Bird are called "case types".
+- Why it matters: object plus a discard hides bugs; a union makes the compiler check the set.
+- Source: 12:02–12:04 ET, transcripts/20261110-120202.txt; shot /shots/120317.jpg
 -->
 
 ---
@@ -762,9 +782,16 @@ time: "12:05"
 # After: Shark is a compile error
 
 <!--
+- Say: With List<Pet>, adding a Shark is now a compile error, and the switch over Pet is exhaustive with no discard.
 - Case types convert implicitly to the union
 - Remove the Shark arm: the switch is exhaustive, no discard needed
 - Make a case nullable (Cat?) and you must add a null arm
+- Errors seen: Shark "cannot implicitly convert to pet"; a Shark arm in the switch is not a case of the union
+- Two things a union gives: implicit conversion from case type to union, and pattern matching on the case types
+- Nullable Cat demo (a Schrödinger's cat joke): the warning said exactly what was missing, the null case
+- Verbatim: "when the warning's gone, you know you've dealt with everything."
+- Why it matters: the compiler becomes the checklist for every case you must handle.
+- Source: 12:04–12:06 ET, transcripts/20261110-120405.txt and 20261110-120602.txt; shot /shots/120500.jpg
 -->
 
 ---
@@ -776,12 +803,17 @@ time: "12:07"
 # Unions are real types
 
 <!--
+- Say: A union is a real type. You can add members and generics, and you can hand-write one with the [Union] attribute.
 - Generic type parameters, function members (`this switch`)
 - No extra state: the value inside is the state
 - Case types: any type convertible to object, incl. type parameters
 - Default union is a struct. Add [Union] to any class/struct to roll your own; the compiler lists what's missing (e.g. a Value property).
 - Under the hood: an object? Value plus one constructor per case type. Conversion calls the constructor; pattern matching reads Value.
 - Hand-write a [Union] (IUnion) to avoid boxing value types, or to adapt an existing union-like type.
+- The compiler-generated union also implements IUnion (just the Value property), so code can work with unions without the exact type. "It's optional, but it's useful."
+- Advanced customization is documented on Microsoft Learn ("all documented on the Learn at Microsoft")
+- Why it matters: you can adapt existing union-like types and control storage to avoid boxing.
+- Source: 12:06–12:13 ET, transcripts/20261110-120602.txt to 20261110-121200.txt; shot /shots/120737.jpg
 -->
 
 ---
@@ -793,10 +825,16 @@ time: "12:17"
 # `closed`: only your assembly can inherit
 
 <!--
+- Say: `closed` fixes the same problem for your own class hierarchy. Only your assembly can derive from it, so the switch is exhaustive.
 - Setup: public abstract Operation, another project adds EvilAdd, so no exhaustive switch
 - `closed` makes the class implicitly abstract
 - Subclasses in other assemblies are errors
 - The switch is exhaustive again
+- Demo: a calculator with abstract Operation and Number, Add, Subtract, Multiply, Divide; another project added EvilAdd and EvilSubtract
+- Wrapping the five classes in a union works but is "painful": "That's not the scenario that unions were created for."
+- Verbatim: "When you are a close class, only in your own assembly do you get to directly inherit from that."
+- Why it matters: public data models in libraries can now be closed without constructor tricks.
+- Source: 12:14–12:18 ET, transcripts/20261110-121403.txt and 20261110-121600.txt; shot /shots/121715.jpg
 -->
 
 ---
@@ -815,9 +853,15 @@ HashSet<string> tags = [with(StringComparer.OrdinalIgnoreCase), "one", "two"];
 ```
 
 <!--
+- Say: Collection expressions can now pass constructor arguments. Put `with(...)` first inside the brackets.
 - 12:20 ET. with(...) passes constructor args: a comparer, a capacity
 - Ctrl+. in the IDE offers the fix
 - Screenshot: /shots/122000.jpg (not shown)
+- Before: to pass a comparer or capacity you had to fall back to `new HashSet<string>(comparer) { ... }`
+- After: `[with(StringComparer.OrdinalIgnoreCase), "one", "two"]` calls that constructor, then adds the items
+- Verbatim: "use the with keyword, and then give a list of arguments that that collection type responds to" (transcript says "width", a speech-to-text error)
+- Why it matters: you keep collection expression syntax even when the collection needs configuration.
+- Source: 12:18–12:20 ET, transcripts/20261110-121805.txt and 20261110-122002.txt
 -->
 
 ---
@@ -841,9 +885,16 @@ outer: for (int i = 0; i < 19; i++)
 ```
 
 <!--
+- Say: C# 15 adds labeled break and continue. Label the outer loop, then break or continue to it from deep inside.
 - 12:21 ET. Replaces the "am I done yet" flag variable
 - Works with continue too
 - IDE refactoring: "use labeled jump statement"
+- Before: a "done" flag variable, set in the inner loop and checked in the outer loop
+- After: `outer:` on the outer loop, then `break outer;` leaves both loops at once
+- Verbatim: "bypasses everything in between"; "Easier to not make a mistake."
+- "many, many languages have something like this" ... "we're late to the game, but now we're in the game"
+- Why it matters: fewer flag variables and fewer mistakes when you edit nested loops.
+- Source: 12:20–12:22 ET, transcripts/20261110-122002.txt and 20261110-122200.txt
 -->
 
 ---
@@ -855,10 +906,13 @@ time: "12:22"
 # Extension indexers
 
 <!--
+- Say: C# 14 added extension blocks with properties. C# 15 adds extension indexers with the same syntax.
 - Index into types you don't own
 - Builds on C# 14 extension blocks (properties came first)
 - The extension block syntax scales to new member kinds
 - Wrap-up (12:24): memory safety preview lets you mark your own APIs unsafe and track it transitively; async is "not different, just faster" with runtime async
+- Why it matters: you can add natural indexing to types you do not own.
+- Source: 12:22–12:24 ET, transcripts/20261110-122200.txt and 20261110-122403.txt; shot /shots/122230.jpg
 -->
 
 ---
@@ -868,12 +922,15 @@ layout: "statement"
 `closed` for your hierarchy. `union` for types you don't own.
 
 <!--
+- Say: Use `closed` when you own the hierarchy. Use a union when the types are not in one hierarchy or you do not control them.
 - 12:26 ET Q&A
 - closed: the list is your direct descendants
 - union: types not in a hierarchy, or you don't control (e.g. data over the wire)
 - Generated unions are structs, so implicitly sealed
 - System.Text.Json supports unions (some cases still need attributes)
 - No new runtime needed: older consumers (e.g. .NET Framework 4.8) read .Value, without union pattern matching
+- Why it matters: pick the right tool for closed sets; both give exhaustive switches.
+- Source: 12:24–12:28 ET, transcripts/20261110-122403.txt to 20261110-122802.txt
 -->
 
 ---
@@ -887,6 +944,14 @@ speakers: "Daniel Roth"
 
 <!--
 [Session 3]
+- Say: Session 3 is Daniel Roth on ASP.NET Core and Blazor in .NET 11. His frame was trust: perform, protect, deliver.
+- 12:30 PM ET. Speaker: Daniel Roth, principal product manager for ASP.NET Core and Blazor
+- Verbatim close: "Trust to perform, trust to protect, and trust to deliver."
+- Next slides: MSN perf on .NET 10, Kestrel bad-request cost, token-free CSRF, SignalR auth refresh, Toscano customer story, free MIT Blazor components, Virtualize, Razor tooling, Blazor + Aspire
+- Also covered, not on a slide: C# unions in Minimal APIs and Blazor (OpenAPI 3.2 schemas), async validation (async validation attribute, IAsyncValidatableObject)
+- Get started: get.net/11 (said on stream as "get.net slash 11")
+- Why it matters: many of these gains come by upgrading, with little code change.
+- Source: 12:30–12:58 ET, transcripts/20261110-123000.txt to 20261110-125801.txt
 -->
 
 ---
@@ -898,8 +963,15 @@ time: "12:31"
 # MSN feeds on .NET 10: 29% lower P95 GC pauses
 
 <!--
+- Say: Microsoft runs .NET at scale. The MSN, Edge, and Windows feeds team upgraded from .NET 8 to .NET 10 and got these numbers.
 - Tens of billions of monthly page views. MSN, Edge, Windows feeds.
 - .NET 8 → 10: 29% lower P95 GC pauses, 11% lower async plugin latency, 20% shorter thread-pool queues
+- .NET powers Copilot, Teams, Bing, Azure, and Xbox; "real production workloads, not just framework benchmarks"
+- Verbatim: "you don't need Microsoft's traffic volume to benefit from that investment."
+- .NET 11 web stack: JIT and allocation work, faster JSON/strings/regex/HTTP, lower observability overhead; Blazor: smaller WebAssembly downloads, static SSR caching, pause idle server circuits
+- "Many of these improvements come simply by upgrading."
+- Why it matters: a runtime upgrade alone can cut GC pauses and latency.
+- Source: 12:30–12:32 ET, transcripts/20261110-123000.txt and 20261110-123204.txt; shot /shots/123125.jpg
 -->
 
 ---
@@ -911,10 +983,13 @@ time: "12:32"
 # Kestrel: bad requests, ~30% cheaper to reject
 
 <!--
+- Say: Kestrel used to throw exceptions to reject malformed requests. In .NET 11 it returns an error result, so bad requests cost less.
 - Malformed HTTP/1.1 requests: no more throw-and-propagate
 - Returns an error result and uses pre-allocated response fragments
 - ~30% higher bad-request throughput (single-core benchmark)
 - "Cycles that are free for your normal website traffic"
+- Why it matters: under junk or attack traffic, more CPU stays free for real users.
+- Source: 12:32–12:34 ET, transcripts/20261110-123204.txt; shot /shots/123244.jpg
 -->
 
 ---
@@ -926,11 +1001,15 @@ time: "12:34"
 # CSRF without tokens: ~4x form posts/sec
 
 <!--
+- Say: CSRF protection is now on by default with browser Fetch Metadata headers. No antiforgery tokens, and it is faster.
 - Fetch Metadata (Sec-Fetch-Site), on by default
 - No tokens to generate or validate
 - ~4x requests/sec, ~65% less allocation per request vs antiforgery tokens
 - Demo: no antiforgery code in Program.cs
 - Q&A (13:00): falls back to Origin headers for older browsers; antiforgery middleware still composes if you want both
+- Demo: a form post from a different port (different origin) got 400 Bad Request; the same post from the app passed
+- Why it matters: less security plumbing and better throughput for form posts.
+- Source: 12:34–12:37 ET, transcripts/20261110-123402.txt and 20261110-123600.txt; Q&A transcripts/20261110-130000.txt; shot /shots/123422.jpg
 -->
 
 ---
@@ -942,12 +1021,17 @@ time: "12:37"
 # SignalR: refresh auth without reconnecting
 
 <!--
+- Say: SignalR and Blazor Server can now refresh auth on a live connection. Permission changes show up without a reconnect.
 - Long-lived connections can outlive their credentials
 - .NET 11: SignalR re-authenticates with fresh tokens on the same connection
 - Blazor Server uses the same machinery to keep auth state current
 - Opt in: enable authentication refresh on SignalR hub options; Blazor: withAuthenticationRefresh
 - Demo (12:39): admin revokes refund permission, open page updates live, typed form data kept
 - Caveat: refresh runs on an interval, when the token is about to expire. Not instant.
+- Option: close on authentication expiration closes the connection if the refresh fails
+- In the demo, Dan shortened the refresh time so it was easy to see
+- Why it matters: long-lived Blazor Server sessions no longer keep stale permissions.
+- Source: 12:37–12:41 ET, transcripts/20261110-123600.txt to 20261110-124002.txt; shot /shots/123740.jpg
 -->
 
 ---
@@ -959,9 +1043,16 @@ time: "12:41"
 # 5 developers, 11M page views a year
 
 <!--
+- Say: Toscano Digital runs a public real-estate portal with five developers. That is about 11 million page views a year.
 - Toscano Digital: real-estate portal + Blazor CRM
 - 4.6M sessions/year (speaker rounded to "about 5 million")
 - Customer-reported figures
+- Slide figures: 5 developers, 4.6M sessions/year, 11M page views/year
+- Requirements: search discoverability, mobile performance, rich interactivity. They combined .NET and Blazor rendering strategies.
+- Verbatim: "They were able to be more productive by leveraging C Sharp full stack"
+- Case study on the slide: dotnet.microsoft.com/platform/customers/toscano
+- Why it matters: a small team can cover public web and internal CRM with one C# stack.
+- Source: 12:41–12:42 ET, transcripts/20261110-124002.txt and 20261110-124200.txt; shot /shots/124137.jpg
 -->
 
 ---
@@ -973,10 +1064,15 @@ time: "12:42"
 # Free, MIT-licensed Blazor components
 
 <!--
+- Say: Infragistics and Syncfusion released free, MIT-licensed Blazor component sets, and both contributed code to Blazor.
 - Infragistics: 50+ Ignite UI for Blazor components
 - Syncfusion Toolkit for Blazor
 - MIT, free for commercial use. Separate from their paid suites.
 - Both contributed to Blazor itself: new analyzers (Infragistics), framework + scaffolding (Syncfusion)
+- Infragistics set includes Grid Lite, inputs, navigation, layouts; Syncfusion toolkit has charts, inputs, calendars, dialogs
+- Dan used Grid Lite and a Syncfusion chart in his final demo
+- Why it matters: you get production-grade components at no cost, including commercial use.
+- Source: 12:42 ET, transcripts/20261110-124200.txt; demo use transcripts/20261110-125604.txt; shot /shots/124215.jpg
 -->
 
 ---
@@ -988,10 +1084,14 @@ time: "12:48"
 # Blazor Virtualize: variable-height rows
 
 <!--
+- Say: Blazor Virtualize now supports rows of different heights, anchor modes, and jump-to-item.
 - Rows grow with their content
 - Anchor modes: pin to start, end, both, or neither
 - ScrollToItemAsync(index); stable position as items change
 - Demo: ~10,000 items scroll smoothly, jump to item 5,000
+- Anchor to end: the view follows new items only when you are at the bottom; mid-list, the position stays stable
+- Why it matters: chat logs, feeds, and queues no longer need a custom virtual list.
+- Source: 12:48–12:51 ET, transcripts/20261110-124800.txt and 20261110-125003.txt; shot /shots/124850.jpg
 -->
 
 ---
@@ -1003,10 +1103,15 @@ time: "12:51"
 # Razor tooling: rename across C# and Razor
 
 <!--
+- Say: Razor tooling caught up with C#: cross-language refactors, EditorConfig formatting, and Emmet in Visual Studio.
 - Cross-language rename, faster Hot Reload
 - EditorConfig C# style in .razor files
 - ~/ asset paths instead of @Assets["..."]
 - Emmet support
+- Also: remove and sort using directives in .razor files
+- Works in Visual Studio and VS Code
+- Why it matters: Razor files get the same editor quality as .cs files.
+- Source: 12:51–12:54 ET, transcripts/20261110-125003.txt and 20261110-125200.txt; shot /shots/125133.jpg
 -->
 
 ---
@@ -1018,12 +1123,17 @@ time: "12:54"
 # Blazor + Aspire: debug browser and backend together
 
 <!--
+- Say: Aspire now runs and debugs Blazor WebAssembly with the backend, and .NET code can run on a Web Worker.
 - Aspire: dashboard, service discovery, WebAssembly debugging
 - New Blazor Gateway: one host for dev and prod, static assets, API proxy
 - Web Workers: run .NET off the UI thread
 - Also: Entra ID auth scaffolding (dotnet scaffold or VS); ASP.NET Core + Blazor plugins at github.com/dotnet/skills
 - Demo (12:57): analysis on the UI thread freezes the page; on a Web Worker it stays responsive. "Debug in Browser" button in the Aspire dashboard.
 - Caveat: the demo ran Aspire 17 daily builds
+- New project templates: a client defaults project (Aspire setup in the WebAssembly app) and a worker project
+- Debug tip (Q&A): use the dashboard's debug gesture; the browser Aspire opens at launch is not configured to debug WebAssembly
+- Why it matters: full-stack Blazor WebAssembly debugging and a responsive UI under CPU load.
+- Source: 12:54–13:00 ET, transcripts/20261110-125402.txt to 20261110-130000.txt; shot /shots/125457.jpg
 -->
 
 ---
@@ -1037,6 +1147,13 @@ speakers: "Chet Husk"
 
 <!--
 [Session 4]
+- Say: Session 4 is Chet Husk. The .NET CLI now runs many commands as Native AOT, and he showed how they did it.
+- 1:00 PM ET. Speaker: Chet Husk, PM for the SDK, the .NET CLI, and core tooling
+- Verbatim: "Billions and billions and billions of commands get run on the .NET CLI every month."
+- "we are all in on native AOT as a technology now"
+- Next slides: startup numbers, CLI-as-library architecture, what had to change, size trade-offs, the 5 MB XML lesson, ship your tools AOT
+- Why it matters: faster CLI commands add up for people and agents that run commands in chains.
+- Source: 13:00–13:30 ET, transcripts/20261110-130000.txt to 20261110-132803.txt
 -->
 
 ---
@@ -1048,6 +1165,7 @@ time: "13:02"
 # `dotnet --version`: 118 ms → 33 ms
 
 <!--
+- Say: `dotnet --version` went from 118 to 33 milliseconds. That is about two-thirds less time on every call.
 - Native AOT CLI vs managed, macOS arm64
 - tool list --local: 121 → 32 ms; user-secrets list: 142 → 54 ms
 - "Billions and billions of commands" run on the CLI every month
@@ -1055,6 +1173,11 @@ time: "13:02"
 - AOT now covers core diagnostics, solution commands, most tool management
 - Next: build commands, tool install/restore, dotnet new
 - Twist: the CLI is a Native AOT library; `dotnet` itself is the native muxer
+- Measured on an M1 arm64 macOS laptop with release bits. Slower machines or spinning disks likely see bigger deltas.
+- Verbatim: "if we can cut 20 milliseconds off of a command, at scale that matters."
+- Also AOT: cached runs of file-based apps, and MTP test runs without a build
+- Why it matters: agents and scripts chain many commands, so the savings compound.
+- Source: 13:02–13:08 ET, transcripts/20261110-130201.txt to 20261110-130605.txt; shot /shots/130256.jpg
 -->
 
 ---
@@ -1066,9 +1189,16 @@ time: "13:09"
 # The CLI is a library now
 
 <!--
+- Say: The CLI is not an AOT app, it is an AOT library. The native muxer loads it and runs eligible commands with no CoreCLR startup.
 - Native `dotnet` muxer picks the SDK, loads the SDK's Native AOT library
 - Eligible commands run native: no CoreCLR startup
 - Everything else falls back in-process to the managed CLI (hostfxr starts CoreCLR)
+- The muxer has two jobs: launch arbitrary .NET DLLs, and select and load an SDK. That stays the same.
+- The SDK exposes a C ABI native entry point; the AOT library parses the whole command line and decides AOT or not
+- Verbatim: "same commands to end users, better performance on the AOT commands, and maintained compatibility with the managed commands."
+- The AOT share grows over time as more commands light up
+- Why it matters: you get the speed with no change to the commands you type.
+- Source: 13:06–13:10 ET, transcripts/20261110-130605.txt and 20261110-130803.txt; shot /shots/130903.jpg
 -->
 
 ---
@@ -1080,12 +1210,15 @@ time: "13:11"
 # Going AOT: what had to change
 
 <!--
+- Say: Most of the AOT work was annotations. A few parts needed rewrites: reflection, runtime codegen, and dependencies.
 - Reflection discovery → known types, generated metadata (incl. load-bearing Assembly.Location)
 - Runtime codegen → static code paths
 - Dynamic deps → accurate annotations, reachable-code tests
 - "Sometimes this is entire rewrites, which sucks, but it's not super frequent." Mostly annotations.
 - Gotcha (13:12): a Native AOT library has no meaningful base directory (it points at the host), so the SDK needed an explicit "SDK root"
 - Partners (13:14): NuGet made its JSON reading/writing AOT-capable; early experiments with MSBuild evaluation in AOT. Approach: "strangler fig" the CLI.
+- Why it matters: this is the checklist for your own AOT migration.
+- Source: 13:10–13:16 ET, transcripts/20261110-131000.txt to 20261110-131405.txt; shot /shots/131100.jpg
 -->
 
 ---
@@ -1095,12 +1228,15 @@ layout: "statement"
 No free lunch: AOT trades size for speed.
 
 <!--
+- Say: AOT is not free. Every feature adds megabytes, so the team checks size on every build.
 - 13:16 ET. AOT CLI first added ~5 MB to the SDK bundle
 - AOT tool command resolution: +2.19 MiB (~100 ms saved)
 - Build-free MTP test: +1.02 MiB
 - Size delta checked on every build
 - "Budget the SDK, not just the DLL" (13:18): symlink dedup cut 53 MB compressed / 140 MB extracted from the Linux x64 SDK tarball (speaker said "about 150"); AOT spent ~15–20 MB of that
 - Design question (13:20): "What do we get out of this chunk of size, and can we get it another way?" PR slash command posts AOT size diffs; Chet's SizeSpy tool reads the compiler/trimmer DGML files to find "dominators" (oversized members).
+- Why it matters: if you ship AOT, budget size the way you budget speed.
+- Source: 13:16–13:22 ET, transcripts/20261110-131601.txt to 20261110-132000.txt
 -->
 
 ---
@@ -1110,11 +1246,14 @@ layout: "statement"
 XML parsing cost 5 MB: XSD → network → crypto.
 
 <!--
+- Say: One XML reader pulled in 5 MB: XSD, then network, then crypto. A small hand-written parser fixed it.
 - 13:22 ET. The BCL XML reader pulled in ~5 MB of a ~15 MB AOT binary per platform
 - Fix: a hand-written recursive-descent parser for one format, saved 5+ MB
 - Same idea for embedded resources: localization now read from existing satellite assemblies
 - Takeaway: check what your dependencies drag in
 - More tips (13:24): use narrow, purpose-built APIs (a Hex1b change saved the Aspire CLI "like 300 KB"); use runtime feature switches; test through a muxer-like harness (they built one called "DN")
+- Why it matters: in AOT, one convenient API can drag in a large dependency graph.
+- Source: 13:22–13:26 ET, transcripts/20261110-132202.txt and 20261110-132403.txt
 -->
 
 ---
@@ -1124,12 +1263,15 @@ layout: "statement"
 Ship your .NET tools Native AOT. Fast and easy — you don't have to choose.
 
 <!--
+- Say: Chet's message: ship your .NET tools as Native AOT. You get speed without a rewrite in another language.
 - 13:26 ET, Chet's wrap-up
 - RID-specific Native AOT tools supported since .NET 10
 - Parity first: when unsure, fall back to the managed implementation
 - AOT payoff beyond startup: explicit, testable architecture
 - Q&A (13:28): dotnetup was the team's AOT practice project; Chet made it install .NET 11 "10 minutes before this talk"
 - No Rust/C++ comparison done. The win: speed without a rewrite or leaving .NET.
+- Why it matters: tool authors can get native startup times and stay in .NET.
+- Source: 13:26–13:30 ET, transcripts/20261110-132601.txt to 20261110-133001.txt
 -->
 
 ---
@@ -1143,8 +1285,14 @@ speakers: "Klaus Löffelmann"
 
 <!--
 [Session 5]
+- Say: Session 5 is Klaus Löffelmann from the WinForms team. WinForms must stay compatible, but .NET 11 still changes its look and behavior a lot.
 - Theme: huge WinForms history vs constant renewal; "WinForms down the road its own migration tool"
 - Demo prop: a second laptop running Windows XP and Visual Studio 2005. It didn't work on stream ("it's not going to work"), so he went straight to demos.
+- 1:30 PM ET. Speaker: Klaus Löffelmann, WinForms team
+- Verbatim: "the necessity to renew constantly to make WinForms down the road its own migration tool."
+- Next slides: classic visual styles, Net11 styles in one line, accessibility, vendor replacement, SuspendPainting, no white flash in dark mode, Copilot-friendly analyzers
+- Why it matters: old WinForms apps can look modern and get more accessible without a rewrite.
+- Source: 13:30–13:33 ET, transcripts/20261110-133001.txt and 20261110-133203.txt
 -->
 
 ---
@@ -1156,10 +1304,15 @@ time: "13:37"
 # WinForms before: classic visual styles
 
 <!--
+- Say: WinForms had FlatStyle properties since the start. They were dormant after Windows XP, and .NET 11 revives them.
 - Old FlatStyle-era properties, unused since Windows XP took over rendering, are revived
 - Used to make styles close to today's Windows design language
 - "Primarily driven by accessibility"
 - Demo: a customer entry form in dark mode (VisualStylesModeDemo)
+- FlatStyle has four settings: System (the OS draws), and Flat, Popup, Standard (WinForms draws)
+- Visual Basic called the XP mode "Enable XP Visual Styles"
+- Why it matters: existing properties get new value; no new control set to learn.
+- Source: 13:34–13:38 ET, transcripts/20261110-133400.txt and 20261110-133603.txt; shot /shots/133753.jpg
 -->
 
 ---
@@ -1171,12 +1324,16 @@ time: "13:39"
 # After: one line of code, `Net11` styles
 
 <!--
+- Say: In .NET 11 one line on Application switches the whole app to the Net11 visual style.
 - New methods/properties on Application: one line changes the whole app's look
 - Visual styles mode is an enum: Net11 now, Net12 and Net13 planned
 - Same controls: modern Windows look, toggle switches, dark mode
 - GroupBox (13:40): flat style fixes the classic low-contrast frame
 - CAVEAT (13:50): new styles are "logically a lot larger"; pixel-perfect layouts won't work because control locations stay the same
 - Fix coming "very soon": Copilot skills in Visual Studio that move pixel-placed controls into a TableLayoutPanel
+- Verbatim: "these controls are still the same Windows controls, but they are drawn in a way that they mimic the experience."
+- Why it matters: a modern look with one line, but check layouts that depend on exact pixel sizes.
+- Source: 13:38–13:40 ET, transcripts/20261110-133801.txt and 20261110-134003.txt; caveat 13:50; shot /shots/133906.jpg
 -->
 
 ---
@@ -1186,9 +1343,15 @@ layout: "statement"
 "This is not about styling. This has all to do with accessibility."
 
 <!--
+- Say: Klaus said the new styles are about accessibility, not theming. The app follows the Windows accent color and text size live.
 - Klaus Löffelmann, 13:42 ET
 - Net11 styles follow the Windows accent color (demo: red → blue) and text size, live
 - Classic checkbox: a 12x12 pixel "landing area"
+- Verbatim (the slide drops a duplicated "not"): "this is not really not about styling. This has all to do with accessibility."
+- On a 4K display the old 12x12 checkbox target is "just too small for modern monitor"
+- Demo: Windows text size set to almost 120%; the running WinForms app picked it up on the fly
+- Why it matters: bigger targets and system settings support help users without extra code.
+- Source: 13:40–13:44 ET, transcripts/20261110-134003.txt and 20261110-134200.txt
 -->
 
 ---
@@ -1200,9 +1363,15 @@ time: "13:44"
 # Vendor gone? Built-in styles can replace it
 
 <!--
+- Say: Many old apps depend on control vendors that are gone. Built-in styles can now give those apps a modern look.
 - Cash register demo (13:44)
 - Old apps often use control libraries from vendors "probably no longer in business"
 - Changing the built-in style changes the whole register's look
+- Cash register: "a typical line of business app that could have been ... done in WinForms like 10, 15 years ago"; "usually there's no need to migrate it"
+- Verbatim: vendor libraries are "in many, many cases sort of an impediment to really bring your app over."
+- Switch from Standard to Popup style: real 3D button look, but the transition was slow. That leads to SuspendPainting (next slide).
+- Why it matters: you can remove a dead third-party dependency and keep the UI modern.
+- Source: 13:44–13:46 ET, transcripts/20261110-134403.txt and 20261110-134606.txt; shot /shots/134428.jpg
 -->
 
 ---
@@ -1212,10 +1381,14 @@ layout: "statement"
 `SuspendPainting`: one `using`, any nesting depth.
 
 <!--
+- Say: SuspendPainting gives you one scope that suspends painting and layout for all nested containers.
 - New WinForms .NET 11 API, 13:46 ET
 - Before: SuspendLayout at every level of nested containers (TableLayoutPanel in TableLayoutPanel...), and no way to suspend painting
 - Now: get a scope, wrap it in `using`; painting and layout are suspended however deep the nesting
 - Exact call shape not shown on stream; check docs before quoting code
+- Demo option name: "use suspending scope" on the cash register
+- Why it matters: big layout changes, like a font change, no longer repaint step by step.
+- Source: 13:46 ET, transcripts/20261110-134606.txt
 -->
 
 ---
@@ -1235,11 +1408,14 @@ Application.Run(new MainForm());
 ```
 
 <!--
+- Say: Dark mode WinForms apps used to flash white at startup. Deferred reveal hides the window until it is built.
 - 13:48 ET. "Pretty much all the apps that are providing dark mode have this flash."
 - Deferred reveal hides intermediate startup paints. Modes: Deferred and Classic. Deferred "cloaks" the window "like a Klingon ship" until it's built.
 - Effect (13:54): startup "feels like it's there instantly ... almost like it was written in C++". Demo code: planned for the .NET Conf repo.
 - DemoConstants are the demo's own values; the visual styles mode is the Net11 enum
 - Source: screenshot /shots/134952.jpg
+- Why it matters: dark mode apps start without a white flash and feel faster.
+- Source (transcripts): 13:48–13:54 ET, transcripts/20261110-134802.txt to 20261110-135400.txt
 -->
 
 ---
@@ -1249,11 +1425,14 @@ layout: "statement"
 Compiler errors written for Copilot to read.
 
 <!--
+- Say: The WinForms team wrote analyzer errors as instructions for Copilot, so the AI fixes designer code it breaks.
 - 13:56 ET. New WinForms analyzers keep designer code sound
 - Problem: Copilot puts for-loops or local functions in designer code, then the designer can't open the form
 - The analyzers emit build errors phrased as commands to Copilot ("unroll that, write it step-by-step")
 - Copilot compiles, reads the error, fixes it. Worked even with "the more capable local models"
 - Q&A (13:58): analyzers add determinism to the AI loop. WinForms skills PR "on the way" in dotnet/skills.
+- Why it matters: analyzers make AI edits to designer code safe and repeatable.
+- Source: 13:56–14:00 ET, transcripts/20261110-135601.txt and 20261110-135804.txt
 -->
 
 ---

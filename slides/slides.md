@@ -377,6 +377,23 @@ time: "11:43"
 -->
 
 ---
+layout: "shot"
+image: "/shots/114545.jpg"
+time: "11:45"
+---
+
+# What's new in .NET + AI
+
+<!--
+- Official OpenAI and Anthropic SDK integrations with MEAI
+- DocumentExtractionClient, RoutingChatClient (experimental)
+- OpenAI Decisions API: probabilities and scores, not chat
+- AG-UI + Blazor AI Components (experimental)
+- MCP C# SDK 2.0
+- Caution: most are experimental. The stream slide said "DRAFT: confirm document-extraction package availability."
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

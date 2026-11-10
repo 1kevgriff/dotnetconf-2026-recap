@@ -2775,6 +2775,7 @@ await worker.withEnvironmentCallback(async (context) => {
 - Also new: an Aspire tray app ("you probably noticed this tray icon ... the Aspire tray app, which you can run now")
 - Under the hood (18:10): the TS `addRedis` "is all generated code" — "it's basically doing RPC, local RPC" into "what we call the app host server". Live log on stream: addRedis completed in 43ms; .NET called the TS callback; TS asked .NET to set DEMO_MESSAGE ("completed in 1ms"); the whole callback round trip ~0.039 s
 - "Shipping in a week": Aspire 17
+- And no .NET install needed (18:18): "the latest few Aspire releases, you don't have to install .NET at all if you don't want to" — see the next statement slide
 - Why it matters: mixed .NET/JS teams can share one Aspire setup, each in their own language.
 - Source: 18:08–18:12 ET, transcripts 20261110-180800, 20261110-181004, /shots/180920.jpg
 -->
@@ -2795,6 +2796,21 @@ time: "18:17"
 - More: devblogs.microsoft.com/aspire/aspire-dashboard-native-aot (on the stream slide)
 - Why it matters: a real Blazor Server app shipping as Native AOT — the stream slide calls it proof that "Blazor Server can compile with Native AOT".
 - Source: 18:16–18:18 ET, transcript 20261110-181604, /shots/181759.jpg
+-->
+
+---
+layout: "statement"
+---
+
+Aspire no longer needs .NET installed.
+
+<!--
+- Say: Recent Aspire releases ship as a self-contained bundle, so you don't need a .NET install to use them — even though Aspire is built on .NET.
+- 18:18: "for a while, even though the app host was TypeScript, you still kind of had to install .NET." Now: "the latest few Aspire releases, you don't have to install .NET at all if you don't want to"
+- "Now you can tell your friends to install Aspire, whoever is still anti-.NET."
+- Why: Aspire "used to run on your .NET install itself"; "we were stuck on .NET 8 for a long time because we knew some of you might still be running .NET 8", and "the back compat was just getting kind of unmaintainable". So they created "what we called the bundle".
+- Why it matters: Aspire's .NET version is no longer tied to what's installed on your machine.
+- Source: 18:18–18:20 ET, transcript 20261110-181804
 -->
 
 ---

@@ -1161,6 +1161,20 @@ time: "14:19"
 -->
 
 ---
+layout: "shot"
+image: "/shots/142237.jpg"
+time: "14:22"
+---
+
+# No image model: a chat model draws SVG
+
+<!--
+- Custom IImageGenerator backed by an IChatClient
+- Chat model returns SVG text → app validates it → renders to PNG
+- Satisfies the contract: text in, image out. A native image model can drop in later.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

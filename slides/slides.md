@@ -307,6 +307,20 @@ kicker: "Modernization + AI"
 -->
 
 ---
+layout: "shot"
+image: "/shots/113638.jpg"
+time: "11:36"
+---
+
+# Modernize: 155x faster, 8 servers to 1
+
+<!--
+- Ateleris / FHNW: 155x faster, 8 servers to 1
+- Intune: weeks saved with AI-assisted migration
+- Windows 365 runs 100+ .NET microservices
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

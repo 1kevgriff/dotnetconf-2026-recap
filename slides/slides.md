@@ -2321,7 +2321,8 @@ layout: "statement"
 - MSRC cases (a researcher fills in the form on the MSRC site): 2025: 84 → 2026: 2,622. CVEs: 12 → 97 (stream slide /shots/163340.jpg)
 - Barry Dorrans: "this year we had lots more gray hair"
 - CVSS caution: scores are based "on the worst possible scenario, which might not be the most likely scenario" — a 9.9 doesn't automatically mean "run out and fix that right now" for your app
-- The stream did not give a reason for the jump in this part (wait for later chunks before claiming one)
+- Why the jump (16:34): "AI is getting better at finding things, and researchers getting better at driving their AI ... So not an increase in bugs." Often in code "unloved and untouched for 15 to 20 years." "It's not that LLMs are bad at writing code."
+- Bounties paid: 2025 $635,500 → 2026 $1,012,500 ("This year we broke a million"). Not every valid report gets a CVE; CVEs are issued for medium CVSS and above; Microsoft also runs "our own LLMs running over everything" (/shots/163503.jpg)
 - Why it matters: expect more .NET security patches; read the advisory, not just the score.
 - Source: 16:32–16:34 ET, transcript 20261110-163200, /shots/163340.jpg
 -->

@@ -1144,6 +1144,22 @@ time: "14:16"
 -->
 
 ---
+layout: "shot"
+image: "/shots/141913.jpg"
+time: "14:19"
+---
+
+# `DocumentExtractionClient`: swap the reader, keep your code
+
+<!--
+- NEW. One contract: a file in; pages, sections, tables, images out
+- Three readers: PdfPig (local), Mistral OCR (cloud), any vision IChatClient
+- Packages: Microsoft.Extensions.DocumentExtraction + CommunityToolkit.DocumentExtraction.{PdfPig, Mistral, VisionLanguageModel}
+- Keynote caveat still applies: experimental, confirm package availability
+- Also (14:18): MEAI "core foundations and abstractions for these decision-style models" coming
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

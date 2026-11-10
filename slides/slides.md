@@ -2217,7 +2217,8 @@ var builder = DistributedApplication.CreateBuilder(args);
 - Demo: the "Aspire Fridays" bingo app (16:12 ET)
 - #:sdk picks the Aspire AppHost SDK; #:package pulls integrations; #:project references projects; #:include pulls in more .cs files (the file-based app #include from the keynote)
 - Excerpt: the stream file has more #:package lines (Azure.AppContainers, Azure.Redis, Docker, Yarp, DevTunnels, Browsers, EntityFrameworkCore) and a second #:project
-- Why it matters: less ceremony; the AppHost can sit at the repo root above everything it runs.
+- On stream: the file can sit "above the projects you're orchestrating"
+- Why it matters: less ceremony — no AppHost project to maintain.
 - Source: 16:12 ET, transcript 20261110-161201, code copied from /shots/161241.jpg
 -->
 

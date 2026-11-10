@@ -2708,7 +2708,7 @@ time: "17:57"
 - Partial parsing: "I've got 12.5 milliseconds, I want to parse out just the number — we have new API TryParsePartial"; it stops at the first invalid character and "will then give you back how much it consumed", so you can validate the unit next
 - UTF-8: bytes ↔ BigInteger / Complex (stream slide)
 - Hexadecimal floats: 0x1.8p+1 → 3 (stream slide)
-- Why it matters: less string slicing and allocation when parsing numbers from logs, configs or network data.
+- Why it matters: parse a number and its unit (or trailing text) in one pass, and parse directly from UTF-8 data.
 - Source: 17:56–17:58 ET, transcript 20261110-175603, /shots/175703.jpg
 -->
 

@@ -2400,6 +2400,21 @@ time: "16:51"
 -->
 
 ---
+layout: "statement"
+---
+
+"Forgiving in your input" is a giant pit of security failure.
+
+<!--
+- Say: The old rule "be strict in what you send, forgiving in what you accept" — Barry Dorrans called it "a giant pit of security failure."
+- CVE-2026-70188 (Security Bypass, HPACK poisoning): Kestrel HTTP/2 request trailers and dynamic HPACK values could accept newline characters instead of rejecting malformed input → one request treated as two → auth bypass (/shots/165258.jpg)
+- Stream takeaways: "Canonicalisation is hard." "You don't have to support every part of an RFC."
+- Barry (16:52): "In certain cases, following the RFC just makes you vulnerable ... make choices about what parts of the RFC you want to implement."
+- Why it matters: reject malformed input instead of trying to make sense of it — especially in parsers and protocol code.
+- Source: 16:52–16:53 ET, transcript 20261110-165203, /shots/165258.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

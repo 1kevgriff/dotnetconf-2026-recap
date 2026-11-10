@@ -698,6 +698,21 @@ time: "12:31"
 -->
 
 ---
+layout: "shot"
+image: "/shots/123244.jpg"
+time: "12:32"
+---
+
+# Kestrel: bad requests, ~30% cheaper to reject
+
+<!--
+- Malformed HTTP/1.1 requests: no more throw-and-propagate
+- Returns an error result and uses pre-allocated response fragments
+- ~30% higher bad-request throughput (single-core benchmark)
+- Helps under attack traffic
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

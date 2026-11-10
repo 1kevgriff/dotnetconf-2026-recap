@@ -1559,6 +1559,7 @@ codeSize: "19"
 - Even simpler (15:48, "freshest" MSBuild bits): typed binding, e.g. ITaskItem<FileInfo>, so the engine resolves the path and the task code shrinks — "a more declarative path" for task authors
 - Analyzer (15:50): Microsoft.Build.TaskAuthoring.Analyzer, ~12 Roslyn rules (some -mt specific); fixers planned. On stream: PackageReference version 18.13.0, PrivateAssets="all"; .editorconfig `msbuild_task_analyzer.run_mt_analyzers_on_all_tasks = true`
 - The MSBuild repo also has an agent plugin the team uses to migrate the SDK's built-in tasks: dotnet/msbuild → plugins/mt-migration. Sample prompt on stream: "Migrate CountFileLines for MT execution. Trace helpers. Preserve outputs and error behavior. Run the analyzer and test distinct project environments."
+- Links (15:56): learn.microsoft.com/visualstudio/msbuild/update-task-multithreaded · nuget.org/packages/Microsoft.Build.TaskAuthoring.Analyzer · github.com/dotnet/msbuild/tree/main/plugins/mt-migration · aka.ms/msbuild/performance-dashboard (PerfStar)
 - Code copied from the stream slide (/shots/154714.jpg)
 -->
 

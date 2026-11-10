@@ -1177,6 +1177,20 @@ time: "14:22"
 -->
 
 ---
+layout: "shot"
+image: "/shots/142657.jpg"
+time: "14:26"
+---
+
+# Put an agent in your UI: the agent proposes, the person decides
+
+<!--
+- NEW: AG-UI C# SDK (just released) — agent streams typed events (run, text, tool call, state change), works with any front end
+- NEW: Blazor AI components — <AgentBoundary> hosts an agent; the person edits; Save persists
+- Agent Framework on any IChatClient, or the GitHub Copilot SDK
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

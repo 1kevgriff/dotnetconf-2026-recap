@@ -2271,6 +2271,7 @@ time: "16:19"
 - Demo (16:20): `aspire update` offers to update all package versions and the NuGet config, running the CLI for each package; "the update was successful"
 - Why the AppHost SDK goes away: "we no longer need to use this very .NET specific mechanism to deliver things that we need behind the scenes, namely the dashboard and DCP" (the CLI bundles them now)
 - Migration demo (16:22): add the Aspire.Hosting.AppHost package plus a .NET hosting package; `AddProject<Projects.X>` is now flagged "obsolete, don't use this anymore" (the generated `Projects` types go away with projects-by-path). Check the Aspire 17 docs for the replacement API name.
+- Why by path (16:24): Aspire can rebuild .NET projects when they change — and "a sneak peek, maybe hot reloading them" without a rebuild. "We already battle tested this with all the other languages ... Let's put .NET up to parity."
 - Why it matters: fewer upgrade headaches and a faster F5 for Aspire apps.
 - Source: 16:18–16:22 ET, transcripts 20261110-161802, 20261110-162000, /shots/161922.jpg
 -->

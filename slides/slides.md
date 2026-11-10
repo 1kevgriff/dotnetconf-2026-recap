@@ -1379,6 +1379,23 @@ The trick: cache the build's project info. `.lscache`.
 -->
 
 ---
+layout: "shot"
+image: "/shots/150930.jpg"
+time: "15:09"
+---
+
+# Opening the Roslyn repo: 89 s → 16 s
+
+<!--
+- Dev Kit v3 → v11, warm load, lower is better
+- dotnet/roslyn (398 projects): 89.0 → 15.9 s
+- dotnet/orleans (155 projects): 62.0 → 17.1 s
+- microsoft/aspire (407 projects): 87.9 → 19.9 s
+- ~77% faster. Intel Xeon Platinum 8370C, 8 cores, Windows 11 x64
+- Numbers from the stream chart
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

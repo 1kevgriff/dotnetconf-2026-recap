@@ -335,6 +335,33 @@ time: "11:38"
 -->
 
 ---
+layout: "shot"
+image: "/shots/114038.jpg"
+time: "11:40"
+---
+
+# Agents in a box: C# sets the rules
+
+<!--
+- Check, plan, fix, validate, learn
+- One repo at a time, same test gate as human PRs
+- Humans approve every PR
+-->
+
+---
+layout: "shot"
+image: "/shots/114148.jpg"
+time: "11:41"
+---
+
+# .NET AI: 170M+ downloads
+
+<!--
+- Shared foundations: Microsoft.Extensions.AI, VectorData, DataIngestion (preview)
+- Agent Framework, MCP C# SDK, OpenAI and Anthropic SDKs, OllamaSharp
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -896,6 +896,7 @@ No free lunch: AOT trades size for speed.
 - Build-free MTP test: +1.02 MiB
 - Size delta checked on every build
 - "Budget the SDK, not just the DLL" (13:18): symlink dedup cut 53 MB compressed / 140 MB extracted from the Linux x64 SDK tarball (speaker said "about 150"); AOT spent ~15–20 MB of that
+- Design question (13:20): "What do we get out of this chunk of size, and can we get it another way?" PR slash command posts AOT size diffs; Chet's SizeSpy tool finds "dominators" (members that pull in the most code).
 -->
 
 ---

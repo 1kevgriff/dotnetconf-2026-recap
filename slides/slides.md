@@ -1482,6 +1482,21 @@ speakers: "Chet Husk"
 -->
 
 ---
+layout: "shot"
+image: "/shots/153347.jpg"
+time: "15:33"
+---
+
+# `-mt` warm incremental: −68% on Windows, −13% on Linux
+
+<!--
+- OrchardCore warm incremental. Windows 54.58 → 17.36 s (−68.2%). Linux 25.47 → 22.13 s (−13.1%)
+- Cold build (per notes agent, not on this chart): −23.5% Windows, −11.9% Linux
+- DIFFERENT from the keynote's −37% (28.4 → 17.9 s, "ASP.NET's shared hardware, 100 projects"). The −mt time is about the same (~17-18 s); the "Normal" baseline differs. Don't quote both as the same measurement.
+- Windows gains much more than Linux: Linux's normal build is already faster
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -854,6 +854,20 @@ time: "13:02"
 -->
 
 ---
+layout: "shot"
+image: "/shots/130903.jpg"
+time: "13:09"
+---
+
+# The CLI is a library now
+
+<!--
+- Native `dotnet` muxer picks the SDK, loads the SDK's Native AOT library
+- Eligible commands run native: no CoreCLR startup
+- Everything else falls back in-process to the managed CLI (hostfxr starts CoreCLR)
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

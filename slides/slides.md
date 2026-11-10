@@ -657,6 +657,19 @@ time: "12:22"
 -->
 
 ---
+layout: "statement"
+---
+
+`closed` for your hierarchy. `union` for types you don't own.
+
+<!--
+- 12:26 ET Q&A
+- closed: the list is your direct descendants
+- union: types not in a hierarchy, or you don't control (e.g. data over the wire)
+- Generated unions are structs, so implicitly sealed
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

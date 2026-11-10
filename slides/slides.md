@@ -1446,9 +1446,16 @@ speakers: "Luis Quintanilla"
 
 <!--
 [Session 6]
+- Say: Luis Quintanilla leads product for the .NET AI libraries. His pitch: the .NET team ships shared AI contracts, and the whole ecosystem builds on them.
+- Time: 2:00 PM ET slot (Luis started ~14:01). Speaker: Luis Quintanilla.
+- Luis (14:01): "I could literally do a whole day just focusing and doing deep dives into each of these sections, but we're going to try to do this in 30 minutes or so."
 - Layers (from title slide): Experiences, Agents, Tools, Multimodal, Context, Decisions, Models
 - Foundations: Microsoft.Extensions.AI, VectorData, DataIngestion (170M+ downloads, see keynote slide)
 - 14:02: Luis added semantic search to Jellyfin on his home Raspberry Pi with .NET embedding generation. Demo app next: "Media Studio" (Blazor Hybrid) — AI "goes beyond chat".
+- Jellyfin detail (14:02): "it's all built entirely in .NET"; a recent release exposed APIs to bring your own search and recommendations.
+- Coming up in this session: Media Studio demo (paper → video) · the stack map · one IChatClient for GPT and Claude · RoutingChatClient · DocumentExtractionClient · a chat model that draws SVG · AG-UI + Blazor AI components · the "not a chatbot" quote and Q&A.
+- Why it matters: learn the contracts once, then swap providers, local or cloud, without a rewrite.
+- Source: 14:00–14:04 ET, transcripts 20261110-140001.txt, 20261110-140203.txt; shot /shots/140141.jpg
 -->
 
 ---
@@ -1460,12 +1467,16 @@ time: "14:05"
 # A research paper in, a narrated video out
 
 <!--
+- Say: Luis fed a research paper into a .NET desktop app and asked, by voice, for a beginner video. The app built a storyboard he could edit with an agent.
 - "Media Studio": one .NET app (Blazor Hybrid), runs locally
 - 1 Bring the paper → 2 Read it → 3 Draft with an agent (typed, cited scenes) → 4 A person fixes and saves → 5 Produce (voice, cover, motion, film)
 - AI "goes beyond chat"
+- The paper (14:06): a research paper on "nested learning". He attached it, then spoke the prompt: "create an introductory video for beginners" with "animations and graphics".
 - Demo (14:07): ask for a video "for beginners"; storyboard appears "after a few seconds"; side pane is an event log, "not quite a chat history"
 - 14:09: AG-UI + Blazor AI Components. "Scene two is too abstract, make it simpler" → agent updates the storyboard live
 - Final video shown was pre-made ("Prepared from the same project you just watched"), not rendered live
+- Why it matters: a real AI feature in a .NET app can be a pipeline with a human in the loop, not a chat box.
+- Source: 14:04–14:11 ET, transcripts 20261110-140405.txt, 20261110-140601.txt, 20261110-140803.txt, 20261110-141000.txt; shot /shots/140515.jpg
 -->
 
 ---
@@ -1477,11 +1488,15 @@ time: "14:11"
 # The .NET AI stack: each contract does one job
 
 <!--
+- Say: Every hop in that demo is a .NET contract. Pink boxes are new this year; the rest already shipped.
 - Pink = new: AgentBoundary (hosts an agent in a Blazor page), AG-UI, DocumentExtractionClient, RoutingChatClient (picks the model per request), Decisions API (typed answer with probabilities)
 - Existing: IChatClient, AIAgent, AIFunction, ITextToSpeechClient, IRealtimeClient, IImageGenerator
 - Demo mixed cloud (OpenAI, Anthropic Claude, Mistral OCR, GitHub Copilot SDK) and local (PdfPig, Kokoro, Whisper.net, ONNX) providers in one app
 - Shared: Microsoft.Extensions.AI, Microsoft.Extensions.DataIngestion
+- Bottom layer (14:10), per Luis: Extensions AI, data ingestion, vector data, tokenizers, tensors. IChatClient is "your entry point" to models.
 - 14:13 "Follow one request. PDF in, film out: every hop is a .NET contract": DocumentExtractionClient → IngestionDocument → RoutingChatClient + IDecisionClient → AIAgent → AgentBoundary (you edit) → ITextToSpeechClient / IImageGenerator → film. Alt slide: /shots/141306.jpg
+- Why it matters: each piece is replaceable on its own, so you can adopt one contract without the rest.
+- Source: 14:10–14:14 ET, transcripts 20261110-141000.txt, 20261110-141201.txt; shots /shots/141130.jpg, /shots/141306.jpg
 -->
 
 ---
@@ -1505,11 +1520,17 @@ var b = await claude.GetResponseAsync(prompt);
 ```
 
 <!--
+- Say: The official OpenAI and Anthropic C# SDKs now plug straight into IChatClient. Pick the model at startup; the rest of the code does not change.
+- Code, in plain words: top half builds two clients, each from its own vendor SDK, and calls AsIChatClient(model) to wrap it. Bottom half makes the identical GetResponseAsync call on either one.
 - 14:14 ET. Official OpenAI and Anthropic C# SDKs now have native IChatClient adapters
 - App code stays the same; only initialization changes. Sample: aka.ms/meai/start
+- Luis (14:14): "outside of the initialization code ... your application code stays relatively the same" (light cleanup)
 - Packages: Microsoft.Extensions.AI, Microsoft.Extensions.AI.OpenAI, Anthropic
 - Code copied from the stream slide (/shots/141458.jpg), "simplified from Planning.cs + FoundryAnthropic.cs"
 - Side note: the final film is stitched with plain code, "no AI at that point"
+- Local models too (14:16): Luis pointed back to the keynote's Hugging Face system-tray app (Microsoft Store, Windows; built with the llama.cpp team) to discover, download, and serve local models. App name is unclear in the transcript; check it before you say it.
+- Why it matters: no vendor lock-in at the call site; switching or A/B testing models is a config change.
+- Source: 14:14–14:16 ET, transcripts 20261110-141403.txt, 20261110-141600.txt; shot /shots/141458.jpg
 -->
 
 ---
@@ -1521,9 +1542,15 @@ time: "14:16"
 # `RoutingChatClient`: your policy picks the model
 
 <!--
+- Say: RoutingChatClient picks which model answers each request. You write the policy; a decision model can score the choice when plain rules get messy.
 - NEW. The policy is a plain record (LocalOnly, RequireJson, AllowTools, MinimumProbability, ...)
 - 1 Policy filters the pool → 2 Decisions API scores what's left → 3 not sure enough: named fallback, or stop
 - The router is still just an IChatClient
+- Policy defaults on the slide: MaxInputCharacters 24000, MaxOutputTokens 4096, MinimumProbability .7, MinimumMargin .2. Pool: named routes "gpt" (gpt-6.1-sol) and "claude" (claude-sonnet-5-5). "Same router plans the video and draws the cover."
+- Luis (14:16): "you can just have a bunch of if statements. You can use unions." But free-text requests make rules hard to manage, so use a decision model.
+- Decision models (14:17–14:18): "the OpenAI SDK today offers support for the decision API"; the code example also showed a local decision model on ONNX Runtime. MEAI abstractions for decision-style models are coming "in the next few cycles".
+- Why it matters: route cheap, local, or JSON-capable requests to the right model without hard-coding one provider.
+- Source: 14:16–14:19 ET, transcripts 20261110-141600.txt, 20261110-141803.txt; shot /shots/141635.jpg
 -->
 
 ---
@@ -1535,12 +1562,18 @@ time: "14:19"
 # `DocumentExtractionClient`: swap the reader, keep your code
 
 <!--
+- Say: A new contract for reading documents. Swap a local PDF reader for cloud OCR or a vision model, and your pipeline code stays the same.
 - NEW. One contract: a file in; pages, sections, tables, images out
 - Three readers: PdfPig (local), Mistral OCR (cloud), any vision IChatClient
 - Packages: Microsoft.Extensions.DocumentExtraction + CommunityToolkit.DocumentExtraction.{PdfPig, Mistral, VisionLanguageModel}
 - Keynote caveat still applies: experimental, confirm package availability
+- Luis (14:18): "everybody's using the same models, but the true value lies in your data."
+- Trade-offs (14:11–14:20): some readers are weak on images or tables; choices differ in "cost, quality, latency". Mistral OCR runs on Foundry or Mistral. The vision option looks at each PDF page as an image.
+- Demo numbers (slide): input a 4-page PDF excerpt (original pages 1, 30, 37, 38); output 4 pages, 14 sections, Figure 5, tables as Markdown.
 - Also (14:18): MEAI "core foundations and abstractions for these decision-style models" coming
 - Flow (14:21): PDF → DocumentExtractionClient → IngestionDocument → chunks. Same whether the reader is Mistral, a chat client, or Azure Document Intelligence.
+- Why it matters: RAG and ingestion pipelines stop depending on one OCR vendor.
+- Source: 14:18–14:22 ET, transcripts 20261110-141803.txt, 20261110-142000.txt; shot /shots/141913.jpg
 -->
 
 ---
@@ -1552,11 +1585,16 @@ time: "14:22"
 # No image model: a chat model draws SVG
 
 <!--
+- Say: The cover images did not come from an image model. A chat model wrote SVG, the app rendered it to PNG, and that still counts as an IImageGenerator.
 - Custom IImageGenerator backed by an IChatClient
 - Chat model returns SVG text → app validates it → renders to PNG
 - Satisfies the contract: text in, image out. A native image model can drop in later.
+- Luis (14:23): "these abstractions and foundations give you the contracts, but then the implementations of what makes the most sense for your application is really sort of up to you."
 - Voice (14:24): narration by Kokoro (local model); mic input transcribed locally with Whisper, or via OpenAI realtime
 - Tools: a C# method exposed as a tool; MCP C# SDK is the other way. Session later covers SDK 2.0 and "serving skills over MCP".
+- The tool in the demo (14:25): the "media draft" tool, a standard C# method that authors the scenes.
+- Why it matters: you can implement a contract any way you like; the rest of the app does not know or care.
+- Source: 14:22–14:26 ET, transcripts 20261110-142202.txt, 20261110-142400.txt; shot /shots/142237.jpg
 -->
 
 ---
@@ -1568,9 +1606,15 @@ time: "14:26"
 # Put an agent in your UI: the agent proposes, the person decides
 
 <!--
+- Say: Two new pieces connect an agent to a real UI: the AG-UI protocol with a new C# SDK, and Blazor AI components that host the agent in your page.
 - NEW: AG-UI C# SDK (just released) — agent streams typed events (run, text, tool call, state change), works with any front end
 - NEW: Blazor AI components — <AgentBoundary> hosts an agent; the person edits; Save persists
 - Agent Framework on any IChatClient, or the GitHub Copilot SDK
+- Packages on the slide: AGUI.Server, AGUI.Client, Microsoft.AspNetCore.Components.AI. Tagline: "Agent ⇄ AG-UI events ⇄ Blazor UI: the agent proposes, the person decides."
+- Luis (14:26): Agent Framework "can orchestrate across different agent types"; Blazor AI components "natively use AGUI".
+- Loop (14:27): request → UI → AG-UI events → agent → tools generate scenes → changes show in the UI in real time.
+- Why it matters: agent output lands as editable app state, not chat text you copy and paste.
+- Source: 14:26–14:28 ET, transcript 20261110-142602.txt; shot /shots/142657.jpg
 -->
 
 ---
@@ -1580,9 +1624,16 @@ layout: "statement"
 "The best AI demo today, because it wasn't a chatbot."
 
 <!--
+- Say: The host read a chat comment on stream: this was the best AI demo of the day because it was not a chatbot.
 - 14:29 ET. Read on stream by the session host: "Kevin said that this was the best AI demo today because it wasn't a chatbot."
 - Confirm this was your post before claiming it on stage (transcript says only "Kevin")
+- Host continued: "It was actually like full-fledged"; companies say "build AI in" and "we don't want a chatbot."
+- Q&A (14:30), "What would your stack be?" Luis builds on the bare building blocks himself, but recommends you start with the Copilot SDK or a "batteries included" agent harness, then "drop down" when needed. (Inference: the harness heard as "map harness" is likely MAF, Microsoft Agent Framework.)
+- Deploy (14:30): Aspire for observability, Container Apps, Functions, or Foundry: "at the end of the day, it's just .NET code."
+- Luis's wrap-up (14:28): talk to any model, choose the model per request, bring your context, go multimodal, expose tools, and build agent UIs with AG-UI and Blazor AI components.
 - Follow-ons: aka.ms/meai/start, aka.ms/openai/start; MCP C# SDK session (Stephen Halter), agentic UI with Blazor (Daniel Roth)
+- Why it matters: the bar for "AI feature" is moving from chat windows to workflows.
+- Source: 14:28–14:31 ET, transcripts 20261110-142805.txt, 20261110-143004.txt
 -->
 
 ---
@@ -1596,9 +1647,17 @@ speakers: "Gerald Versluis"
 
 <!--
 [Session 7]
+- Say: Gerald Versluis from the MAUI team says Copilot changed how fast they ship. The big change is the move from Mono to CoreCLR.
+- Time: 2:30 PM ET slot (Gerald started ~14:33). Speaker: Gerald Versluis, software engineer on the .NET MAUI team.
 - 14:34: 1,600 PRs last month, "an absolute record" (keynote stat slide)
+- Last year: "400, 500 PRs a month on a good month." Gerald: "I'm an engineer. I don't have to sugarcoat this." (transcript: "sugar code")
 - Partners: Syncfusion (engineers fix issues in dotnet/maui + free toolkit), Uno Platform (Android API bindings, co-maintains SkiaSharp), Avalonia (MAUI on Linux)
 - 14:50: native passkeys (generate + validate); `dotnet run`, `test`, `watch` now work for MAUI with an interactive platform prompt (full session at 7:30 PM)
+- Not on our slides (14:46–14:50): long-press gesture recognizer; badges on tabs and toolbar items; a new C# UI (no XAML) template; Material 3 with one property; handlers now public; Maps clustering (one property, cluster click event) and custom pins via a pin image source.
+- Coming up: Mono → CoreCLR · NativeAOT startup numbers · XAML source gen on by default · C# expressions in XAML · MAUI Inspector + incremental hot reload · MAUI Labs · the support-policy warning.
+- Live glitch (14:38–14:40): his display dropped mid-chart; he recovered with "the charm of doing things live".
+- Why it matters: MAUI 11 is a runtime change plus a long list of small fixes people asked for for years.
+- Source: 14:32–14:51 ET, transcripts 20261110-143201.txt, 20261110-143405.txt, 20261110-144003.txt, 20261110-144600.txt, 20261110-144802.txt, 20261110-145004.txt; shot /shots/143420.jpg
 -->
 
 ---
@@ -1608,10 +1667,16 @@ layout: "statement"
 Mono → CoreCLR: "you won't really see, but you will feel."
 
 <!--
+- Say: In .NET 11, every MAUI app runs on CoreCLR instead of Mono. You will not see it in the UI, but you will feel it in speed and tooling.
 - Gerald Versluis, 14:37 ET: "the biggest change to .NET MAUI"
+- Full quote: "the biggest change to .NET MAUI, which unfortunately you won't really see, but you will feel"
 - Same runtime as ASP.NET Core and Azure on every MAUI platform
+- Platforms (14:37): Android, iOS, Mac Catalyst, Windows all run on CoreCLR with .NET 11.
+- Tooling (14:41–14:42): tools like the profiler needed extra work to support Mono; on CoreCLR MAUI gets those tooling improvements, and all .NET 11 performance work "will now automatically be available for .NET MAUI".
 - Demo app: David Ortinau's Barista Notes (screenshot /shots/143737.jpg)
 - Avalonia backend is now an option in the .NET MAUI templates for .NET 11
+- Why it matters: one runtime means one set of perf gains and one set of diagnostics tools across all your .NET apps.
+- Source: 14:36–14:42 ET, transcripts 20261110-143602.txt, 20261110-144003.txt, 20261110-144200.txt; shot /shots/143737.jpg
 -->
 
 ---
@@ -1623,6 +1688,7 @@ time: "14:41"
 # MAUI on Android, NativeAOT: 974 → 280 ms median startup
 
 <!--
+- Say: On a Pixel 5, NativeAOT cut MAUI's median cold start from about 974 ms to 280 ms. Android NativeAOT is still experimental.
 - BaristaNotes, Pixel 5, Android 14, .NET 11 RC2, 30 launches per cell
 - MAUI median cold start: Full R2R 973.5 ms → NativeAOT 280 ms (C# Android Views: 181 ms)
 - Caveat on the chart: MAUI NativeAOT p90 is still 908 ms
@@ -1630,6 +1696,10 @@ time: "14:41"
 - "Android NativeAOT is experimental" (chart footnote)
 - Numbers from the chart only; not spoken in the transcript
 - iOS (iPhone 15 Pro, /shots/144228.jpg): MAUI median 490.3 → 321.8 ms with NativeAOT (C# UIKit 185.9); package 58.86 → 42.01 MiB
+- Why RC2 (14:37): "GA is rolling out while we speak"; Gerald expects GA numbers to be very close.
+- Gerald (14:38): MAUI will always be a bit slower than the platform bindings directly: "It's just a thin layer on top."
+- Why it matters: startup time is the first thing mobile users feel; NativeAOT is the lever to try.
+- Source: 14:37–14:42 ET, transcripts 20261110-143602.txt, 20261110-143800.txt; shots /shots/144153.jpg, /shots/144228.jpg
 -->
 
 ---
@@ -1639,9 +1709,15 @@ layout: "statement"
 XAML source generation on by default: Debug behaves like Release.
 
 <!--
+- Say: In .NET 11, MAUI turns XAML into C# at build time by default. Your Debug build now behaves like your Release build.
 - 14:42 ET. XAML compiles to C# at build time with source generators
+- Before: XAML compilation produced IL, "already better than interpreting at runtime". Now source generators produce C# you can read.
 - No more "trimmed from the release build and boom, your app blows up in production"
+- Gerald (14:43): faster, "no XAML parsing at runtime"; build errors "you can understand"; you can set breakpoints in the generated code.
+- Also (14:44): implicit XAML namespaces cut page ceremony to one line. "I love my XAML but there's one thing that I love more than XAML: it's less XAML." (light cleanup)
 - Already listed on the keynote MAUI slide; this is the "why"
+- Why it matters: fewer "works in Debug, crashes in Release" bugs, and you can debug XAML like normal C#.
+- Source: 14:42–14:44 ET, transcripts 20261110-144200.txt, 20261110-144403.txt
 -->
 
 ---
@@ -1666,9 +1742,15 @@ codeSize: "20"
 ```
 
 <!--
+- Say: MAUI 11 lets you write small C# expressions right inside XAML bindings, so most value converters go away.
+- Code, in plain words: before, flipping a bool needed a converter class, a resource, and a long binding. In .NET 11 you write {!IsBusy}. The last four lines show other forms: string interpolation, math, null fallback, and boolean logic.
 - 14:45 ET. Inline C# replaces most value converters
 - Before also needed a whole InverseBoolConverter : IValueConverter class (Convert + ConvertBack)
+- Gerald (14:45): "Every project basically has this." Now: "is enabled, curly braces, not is busy, boom, that's everything that you need to do." (transcribed speech, light cleanup)
+- Also possible (14:45): string interpolation, simple math, and a click handler inline.
 - Code copied from the stream slide /shots/144523.jpg
+- Why it matters: less boilerplate per page, and one less class to test for every trivial conversion.
+- Source: 14:44–14:46 ET, transcripts 20261110-144403.txt, 20261110-144600.txt; shot /shots/144523.jpg
 -->
 
 ---
@@ -1680,11 +1762,16 @@ time: "14:53"
 # .NET MAUI Inspector: see inside your running app
 
 <!--
+- Say: The MAUI Inspector shows the live visual tree of a running app, lets you edit properties live, and Copilot can drive it through MCP.
 - Live visual tree, properties, screenshot; record, replay and assert UI flows
 - Copilot drives the same session through MCP tools
 - Runs in VS Code, the GitHub Copilot app, Copilot CLI, any browser
 - Part of MAUI Labs: github.com/dotnet/maui-labs
+- Gerald (14:52): click a node to highlight it on screen, and the other way around; a live property editor changes values "without having to stop and kind of like restart".
 - Also (14:52): incremental XAML Hot Reload keeps state (no lost navigation stack or values), via dotnet watch
+- Hot reload detail: works with dotnet watch now, "also coming to Visual Studio and Visual Studio Code".
+- Why it matters: a faster inner loop for you, and a way for agents to see and test the real UI.
+- Source: 14:52–14:54 ET, transcript 20261110-145201.txt; shot /shots/145306.jpg
 -->
 
 ---
@@ -1696,11 +1783,16 @@ time: "14:54"
 # MAUI Labs: 10+ experiments to try
 
 <!--
+- Say: MAUI Labs is where the team ships experiments fast: a CLI, DevFlow for agent testing, on-device AI, and new Linux and WPF backends.
 - github.com/dotnet/maui-labs. "Who knows, some might graduate."
 - DevFlow: like Playwright, for MAUI apps and agents
+- DevFlow detail (14:55): agents used to take simulator screenshots and guess click coordinates. DevFlow puts a small agent inside your app, so it can read the visual tree, click a button, or read an entry's value.
 - MAUI CLI, Essentials.AI (on-device chat + embeddings), `maui ai init` (skills + MCP)
+- MAUI CLI (14:57): set up and check your environment ("MAUI doctor"), drive emulators, JSON output that agents can read. Also "a couple of dozens" of agent skills.
 - New backends: Linux (GTK) and WPF
 - `dotnet new mauitest` for device tests
+- Why it matters: agents can now build, run, and verify MAUI apps without guessing from screenshots.
+- Source: 14:53–14:57 ET, transcripts 20261110-145201.txt, 20261110-145405.txt, 20261110-145602.txt; shot /shots/145430.jpg
 -->
 
 ---
@@ -1712,12 +1804,18 @@ time: "14:57"
 # Heads up: MAUI 10 support ends May 2027
 
 <!--
+- Say: MAUI support is not the same as .NET support. Each MAUI version gets 18 months, so MAUI 10 ends May 2027 even though .NET 10 is LTS.
 - Each MAUI version is patched for 18 months: support ends 6 months after the next major ships
 - MAUI 10 → May 2027, even though .NET 10 itself is LTS. MAUI 11 → May 2028 (assumes .NET 12 ships Nov 2027)
 - aka.ms/maui-support-policy
 - Also (14:56): Essentials.AI uses on-device models (Apple Intelligence, Gemini Nano)
+- Why (14:58): MAUI builds "on top of third-party tools that have different support timelines".
+- Gerald (14:57): people told him their manager won't allow STS versions: "well, have I got good news for you, you need to update." (light cleanup)
 - Gerald (14:58): "Every .NET MAUI version has 18 months, period. So get on .NET 11 right now."
 - Q&A "best IDE for MAUI?" → "What's an IDE?" Team "has not been in an IDE for a while", building toward the CLI
+- Q&A detail (14:59): the team works mostly in the GitHub Copilot app; Gerald uses VS Code on a Mac; Visual Studio is fine too.
+- Why it matters: if you ship MAUI on .NET 10, plan the .NET 11 upgrade before May 2027.
+- Source: 14:56–15:00 ET, transcripts 20261110-145602.txt, 20261110-145800.txt; shot /shots/145752.jpg
 -->
 
 ---
@@ -1731,6 +1829,13 @@ speakers: "Drew Noakes, Emanuel Fernandez Dell'Oca"
 
 <!--
 [Session 8] Keynote already has the Dev Kit 11 numbers slide (77% / 80% / 36s → 2s); add only new details here.
+- Say: Three people from the Dev Kit team explain how one unhappy team with many agents led to a rewrite of C# Dev Kit.
+- Time: 3:00 PM ET slot (started ~15:01). On stage: Drew (Noakes), Jake (not on the agenda; last name not given on stream), Emanuel (Fernandez Dell'Oca).
+- Drew (15:01): "it's not really an incremental update. We've rewritten almost all of it. It's a completely new architecture, a completely new approach."
+- Drew: the ideas are "more broadly applicable than even in just C# IDE"; they help when you run many copies of tools at once with agents.
+- Coming up: the "VS Code is terrible" origin story · .lscache · Roslyn/Orleans/Aspire load times · BuildX · MSBuild Coordinator · `dotnet buildx` on OrchardCore · the 20–40% agent-loop stat.
+- Why it matters: the fixes start in Dev Kit but move into Roslyn, MSBuild, and the SDK, so every .NET tool gets them.
+- Source: 15:00–15:03 ET, transcripts 20261110-150002.txt, 20261110-150204.txt
 -->
 
 ---
@@ -1740,11 +1845,16 @@ layout: "statement"
 "VS Code is terrible." It was 15 agents and hundreds of MSBuild workers.
 
 <!--
+- Say: A team said VS Code was terrible. The real cause: up to 15 agents, each kicking off builds, ate all the memory on the machine.
 - 15:03 ET. Dev Kit 11 origin story
 - An internal team kept saying VS Code + C# Dev Kit "were terrible"; their VP escalated; "crashing on their machine"
+- Timeline (15:02): "about nine months ago". Dumps and the usual diagnosis found nothing, so Jake went to sit with the team.
 - Reality: "5, 10, 15" agents solving GitHub issues on Macs with 256 GB RAM, and "hundreds and hundreds of MSBuild workers"
+- Jake (15:04): "there was no resources available on their machine to do VS Code, to do Teams, to do Chrome, to do anything". Later (15:10): "their screen was completely locking up".
 - Why Dev Kit 11 was re-architected for many agents on one machine
 - The fix (15:04): a build queue that runs the agents' builds serially. Build throughput for all agents went UP — "the oversaturation of build nodes was actually hindering throughput."
+- Why it matters: with agents, your tools run many times in parallel; tool overhead becomes the bottleneck.
+- Source: 15:02–15:05 ET, transcripts 20261110-150204.txt, 20261110-150401.txt, 20261110-151002.txt
 -->
 
 ---
@@ -1754,11 +1864,17 @@ layout: "statement"
 The trick: cache the build's project info. `.lscache`.
 
 <!--
+- Say: Builds already compute everything an IDE needs to know about a project. Dev Kit 11 saves that to a cache file and reads it back in milliseconds.
 - 15:06 ET. The build's pre-compile step (evaluate + resolve inputs, globs, disk scans) is written to a .lscache file
+- What is in that step (15:06): find source files from globs, resolve package references (and which target), language version, target frameworks.
 - "Not really that revolutionary to write a cache file to disk"
+- Cheap to write: "we've got all that information during the build anyway."
 - Reading it: "a few milliseconds". Asking MSBuild: "hundreds, maybe thousands of milliseconds"
+- Who needs it: the IDE (Roslyn language services, IntelliSense), dotnet watch, dotnet test. Jake (15:08): one build "can be dozens of things", scaling with project count, and tools were not sharing.
 - (My inference, not stated on stream: likely a big part of the keynote's ~77% faster workspace load)
 - Next (15:16): reading/writing .lscache lives in the Roslyn repo (open source) and is going into the SDK, so "every build is capable of writing these files" and all tools benefit. "From a faster Dev Kit to a faster development loop."
+- Why it matters: one build can feed the IDE, tests, and agents, instead of each tool asking MSBuild again.
+- Source: 15:06–15:17 ET, transcripts 20261110-150603.txt, 20261110-150800.txt, 20261110-151605.txt
 -->
 
 ---
@@ -1770,13 +1886,18 @@ time: "15:09"
 # Opening the Roslyn repo: 89 s → 16 s
 
 <!--
+- Say: Opening the Roslyn repo in VS Code went from 89 seconds to 16. Orleans and Aspire show the same drop, about 77%.
 - Dev Kit v3 → v11, warm load, lower is better
 - dotnet/roslyn (398 projects): 89.0 → 15.9 s
 - dotnet/orleans (155 projects): 62.0 → 17.1 s
 - microsoft/aspire (407 projects): 87.9 → 19.9 s
 - ~77% faster. Intel Xeon Platinum 8370C, 8 cores, Windows 11 x64
 - Numbers from the stream chart
+- Drew (15:09): the difference between "making a cup of tea or checking your email" and "just getting straight on with your work". Smaller solutions "will feel much closer to instant".
 - Memory (15:10): "80% less memory ... you can fit five C# Dev Kits in the space of one from before"
+- Drew (15:10): "one human and four agents on your machine, you're now using roughly the same resources" as one user before.
+- Why it matters: big solutions open fast enough to jump between an agent session and the editor.
+- Source: 15:08–15:11 ET, transcripts 20261110-150800.txt, 20261110-151002.txt; shot /shots/150930.jpg
 -->
 
 ---
@@ -1788,12 +1909,18 @@ time: "15:11"
 # BuildX: skip, copy, or build
 
 <!--
+- Say: BuildX is a new incremental build in Dev Kit 11. It builds only what changed, skips the rest, and copies outputs without full MSBuild work.
 - New build integration in Dev Kit 11
+- In Dev Kit today; the team wants to bring it to the command line and other places (15:10).
 - Implementation-only edit, public API unchanged: build only H, skip unchanged projects, copy outputs where needed
+- How (15:12): the per-project "does this need a build?" check takes "a couple of milliseconds"; file copies happen "without having to invoke any of the machinery of MSBuild".
 - Confirmed (15:12): BuildX is behind the keynote number. Aspire.slnx, 407 projects: single change 36.1 → 2.1 s (−94%), median of 5
 - No-op build: 34.4 → 0.9 s (−97%); the old 34.4 s was "almost entirely overhead"
 - Alt chart slide: /shots/151239.jpg
 - Demo (15:14): the agent's build already wrote the cache files, so VS Code opens with tests discovered and IntelliSense ready; the test re-run uses BuildX; ".lscaches are also shared across worktrees"
+- Demo setup (15:13): Emanuel started in the GitHub Copilot app on the dotnet/eShop repo.
+- Why it matters: most of a typical incremental build is overhead; BuildX removes it.
+- Source: 15:10–15:16 ET, transcripts 20261110-151002.txt, 20261110-151204.txt, 20261110-151401.txt; shots /shots/151107.jpg, /shots/151239.jpg, /shots/151344.jpg
 -->
 
 ---
@@ -1805,13 +1932,18 @@ time: "15:18"
 # MSBuild Coordinator: one build budget per machine
 
 <!--
+- Say: Even lighter builds still fight for CPU when many agents run. The MSBuild Coordinator gives the whole machine one shared node budget.
 - 5, 10, 20 agent builds each asking for N nodes = more than the machine has
 - Coordinator: a shared node budget; some builds run, the rest queue
 - "Cheaper instances help. Growing concurrency still needs a budget."
 - Opt-in, not default; participating builds only
+- Credits (15:18 + slide footer "Dustin & Ema"): implemented by Dustin (Campbell, from the 12:00 PM C# session with Mads); Emanuel is improving it.
 - This is the product version of the origin story's build queue
 - Also (15:20): "we want to prioritize the human" — the coordinator decides which builds go first. If an agent's build already produced the .lscache, the IDE can skip its own "design-time build".
+- Priority idea (15:19–15:20): if you are in VS Code, "you probably care about that build over others"; the team could infer focus from "what app you're looking at". Still work in progress.
 - BuildX CLI demo on OrchardCore follows
+- Why it matters: agent builds should not freeze the machine you are typing on.
+- Source: 15:18–15:21 ET, transcripts 20261110-151801.txt, 20261110-152004.txt; shot /shots/151821.jpg
 -->
 
 ---
@@ -1830,12 +1962,18 @@ buildx: done in 13378 ms: 2 built, 201 accelerated (612 files copied), 12 skippe
 ```
 
 <!--
+- Say: From the command line, buildx confirmed 215 projects up to date in under half a second. After a core change, it built 2 projects and copied outputs for 201.
+- Output, in plain words: first run, nothing changed, so buildx checks all 215 projects and stops in 388 ms. Second run, after an edit to a core abstractions project: it compiles only 2 projects, copies outputs to 201 dependents ("accelerated"), and skips 12.
 - 15:22 ET. No-op build of 215 projects: 388 ms
 - One change in a core project: 2 projects built, 201 "accelerated" (outputs copied), 12 skipped
+- Demo (15:22): the dependents "were not built"; "we copy the binaries that abstractions produced" to them.
 - Caveat: that 13.4 s run included a NuGet restore and starting the buildx server
 - Q&A (15:28): buildx sits next to `dotnet build`, like `docker buildx` next to `docker build`. Starts as a separate tool, being moved into the SDK; "I do have a dream that it replaces it."
+- On the "X" (15:28): "Could mean experimental, could mean extended" — "a playground for us to do new stuff".
 - Output copied from the stream terminal (/shots/152232.jpg); a line with a local user path left out
 - Exploring, not committed (15:24): agents are trained on `dotnet build` / `dotnet test`, so if an agent is detected those commands could use the faster paths. Optimizations that might surprise a human are fine for an agent if a log message says "this optimization has been applied" — the agent will read the docs.
+- Why it matters: a change deep in the graph no longer means recompiling every dependent project.
+- Source: 15:20–15:30 ET, transcripts 20261110-152004.txt, 20261110-152202.txt, 20261110-152404.txt, 20261110-152803.txt; shot /shots/152232.jpg
 -->
 
 ---
@@ -1845,9 +1983,16 @@ layout: "statement"
 20–40% of your agent loop is running .NET tools.
 
 <!--
+- Say: The team says 20 to 40 percent of an agent's loop is spent waiting on .NET tools. Shrink that, and the agent spends more time on the actual work.
 - 15:26 ET: "in your agent loop, 20 to 40% of that time is actually running .NET tools"
 - Ideas to shrink it: infer which tests actually need to run; get errors from a background LSP instead of a build
+- Why rules alone fail (15:26): repo instructions for agents are "one compact away"; then the agent goes back to plain build and test. So the tools should take the agent's intent and do it the cheaper way.
+- Side benefit (15:26): "Saving your battery life if you're working on a laptop."
 - Worktrees: "Don't make the next person start over." A new worktree reuses the project data (and maybe binaries) an agent's build already wrote. Broader reuse is "direction", not shipped (/shots/152736.jpg)
+- Scale (15:28): worktree creation now happens "dozens, potentially hundreds of times a day".
+- Also floated (15:30): a "TestX" that builds with BuildX and maybe optimizes test discovery. Idea only.
+- Why it matters: faster tools mean faster agent iterations and less waiting for you.
+- Source: 15:26–15:31 ET, transcripts 20261110-152601.txt, 20261110-152803.txt, 20261110-153000.txt; shot /shots/152736.jpg
 -->
 
 ---
@@ -1861,6 +2006,13 @@ speakers: "Chet Husk"
 
 <!--
 [Session 9] Keynote already has the `-mt` slide (−37% warm incremental on OrchardCore); add only new details.
+- Say: Chet Husk explains -mt: MSBuild runs its workers as threads in one process instead of many processes, and that makes builds faster.
+- Time: 3:30 PM ET slot (Chet started ~15:31). Speaker: Chet Husk. Host intro: "Chatty Chet", his third appearance of the day.
+- Goal (15:31): faster builds on "your machine, your CI machine, your agent's context" "while not sacrificing correctness or the extensibility".
+- Test project (15:32): OrchardCore, about 100 projects, each with at least two target frameworks: "actually more like 300 configurations" for MSBuild (15:36).
+- Coming up: the warm and cold numbers · the 11.0.200 default target and how -mt works · the shared current-directory problem · a task code sample, analyzer, and migration plugin.
+- Why it matters: one flag, no code changes for most builds, and it is aimed to be the default soon.
+- Source: 15:30–15:37 ET, transcripts 20261110-153000.txt, 20261110-153202.txt, 20261110-153601.txt; shot /shots/153105.jpg
 -->
 
 ---
@@ -1872,11 +2024,16 @@ time: "15:33"
 # `-mt` warm incremental: −68% on Windows, −13% on Linux
 
 <!--
+- Say: On a no-change OrchardCore rebuild, -mt cut Windows build time by 68%. Linux gained 13%, because its normal build is already faster.
 - OrchardCore warm incremental. Windows 54.58 → 17.36 s (−68.2%). Linux 25.47 → 22.13 s (−13.1%)
 - Cold build (per notes agent, not on this chart): −23.5% Windows, −11.9% Linux
+- Verified on the separate cold-build chart /shots/153242.jpg: Windows 116.05 → 88.74 s (−23.5%), Linux 96.15 → 84.74 s (−11.9%). Chet: "no other changes in .NET 11 aside from adding the -mt flag".
+- Chet (15:33): warm incremental is "the truest representation of the overhead ... of the MSBuild engine". Unlike BuildX, "we're not skipping any work here."
 - DIFFERENT from the keynote's −37% (28.4 → 17.9 s, "ASP.NET's shared hardware, 100 projects"). The −mt time is about the same (~17-18 s); the "Normal" baseline differs. Don't quote both as the same measurement.
 - Windows gains much more than Linux: Linux's normal build is already faster
 - More to come (15:52): many OrchardCore projects are web projects that pack during build; "entire swaths of the build that we have not yet enlightened and we're already seeing these numbers"
+- Why it matters: the biggest win is the inner loop you run all day, not only CI.
+- Source: 15:32–15:34 ET, transcripts 20261110-153202.txt, 20261110-153404.txt, 20261110-155200.txt; shots /shots/153347.jpg, /shots/153242.jpg
 -->
 
 ---
@@ -1886,6 +2043,7 @@ layout: "statement"
 Target: `-mt` on by default in SDK 11.0.200 — this winter.
 
 <!--
+- Say: The MSBuild team is targeting -mt as the default in SDK 11.0.200 this winter. You can turn it on today with the -mt flag.
 - 15:34 ET: "We are targeting making this behavior the default in 11.0.200. So this winter's build of .NET 11." (Targeting, not promised.)
 - Console and library builds are already "enlightened" (multithread-compatible); next: pack, publish, web apps
 - Why faster: less duplicated engine work, fewer task handoffs, reusable server state
@@ -1894,6 +2052,12 @@ Target: `-mt` on by default in SDK 11.0.200 — this winter.
 - Pattern: narrow agent inner loops + long exhaustive validation in CI; -mt helps both
 - How (15:40): "each of the worker nodes is just a thread instead of an entire process." In-process messages replace IPC; runtime and task assemblies load and JIT once.
 - The catch: "Tasks today get to pretend like they are in completely separate processes that they own" (process state). Custom tasks need changes — see next slide.
+- Compatibility (Q&A, 15:58): "you should just be able to turn multi-threaded on for the vast majority of builds." Some .NET Framework MSBuild features do not work with -mt, but "we do bail out with a nice message".
+- Side win (15:52): an IPC fix for binlog messages, coming in the winter release, also speeds up normal (non -mt) MSBuild for some projects.
+- Slow builds (Q&A, 15:58): "it's often not a single task that makes your build slow. It's something about the layout of your build" and how interconnected the projects are
+- Profile it (16:00): get binlogs with `-bl` on any build command; open them in Kirill Osenkov's Structured Log Viewer or the binlog MCP the tooling team shipped in VS Code ("I believe"). Factor out bottleneck projects for more parallelism.
+- Why it matters: try -mt now on your repo so problems surface before it becomes the default.
+- Source: 15:34–15:59 ET, transcripts 20261110-153404.txt, 20261110-154003.txt, 20261110-155200.txt, 20261110-155403.txt, 20261110-155802.txt
 -->
 
 ---
@@ -1905,10 +2069,17 @@ time: "15:43"
 # Task authors: resolve paths against `TaskEnvironment`
 
 <!--
+- Say: In -mt, all projects share one process, so they share one current directory. Tasks must resolve paths through TaskEnvironment, not the process.
 - "One process. One current directory." Under -mt, two projects share one process CWD
 - Speaker's "favorite example": Environment.CurrentDirectory — a relative "input.txt" can resolve to the wrong project
+- Chet (15:42): change it once and "it changes it for all threads"; "poking at that process level state is one of the cardinal sins of any multi-threaded system".
 - Fix: resolve paths against TaskEnvironment, not the process
+- TaskEnvironment is the "state bundle, a context object" (15:42) that gives a task safe access to paths, environment variables, and process start.
 - Compatibility (15:44): tasks marked MSBuildMultiThreadableTask run in-process. Unmarked tasks still work — they run in a short-lived "sidecar" TaskHost process with isolated process state. So old tasks keep working. (My inference: they won't get the in-process speedup.)
+- Chet (15:45) on sidecars: "there is still some startup cost for builds that don't use only enlightened tasks"; the TaskHost is destroyed at the end of the build.
+- Q&A (15:59): a common hurdle is tasks that do their own file I/O, for example asking for the temp path directly; that may not work consistently in -mt.
+- Why it matters: if you ship custom MSBuild tasks, this is the change that keeps them correct and fast under -mt.
+- Source: 15:41–15:59 ET, transcripts 20261110-154003.txt, 20261110-154200.txt, 20261110-154402.txt, 20261110-155802.txt; shot /shots/154300.jpg
 -->
 
 ---
@@ -1936,13 +2107,20 @@ codeSize: "19"
 ```
 
 <!--
+- Say: Two changes make a task -mt ready: mark it as multithreadable, and resolve file paths through TaskEnvironment. The task's inputs and outputs stay the same.
+- Code, in plain words: before, a plain Task reads SourceFile as-is, so a relative path resolves against the shared process directory. After, the class has the attribute and IMultiThreadableTask, gets a TaskEnvironment property, and turns SourceFile into an absolute path before it reads the file.
 - 15:47 ET. Inputs/outputs stay the same
 - 1) Add the marker attribute + interface. 2) Resolve relative paths through TaskEnvironment
+- Chet (15:46) on the attribute: "We never do this implicitly. It has to be an explicit author decision." If the task does nothing fancy, the attribute alone can be enough; the interface is for paths, environment variables, and process start.
 - Even simpler (15:48, "freshest" MSBuild bits): typed binding, e.g. ITaskItem<FileInfo>, so the engine resolves the path and the task code shrinks — "a more declarative path" for task authors
+- Typed binding supports FileInfo, DirectoryInfo, and an MSBuild AbsolutePath type (15:49).
 - Analyzer (15:50): Microsoft.Build.TaskAuthoring.Analyzer, ~12 Roslyn rules (some -mt specific); fixers planned. On stream: PackageReference version 18.13.0, PrivateAssets="all"; .editorconfig `msbuild_task_analyzer.run_mt_analyzers_on_all_tasks = true`
+- What the analyzer flags (15:50): starting processes yourself, manual file I/O, file path traversals; it points you to the safe versions.
 - The MSBuild repo also has an agent plugin the team uses to migrate the SDK's built-in tasks: dotnet/msbuild → plugins/mt-migration. Sample prompt on stream: "Migrate CountFileLines for MT execution. Trace helpers. Preserve outputs and error behavior. Run the analyzer and test distinct project environments."
 - Links (15:56): learn.microsoft.com/visualstudio/msbuild/update-task-multithreaded · nuget.org/packages/Microsoft.Build.TaskAuthoring.Analyzer · github.com/dotnet/msbuild/tree/main/plugins/mt-migration · aka.ms/msbuild/performance-dashboard (PerfStar)
 - Code copied from the stream slide (/shots/154714.jpg)
+- Why it matters: enlightened tasks run in-process and fast; every task you migrate removes a sidecar process from the build.
+- Source: 15:45–15:57 ET, transcripts 20261110-154402.txt, 20261110-154604.txt, 20261110-154801.txt, 20261110-155003.txt, 20261110-155605.txt; shot /shots/154714.jpg
 -->
 
 ---

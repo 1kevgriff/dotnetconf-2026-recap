@@ -472,6 +472,43 @@ time: "11:52"
 -->
 
 ---
+layout: "section"
+kicker: "Keynote close"
+---
+
+# 4 days. 60+ sessions.
+
+<!--
+[Kathy Sullivan, Maddy Montaquila] 11:54 ET.
+- Ask the team live: dotnetconfquestions.com
+-->
+
+---
+layout: "shot"
+image: "/shots/115537.jpg"
+time: "11:55"
+---
+
+# Microsoft builds with .NET too
+
+<!--
+- Copilot, Teams, Bing, Xbox, Azure, Exchange Online, Windows 365, Intune
+- aka.ms/dotnet-developer-stories
+-->
+
+---
+layout: "shot"
+image: "/shots/115635.jpg"
+time: "11:56"
+---
+
+# Download .NET 11: get.dot.net
+
+<!--
+- winget and other installers "soon"
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

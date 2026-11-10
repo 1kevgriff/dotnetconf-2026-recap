@@ -2360,7 +2360,22 @@ time: "16:36"
 - Dependencies (16:40): "you need to keep an eye on your dependencies." Dependabot and other scanners "all depend on the vulnerability being described" properly, so "every now and again you should probably manually sweep all your dependencies and take a look at some of the descriptions"
 - MSQuic RCE: scored 9.8, "very high", but "not so much for .NET": Windows embeds its own copy in the kernel; .NET embeds a separate copy "only for .NET uses". Same bug, different real risk.
 - Why it matters: set limits on loops, input sizes and allocations in your own code — that's where most issues were.
-- Source: 16:36 ET, transcript 20261110-163600, /shots/163615.jpg
+- Source: 16:36–16:41 ET, transcripts 20261110-163600, 20261110-163803, 20261110-164004, /shots/163615.jpg
+-->
+
+---
+layout: "statement"
+---
+
+Add a guard? Apply it everywhere. Parse once. Check your complexity.
+
+<!--
+- Say: Two real .NET CVEs from this year, two lessons you can use in your own code.
+- CVE-2026-32203 (System.Security.Cryptography.Xml DoS): EncryptedXml.DecryptEncryptedKey() recursed on inner keys through a path that didn't increment or check the existing depth counter → unbounded recursion → StackOverflowException kills the process. Takeaway on stream: "When you add a guard make sure it applies everywhere."
+- XML in general: "Encrypted XML in particular has proved great for" unbounded recursions and stack overflows
+- CVE-2026-84008 (System.Security.Cryptography.Pkcs DoS): SignedCms rebuilt and reparsed every embedded certificate once per signer, "no trust required". "A 117kb message caused 160,000 certificate constructions. Fix was to parse a certificate once. Check your algorithm complexity." ("Billion laughs attacks are everywhere.")
+- Why it matters: most of this year's CVEs were DoS — guards that miss one code path and quadratic work on untrusted input are the pattern.
+- Source: 16:42–16:46 ET, transcripts 20261110-164202, 20261110-164404, /shots/164332.jpg, /shots/164514.jpg
 -->
 
 ---

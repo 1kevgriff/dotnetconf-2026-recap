@@ -1339,6 +1339,19 @@ time: "14:57"
 -->
 
 ---
+layout: "session"
+num: 8
+time: "3:00 PM"
+speakers: "Drew Noakes, Emanuel Fernandez Dell'Oca"
+---
+
+# C# Dev Kit 11: Faster Foundations for .NET Development — and What Comes Next
+
+<!--
+[Session 8] Keynote already has the Dev Kit 11 numbers slide (77% / 80% / 36s → 2s); add only new details here.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

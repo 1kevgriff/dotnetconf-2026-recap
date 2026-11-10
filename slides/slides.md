@@ -1081,6 +1081,8 @@ time: "14:05"
 - 1 Bring the paper → 2 Read it → 3 Draft with an agent (typed, cited scenes) → 4 A person fixes and saves → 5 Produce (voice, cover, motion, film)
 - AI "goes beyond chat"
 - Demo (14:07): ask for a video "for beginners"; storyboard appears "after a few seconds"; side pane is an event log, "not quite a chat history"
+- 14:09: AG-UI + Blazor AI Components. "Scene two is too abstract, make it simpler" → agent updates the storyboard live
+- Final video shown was pre-made ("Prepared from the same project you just watched"), not rendered live
 -->
 
 ---

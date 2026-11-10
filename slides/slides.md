@@ -1290,6 +1290,22 @@ codeSize: "20"
 -->
 
 ---
+layout: "shot"
+image: "/shots/145306.jpg"
+time: "14:53"
+---
+
+# .NET MAUI Inspector: see inside your running app
+
+<!--
+- Live visual tree, properties, screenshot; record, replay and assert UI flows
+- Copilot drives the same session through MCP tools
+- Runs in VS Code, the GitHub Copilot app, Copilot CLI, any browser
+- Part of MAUI Labs: github.com/dotnet/maui-labs
+- Also (14:52): incremental XAML Hot Reload keeps state (no lost navigation stack or values), via dotnet watch
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

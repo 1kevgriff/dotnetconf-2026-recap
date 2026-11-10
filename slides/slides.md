@@ -2943,6 +2943,21 @@ var dotnet12 = unsafe(CodeHasASafetyContract());
 -->
 
 ---
+layout: "statement"
+---
+
+"~70% of the vulnerabilities Microsoft assigns a CVE each year continue to be memory safety issues."
+
+<!--
+- Say: That's why memory safety v2 exists. Set the rules version to 2 and turn off unsafe blocks, and no unsafe code gets in — whether a person or an AI agent writes it.
+- Quote on the stream slide, attributed to Microsoft (18:46). Rich Lander: "Microsoft made this statement a few years ago that 70% of vulnerabilities are caused by memory safety issues."
+- With MemorySafetyRulesVersion 2 (and AllowUnsafeBlocks false), "or AI agents are writing code for you" — the rules apply either way
+- Frame /shots/184708.jpg not added to the repo (bottom-left footer looks like the confidential label).
+- Why it matters: in the agent era, a compiler-enforced "no unsafe" rule is a guardrail you don't have to remember.
+- Source: 18:46–18:48 ET, transcript 20261110-184603
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

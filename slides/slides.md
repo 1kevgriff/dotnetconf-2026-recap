@@ -1086,6 +1086,21 @@ time: "14:05"
 -->
 
 ---
+layout: "shot"
+image: "/shots/141130.jpg"
+time: "14:11"
+---
+
+# The .NET AI stack: each contract does one job
+
+<!--
+- Pink = new: AgentBoundary (hosts an agent in a Blazor page), AG-UI, DocumentExtractionClient, RoutingChatClient (picks the model per request), Decisions API (typed answer with probabilities)
+- Existing: IChatClient, AIAgent, AIFunction, ITextToSpeechClient, IRealtimeClient, IImageGenerator
+- Demo mixed cloud (OpenAI, Anthropic Claude, Mistral OCR, GitHub Copilot SDK) and local (PdfPig, Kokoro, Whisper.net, ONNX) providers in one app
+- Shared: Microsoft.Extensions.AI, Microsoft.Extensions.DataIngestion
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

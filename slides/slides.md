@@ -849,6 +849,8 @@ time: "13:02"
 - "Billions and billions of commands" run on the CLI every month
 - Compounds (13:05 chart): 3-command SDK check 374 → 118 ms (−69%); tool list + run 297 → 110 ms (−63%)
 - AOT now covers core diagnostics, solution commands, most tool management
+- Next: build commands, tool install/restore, dotnet new
+- Twist: the CLI is a Native AOT library; `dotnet` itself is the native muxer
 -->
 
 ---

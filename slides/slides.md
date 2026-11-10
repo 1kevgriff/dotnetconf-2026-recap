@@ -672,6 +672,32 @@ layout: "statement"
 -->
 
 ---
+layout: "session"
+num: 3
+time: "12:30 PM"
+speakers: "Daniel Roth"
+---
+
+# Modern web development with ASP.NET Core & Blazor in .NET 11
+
+<!--
+[Session 3]
+-->
+
+---
+layout: "shot"
+image: "/shots/123125.jpg"
+time: "12:31"
+---
+
+# MSN feeds on .NET 10: 29% lower P95 GC pauses
+
+<!--
+- Tens of billions of monthly page views. MSN, Edge, Windows feeds.
+- .NET 8 → 10: 29% lower P95 GC pauses, 11% lower async plugin latency, 20% shorter thread-pool queues
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -1393,6 +1393,21 @@ time: "15:09"
 - microsoft/aspire (407 projects): 87.9 → 19.9 s
 - ~77% faster. Intel Xeon Platinum 8370C, 8 cores, Windows 11 x64
 - Numbers from the stream chart
+- Memory (15:10): "80% less memory ... you can fit five C# Dev Kits in the space of one from before"
+-->
+
+---
+layout: "shot"
+image: "/shots/151107.jpg"
+time: "15:11"
+---
+
+# BuildX: skip, copy, or build
+
+<!--
+- New build integration in Dev Kit 11
+- Implementation-only edit, public API unchanged: build only H, skip unchanged projects, copy outputs where needed
+- (Likely what's behind the keynote's 36 s → 2 s incremental build; not stated directly here)
 -->
 
 ---

@@ -4,6 +4,7 @@ title: .NET Conf 2026 Recap
 info: |
   ## .NET Conf 2026 Recap
   Kevin Griffin - Microsoft MVP
+  Day 1 highlights, captured live from the stream.
 author: Kevin Griffin
 class: text-left
 lineNumbers: false
@@ -22,7 +23,7 @@ image: "/cast-kevin.jpg"
 
 # .NET Conf 2026 Recap
 
-- What shipped in .NET 11
+- Day 1 highlights
 - Kevin Griffin
 - Microsoft MVP
 
@@ -50,39 +51,184 @@ image: "/kevin-griffin.png"
 
 ---
 layout: "section"
-kicker: "Part 1"
+kicker: "Keynote"
 ---
 
-# The big picture
+# .NET 11 ships
 
 <!--
-[Part 1]
+[Keynote] Scott Hanselman, Damian Edwards, Chet Husk, Daniel Roth.
 -->
 
 ---
-layout: "statement"
+layout: "shot"
+image: "/shots/110905.jpg"
+time: "11:09"
 ---
 
-TODO: the one-line takeaway
+# .NET 11 is GA
 
 <!--
-[statement]
+- Released today. get.dot.net
+- Damian Edwards: "five eras, one platform" (Windows, Web, Mobile, Cloud, AI)
 -->
 
 ---
-layout: "default"
+layout: "shot"
+image: "/shots/110459.jpg"
+time: "11:04"
 ---
 
-# A feature worth showing
-
-```csharp
-var app = WebApplication.CreateBuilder(args).Build();
-app.MapGet("/", () => "Hello .NET Conf 2026");
-app.Run();
-```
+# 2002 homework OS, running on .NET 11
 
 <!--
-[demo]
+- Hanselman's TinyOS from .NET 1 days, updated and running on .NET 11
+- The point: .NET code is durable
+-->
+
+---
+layout: "shot"
+image: "/shots/110920.jpg"
+time: "11:09"
+---
+
+# C# 15
+
+<!--
+- Unions, closed hierarchies, collection arguments
+- Labeled break, extension indexers
+- Memory safety preview
+-->
+
+---
+layout: "shot"
+image: "/shots/111254.jpg"
+time: "11:12"
+---
+
+# Unions: add a case, every switch lights up
+
+<!--
+- union Pet(Dog, Cat, Bird, Hamster)
+- Add Hamster: every non-exhaustive switch is flagged
+-->
+
+---
+layout: "shot"
+image: "/shots/111728.jpg"
+time: "11:17"
+---
+
+# .NET CLI on Native AOT: 66–75% faster startup
+
+<!--
+- Chet Husk: CLI usage about 3x in the past year
+- File-based apps can #include other .cs files
+- dotnet run device prompts, dotnetup installer
+-->
+
+---
+layout: "shot"
+image: "/shots/111823.jpg"
+time: "11:18"
+---
+
+# MSBuild `-mt`: 37% faster incremental builds
+
+<!--
+- Multithreaded MSBuild
+- Warm incremental build on OrchardCore
+-->
+
+---
+layout: "shot"
+image: "/shots/112046.jpg"
+time: "11:20"
+---
+
+# Runtime async: 0 bytes allocated
+
+<!--
+- No state machines, no ValueTask needed
+- 0 B per op vs 216–504 B with state machines
+- Default in .NET 12
+-->
+
+---
+layout: "shot"
+image: "/shots/112220.jpg"
+time: "11:22"
+---
+
+# Memory safety v2: the Rust/Swift model, stricter
+
+<!--
+- Unsafe is off by default
+- An unmarked unsafe call is an error
+- Preview in .NET 11, GA in .NET 12
+-->
+
+---
+layout: "section"
+kicker: "ASP.NET Core 11"
+---
+
+# Web
+
+<!--
+[Daniel Roth] ASP.NET Core and Blazor.
+-->
+
+---
+layout: "shot"
+image: "/shots/112531.jpg"
+time: "11:25"
+---
+
+# Unions end to end
+
+<!--
+- System.Text.Json writes only the active case. No wrapper, no type field.
+- OpenAPI 3.2: the union shows as anyOf
+-->
+
+---
+layout: "shot"
+image: "/shots/112649.jpg"
+time: "11:26"
+---
+
+# One async validation rule: Blazor and API
+
+<!--
+- AsyncValidationAttribute (InStock example)
+- Blazor: spinner while the check runs
+- API: out of stock returns 400
+-->
+
+---
+layout: "shot"
+image: "/shots/112845.jpg"
+time: "11:28"
+---
+
+# CSRF protection, built in
+
+<!--
+- Uses Fetch Metadata headers (Sec-Fetch-Site)
+- No antiforgery tokens
+-->
+
+---
+layout: "shot"
+image: "/shots/112950.jpg"
+time: "11:29"
+---
+
+# More in ASP.NET Core 11
+
+<!--
+- Feature grid. Pick 1–2 to call out.
 -->
 
 ---

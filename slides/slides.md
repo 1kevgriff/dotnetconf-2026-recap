@@ -2437,6 +2437,25 @@ time: "16:55"
 -->
 
 ---
+layout: "shot"
+image: "/shots/165610.jpg"
+time: "16:56"
+---
+
+# Found a .NET vulnerability? Report it to MSRC, and get paid
+
+<!--
+- Say: Barry's ask: report security bugs to MSRC, not as GitHub issues — and there's a bounty.
+- Report: msrc.microsoft.com/report/vulnerability ("not in GitHub issues")
+- "If you're using AI, please check your results."
+- Grounding docs for your AI agents: aka.ms/dotnet/securityfoundations
+- Bounty: aka.ms/dotnet/bounty ("I may have to write you a cheque")
+- Q&A, on whether AI will make code safer: "I am not a hopeful person by nature. That is why I am in this job." (Barry Dorrans)
+- Why it matters: point your agents at the security grounding docs when they write .NET code.
+- Source: 16:56–16:58 ET, transcript 20261110-165600, /shots/165610.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

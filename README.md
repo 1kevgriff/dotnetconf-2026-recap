@@ -75,6 +75,11 @@ check first:
   rendered live.
 - The "best AI demo" quote names only "Kevin". Confirm it was your post.
 - A few speaker quotes were tidied for grammar. The notes say which.
+- Runtime async: speakers said two different things about whether the .NET 11
+  framework libraries use it. The slide avoids that claim; the notes quote
+  both.
+- Some stream frames carry a "Microsoft Confidential" footer. Those frames
+  are not in this repo.
 
 ## Layout
 

@@ -321,6 +321,20 @@ time: "11:36"
 -->
 
 ---
+layout: "shot"
+image: "/shots/113851.jpg"
+time: "11:38"
+---
+
+# Windows 365: clone, F5, 100+ services
+
+<!--
+- Aspire AppHost composes 100+ microservices locally
+- Reliability first: readiness checks, same tooling on dev, CI, build
+- Then agentic AI on top
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

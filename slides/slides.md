@@ -243,6 +243,17 @@ kicker: ".NET MAUI"
 -->
 
 ---
+layout: "statement"
+---
+
+1,600 PRs a month. ~80% by Copilot.
+
+<!--
+- MAUI team PR volume, about 4x what it was
+- 11:30 ET
+-->
+
+---
 layout: "shot"
 image: "/shots/113143.jpg"
 time: "11:31"

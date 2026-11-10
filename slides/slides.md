@@ -2677,7 +2677,22 @@ time: "17:47"
 - Correctness too (17:48 stream slide "Fast is only useful when it's right"): fixes for broadcasting, empty tensors, slice origins, overlap validation, NaNs/ties/signed zero, and Resize now zero-fills (`default(T)`, "not repeated input": [1,2] → [1,2,0,0,0]) (/shots/174852.jpg)
 - Demo output (17:52, Runtime .NET 11.0.0): gapped storage [1, 2, -99, 3, 4, -99], IsDense False, flattened view [1, 2, 3, 4]; Resize [1, 2] → [1, 2, 0, 0, 0]; overlapping dense copy [1, 1, 2, 3, 4]; strided overlap → "ArgumentException; buffer unchanged" (rejected, not silently wrong); first NaN index 2; first maximum tie index 1
 - Why it matters: large speedups for common tensor operations like Add and FlattenTo.
-- Source: 17:46–17:48 ET, transcript 20261110-174604, /shots/174734.jpg
+- Source: 17:46–17:53 ET, transcripts 20261110-174604, 20261110-174802, 20261110-175203, /shots/174734.jpg, /shots/174852.jpg
+-->
+
+---
+layout: "statement"
+---
+
+Accuracy is part of performance: one path got slower on purpose.
+
+<!--
+- Say: The .NET team made one math path slower on purpose, because the faster version gave wrong answers on some hardware.
+- Stream slide (17:54): "A faster path must still honor the numeric contract." With FMA: guaranteed fused vector range reduction. Without FMA: scalar fallback "only for cancellation-sensitive vectors"
+- "Selected non-FMA Tan case: 5.60 us -> 9.19 us. An intentional accuracy tradeoff." (/shots/175455.jpg)
+- Also new in .NET 11, System.Random: you used to get only Int32/Int64/Double etc. — "You couldn't get it for custom numeric types ... any other floating point type like half." New APIs request "the next integer given a particular type" (0 inclusive to a limit exclusive) and "the next binary floating point value given the specified type"
+- Why it matters: when you optimize numeric code, correctness on all hardware comes first.
+- Source: 17:54–17:56 ET, transcript 20261110-175400, /shots/175455.jpg
 -->
 
 ---

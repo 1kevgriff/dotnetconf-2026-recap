@@ -2882,6 +2882,24 @@ time: "18:37"
 -->
 
 ---
+layout: "shot"
+image: "/shots/183943-compare.jpg"
+time: "18:39"
+---
+
+# Async stack traces: just your methods
+
+<!--
+- Say: With runtime async, the call stack shows just your methods, in the order you wrote them — no MoveNext or builder frames in between.
+- Before: 9 frames — each of your 3 calls wrapped in `<Method>d__N.MoveNext()` and `AsyncMethodBuilderCore.Start<TStateMachine>(...)`
+- After: 3 frames — OrderService.LoadAsync, OrderService.GetOrderAsync, OrdersController.Get
+- Stream slide: "The runtime suspends and resumes the method itself: no generated state machine. The same stack now shows just your methods, in the order you wrote them."
+- Shown with Environment.StackTrace (18:38); "debuggers and profilers show those frames between every one of your calls" before
+- Why it matters: easier debugging, profiling and log reading for async code.
+- Source: 18:38–18:40 ET, transcript 20261110-183803, /shots/183943-compare.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

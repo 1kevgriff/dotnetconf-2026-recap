@@ -1523,6 +1523,7 @@ time: "15:43"
 - "One process. One current directory." Under -mt, two projects share one process CWD
 - Speaker's "favorite example": Environment.CurrentDirectory — a relative "input.txt" can resolve to the wrong project
 - Fix: resolve paths against TaskEnvironment, not the process
+- Compatibility (15:44): tasks marked MSBuildMultiThreadableTask run in-process. Unmarked tasks still work — they run in a short-lived "sidecar" TaskHost process with isolated process state. So old tasks don't break; they're just slower.
 -->
 
 ---

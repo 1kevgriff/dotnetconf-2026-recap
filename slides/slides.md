@@ -2292,8 +2292,22 @@ time: "16:27"
 - 16:28: the overview now shows console logs inline ("my console logs are directly in the overview") and resource relationships
 - By-path helps at scale: "I think I've seen 47 .NET projects orchestrated by Aspire"
 - Links: aspire.dev; Discord at aka.ms/aspire-discord ("the best Discord on planet Earth. Sorry, MAUI")
+- Skills Q&A (16:30): in 17, Aspire skills ship as a plugin that updates "out of band of our releases" — "you don't have to drop the skill files in your repo and check them in. You just need a reference to the plugin."
 - Why it matters: let an agent do the Aspire 17 migration with the provided skills.
 - Source: 16:26–16:28 ET, transcript 20261110-162603, /shots/162753.jpg
+-->
+
+---
+layout: "session"
+num: 11
+time: "4:30 PM"
+speakers: "Barry Dorrans"
+---
+
+# 2 Secure 2 Curmudgeonly
+
+<!--
+[Session 11] .NET security.
 -->
 
 ---

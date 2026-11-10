@@ -42,6 +42,7 @@ npm install-scripts approve playwright-chromium
 | 08 | C# Dev Kit 11 | Drew Noakes, Emanuel Fernandez Dell'Oca |
 | 09 | More Processes, More Problems: Multithreaded MSBuild | Chet Husk |
 | 10 | What's New in Aspire for .NET Developers | Maddy Montaquila, Damian Edwards |
+| 11 | 2 Secure 2 Curmudgeonly | Barry Dorrans |
 
 Later sessions are added as the stream continues.
 

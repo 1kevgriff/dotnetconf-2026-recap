@@ -2472,6 +2472,24 @@ speakers: "Wendy Breiding"
 -->
 
 ---
+layout: "shot"
+image: "/shots/170443.jpg"
+time: "17:04"
+---
+
+# Visual Studio picks the right .NET skills for your solution
+
+<!--
+- Say: Visual Studio now detects what your solution uses and turns on matching built-in .NET skills for Copilot.
+- "It's going to detect what I [use] ... So it is automatically provided this WinForms expert skill as well as the .NET Web API skill, since my solution has both a WinForms front end and an API back end."
+- With the Auto model, Copilot "picked up that WinForms expert skill, identifying that this is a front-end change"
+- AI Customization → Skills shows them as Built-in (winforms-expert, dotnet-webapi, writing-mstest-tests, test-smell-detection, ...)
+- Same curated skills for other agents: github.com/dotnet/skills (see the keynote eval slide)
+- Why it matters: you get .NET-specific guidance without writing your own instructions.
+- Source: 17:04 ET, transcript 20261110-170403, /shots/170443.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

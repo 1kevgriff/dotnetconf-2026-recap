@@ -847,6 +847,8 @@ time: "13:02"
 - Native AOT CLI vs managed, macOS arm64
 - tool list --local: 121 → 32 ms; user-secrets list: 142 → 54 ms
 - "Billions and billions of commands" run on the CLI every month
+- Compounds (13:05 chart): 3-command SDK check 374 → 118 ms (−69%); tool list + run 297 → 110 ms (−63%)
+- AOT now covers core diagnostics, solution commands, most tool management
 -->
 
 ---

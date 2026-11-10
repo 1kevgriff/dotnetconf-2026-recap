@@ -940,7 +940,7 @@ speakers: "Klaus Löffelmann"
 <!--
 [Session 5]
 - Theme: huge WinForms history vs constant renewal; "WinForms down the road its own migration tool"
-- Demo prop: a second laptop running Windows XP and Visual Studio 2005
+- Demo prop: a second laptop running Windows XP and Visual Studio 2005. It didn't work on stream ("it's not going to work"), so he went straight to demos.
 -->
 
 ---

@@ -1102,6 +1102,34 @@ time: "14:11"
 -->
 
 ---
+layout: "default"
+codeSize: "20"
+---
+
+# GPT or Claude: same `IChatClient`
+
+```csharp
+// Each official SDK has an AsIChatClient adapter
+IChatClient gpt = new OpenAIClient(...)
+    .GetResponsesClient().AsIChatClient("gpt-6.1-sol");
+
+IChatClient claude = new AnthropicClient(...)
+    .AsIChatClient("claude-sonnet-5-5");
+
+// Same call, either model
+var a = await gpt.GetResponseAsync(prompt);
+var b = await claude.GetResponseAsync(prompt);
+```
+
+<!--
+- 14:14 ET. Official OpenAI and Anthropic C# SDKs now have native IChatClient adapters
+- App code stays the same; only initialization changes. Sample: aka.ms/meai/start
+- Packages: Microsoft.Extensions.AI, Microsoft.Extensions.AI.OpenAI, Anthropic
+- Code copied from the stream slide (/shots/141458.jpg), "simplified from Planning.cs + FoundryAnthropic.cs"
+- Side note: the final film is stitched with plain code, "no AI at that point"
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

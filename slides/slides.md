@@ -1469,6 +1469,19 @@ layout: "statement"
 -->
 
 ---
+layout: "session"
+num: 9
+time: "3:30 PM"
+speakers: "Chet Husk"
+---
+
+# More Processes, More Problems: Multithreaded MSBuild
+
+<!--
+[Session 9] Keynote already has the `-mt` slide (−37% warm incremental on OrchardCore); add only new details.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

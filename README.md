@@ -40,6 +40,7 @@ npm install-scripts approve playwright-chromium
 | 06 | The .NET AI Stack | Luis Quintanilla |
 | 07 | What's New in .NET MAUI in .NET 11 | Gerald Versluis |
 | 08 | C# Dev Kit 11 | Drew Noakes, Emanuel Fernandez Dell'Oca |
+| 09 | More Processes, More Problems: Multithreaded MSBuild | Chet Husk |
 
 Later sessions are added as the stream continues.
 

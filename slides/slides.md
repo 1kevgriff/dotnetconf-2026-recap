@@ -1497,6 +1497,19 @@ time: "15:33"
 -->
 
 ---
+layout: "statement"
+---
+
+`-mt` becomes the default in SDK 11.0.200 — this winter.
+
+<!--
+- 15:34 ET: "We are targeting making this behavior the default in 11.0.200. So this winter's build of .NET 11." (Targeting, not promised.)
+- Console and library builds are already "enlightened" (multithread-compatible); next: pack, publish, web apps
+- Why faster: less duplicated engine work, fewer task handoffs, reusable server state
+- Built on a new long-lived MSBuild server daemon, to be reused for future caching
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

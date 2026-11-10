@@ -2958,6 +2958,33 @@ layout: "statement"
 -->
 
 ---
+layout: "default"
+codeSize: "20"
+---
+
+# `unsafe` becomes a contract callers can see
+
+```csharp
+// Before — callers saw a normal method
+public static string PtrToStringAnsi(
+    IntPtr ptr, int len);
+
+// Unsafe-v2 — callers must explicitly opt in
+public static unsafe string PtrToStringAnsi(
+    IntPtr ptr, int len);
+```
+
+<!--
+- Say: Under memory safety v2, a method can be marked unsafe, and that requirement flows up to everyone who calls it.
+- C# already gives safety by default (18:48): definite assignment, "all of the dynamically allocated memory is zeroed", "bounds checks by default on all array accesses and collections", and the GC
+- "But we also have escape hatches" (pointers, P/Invoke) — and "we have no way of delivering that safety contract up to our callers." Now "the escape hatches can propagate that information up to the callers."
+- Example from the stream: Marshal.PtrToStringAnsi becomes a method-level `unsafe` member ("requires-unsafe")
+- Code copied from the stream slide "Unsafe is a contract"; the frame itself (/shots/184848.jpg) is NOT in the repo — it carries the "Microsoft Confidential" footer
+- Why it matters: you can see in code review which calls need care, instead of it hiding in a normal-looking API.
+- Source: 18:48–18:50 ET, transcript 20261110-184803
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

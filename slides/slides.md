@@ -346,6 +346,7 @@ time: "11:40"
 - Check, plan, fix, validate, learn
 - One repo at a time, same test gate as human PRs
 - Humans approve every PR
+- Quote: "Passing tests is not the same as approving the change."
 -->
 
 ---

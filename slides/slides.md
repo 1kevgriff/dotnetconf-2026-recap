@@ -914,6 +914,19 @@ XML parsing cost 5 MB: XSD → network → crypto.
 -->
 
 ---
+layout: "statement"
+---
+
+Ship your .NET tools Native AOT. Fast and easy — you don't have to choose.
+
+<!--
+- 13:26 ET, Chet's wrap-up
+- RID-specific Native AOT tools supported since .NET 10
+- Parity first: when unsure, fall back to the managed implementation
+- AOT payoff beyond startup: explicit, testable architecture
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -653,6 +653,7 @@ time: "12:22"
 - Index into types you don't own
 - Builds on C# 14 extension blocks (properties came first)
 - The extension block syntax scales to new member kinds
+- Wrap-up (12:24): memory safety preview lets you mark your own APIs unsafe and track it transitively; async is "not different, just faster" with runtime async
 -->
 
 ---

@@ -1053,6 +1053,21 @@ Compiler errors written for Copilot to read.
 -->
 
 ---
+layout: "session"
+num: 6
+time: "2:00 PM"
+speakers: "Luis Quintanilla"
+---
+
+# The .NET AI Stack: What's New, What's Next, and How It Fits Together
+
+<!--
+[Session 6]
+- Layers: experiences, agents, tools, multimodal, context, sessions, models
+- Foundations: Microsoft.Extensions.AI, VectorData, DataIngestion (170M+ downloads, see keynote slide)
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -2687,7 +2687,7 @@ layout: "statement"
 Accuracy is part of performance: one path got slower on purpose.
 
 <!--
-- Say: The .NET team made one math path slower on purpose, because the faster version gave wrong answers on some hardware.
+- Say: On hardware without FMA, the .NET team made one Tan path slower on purpose to keep it accurate.
 - Stream slide (17:54): "A faster path must still honor the numeric contract." With FMA: guaranteed fused vector range reduction. Without FMA: scalar fallback "only for cancellation-sensitive vectors"
 - "Selected non-FMA Tan case: 5.60 us -> 9.19 us. An intentional accuracy tradeoff." (/shots/175455.jpg)
 - Also new in .NET 11, System.Random: you used to get only Int32/Int64/Double etc. — "You couldn't get it for custom numeric types ... any other floating point type like half." New APIs request "the next integer given a particular type" (0 inclusive to a limit exclusive) and "the next binary floating point value given the specified type"

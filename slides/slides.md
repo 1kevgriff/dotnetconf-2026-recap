@@ -2848,6 +2848,22 @@ speakers: "Richard Lander, Andy Gocke"
 -->
 
 ---
+layout: "statement"
+---
+
+Runtime async is opt-in in .NET 11 — but the framework already uses it.
+
+<!--
+- Say: Runtime async is opt-in for your code in .NET 11 and expected to be the default in .NET 12. But much of the framework is already compiled with it, so you benefit just by moving to .NET 11.
+- Rich Lander (18:32): "This feature is new in .NET 11, but it's opt-in. This is this feature's MSBuild property is how you turn it on, and we expect it to be the default in .NET 12."
+- "We actually compiled much of the framework libraries with this feature enabled. So no matter what, you're going to be getting some benefit from this feature when you install and start using .NET 11."
+- Stream slide: "No IL state machines. No ValueTask. Near Synchronous Performance." (/shots/183325.jpg)
+- The exact MSBuild property wasn't readable in what I verified; the notes agent says `<Features>runtime-async=on</Features>` — check docs before quoting it.
+- Why it matters: upgrade to .NET 11 for the framework win now; try opting in your own code before it becomes the default.
+- Source: 18:32–18:34 ET, transcript 20261110-183200, /shots/183325.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

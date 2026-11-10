@@ -1261,6 +1261,33 @@ XAML source generation on by default: Debug behaves like Release.
 -->
 
 ---
+layout: "default"
+codeSize: "20"
+---
+
+# C# expressions in XAML: goodbye, value converters
+
+```xml
+<!-- Before: a converter class, a resource, and a binding -->
+<Button IsEnabled="{Binding IsBusy,
+    Converter={StaticResource InverseBool}}" />
+
+<!-- .NET 11 -->
+<Button IsEnabled="{!IsBusy}" />
+
+{$'Hello {Name}!'}
+{Price * Quantity}
+{Title ?? 'Untitled'}
+{IsAdmin || IsOwner}
+```
+
+<!--
+- 14:45 ET. Inline C# replaces most value converters
+- Before also needed a whole InverseBoolConverter : IValueConverter class (Convert + ConvertBack)
+- Code copied from the stream slide /shots/144523.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

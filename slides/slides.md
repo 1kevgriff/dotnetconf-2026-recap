@@ -885,6 +885,19 @@ time: "13:11"
 -->
 
 ---
+layout: "statement"
+---
+
+No free lunch: AOT trades size for speed.
+
+<!--
+- 13:16 ET. AOT CLI first added ~5 MB to the SDK bundle
+- AOT tool command resolution: +2.19 MiB (~100 ms saved)
+- Build-free MTP test: +1.02 MiB
+- Size delta checked on every build
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -2156,6 +2156,24 @@ time: "16:05"
 -->
 
 ---
+layout: "shot"
+image: "/shots/160605.jpg"
+time: "16:06"
+---
+
+# #1 thing orchestrated with Aspire: JavaScript
+
+<!--
+- Say: The number one integration people pull into Aspire isn't a .NET thing — it's JavaScript.
+- Top 5 hosting integrations: JavaScript, SQL Server, Redis, PostgreSQL, Azure Storage
+- JavaScript "includes like TypeScript, Node, Vite, a bunch of the different runtimes"
+- Azure Storage is the #1 cloud integration; the community also uses Aspire with AWS, GCP, Docker Compose, Kubernetes
+- AppHost: most author it in C#, "but you can also author in TypeScript and other languages coming soon"
+- Why it matters: Aspire is polyglot now; it's not only for all-.NET stacks.
+- Source: 16:06 ET, transcript 20261110-160600, /shots/160605.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

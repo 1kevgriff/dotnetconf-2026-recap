@@ -283,6 +283,7 @@ time: "11:32"
 - Passkeys, Material 3, long press, tab/toolbar badges
 - C# UI template: dotnet new maui --ui csharp
 - Fixed with Copilot. DevFlow lets agents drive your app.
+- MAUI session (14:46): Material 3 on Android = set one property in your csproj
 -->
 
 ---

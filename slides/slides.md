@@ -2311,6 +2311,22 @@ speakers: "Barry Dorrans"
 -->
 
 ---
+layout: "statement"
+---
+
+.NET security reports: 84 → 2,622 in one year.
+
+<!--
+- Say: Last year .NET had 84 security reports. This year, 2,622. Real vulnerabilities went from 12 to 97.
+- MSRC cases (a researcher fills in the form on the MSRC site): 2025: 84 → 2026: 2,622. CVEs: 12 → 97 (stream slide /shots/163340.jpg)
+- Barry Dorrans: "this year we had lots more gray hair"
+- CVSS caution: scores are based "on the worst possible scenario, which might not be the most likely scenario" — a 9.9 doesn't automatically mean "run out and fix that right now" for your app
+- The stream did not give a reason for the jump in this part (wait for later chunks before claiming one)
+- Why it matters: expect more .NET security patches; read the advisory, not just the score.
+- Source: 16:32–16:34 ET, transcript 20261110-163200, /shots/163340.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

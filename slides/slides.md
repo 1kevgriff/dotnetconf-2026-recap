@@ -1961,6 +1961,23 @@ speakers: "Maddy Montaquila, Damian Edwards"
 -->
 
 ---
+layout: "shot"
+image: "/shots/160528.jpg"
+time: "16:05"
+---
+
+# Aspire: ~50k → ~90k developers a month, growth from VS Code and the CLI
+
+<!--
+- Say: Aspire's monthly engaged developers nearly doubled in a year, and the growth came from VS Code and the Aspire CLI, including coding agents.
+- Nov 2025 ~50k → Nov 2026 ~90k (+40k), deduplicated across tools
+- "All if not more of that growth has been from both VS Code and our CLI itself"
+- People "enter from Claude Code and Copilot and Codex and the CLIs and the desktop apps"; polyglot repos in VS Code
+- Why it matters: Aspire is increasingly driven from terminals and agents, not only from Visual Studio.
+- Source: 16:05 ET, transcript 20261110-160403, /shots/160528.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

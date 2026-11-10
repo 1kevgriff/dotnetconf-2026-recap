@@ -1306,6 +1306,22 @@ time: "14:53"
 -->
 
 ---
+layout: "shot"
+image: "/shots/145430.jpg"
+time: "14:54"
+---
+
+# MAUI Labs: 10+ experiments to try
+
+<!--
+- github.com/dotnet/maui-labs. "Who knows, some might graduate."
+- DevFlow: like Playwright, for MAUI apps and agents
+- MAUI CLI, Essentials.AI (on-device chat + embeddings), `maui ai init` (skills + MCP)
+- New backends: Linux (GTK) and WPF
+- `dotnet new mauitest` for device tests
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

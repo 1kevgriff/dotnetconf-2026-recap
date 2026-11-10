@@ -974,6 +974,18 @@ time: "13:39"
 -->
 
 ---
+layout: "statement"
+---
+
+"This is not about styling. This has all to do with accessibility."
+
+<!--
+- Klaus Löffelmann, 13:42 ET
+- Net11 styles follow the Windows accent color (demo: red → blue) and text size, live
+- Classic checkbox: a 12x12 pixel "landing area"
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

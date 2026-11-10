@@ -1362,6 +1362,7 @@ layout: "statement"
 - An internal team kept saying VS Code + C# Dev Kit "were terrible"; their VP escalated; "crashing on their machine"
 - Reality: "5, 10, 15" agents solving GitHub issues on Macs with 256 GB RAM, and "hundreds and hundreds of MSBuild workers"
 - Why Dev Kit 11 was re-architected for many agents on one machine
+- The fix (15:04): a build queue that runs the agents' builds serially. Build throughput for all agents went UP — "the oversaturation of build nodes was actually hindering throughput."
 -->
 
 ---

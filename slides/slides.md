@@ -2834,6 +2834,20 @@ Aspire is a .NET customer: Roslyn, Blazor, Native AOT.
 -->
 
 ---
+layout: "session"
+num: 15
+time: "6:30 PM"
+speakers: "Richard Lander, Andy Gocke"
+---
+
+# .NET Runtime vNext: Memory Safety and Runtime Async
+
+<!--
+[Session 15] Agenda title; the notes agent logged it as ".NET Runtime vNext: Async and Safety". Started ~6:32 PM ET.
+- The keynote already has runtime async (0 B allocated) and memory safety v2 slides; add only new details here.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

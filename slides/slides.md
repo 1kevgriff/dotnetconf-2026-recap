@@ -2357,6 +2357,8 @@ time: "16:36"
 - Severity: "four criticals this year, most of them were high"
 - "The fix author may not have written the vulnerable code in the first place ... don't blame fix authors for writing vulnerabilities"
 - Out-of-band example (16:38): a Brotli bug from Google (copy embedded in .NET). In NPM it was remote code execution — NPM enables Brotli by default. In .NET "you would have got a denial of service", and HttpClient needed an opt-in to response decompression. It's still labeled RCE because Google classified it that way: "In theory, it can always go to remote code execution."
+- Dependencies (16:40): "you need to keep an eye on your dependencies." Dependabot and other scanners "all depend on the vulnerability being described" properly, so "every now and again you should probably manually sweep all your dependencies and take a look at some of the descriptions"
+- MSQuic RCE: scored 9.8, "very high", but "not so much for .NET": Windows embeds its own copy in the kernel; .NET embeds a separate copy "only for .NET uses". Same bug, different real risk.
 - Why it matters: set limits on loops, input sizes and allocations in your own code — that's where most issues were.
 - Source: 16:36 ET, transcript 20261110-163600, /shots/163615.jpg
 -->

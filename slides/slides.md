@@ -1376,6 +1376,7 @@ The trick: cache the build's project info. `.lscache`.
 - "Not really that revolutionary to write a cache file to disk"
 - Reading it: "a few milliseconds". Asking MSBuild: "hundreds, maybe thousands of milliseconds"
 - (My inference, not stated on stream: likely a big part of the keynote's ~77% faster workspace load)
+- Next (15:16): reading/writing .lscache lives in the Roslyn repo (open source) and is going into the SDK, so "every build is capable of writing these files" and all tools benefit. "From a faster Dev Kit to a faster development loop."
 -->
 
 ---

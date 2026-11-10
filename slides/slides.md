@@ -2223,6 +2223,23 @@ var builder = DistributedApplication.CreateBuilder(args);
 -->
 
 ---
+layout: "shot"
+image: "/shots/161453.jpg"
+time: "16:14"
+---
+
+# Clone, run, and the dashboard asks for the missing secrets
+
+<!--
+- Say: When someone clones your repo and runs it, Aspire's dashboard now pops up and asks for any secrets it needs.
+- "Aspire Secrets": abstracts .NET User Secrets, which "has always been what we've used under the hood to keep API keys, passwords, etc. out of your source"
+- Dialog "Set unresolved parameters" with a "Save to user secrets" checkbox; resources that need the value "actually wait on them"
+- Same demo: "polyglot debugging" — the debugger attaches to the C# apps and the Vite app; "not just .NET and JavaScript but also Go", and Python
+- Why it matters: new team members (and agents) get a working app from a clone without a setup doc for secrets.
+- Source: 16:14 ET, transcript 20261110-161403, /shots/161453.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

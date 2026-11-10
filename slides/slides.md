@@ -1000,6 +1000,19 @@ time: "13:44"
 -->
 
 ---
+layout: "statement"
+---
+
+`SuspendPainting`: one `using`, any nesting depth.
+
+<!--
+- New WinForms .NET 11 API, 13:46 ET
+- Before: SuspendLayout at every level of nested containers (TableLayoutPanel in TableLayoutPanel...), and no way to suspend painting
+- Now: get a scope, wrap it in `using`; painting and layout are suspended however deep the nesting
+- Exact call shape not shown on stream; check docs before quoting code
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

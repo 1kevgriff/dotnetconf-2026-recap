@@ -1049,6 +1049,7 @@ Compiler errors written for Copilot to read.
 - Problem: Copilot puts for-loops or local functions in designer code, then the designer can't open the form
 - The analyzers emit build errors phrased as commands to Copilot ("unroll that, write it step-by-step")
 - Copilot compiles, reads the error, fixes it. Worked even with "the more capable local models"
+- Q&A (13:58): analyzers add determinism to the AI loop. WinForms skills PR "on the way" in dotnet/skills.
 -->
 
 ---

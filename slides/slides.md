@@ -2289,6 +2289,9 @@ time: "16:27"
 - "All the dashboard functionality that you are obviously used to and you love is obviously still here"
 - New: "tags and pinning and all types of wonderful stuff that wasn't there before"; banner on stream: "Welcome to the new Aspire dashboard!"
 - Upgrading: "there's a skill too" — an update / breaking-changes skill that pulls in others, "including the very specific project resource V2 skill"
+- 16:28: the overview now shows console logs inline ("my console logs are directly in the overview") and resource relationships
+- By-path helps at scale: "I think I've seen 47 .NET projects orchestrated by Aspire"
+- Links: aspire.dev; Discord at aka.ms/aspire-discord ("the best Discord on planet Earth. Sorry, MAUI")
 - Why it matters: let an agent do the Aspire 17 migration with the provided skills.
 - Source: 16:26–16:28 ET, transcript 20261110-162603, /shots/162753.jpg
 -->

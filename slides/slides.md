@@ -1956,6 +1956,8 @@ speakers: "Maddy Montaquila, Damian Edwards"
 
 <!--
 [Session 10]
+- Opening (16:02): "The Opus Moment" pushed the team to lean into agents. "Aspire is this deterministic thing that can actually orchestrate your stack under the hood. So you can have all this magic with agents but keep it on guard rails."
+- Naming: "not called dotnet aspire, it is just aspire"
 -->
 
 ---

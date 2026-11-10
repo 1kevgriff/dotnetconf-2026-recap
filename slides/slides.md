@@ -805,6 +805,21 @@ time: "12:51"
 -->
 
 ---
+layout: "shot"
+image: "/shots/125457.jpg"
+time: "12:54"
+---
+
+# Blazor + Aspire: debug browser and backend together
+
+<!--
+- Aspire: dashboard, service discovery, WebAssembly debugging
+- New Blazor Gateway: one host for dev and prod, static assets, API proxy
+- Web Workers: run .NET off the UI thread
+- Also: Entra ID auth scaffolding (dotnet scaffold or VS); ASP.NET Core + Blazor plugins at github.com/dotnet/skills
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

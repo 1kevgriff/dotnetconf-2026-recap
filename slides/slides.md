@@ -2255,6 +2255,24 @@ layout: "statement"
 -->
 
 ---
+layout: "shot"
+image: "/shots/161922.jpg"
+time: "16:19"
+---
+
+# Aspire 17, next week: faster starts, easier upgrades
+
+<!--
+- Say: Aspire 17 ships next week. The AppHost becomes a plain .NET project, so upgrading is just a package bump.
+- "We are shipping 17.0 next week" (the team is "already at 17.1" internally)
+- A plain .NET project: AppHosts use Microsoft.NET.Sdk — upgrade is "a package bump, not an SDK pin"
+- Projects by path: no project references, so the dashboard starts "without waiting on the MSBuild graph"
+- Your NuGet setup as is: inherited feeds, consistent restore; attach to running apps: debug a running service in VS Code from the Aspire view
+- Why it matters: fewer upgrade headaches and a faster F5 for Aspire apps.
+- Source: 16:18–16:20 ET, transcript 20261110-161802, /shots/161922.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

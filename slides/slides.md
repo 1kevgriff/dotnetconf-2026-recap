@@ -2828,7 +2828,7 @@ Aspire is a .NET customer: Roslyn, Blazor, Native AOT.
 - "Aspire is a .NET customer because it's the best."
 - "The best language will always be the best language for Aspire" — "what he meant was, the best language on Earth, C#, obviously, is the best language for building Aspire."
 - Links: aspire.dev, aka.ms/aspire-discord
-- Why it matters: a big .NET tool reaching non-.NET developers by leaning on .NET, not hiding it.
+- Why it matters: Roslyn, Blazor, and Native AOT doing real work inside a cross-language tool.
 - Source: 18:26–18:28 ET, transcript 20261110-182602, /shots/182657.jpg
 -->
 

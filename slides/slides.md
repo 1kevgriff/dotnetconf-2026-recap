@@ -817,6 +817,7 @@ time: "12:54"
 - New Blazor Gateway: one host for dev and prod, static assets, API proxy
 - Web Workers: run .NET off the UI thread
 - Also: Entra ID auth scaffolding (dotnet scaffold or VS); ASP.NET Core + Blazor plugins at github.com/dotnet/skills
+- Demo (12:57): analysis on the UI thread freezes the page; on a Web Worker it stays responsive. "Debug in Browser" button in the Aspire dashboard.
 -->
 
 ---

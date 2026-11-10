@@ -2851,17 +2851,19 @@ speakers: "Richard Lander, Andy Gocke"
 layout: "statement"
 ---
 
-Runtime async is opt-in in .NET 11 — but the framework already uses it.
+Runtime async: opt in your apps now. Libraries wait for .NET 12.
 
 <!--
-- Say: Runtime async is opt-in for your code in .NET 11 and expected to be the default in .NET 12. But much of the framework is already compiled with it, so you benefit just by moving to .NET 11.
+- Say: Runtime async is opt-in in .NET 11 and expected to be the default in .NET 12. Apps can turn it on now; libraries should wait for .NET 12.
+- Guidance (Q&A, 18:56): "right now, libraries should stay on compiler async, while applications, by all means." Reason: "not all of the runtimes that we're shipping in .NET 11 support runtime async" — "It's just MonoWASM." "In .NET 12, they will."
+- ⚠ CONFLICTING STATEMENTS on stream — don't claim either as fact without checking: at 18:32 Rich said "we actually compiled much of the framework libraries with this feature enabled ... you're going to be getting some benefit"; at 18:56 the speakers said "our libraries are staying on compiler async for the moment".
 - Rich Lander (18:32): "This feature is new in .NET 11, but it's opt-in. This is this feature's MSBuild property is how you turn it on, and we expect it to be the default in .NET 12."
 - "We actually compiled much of the framework libraries with this feature enabled. So no matter what, you're going to be getting some benefit from this feature when you install and start using .NET 11."
 - Stream slide: "No IL state machines. No ValueTask. Near Synchronous Performance." (/shots/183325.jpg)
 - The exact MSBuild property wasn't readable in what I verified; the notes agent says `<Features>runtime-async=on</Features>` — check docs before quoting it.
 - Speed (18:40 chart, "The performance advantage grows with async depth", synchronous completion, modeled on a backup app): time per op state machines vs runtime async — 3 frames 1.487 vs 1.399 µs (1.06×), 5 frames 1.547 vs 1.431 µs (1.08×), 7 frames 1.621 vs 1.437 µs (1.13×). Allocations: see the keynote "0 bytes" slide. (Chart image not added to the repo: it carries a "Microsoft Confidential" footer.)
-- Why it matters: upgrade to .NET 11 for the framework win now; try opting in your own code before it becomes the default.
-- Source: 18:32–18:34 ET, transcript 20261110-183200, /shots/183325.jpg
+- Why it matters: try it in your apps now (unless you target Mono WASM); hold off in libraries until .NET 12.
+- Source: 18:32–18:34 and 18:56 ET, transcripts 20261110-183200, 20261110-185603, /shots/183325.jpg
 -->
 
 ---

@@ -881,6 +881,7 @@ time: "13:11"
 - Dynamic deps → accurate annotations, reachable-code tests
 - "Sometimes this is entire rewrites, which sucks, but it's not super frequent." Mostly annotations.
 - Gotcha (13:12): a Native AOT library has no meaningful base directory (it points at the host), so the SDK needed an explicit "SDK root"
+- Partners (13:14): NuGet made its JSON reading/writing AOT-capable; early experiments with MSBuild evaluation in AOT. Approach: "strangler fig" the CLI.
 -->
 
 ---

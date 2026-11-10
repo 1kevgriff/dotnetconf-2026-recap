@@ -2240,6 +2240,21 @@ time: "16:14"
 -->
 
 ---
+layout: "statement"
+---
+
+"So we put a terminal in the dashboard."
+
+<!--
+- Say: Terminals are the thing now, so the Aspire dashboard now has a full terminal emulator in it.
+- "We built maybe the most fully featured terminal emulator on the planet" — Mitch Denny's "opus moment": a terminal emulator plus a .NET library for building TUIs, and a web-based terminal host
+- Demo: a "file-based app, single C# file terminal app" that "compiles down with native AOT", running inside the dashboard (AspiriFridays Producer Console)
+- "Anything you see in the dashboard is CLI-able"
+- Why it matters: CLI/TUI tools in your app run and get tested right next to everything else in Aspire.
+- Source: 16:16 ET, transcript 20261110-161600, /shots/161630.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -394,6 +394,31 @@ time: "11:45"
 -->
 
 ---
+layout: "section"
+kicker: "Agentic development"
+---
+
+# Agents
+
+<!--
+[Wendy Breiding] Agentic development.
+-->
+
+---
+layout: "shot"
+image: "/shots/114707.jpg"
+time: "11:47"
+---
+
+# Copilot app: fix a race condition
+
+<!--
+- Prompt: two people reserve the last RSVP spot, only one gets in
+- Reproduced with a file-based app
+- Copilot picks the model, loads a C# expert skill, uses LSP code search
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

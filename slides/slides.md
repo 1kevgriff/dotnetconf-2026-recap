@@ -868,6 +868,21 @@ time: "13:09"
 -->
 
 ---
+layout: "shot"
+image: "/shots/131100.jpg"
+time: "13:11"
+---
+
+# Going AOT: what had to change
+
+<!--
+- Reflection discovery → known types, generated metadata (incl. load-bearing Assembly.Location)
+- Runtime codegen → static code paths
+- Dynamic deps → accurate annotations, reachable-code tests
+- "Sometimes this is entire rewrites, which sucks, but it's not super frequent." Mostly annotations.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

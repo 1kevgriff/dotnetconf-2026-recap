@@ -2725,6 +2725,8 @@ speakers: "Maddy Montaquila, Jose Perez Rodriguez"
 <!--
 [Session 14] Agenda time 6:00 PM ET; started ~6:01.
 - Session 10 already covered Aspire 17; add only new details here.
+- Framing (18:02): "a customer study for Aspire as a .NET customer" — why Aspire went polyglot
+- The AppHost "CSproj" didn't land with mixed teams: "I have a JavaScript front-end team ... they don't want a CSproj". Even a single-file C# AppHost got "whoa, C# that only runs on Windows"
 -->
 
 ---

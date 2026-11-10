@@ -2606,7 +2606,8 @@ Decimal64.Quantize(value, cents);
 - Quantum: 1.0 and 1.00 are the same value but not the same quantum — "you want to keep track of the fact that you have at least a guaranteed zero digit"; it matters "when you have to worry about precision and tolerances"
 - Demo also showed IEEE divide by zero (Decimal64.One / Decimal64.Zero) and Decimal128.Acos near 1 vs Math.Acos on double
 - Why it matters: decimal values that remember their precision, with IEEE behavior for edge cases.
-- Source: 17:36–17:40 ET, transcripts 20261110-173603, 20261110-173800, /shots/173753.jpg, /shots/174000.jpg
+- Gotcha (Q&A, 17:58): operators (==, <, >) follow IEEE — "NaN equals NaN, it will always report false"; "If you compare 1.0 to 1.00, it will compare as equal." But `Decimal64.Equals` / `.CompareTo` follow the rules "required for collections and sorting": "NaN will equal NaN, and you still have the quantums comparing to each other." So `==` and `Equals` can disagree.
+- Source: 17:36–17:58 ET, transcripts 20261110-173603, 20261110-173800, 20261110-175802, /shots/173753.jpg, /shots/174000.jpg
 -->
 
 ---

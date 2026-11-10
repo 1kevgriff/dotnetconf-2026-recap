@@ -2627,6 +2627,24 @@ time: "17:41"
 -->
 
 ---
+layout: "shot"
+image: "/shots/174220.jpg"
+time: "17:42"
+---
+
+# `Complex<T>`: complex numbers in your choice of `T`
+
+<!--
+- Say: System.Numerics.Complex was double-only. .NET 11 adds Complex<T>, so you pick float, double, or Decimal128.
+- "System.Numerics.Complex ... that's only supported double. People have been asking for a while ... can you also give support for float?"
+- Enabled by generic math: "we were finally able to go and expose a complex of T, where the user gets to decide what that T is"
+- Behavior made "compliant with the standard specification for complex number handling"
+- Demo: one generic Square function "operates regardless of whether we have float or decimal 128 or complex of either of those types"
+- Why it matters: write numeric code once with generic math and run it on real or complex values at the precision you choose.
+- Source: 17:42–17:44 ET, transcript 20261110-174200, /shots/174220.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

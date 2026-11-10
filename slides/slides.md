@@ -2374,6 +2374,7 @@ Add a guard? Apply it everywhere. Parse once. Check your complexity.
 - CVE-2026-32203 (System.Security.Cryptography.Xml DoS): EncryptedXml.DecryptEncryptedKey() recursed on inner keys through a path that didn't increment or check the existing depth counter → unbounded recursion → StackOverflowException kills the process. Takeaway on stream: "When you add a guard make sure it applies everywhere."
 - XML in general: "Encrypted XML in particular has proved great for" unbounded recursions and stack overflows
 - CVE-2026-84008 (System.Security.Cryptography.Pkcs DoS): SignedCms rebuilt and reparsed every embedded certificate once per signer, "no trust required". "A 117kb message caused 160,000 certificate constructions. Fix was to parse a certificate once. Check your algorithm complexity." ("Billion laughs attacks are everywhere.")
+- CVE-2026-57108 (.NET Runtime DoS, "only on Linux", 16:46): a self-issued cert with a 21-byte SAN payload; cert.GetNameInfo() goes to the OpenSSL layer and crashes the worker "before the certificate chain trust is ever evaluated" — repeatable for a persistent DoS. Takeaways: "DoS is not just resource consumption"; "You cannot know if unmanaged APIs validate their inputs. Assume not and validate before passing." (/shots/164646.jpg)
 - Why it matters: most of this year's CVEs were DoS — guards that miss one code path and quadratic work on untrusted input are the pattern.
 - Source: 16:42–16:46 ET, transcripts 20261110-164202, 20261110-164404, /shots/164332.jpg, /shots/164514.jpg
 -->

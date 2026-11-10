@@ -1231,6 +1231,23 @@ Mono → CoreCLR: "you won't really see, but you will feel."
 -->
 
 ---
+layout: "shot"
+image: "/shots/144153.jpg"
+time: "14:41"
+---
+
+# MAUI on Android, NativeAOT: 974 → 280 ms median startup
+
+<!--
+- BaristaNotes, Pixel 5, Android 14, .NET 11 RC2, 30 launches per cell
+- MAUI median cold start: Full R2R 973.5 ms → NativeAOT 280 ms (C# Android Views: 181 ms)
+- Caveat on the chart: MAUI NativeAOT p90 is still 908 ms
+- Package: 45.65 MiB (Full R2R) → 30.40 MiB (NativeAOT)
+- "Android NativeAOT is experimental" (chart footnote)
+- Numbers from the chart only; not spoken in the transcript
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

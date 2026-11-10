@@ -1494,6 +1494,7 @@ time: "15:33"
 - Cold build (per notes agent, not on this chart): −23.5% Windows, −11.9% Linux
 - DIFFERENT from the keynote's −37% (28.4 → 17.9 s, "ASP.NET's shared hardware, 100 projects"). The −mt time is about the same (~17-18 s); the "Normal" baseline differs. Don't quote both as the same measurement.
 - Windows gains much more than Linux: Linux's normal build is already faster
+- More to come (15:52): many OrchardCore projects are web projects that pack during build; "entire swaths of the build that we have not yet enlightened and we're already seeing these numbers"
 -->
 
 ---
@@ -1555,7 +1556,7 @@ codeSize: "19"
 - 1) Add the marker attribute + interface. 2) Resolve relative paths through TaskEnvironment
 - Even simpler (15:48, "freshest" MSBuild bits): typed binding, e.g. ITaskItem<FileInfo>, so the engine resolves the path and the task code shrinks — "a more declarative path" for task authors
 - Analyzer (15:50): Microsoft.Build.TaskAuthoring.Analyzer, ~12 Roslyn rules (some -mt specific); fixers planned. On stream: PackageReference version 18.13.0, PrivateAssets="all"; .editorconfig `msbuild_task_analyzer.run_mt_analyzers_on_all_tasks = true`
-- The MSBuild repo also has an agent plugin the team uses to migrate the SDK's built-in tasks
+- The MSBuild repo also has an agent plugin the team uses to migrate the SDK's built-in tasks: dotnet/msbuild → plugins/mt-migration. Sample prompt on stream: "Migrate CountFileLines for MT execution. Trace helpers. Preserve outputs and error behavior. Run the analyzer and test distinct project environments."
 - Code copied from the stream slide (/shots/154714.jpg)
 -->
 

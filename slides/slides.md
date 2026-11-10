@@ -1334,6 +1334,8 @@ time: "14:57"
 - MAUI 10 → May 2027, even though .NET 10 itself is LTS. MAUI 11 → May 2028 (assumes .NET 12 ships Nov 2027)
 - aka.ms/maui-support-policy
 - Also (14:56): Essentials.AI uses on-device models (Apple Intelligence, Gemini Nano)
+- Gerald (14:58): "Every .NET MAUI version has 18 months, period. So get on .NET 11 right now."
+- Q&A "best IDE for MAUI?" → "What's an IDE?" Team "has not been in an IDE for a while", building toward the CLI
 -->
 
 ---

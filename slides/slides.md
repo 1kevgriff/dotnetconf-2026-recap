@@ -1191,6 +1191,18 @@ time: "14:26"
 -->
 
 ---
+layout: "statement"
+---
+
+"The best AI demo today, because it wasn't a chatbot."
+
+<!--
+- 14:29 ET. Read on stream by host Maddy Montaquila: "Kevin said that this was the best AI demo today because it wasn't a chatbot."
+- Confirm this was your post before claiming it on stage (transcript says only "Kevin")
+- Follow-ons: aka.ms/meai/start, aka.ms/openai/start; MCP C# SDK session (Stephen Halter), agentic UI with Blazor (Daniel Roth)
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

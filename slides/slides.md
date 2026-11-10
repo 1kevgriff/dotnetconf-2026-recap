@@ -2771,6 +2771,8 @@ await worker.withEnvironmentCallback(async (context) => {
 - Demo file apphost.mts (18:08–18:10); code simplified from /shots/180920.jpg (console.log lines removed, the joined string inlined; the stream builds it with ["Hello","from","the","shared","Aspire","engine"].join(" "))
 - Callback round trip: .NET calls the TS function, TS asks .NET for the environment, sets DEMO_MESSAGE, .NET acknowledges — over the JSON-RPC bridge from the previous slide
 - Also new: an Aspire tray app ("you probably noticed this tray icon ... the Aspire tray app, which you can run now")
+- Under the hood (18:10): the TS `addRedis` "is all generated code" — "it's basically doing RPC, local RPC" into "what we call the app host server". Live log on stream: addRedis completed in 43ms; .NET called the TS callback; TS asked .NET to set DEMO_MESSAGE ("completed in 1ms"); the whole callback round trip ~0.039 s
+- "Shipping in a week": Aspire 17
 - Why it matters: mixed .NET/JS teams can share one Aspire setup, each in their own language.
 - Source: 18:08–18:10 ET, transcript 20261110-180800, /shots/180920.jpg
 -->

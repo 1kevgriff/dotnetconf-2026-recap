@@ -713,6 +713,20 @@ time: "12:32"
 -->
 
 ---
+layout: "shot"
+image: "/shots/123422.jpg"
+time: "12:34"
+---
+
+# CSRF without tokens: ~4x form posts/sec
+
+<!--
+- Fetch Metadata (Sec-Fetch-Site), on by default
+- No tokens to generate or validate
+- ~4x requests/sec, ~65% less allocation per request vs antiforgery tokens
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

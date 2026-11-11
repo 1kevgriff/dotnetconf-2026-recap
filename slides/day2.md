@@ -926,6 +926,24 @@ time: "14:11"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/142114.jpg"
+time: "14:21"
+---
+
+# Elicitation: the MCP server asks the human, not the model
+
+<!--
+- Say: With elicitation, an MCP server can stop and ask the user for input through a typed form. The model cannot fill it in. Good for release controls and approvals.
+- Stephen (14:18): elicitation gives "another benefit beyond just a command line API or a skill. When you implement an MCP server, you can do requests that basically instead of taking parameters from the model or the agent, the rule is that you have to expose elicitations to the user."
+- Demo, a "release-planner" MCP server: "Release controls for source.dot.net 2.0" with Target environment (production), Rollout strategy (canary), Initial rollout percentage (10), Rollback error-rate threshold (1); buttons Cancel / Decline / Accept.
+- Then "a second elicitation where my server said that before we make any action, we need to approve a release plan."
+- Code: the tool sets up "elicit request params" with "a request schema that took various enums" and numbers with ranges (percent 1 to 100).
+- Why it matters: a clean human-in-the-loop gate for risky agent actions, enforced by the server.
+- Source: 14:18-14:21 ET, transcripts 20261111-141800 and 20261111-142004; shot 20261111/142114.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

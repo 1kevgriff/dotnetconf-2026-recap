@@ -566,8 +566,26 @@ time: "12:24"
   - All editions: "These are all available for all SKUs of Visual Studio" (Community, Pro, Enterprise).
   - Recent: "I think 18.11 was the oldest feature that I showed." Mads: "we just released 18.12 yesterday ... We're releasing every month now." Jason: 18.13 "is even looking more jam-packed", and work on 18.14 has started.
   - HTML-to-CSS go-to-definition also works in Razor (Mads tested it) and for SASS and LESS.
+  - Accessibility (12:29): a viewer must set a 17 pt minimum font again after each fresh install. Jason: "It's not as simple as you would think ... but we are looking into a few features that you can increase font size very fluidly, as well as icons and potentially even being able to customize icons." "Coming soon" was said, but no version; say "they are looking into it".
 - Why it matters: this is the slide to screenshot. Three of these features need one settings change each, and they are in every VS edition.
-- Source: 12:24-12:27 ET, transcripts 20261111-122404 and 20261111-122603; slide "What we saw today" (shot 20261111/122414).
+- Source: 12:24-12:27 ET, transcripts 20261111-122404, 20261111-122603 and 20261111-123003; slide "What we saw today" (shot 20261111/122414).
+-->
+
+---
+layout: "session"
+num: 4
+time: "12:30 PM"
+speakers: "Sebastian Hernandez"
+---
+
+# Get the most out of Version Control in Visual Studio 2026
+
+<!--
+- [session 04] Sebastian Hernandez, Software Engineer. Title on the title card; the agenda calls it "Get the most out of git in Visual Studio".
+- Goal, Sebastian (12:30): do "your entire developer workflow from start to finish, all within Visual Studio without having to leave the IDE."
+- Agenda slide: Version Control Environment, Create a new Feature, Local Code Review, Version Control with AI, Create Pull Request, Review Pull Request.
+- This is the deep dive Mads promised in the keynote ("Sebastian will show a whole lot there").
+- Source: 12:30-12:31 ET, transcript 20261111-123003; title card shot 20261111/123138; agenda shot 20261111/123153.
 -->
 
 ---

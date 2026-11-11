@@ -3007,6 +3007,19 @@ He turned on memory safety v2. The build failed. An AI agent had added unsafe co
 -->
 
 ---
+layout: "session"
+num: 16
+time: "7:00 PM"
+speakers: "Jeremy Barton"
+---
+
+# Post-Quantum Cryptography with .NET 11
+
+<!--
+[Session 16] Agenda time 7:00 PM ET; started ~7:02.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

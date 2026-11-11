@@ -1478,9 +1478,9 @@ time: "17:21"
 - Alexandre (17:21): "XAML is a first-class way of building WinUI applications and it is not deprecated."
 - Lessons from building it (17:20): keys "matter more than we originally first thought"; when something felt slow, "everyone's instinct was just to say that the diff itself was slow, which almost never was the case. The profiler kept pointing at allocations" from fluent modifier chains; "implementing docking took way more design time than the reconciler did".
 - Version (17:22): hosting Reactor in a XAML page "is new in Reactor Preview.17 that we shipped last week". "if you are on WinForms, there is also an interop package for that too".
-- Next demo: Reactor DevTools via `winapp run --watch`; "--watch" is "not shipped publicly yet" (winapp run is).
+- Next demo: Reactor DevTools via `winapp run --watch`; "--watch" is "not shipped publicly yet" (winapp run is). Hot reload demo (17:24): he changed a font factor "from 0.55 to 0.95", saved, and only that one number grew; "my flags are still there, my bombs are still there ... This is just hot reloading a live app", inside a packaged app. "this is in preview, this is not in the stable version 0.8 that we shipped of the WinApp CLI."
 - Why it matters: this is an experiment you can try in an existing XAML app, not a migration.
-- Source: 17:20-17:23 ET, transcripts 20261111-172003 and 20261111-172204; shot 20261111/172138.
+- Source: 17:20-17:23 ET, transcripts 20261111-172003, 20261111-172204, 20261111-172404; shot 20261111/172138.
 -->
 
 ---

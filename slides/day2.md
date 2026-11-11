@@ -1647,7 +1647,7 @@ time: "17:54"
 - Say: The prompt is the brain; the hands are trusted C# code exposed as an MCP tool. Here an `analyze_photo` tool reads a package photo from Blob storage and asks a vision model for a damage verdict.
 - On screen (src/PackageTools/PhotoInspectionTool.cs): `[McpServerToolType] public sealed class PhotoInspectionTool(PhotoAnalysisService analysis, ILogger<PhotoInspectionTool> logger)`; `[McpServerTool(Name = "analyze_photo")]` with `[Description("Read one JPEG or PNG package photo from the package-photos Blob container and ask the vision model to ...")]`; `Task<PhotoVerdict> AnalyzePhotoAsync(string blobName, string inspectionInstructions, CancellationToken ...)`; parameter description: "The inspection rules from the hosted skill's Markdown". On timeout it throws `McpException("Photo analysis timed out. No damage verdict is available.")`.
 - Speaker (17:54): "These are my hands, essentially." "we're giving the tool name, we're giving it a description, so the model can say, oh, I think I might need this ... your hands do it". "these are our hands essentially that's well written, we trust it." It is handed to the function "because it's an MCP server now".
-- This is the MCP C# SDK from earlier today (session 07), used as the tool layer for a hosted skill.
+- (Inference) The [McpServerTool] attributes are from the MCP C# SDK shown in session 07.
 - Source: 17:54-17:55 ET, transcript 20261111-175404; shot 20261111/175449.
 -->
 

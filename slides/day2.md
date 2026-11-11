@@ -799,6 +799,24 @@ time: "13:33"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/134926.jpg"
+time: "13:49"
+---
+
+# Blazor circuits survive eviction and planned shutdowns
+
+<!--
+- Say: Blazor Server state now survives two kinds of interruption: a lost connection, and a planned server shutdown. New in .NET 11: you can ask a circuit to pause before you shut down.
+- Connection loss, Dan (13:46): the server keeps a disconnected circuit in memory for a while, but "before it evicts the circuit, it will persist it. And if the components have been set up with persistent state, then that state can be reused to then resume that circuit later with a new circuit."
+- Demo (13:48): he cut the network in browser dev tools. Aspire metrics went to "zero active circuits" (eviction shortened from the normal two minutes for the demo). Back online, the form state (delivery address, choices) came back: "none of that was lost because all of it got persisted."
+- Planned shutdown, NEW IN .NET 11 (slide "Ask a circuit to pause"): `var accepted = await circuit.RequestCircuitPauseAsync(ct);` A CircuitHandler gives your app access to circuits; "Wait for pause completion within a shutdown budget."
+- Dan: the paused state "can actually be stored client side instead of storing it on the server". And "an accepted request to pause the circuit does not mean the circuit is actually fully paused yet", so allow a short delay.
+- Why it matters: deploys and node replacements no longer have to wipe in-progress user work in Blazor Server apps.
+- Source: 13:46-13:50 ET, transcripts 20261111-134601 and 20261111-134801; slide "Ask a circuit to pause" (shot 20261111/134926).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

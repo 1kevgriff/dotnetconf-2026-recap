@@ -628,6 +628,25 @@ time: "12:45"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/125235.jpg"
+time: "12:52"
+---
+
+# Full PR review in VS, for GitHub and Azure DevOps
+
+<!--
+- Say: The pull request experience is now fully in the IDE, for GitHub and Azure DevOps. Vote, complete, comment, and edit the code right in the PR diff.
+- Sebastian (12:50): "this pull request experience is now fully in the IDE. It's very similar to what we have on Azure DevOps or on GitHub. It works for both."
+- What you can do: publish or abandon your PR; vote on others (approve, wait for author, reject); complete or set auto-complete. The overview shows the description with images and GIFs, iterations, global comments; reply, resolve, and filter comments by status or author.
+- AI grouping: "kickstart your review with AI ... Can you bucket them into similar areas so that it's easier for the reviewer to review?" ("generate group").
+- Check out the PR: test your teammate's edge cases; or, as the author, "you can actually edit the files" in the PR view and respond to comments in place.
+- On screen: PR #805625 "[DO NOT REVIEW] Test", Changes (7) with checkboxes to mark files reviewed, and an AI review comment ("VSEng Copilot Code Reviewer ... Maintainability", model gpt-6-luna) asking for an extra test.
+- Why it matters: this is the "full code review and pull request flow" from the keynote. For many teams the browser is no longer needed for review.
+- Source: 12:50-12:53 ET, transcripts 20261111-125004 and 20261111-125205; shot 20261111/125235.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

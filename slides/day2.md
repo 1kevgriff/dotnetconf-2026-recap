@@ -1842,6 +1842,23 @@ time: "18:33"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/183750.jpg"
+time: "18:37"
+---
+
+# Full C#, virtual project, and the SDK caches the build
+
+<!--
+- Say: A file-based app is real C# with a project that is just virtual, so you get IntelliSense. And the .NET SDK caches the build, so a re-run skips work it does not need.
+- Damian (18:36): "It's not C# scripting. It is not C# interactive ... CSX. This is full-fat C#. It's just that the project is virtual." "Yes, I get IntelliSense here."
+- Caching: "we've actually done a bunch of work in file-based apps in the .NET SDK to implement build caching." His measure-launch.ps1 script ran hello.cs in different cache states. "for an uncached build, you can actually disable the cache by passing --no-cache".
+- On screen (Mode / Run / Milliseconds, 5 runs each): uncached build 953.6-988.3 ms; fresh output 349.4-377.4 ms; directive change 1040.8-1050.7 ms (3 runs visible). So roughly: uncached about 970 ms, cached ("fresh output") about 370 ms, changing a #: directive about 1045 ms. He said the table at the bottom gives the median; it was not captured.
+- (Inference) "fresh output" = the build output is current, so the build step is skipped.
+- Source: 18:36-18:38 ET, transcript 20261111-183600; shot 20261111/183750.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

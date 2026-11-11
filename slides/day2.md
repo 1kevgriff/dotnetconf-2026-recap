@@ -146,7 +146,7 @@ time: "11:08"
 - Chart: 4 runs, setting off 31/27/25/21 s, setting on 2/2/1/1 s. "Average: 26.0s → 1.5s (94% faster)".
 - Agent angle, his words: "whether you're the one building or if your agent building is part of a loop that you're running, you're going to see much faster inner loop."
 - Same release, also said: Live Unit Testing is 25% faster with xUnit.
-- Jason Chlus demoed it live at 12:06 on Orchard Core: "this does have 260 projects, so it does take maybe four or five minutes to build. And with this new feature, you will see that it will stop on the first error in around 10 seconds." He credited Mads for the feature.
+- Jason Chlus demoed it live at 12:06 on Orchard Core: "this does have 260 projects, so it does take maybe four or five minutes to build. And with this new feature, you will see that it will stop on the first error in around 10 seconds." He credited Mads for the feature. At 12:14 he added: "the stop on first failure is also opt in", so turn it on in settings.
 - Why it matters: a failed build in a big solution now fails in seconds, for people and for agents.
 - (Inference) The release is 18.12; Mads showed this right after the 18.12 performance list. Check the release notes for the exact option name.
 - Source: 11:08-11:09 ET, transcript 20261111-110804; shot 20261111/110839. Live demo: 12:06 ET, transcript 20261111-120600.
@@ -486,6 +486,27 @@ time: "12:09"
 - Also on screen: "Last run: 11/11/2026 9:08:34 AM" on the test detail. Jason: last run shows for groups and single tests, so you see when a result is old.
 - Why it matters: the hardest string failures (one invisible character) are now visible at a glance.
 - Source: 12:08-12:09 ET, transcript 20261111-120800; shot 20261111/120910.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/121506.jpg"
+time: "12:15"
+---
+
+# Colorized Output window (ANSI colors). Opt-in.
+
+<!--
+- Say: The Output window now shows ANSI colors, so warnings and errors in a messy build stand out. It is off by default; turn it on in settings.
+- Jason (12:14): "we have colorized output in VS ... especially when your builds get messy and you're looking to quickly scan find warnings infos errors". "this is not on by default so that is one of those features that you will have to opt in on". You can edit all the colors.
+- On screen: Output "Show output from: Colorized Output", the 16 ANSI foreground colors (30-37 standard, 90-97 bright), and the new Fonts and Colors page in Tools > Options with search and live preview.
+- Other quality-of-life items in the same tour (12:12-12:14):
+  - Move tabs with the keyboard; "close all tabs to the right"; a new option for tighter tabs.
+  - New keyboard shortcuts UI: search commands (e.g. Zoom Reset), "record your steps" to find a binding, pick standard schemes. Reset zoom with Ctrl+Num0.
+  - New Fonts and Colors UI: search an item, edit in place, see a preview.
+  - Git: from your repo view you see history and PRs; "We have the complete end-to-end in VS now. You can go from coding to code review to creating a PR." Review changes since any commit.
+- Why it matters: many small DevCom requests closed at once. Two of the best (colorized output, stop on first failure) are opt-in, so tell people to turn them on.
+- Source: 12:12-12:15 ET, transcripts 20261111-121201 and 20261111-121401; shot 20261111/121506.
 -->
 
 ---

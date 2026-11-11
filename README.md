@@ -50,7 +50,7 @@ npm install-scripts approve playwright-chromium
 | 16 | Post-Quantum Cryptography with .NET 11 | Jeremy Barton |
 | 17 | Bringing `dotnet run`, `test`, and `watch` to .NET MAUI | Jonathan Peppers |
 
-Later sessions are added as the stream continues.
+Day 1 is complete: all 17 agenda sessions, 159 slides.
 
 ## How it was made
 

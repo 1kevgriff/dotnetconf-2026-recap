@@ -1425,8 +1425,10 @@ Button(label, () => dispatch(new Reveal(x, y)))
 - Say: For bigger state, Reactor has UseReducer: one state record, every move is a record, and the reducer is a pure C# function (state, action) → next state. You can unit test it with no window.
 - Code is from the stream slide "UseReducer" (17:12, shot 20261111/171258): a Minesweeper game. Slide text: "One state record. Every move in one place. Each one is a record. A pure function you can unit test, with no window."
 - Alexandre (17:12): "From MVVM the biggest difference is there is no INotifyPropertyChanged. There's no binding". For simple values, use UseState; for more complex state, "we provide another method called the useReducer". "The state is a record and every move is also a record." "the use reducer method gives us the current state and a dispatch function". "state and action in" and the next state out.
+- Headless testing (17:14): the reducer has "no controls no dispatcher no UI types", so "you can unit test this whole application with literally every single move in a headless ... test project without any windows".
+- The one rule (slide "The one rule", shot 20261111/171439): "Hooks are tracked by call order. Never call one conditionally: no ifs, loops or early returns. The analyzer catches it as you type: REACTOR_HOOKS_001." Wrong: UseState inside `if (isLoggedIn)`; right: call UseState every time, then branch on the value. Alexandre: "That's basically the same rule that you have with React and for exactly the same reason."
 - Experimental: no API guarantees yet.
-- Source: 17:12-17:13 ET, transcript 20261111-171203; shot 20261111/171258.
+- Source: 17:12-17:15 ET, transcripts 20261111-171203 and 20261111-171404; shots 20261111/171258 and 171439.
 -->
 
 ---

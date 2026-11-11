@@ -1062,6 +1062,21 @@ time: "14:51"
 -->
 
 ---
+layout: "statement"
+---
+
+WinUI: monthly releases in the open, modern .NET workflow, ready for agents.
+
+<!--
+- Say: Niels's three takeaways: WinUI ships every month on GitHub, it now works like modern .NET (dotnet new, dotnet run, any editor), and it is ready for agents. Get started: aka.ms/winui.
+- Niels (14:54): "we're investing in WinUI and we're shipping new releases every month. And we're doing that open on GitHub." The WinUI Gallery in the Microsoft Store now ships with the latest experimental SDK, to try new controls. "building WinUI apps now feels much more like modern .NET development ... .NET new or .NET run ... the CLI ... VS Code, or Visual Studio." "WinUI is ready for agents": WinApp CLI = tools, WinUI plugin = knowledge.
+- On the closing slide: "A new Experimental + Stable release [each month], built in the open on GitHub"; "Get started: aka.ms/winui" (slide not in deck: a presenter menu and a camera frame cover it).
+- New VS templates (14:52): a unit test app on the new MTP (Microsoft.Testing.Platform) "which allows you to run your tests with AOT, and you can do async UI tests"; a packaged/unpackaged choice in the templates, which the community asked for. The new XAML previewer (resize, dark mode) is experimental; they want feedback.
+- Next Windows session today: CsWinRT 3.0 (3:30 PM ET).
+- Source: 14:52-14:55 ET, transcripts 20261111-145203 and 20261111-145403; closing slide shot 20261111/145533.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

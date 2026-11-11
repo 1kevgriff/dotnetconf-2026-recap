@@ -1448,6 +1448,23 @@ time: "17:17"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/171829.jpg"
+time: "17:18"
+---
+
+# Reactor ships 60+ Roslyn analyzers that catch UI bugs as you type
+
+<!--
+- Say: Because Reactor UI is just C#, it ships Roslyn analyzers that catch UI bugs before you build: conditional hooks, missing keys, hard-coded colors, missing accessible names, typos, UI calls from background threads.
+- On screen, "60+ analyzers catch UI bugs as you type": REACTOR_HOOKS_001 (a hook called conditionally); REACTOR_DSL_001 (a list item missing .WithKey); REACTOR_THEME_001 (a hard-coded color, not a theme token); REACTOR_A11Y_001 (an icon-only button with no accessible name); REACTOR_DYM_003 ("Buton(...)? Did you mean Button?"); REACTOR_THREAD_001 (a UI-thread call from a background thread).
+- Alexandre (17:18): "We have more than 60 of them, I think 62." A hard-coded color "looks fine in light mode and breaks in dark mode"; an icon-only button "a screen reader can only announce as a button"; a UI update from a background thread "you normally only find when the app actually crashes".
+- "because these are just Roslyn analyzers, it shows up in Visual Studio, it shows up in VS Code, and even in just a build output from a simple .NET build from the CLI."
+- Why it matters: with no XAML, the compiler and analyzers see the whole UI, so accessibility and theming bugs show up as squiggles. (Inference) Agents that build and read diagnostics get the same feedback.
+- Source: 17:18-17:19 ET, transcript 20261111-171804; shot 20261111/171829.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

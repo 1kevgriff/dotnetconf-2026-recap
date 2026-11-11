@@ -1259,6 +1259,21 @@ time: "15:57"
 -->
 
 ---
+layout: "session"
+num: 11
+time: "4:03 PM"
+speakers: "Mika Dumont"
+---
+
+# GitHub Copilot modernization
+
+<!--
+- [session 11] Mika Dumont. Started about 4:03 PM ET.
+- Jason pointed here this morning: "if you're a little bit worried about making the jump from one of the older versions of .NET, like .NET 8 or .NET 9, to .NET 11, you should check out Mika's section on the Modernization agent."
+- Source: dotnetconf.net/agenda (4:00 PM ET); transcript 20261111-122404 for Jason's pointer.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

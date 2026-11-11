@@ -541,8 +541,7 @@ Hot exit: close VS with unsaved changes. Reopen, nothing lost.
 - Demo: unsaved MarkdownFile2.md in the Orchard Core solution came back after closing and reopening VS (shot 20261111/122334, not in deck).
 - SSMS: "This is also coming to SSMS ... I think that'll be in the next release." Say "planned", not "shipped".
 - Teaser: Jason is "working on a PR that will allow you to export your test results" from Test Explorer. In progress, no date.
-- Why it matters: a long-time request (other editors have had it for years) is now first class in VS.
-- (Inference) "other editors have had it for years" is my framing; Jason did not say it.
+- Why it matters: you can close VS at any time, also with agent and skill files half edited, and lose nothing.
 - Source: 12:22-12:23 ET, transcript 20261111-122204.
 -->
 

@@ -969,6 +969,20 @@ time: "14:25"
 -->
 
 ---
+layout: "session"
+num: 8
+time: "2:31 PM"
+speakers: "Niels Laute, Morten Nielsen"
+---
+
+# Building great Windows apps with WinUI and agents
+
+<!--
+- [session 08] Niels Laute and Morten Nielsen. Started about 2:31 PM ET.
+- Source: 14:30-14:31 ET, transcript 20261111-143000; dotnetconf.net/agenda (2:30 PM ET).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -1043,6 +1043,24 @@ time: "14:47"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/145135.jpg"
+time: "14:51"
+---
+
+# `winapp perf`: the agent profiled startup and found the UI-thread waste
+
+<!--
+- Say: The WinApp CLI just added performance recordings. Morten told the agent "it takes a long time to display things". It ran `winapp perf`, and found that most of a slow startup frame was his own load/save code, not rendering.
+- Morten (14:50): "one of the things we just added to the WinApp CLI is the ability to do performance recordings and also query those performance recordings. And then if you give that to the agent, it becomes quite powerful". The app took "about two seconds" to start.
+- On screen: "The main delay is cached-data processing on the UI thread, including a redundant reload, not XAML rendering. `winapp perf` recorded a 1.53-second startup frame; layout/rendering accounted for only ~0.34 seconds." Timings: load cached account then save it 816 ms; fetch GitHub user 335 ms; reload and save the same account again 772 ms; initial refresh 1.80 s; AI availability check 158 ms. Cause: "SQLite's async calls execute synchronously, keeping this work on the UI thread." Fix: avoid saving unchanged data, move cache processing off the UI thread.
+- The agent noted: "Timings are approximate because debugger attachment adds overhead". Morten had run this before the session ("I kind of pre-did this already").
+- Follow-up: the recording stays on the machine, so you can ask more questions, e.g. the most expensive UI elements, with a WinUI performance-analysis skill.
+- Why it matters: profiling a desktop app becomes a chat question, with evidence the agent can show.
+- Source: 14:50-14:52 ET, transcript 20261111-145000; shot 20261111/145135.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

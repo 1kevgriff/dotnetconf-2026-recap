@@ -1328,7 +1328,7 @@ time: "16:37"
 - DevFlow (16:36): the agent asks for the visual tree, "it doesn't have to guess based on a screenshot ... including things that might be invisible ... Or have a zero width." "this will save you tokens". "You can see this as Playwright for your mobile applications".
 - Status: "everything in MAUI Labs is a pre-release right now".
 - Also in maui-labs (README "At a glance", 16:43, shot 20261111/164314): Comet ("Experimental MVU UI framework for .NET MAUI with C# fluent UI, signals, and reactive state"), Go (single-file Comet app server), AI Extensions (source-generated Microsoft.Extensions.AI tool bindings), a macOS AppKit backend ("running MAUI apps as macOS apps without Mac Catalyst"), a WPF backend, Essentials.AI (on-device chat, embeddings, tool calling), AppProjectReference, MAUI Testing (MTP-based device tests). Gerald also said "we have a Linux backend in here".
-- MAUI Sherpa (16:38), not in maui-labs: a visual tool "built by Jonathan on our team" (last name not said here. (Inference) Likely Jonathan Dick (Redth), the author of Mobile Canvas, which Gerald introduced as "another cool thing by my good friend Jonathan". Not Jonathan Peppers. Confirm before you name him.) It sets up Android SDK and Xcode, checks .NET SDKs, handles certificates, builds, uploads to app stores, manages secrets: "mission control for mobile development". Not only for MAUI apps.
+- MAUI Sherpa (16:38), not in maui-labs: a visual tool "built by Jonathan on our team" (Gerald's "Get started" slide confirms: "MAUI Sherpa and Mobile Canvas, by Redth", i.e. Jonathan Dick. Not Jonathan Peppers.) It sets up Android SDK and Xcode, checks .NET SDKs, handles certificates, builds, uploads to app stores, manages secrets: "mission control for mobile development". Not only for MAUI apps.
 - Why it matters: agents read the real UI state of iOS and Android apps instead of guessing from screenshots. (Inference) It parallels winapp for WinUI from earlier today.
 - Source: 16:34-16:43 ET, transcripts 20261111-163402, 20261111-163604, 20261111-163803, 20261111-164204; shots 20261111/163719 and 164314.
 -->
@@ -1349,6 +1349,23 @@ time: "16:52"
 - DevFlow point (slide "The visual tree beats a screenshot", 16:45): screenshot only "Guesses coordinates from pixels ... Breaks when the layout shifts"; DevFlow visual tree "Taps controls by name ... Knows properties and state".
 - Name note: the stream agent called the canvas author Jonathan Peppers; the slide says Redth (Jonathan Dick). Use the slide.
 - Source: 16:45-16:53 ET, transcripts 20261111-164405, 20261111-165002, 20261111-165202; shots 20261111/164505 and 165242.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/165542.jpg"
+time: "16:55"
+---
+
+# "Ask for proof": three commands to give your agent eyes on a MAUI app
+
+<!--
+- Say: To start: install the MAUI CLI, run `maui ai init`, then add DevFlow and open the Inspector. Gerald's main tip: ask the agent for proof at runtime, not just code.
+- On screen, "Get started": `dotnet tool install -g Microsoft.Maui.Cli --prerelease`; `maui ai init --env VsCode --yes`; "Ask your agent to add DevFlow, then open the Inspector": `maui devflow broker start`, http://localhost:19223/inspector/; docs: github.com/dotnet/maui-labs; "MAUI Sherpa and Mobile Canvas, by Redth": github.com/Redth. (This confirms Sherpa is by Redth / Jonathan Dick.)
+- Gerald's tips (16:54): "start from a running app, ask for proof ... with DevFlow it can even do screenshots and screen recordings". "The code is less important for me now ... but that it runs at runtime, absolutely still important". "commit the MAUI AI ... setup ... so that everyone has the same skills". "Keep DevFlow only for your debug builds and always, it hasn't changed with AI, always test it on actual real devices."
+- Viewer comment (16:56): DevFlow "as part of a PR review. After the review, the agent used it to confirm the bug it found, write the fix, and confirm it was done."
+- Q&A: for WPF, "look for something that's called Aloha, A-I-loha" — "an experiment that we didn't really promote enough yet", the same idea for WPF, Windows "but also for other frameworks".
+- Source: 16:54-16:57 ET, transcripts 20261111-165402 and 20261111-165602; shot 20261111/165542.
 -->
 
 ---

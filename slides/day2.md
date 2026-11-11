@@ -61,12 +61,15 @@ time: "11:00 AM"
 speakers: "Mads Kristensen"
 ---
 
-# Keynote
+# Keynote: Visual Studio Now and Next
 
 <!--
-- [session 01] Day 2 opens with the Visual Studio keynote.
-- Say: Day 2 is the Microsoft product team day. Mads Kristensen opens it, and the morning is all Visual Studio: AI in VS, what's new, git, then debugging.
-- Source: dotnetconf.net/agenda, Day 2, 11:00 AM ET.
+- [session 01] Day 2 opens with the Visual Studio keynote. The slide title on stream was "Visual Studio Now and Next".
+- Say: Day 2 is the Microsoft product team day. Mads Kristensen (Principal Product Manager) opens it, and the morning is all Visual Studio: AI in VS, what's new, git, then debugging.
+- His framing, from the opening: "the role of development is changing faster than maybe it ever has. AI is becoming part of our everyday development. Our solutions are getting bigger." And developers "still need the fundamentals required to be fast, to be reliable and effortless".
+- Why it matters: the keynote sets up the pitch for the day: AI features in VS, but not at the cost of IDE speed and reliability.
+- Questions during the day: the chat, or a questions site. The transcript has ".netconfquestions.com". Confirm the URL before you say it.
+- Source: 11:00-11:01 ET, transcript 20261111-110002; title card shot 20261111/110122.
 -->
 
 ---

@@ -1899,6 +1899,22 @@ time: "18:46"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/185354.jpg"
+time: "18:53"
+---
+
+# .NET 11: the whole SDK CLI understands file-based apps
+
+<!--
+- Say: In .NET 10 only build, restore, run and publish really understood file-based apps. In .NET 11 the team went through the SDK commands, so things like `dotnet format` and `dotnet package list --outdated` now work on a single .cs file.
+- Damian (18:51): "in .NET 11, we did a lot of work in the .NET SDK to go through all of the commands". "When we first launched our file-based apps in .NET 10 ... It was really only dotnet build, dotnet restore, dotnet run, and dotnet publish that really understood" them.
+- Demo: `dotnet format` on a file-based app; `dotnet package list --file packages.cs`, then `--outdated` → "Project `packages.cs` has the following updates to its packages [net11.0]: Humanizer.Core requested 2.14.1, resolved 2.14.1, latest 3.0.10"; then `--vulnerable`.
+- Why it matters: file-based apps get the same maintenance tools as projects: formatting, outdated and vulnerable package checks.
+- Source: 18:51-18:54 ET, transcripts 20261111-185001 and 20261111-185204; shot 20261111/185354.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

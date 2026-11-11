@@ -732,9 +732,29 @@ time: "13:17"
 - Say: For people who like other AI clients: start a performance investigation in Copilot CLI, then connect Visual Studio and continue with its profiler. Not shipped yet.
 - Harshada (13:16): "you can bring in Visual Studio along with your existing client and have that connected diagnostics experience." "I'm going to use the AHP to connect the Visual Studio to the client". (Agent Host Protocol per the stream agent; she said "AHP".)
 - Demo: SharpZipLib, benchmark Adler32LargeUpdate. The CLI did a static analysis first (on screen: "measures a single checksum pass over 256 MiB", call path Update(byte[]) → Update(ArraySegment...)). Then a `launch-vs` prompt from a CLI plugin connects VS.
-- Status: "this particular experience is not out yet. It is coming soon."
+- Status: "this particular experience is not out yet. It is coming soon." Later (13:27): "The AHP is still internal".
 - Why it matters: VS's profiler and debugger become tools any agent client can call, not only the VS chat.
 - Source: 13:16-13:17 ET, transcript 20261111-131603; shot 20261111/131728.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/132254.jpg"
+time: "13:22"
+---
+
+# Profiler agent result: Adler32 27.9% faster on .NET 6, 13.0% on .NET Framework
+
+<!--
+- Say: The connected demo ended with the VS profiler agent finding and fixing a hot loop in SharpZipLib. Same Release benchmark: 27.9% less time on .NET 6, 13.0% on .NET Framework 4.8.1.
+- On screen (Copilot CLI, after VS profiling):
+  - .NET 6.0.36: 159.385 ms → 114.965 ms, 27.9% time reduction.
+  - .NET Framework 4.8.1, net462 target: 149.235 ms → 129.858 ms, 13.0%.
+  - The change: accumulate four byte-position sums, then apply weighted arithmetic once per 3,800-byte block instead of per group. "The block limit, tail handling, and public API remain unchanged." "All four focused correctness tests passed".
+- Harshada (13:21): "after the profiler agent ... we are able to see almost 27 percent of optimization for the .NET 6 and then for the other .NET framework ... 13 percent".
+- Status: the CLI-to-VS connection is "not out yet"; she said "The AHP is still internal". So: demo of a coming feature.
+- Why it matters: the agent changed an algorithm in a real open-source library, measured it on two runtimes, and kept the tests green.
+- Source: 13:20-13:28 ET, transcripts 20261111-132003, 20261111-132204, 20261111-132600; shot 20261111/132254.
 -->
 
 ---

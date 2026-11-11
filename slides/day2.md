@@ -293,7 +293,7 @@ speakers: "Rachel Kang, Barbara Boyajian"
 <!--
 - [session 02] Rachel Kang and Barbara Boyajian, both Microsoft. The agenda lists only Rachel; the title card shows both.
 - Headline of the session, Rachel (11:30): "The new agent harness powered by the Copilot SDK is now generally available in Visual Studio."
-- "New Brain" = the new agent harness on the Copilot SDK (the one Mads introduced in the keynote). "More Choice" = more ways to pick and run models and agents.
+- "New Brain" = the new agent harness on the Copilot SDK (the one Mads introduced in the keynote). (Inference) "More Choice" = more ways to pick models and agents; Rachel said only "a whole lot more choice that we now offer in Visual Studio to put your AI to work".
 - Why it matters: the keynote's Copilot SDK rebuild is GA, not a preview.
 - Source: 11:30 ET, transcript 20261111-113000; title card shot 20261111/113025.
 -->

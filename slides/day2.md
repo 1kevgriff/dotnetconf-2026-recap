@@ -1219,6 +1219,25 @@ time: "15:44"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/154850.jpg"
+time: "15:48"
+---
+
+# Opt in to CsWinRT 3.0 with the TFM: `.0` = 2.x, `.1` = 3.0
+
+<!--
+- Say: CsWinRT 3.0 is a breaking change, so you opt in. The last number of the Windows OS version in your target framework picks it: .0 keeps CsWinRT 2.x, .1 moves to 3.0. Libraries can multi-target and use #if CSWINRT3_0.
+- Manu (15:47): "the last bit in the OS version, in the TFM, typically has always been zero. And that will continue to mean that you're using CsWinRT 2.x or earlier projection. But if you change that to .1, that will mean that you're moving to CsWinRT 3.0 projections." They worked with the .NET SDK and NuGet teams on this.
+- Libraries: "you're able to multi-target" with 2.x projections in one folder and 3.0 projections in the .1 TFM folder, so consumers move "at their own pace". The define CSWINRT3_0 lets you branch code.
+- On screen, "Multi-target with CSWINRT3_0": `#if CSWINRT3_0` → `System.EventHandler<Watcher, Info> h = OnAdded;` `#else` → `Windows.Foundation.TypedEventHandler<Watcher, Info> h = OnAdded;`. "TargetFramework picks CsWinRT 2.x (.0) or 3.0 (.1)".
+- Example of an API change: TypedEventHandler becomes System.EventHandler in 3.0 projections.
+- (Inference) A TFM then looks like net11.0-windows10.0.<build>.1; no full TFM string was shown.
+- Why it matters: you control when you take the breaking change, and package authors can support both.
+- Source: 15:47-15:49 ET, transcript 20261111-154800; shot 20261111/154850.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

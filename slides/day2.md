@@ -696,7 +696,7 @@ time: "13:08"
   - Manual: you reproduce and verify with your own judgment.
   - Test-driven: "The agent will actually use the existing test suite, even create a new test if needed".
   - UI Automation: "recently added ... in our latest insiders", for UI and WPF bugs. Insiders only.
-- Demo next: eShopOnWeb running locally, a bug when buying the ".NET Bot" sweatshirt.
+- Demo next: eShopOnWeb running locally, a bug when buying a .NET sweatshirt (product name unclear in the transcript).
 - Why it matters: the agent works from the runtime state, not just the source, and proves the fix.
 - Source: 13:08-13:09 ET, transcript 20261111-130801; slide "The investigation loop" (shot 20261111/130801).
 -->

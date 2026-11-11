@@ -849,6 +849,7 @@ Start with static SSR. Add interactive server where needed. WebAssembly for comp
 - "different parts of your app might have different characteristics ... you can set up the render modes for each part of your app".
 - Where paused-circuit state goes (13:54): no browser connection (eviction after a disconnect) → on the server, in-memory cache by default, or HybridCache if enabled, so it can scale out. With a connection (graceful shutdown, Auto Pause) → "persist down to the client ... nicely protected", in the browser's local storage.
 - On Aspire: "I would never build another ASP.NET Core Blazor app without wiring up Aspire." The demos used the Aspire dashboard for circuit metrics.
+- Download: "Go ahead and download .NET 11 at get.net slash 11" (Dan, 13:54). Say: get.net/11.
 - Why it matters: a clear default for new Blazor apps, with less server state per user.
 - Source: 13:54-13:57 ET, transcripts 20261111-135402 and 20261111-135602.
 -->

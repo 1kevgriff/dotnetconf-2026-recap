@@ -1178,6 +1178,7 @@ speakers: "Manodasan Wignarajah, Sergio Pedri"
 
 <!--
 - [session 10] Manodasan Wignarajah and Sergio Pedri. Started about 3:31 PM ET.
+- STATUS: CsWinRT 3.0 is in PREVIEW. Sergio (15:53): "all of these is currently in preview". The NuGet and Windows SDK packages came out this week as previews; the WinUI / Windows App SDK multi-target package is "an internal package at the moment, but we're hoping to get this out very soon."
 - Source: dotnetconf.net/agenda (3:30 PM ET); stream agent session marker.
 -->
 
@@ -1192,7 +1193,7 @@ time: "15:34"
 <!--
 - Say: Just moving the Microsoft Store client from CsWinRT 2 to CsWinRT 3 cut its Native AOT binary by about 22 MB (16.6%). The interop generator is 12.8x faster on a clean build and no longer runs in the IDE loop.
 - On screen, "Smaller AOT apps": Microsoft Store 129.34 MB → 107.86 MB (−16.61%); Contoso Camera 5.61 MB → 5.08 MB (−9.45%).
-- Sergio (Store client team, 15:34): the Store numbers are "on .NET 10 and Native AOT" both before and after; "This is just from updating from CSP2 to CSP3 [CsWinRT 2 to 3]". "this, again, is a production ready thing. And we're actually rolling it out to Windows Insiders experimental users right now." The size win "scales with" app complexity.
+- Sergio (Store client team, 15:34): the Store numbers are "on .NET 10 and Native AOT" both before and after; "This is just from updating from CSP2 to CSP3 [CsWinRT 2 to 3]". "this, again, is a production ready thing. And we're actually rolling it out to Windows Insiders experimental users right now." Note: that is the Store app's own build; the public CsWinRT 3.0 packages are still preview (15:53). The size win "scales with" app complexity.
 - Next slide, "Faster IntelliSense builds / Microsoft Store: CsWinRT 3.0 generator vs 2.x": clean build (generator only) 115 s → 9 s, 12.8x; incremental build (generator only) 24 s → 4 s, 6x.
 - Why it's faster: CsWinRT 2 used source generators that analyze all your code for marshalling stubs, "very, very expensive". CsWinRT 3 "completely removed all of these generators" and moved to "a single native AOT compiled interop generator, which runs just when you actually are ready to deploy your app ... this is not part of the IDE loop."
 - Why it matters: smaller Windows apps, and VS loads and builds big WinRT projects faster.
@@ -1214,7 +1215,8 @@ time: "15:44"
 - CsWinRT 3: "no need to mark anything as partial, no need to add attributes anywhere, no need to add casts anywhere. The code is just working as is".
 - Versioning pain fixed (15:42): before, packages built against an older CsWinRT kept old bugs, so "you would have to wait for all of your dependencies to actually go and update". Now "You can just reference the latest version of CsWinRT in your app, and then you get all the bug fixes and all the improvements".
 - Root cause: CsWinRT started in .NET 5, before trimming and AOT support, so AOT was added later without breaking changes.
-- Why it matters: WinUI and Windows App SDK apps can go Native AOT with ordinary C#.
+- Also new (15:50): arrays in WinRT APIs project as `ReadOnlySpan<T>` (pass arrays) and `Span<T>` (fill arrays). Still source compatible thanks to the C# 14 "first class span" feature (arrays and strings convert automatically), with fewer allocations.
+- Why it matters: WinUI and Windows App SDK apps can go Native AOT with ordinary C#. CsWinRT 3.0 is preview today.
 - Source: 15:42-15:45 ET, transcripts 20261111-154200 and 20261111-154400; shot 20261111/154425.
 -->
 
@@ -1224,10 +1226,10 @@ image: "/shots/day2/154850.jpg"
 time: "15:48"
 ---
 
-# Opt in to CsWinRT 3.0 with the TFM: `.0` = 2.x, `.1` = 3.0
+# Opt in to CsWinRT 3.0 (preview) with the TFM: `.0` = 2.x, `.1` = 3.0
 
 <!--
-- Say: CsWinRT 3.0 is a breaking change, so you opt in. The last number of the Windows OS version in your target framework picks it: .0 keeps CsWinRT 2.x, .1 moves to 3.0. Libraries can multi-target and use #if CSWINRT3_0.
+- Say: CsWinRT 3.0 is in preview and is a breaking change, so you opt in. The last number of the Windows OS version in your target framework picks it: .0 keeps CsWinRT 2.x, .1 moves to 3.0. Libraries can multi-target and use #if CSWINRT3_0.
 - Manu (15:47): "the last bit in the OS version, in the TFM, typically has always been zero. And that will continue to mean that you're using CsWinRT 2.x or earlier projection. But if you change that to .1, that will mean that you're moving to CsWinRT 3.0 projections." They worked with the .NET SDK and NuGet teams on this.
 - Libraries: "you're able to multi-target" with 2.x projections in one folder and 3.0 projections in the .1 TFM folder, so consumers move "at their own pace". The define CSWINRT3_0 lets you branch code.
 - On screen, "Multi-target with CSWINRT3_0": `#if CSWINRT3_0` → `System.EventHandler<Watcher, Info> h = OnAdded;` `#else` → `Windows.Foundation.TypedEventHandler<Watcher, Info> h = OnAdded;`. "TargetFramework picks CsWinRT 2.x (.0) or 3.0 (.1)".

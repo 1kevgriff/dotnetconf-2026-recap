@@ -55,6 +55,21 @@ image: "/kevin-griffin.png"
 -->
 
 ---
+layout: "session"
+num: 1
+time: "11:00 AM"
+speakers: "Mads Kristensen"
+---
+
+# Keynote
+
+<!--
+- [session 01] Day 2 opens with the Visual Studio keynote.
+- Say: Day 2 is the Microsoft product team day. Mads Kristensen opens it, and the morning is all Visual Studio: AI in VS, what's new, git, then debugging.
+- Source: dotnetconf.net/agenda, Day 2, 11:00 AM ET.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

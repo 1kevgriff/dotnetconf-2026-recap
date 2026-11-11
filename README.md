@@ -1,7 +1,8 @@
 # .NET Conf 2026 Recap
 
-A [Slidev](https://sli.dev) deck of Day 1 highlights from .NET Conf 2026
-(2026-11-10), by Kevin Griffin. It was built live while the stream ran.
+Two [Slidev](https://sli.dev) decks of highlights from .NET Conf 2026,
+by Kevin Griffin: Day 1 (`slides/slides.md`, 2026-11-10) and Day 2
+(`slides/day2.md`, 2026-11-11). It was built live while the stream ran.
 Each session from the agenda has its own part, with short headlines on the
 slides and the details in the presenter notes.
 
@@ -15,6 +16,10 @@ npm install
 npm run dev      # http://localhost:3030, opens a browser
 npm run build    # static SPA in slides/dist
 npm run export   # PDF, needs playwright-chromium
+
+npm run dev:day2     # Day 2 deck, http://localhost:3031
+npm run build:day2   # static SPA in slides/dist/day2
+npm run export:day2  # Day 2 PDF
 ```
 
 For `npm run export`, approve the Playwright install script first:
@@ -25,8 +30,8 @@ npm install-scripts approve playwright-chromium
 
 ### Solo
 
-`solo.yml` defines three commands: `Slidev` (dev server, auto-start),
-`Build`, and `Export PDF`. Trust them in the Solo UI before the first run.
+`solo.yml` defines five commands: `Slidev` and `Slidev Day 2` (dev
+servers, auto-start), `Build`, `Build Day 2`, and `Export PDF`. Trust them in the Solo UI before the first run.
 
 ## What is in the deck
 
@@ -51,6 +56,9 @@ npm install-scripts approve playwright-chromium
 | 17 | Bringing `dotnet run`, `test`, and `watch` to .NET MAUI | Jonathan Peppers |
 
 Day 1 is complete: all 17 agenda sessions, 159 slides.
+
+Day 2 (Microsoft product team day, 18 sessions from 11:00 AM ET) is in
+progress in `slides/day2.md`. Its screenshots are in `public/shots/day2/`.
 
 ## How it was made
 
@@ -87,7 +95,8 @@ check first:
 
 ```text
 slides/
-  slides.md      the deck
+  slides.md      Day 1 deck
+  day2.md        Day 2 deck
   layouts/       cover, session, section, statement, shot, default, code, ...
   components/    Badge, BigNum, Caption, Card, Panel, ...
   public/shots/  stream screenshots used on slides

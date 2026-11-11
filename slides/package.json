@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "slidev --open",
     "build": "slidev build",
-    "export": "npm run build && slidev export --wait 6000 --wait-until networkidle --timeout 600000"
+    "export": "npm run build && slidev export --wait 6000 --wait-until networkidle --timeout 600000",
+    "dev:day2": "slidev day2.md --port 3031 --open",
+    "build:day2": "slidev build day2.md --out dist/day2",
+    "export:day2": "npm run build:day2 && slidev export day2.md --output day2-export.pdf --wait 6000 --wait-until networkidle --timeout 600000"
   },
   "dependencies": {
     "@slidev/cli": "^53.0.0",

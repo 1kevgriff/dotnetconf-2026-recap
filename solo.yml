@@ -15,3 +15,14 @@ processes:
     command: npm run export
     working_dir: ./slides
     auto_start: false
+  Slidev Day 2:
+    command: npx slidev day2.md --port 3031
+    working_dir: ./slides
+    auto_start: true
+    restart_when_changed:
+      - slides/package.json
+      - slides/setup/**
+  Build Day 2:
+    command: npm run build:day2
+    working_dir: ./slides
+    auto_start: false

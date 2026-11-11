@@ -1465,6 +1465,23 @@ time: "17:18"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/172138.jpg"
+time: "17:21"
+---
+
+# XAML isn't going away. Don't migrate; add Reactor to one new screen.
+
+<!--
+- Say: Reactor does not replace XAML. XAML stays first-class, the two interop both ways in one visual tree, and the advice is: don't migrate, try Reactor on one small new screen.
+- On screen, "XAML isn't going away": "XAML is first-class and still getting active investment. Interop runs both ways, in one process and one visual tree. Don't migrate. Pick one small, new screen and add Reactor there." Code: `<reactor:ReactorHostControl ComponentType="local:Dashboard" />` (Reactor inside a XAML page) and `VStack(XamlPage(typeof(SettingsPage)), XamlHost(() => new SignaturePad()))` (XAML inside a Reactor component).
+- Alexandre (17:21): "XAML is a first-class way of building WinUI applications and it is not deprecated."
+- Lessons from building it (17:20): keys "matter more than we originally first thought"; when something felt slow, "everyone's instinct was just to say that the diff itself was slow, which almost never was the case. The profiler kept pointing at allocations" from fluent modifier chains; "implementing docking took way more design time than the reconciler did".
+- Why it matters: this is an experiment you can try in an existing XAML app, not a migration.
+- Source: 17:20-17:22 ET, transcript 20261111-172003; shot 20261111/172138.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

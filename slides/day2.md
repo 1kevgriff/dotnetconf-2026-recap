@@ -254,7 +254,6 @@ time: "11:21"
 - Say: You can move a Copilot chat session from the CLI, VS Code or the Copilot app into Visual Studio, and keep going with VS tools.
 - On screen: "Roundtrip chat sessions from CLI, VS Code, Copilot App".
 - Mads (11:20): "we know that you're not always using Visual Studio for everything and that's totally fine." If you started in the CLI and find "you need a debugger or you need a profiler", you can "take that session that you have in the Copilot CLI and simply move it into Visual Studio and continue with it there", and add "that debugger, that UI automation".
-- He said more on this comes "later today".
 - Why it matters: this works because of the shared Copilot SDK (two slides back). VS becomes one stop in a session, not the only place you work.
 - Source: 11:20-11:21 ET, transcript 20261111-112004; slide "Your workflow understood" (shot 20261111/112109).
 -->

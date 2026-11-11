@@ -1720,6 +1720,23 @@ time: "18:08"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/181105-crop.jpg"
+time: "18:11"
+---
+
+# The pattern: agent loop + sandboxed tools + AI Gateway for models and MCP
+
+<!--
+- Say: The full pattern from Part 1: triggers start an agent; the agent calls models through AI Gateway and sends risky tool calls to ACA Sandboxes. The gateway governs models and MCP tools in one place.
+- On screen, "Sandbox & AI Gateway Pattern: Tool Isolation" (README of github.com/paulyuk/aca-sandboxes-dotnet-demo): Triggers (HTTP REST, Timer, Connectors events) → "Interchangeable agent host" (FHA / ACA / App Service / Functions) with an agent control loop ("Call models through gateway · Dispatch tools to isolation · Check results; continue or stop"). Tool isolation: ACA Sandboxes ("Ephemeral microVM · egress-default: Deny", create → exec → delete), "Default deny · explicit egress policy", "Check result contract + policy". Shared model and tool access: AI Gateway (Model Routing, MCP, Policies, Enforcement) → Remote model. "Host choice is independent of tool isolation."
+- Paul (18:11): "this sample also is going to use AI Gateway so that I can govern my models and my tools the same way". With many agents and teams: "capacity ... token budgets ... safety ... I don't want every team kind of figuring that out on their own." And teams "can't possibly know the noisy neighbors".
+- Also mentioned (18:09): a colleague, Nick Greenfield, uses a hosted skill for dead-letter handling: messages "we just don't know how to handle ... throw that at the hosted skill, and it can start to classify".
+- Image: diagram cropped from the browser (bookmarks bar removed).
+- Source: 18:09-18:12 ET, transcripts 20261111-180804 and 20261111-181005; crop of shot 20261111/181105.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

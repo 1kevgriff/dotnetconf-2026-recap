@@ -3163,6 +3163,9 @@ time: "19:43"
 - Pipeline (stream slide): Select → Build → Deploy → Run test application → Collect results, on Microsoft.Testing.Platform (MTP). "The test project must run tests on the device."
 - "The main difference is at the end, you want some kind of test results to happen." (19:43)
 - How watch talks to the app (19:42): over WebSockets — a project capability named "Hot Reload WebSockets"; on Android it uses ADB (Android Debug Bridge) to reach the device
+- New templates (19:46): `dotnet new androidtest -n MyAndroidTests`, `dotnet new iostest -n MyiOSTests` ("We actually have tvOS and Mac Catalyst test" too). Each makes an executable test app using the platform's startup model (Android instrumentation → MTP; iOS UIKit scene lifecycle → MTP)
+- Coming from dotnet/maui-labs (experimental/prerelease): `dotnet new mauitest -n MyApp.Tests` (/shots/194729.jpg)
+- Not verified in transcript: the notes agent's list of supported frameworks (MSTest, NUnit, xUnit, TUnit)
 - Why it matters: device tests become a plain CLI command that CI and agents can run.
 - Source: 19:42–19:44 ET, transcript 20261110-194203, /shots/194348.jpg
 -->

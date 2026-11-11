@@ -1295,6 +1295,21 @@ time: "16:07"
 -->
 
 ---
+layout: "session"
+num: 12
+time: "4:30 PM"
+speakers: "Gerald Versluis"
+---
+
+# Beyond Code Generation: Give AI Eyes and Hands for .NET MAUI
+
+<!--
+- [session 12] Gerald Versluis. Started about 4:30 PM ET.
+- Warm-up from the host just before (16:28): he built MAUI apps "using agentic tools for Maui development" after a fitness app raised its price. A bike app "using the native maps, it's using Bluetooth, it's integrating in with my stationary bike", with a "Mario Kart mode" and a zombie-chase mode; and a breathing/mindfulness app on his phone using "MAI speech models". His point: MAUI "looks cool, but it's a little complicated. I'm telling you now, it's not." (The stream agent names the host Jon; the transcript does not say his name here.)
+- Source: dotnetconf.net/agenda (4:30 PM ET); host segment transcript 20261111-162801.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

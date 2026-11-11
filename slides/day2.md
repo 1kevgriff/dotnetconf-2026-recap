@@ -984,6 +984,24 @@ speakers: "Niels Laute, Morten Nielsen"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/143502-crop.jpg"
+time: "14:35"
+---
+
+# WinUI: open source on GitHub, new Chart, TableView and Ink controls
+
+<!--
+- Say: WinUI now works in the open on GitHub, adds charting, a table view and ink, and ships monthly as part of the Windows App SDK.
+- On screen, "What's new in WinUI": Open source ("GitHub is now the source of truth"); New controls (Chart, TableView, Ink); Performance ("Faster and more responsive"); Fundamentals (new windowing APIs, GameInput support, ThemeResources in code, XAML compiler); Developer experience (dotnet new templates, WinApp CLI, Windows agent skills).
+- Niels (14:34): "GitHub is now our source of truth and we're working in the open ... We're not quite ready yet to accept community pull requests, but that is something we're looking at". New controls: "different charting controls, a new table view control, and pen and ink support."
+- Context: WinUI ships in the Windows App SDK, so "we can ship both stable and experimental releases on a monthly basis." Microsoft uses it in Paint, Notepad, Photos, Widgets, the new Windows Search and the new Run dialog.
+- Image: a crop of the stream slide (the raw frame's camera inset shows a wall note, so it is cropped out).
+- Why it matters: a native Windows UI stack that you can follow on GitHub, with the controls people asked for.
+- Source: 14:32-14:35 ET, transcripts 20261111-143202 and 20261111-143402; slide crop from shot 20261111/143502.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

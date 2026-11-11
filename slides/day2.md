@@ -360,6 +360,24 @@ time: "11:35"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/114110.jpg"
+time: "11:41"
+---
+
+# Agent added 10 tests, saw 1 fail, fixed itself: 50/50 pass
+
+<!--
+- Say: The agent wrote regression tests for the double booking, ran them, saw one fail, and fixed its own code without being asked. All 50 tests pass.
+- Before: 40 tests, all passing. Rachel (11:38): "we clearly don't have tests that accounted for this". She asked it to add tests, run them, then build and relaunch.
+- Rachel (11:40): "We have 10 additional ones now that are automatically being run by the agent ... One of them is failing". "Back in the day ... I would have had to ask Copilot to please acknowledge that this test failed and fix it." Then: "now we're seeing that all 50 tests are passing."
+- On screen: chat log "Ran 37 test(s). 36 Passed, 1 Failed", then edits to MessagingWorkflowTests.cs and SchedulingViewModel.cs; Test Explorer "50 Passed". The chat footer shows Agent, "Autopilot (Allow all)", model GPT-6.1 Sol. The agent also read a SKILL.md.
+- After relaunch, the faulty reschedule action to double book was gone.
+- Why it matters: this is the "tests are the guardrails" point from the keynote, done by the agent inside VS.
+- Source: 11:38-11:41 ET, transcripts 20261111-113805 and 20261111-114000; shot 20261111/114110.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

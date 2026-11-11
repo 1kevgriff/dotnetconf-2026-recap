@@ -656,7 +656,7 @@ time: "12:58"
 
 <!--
 - [surprise guest, between sessions 04 and 05] Mads Kristensen with "Mr. .NET". Mads calls him "Scott"; no lower third was shown. He said: "I was here from 2007 until last year", and Mads said he was Mads's manager "back in your ASP.NET days".
-- (Inference) This is Scott Hunter, former head of .NET product at Microsoft. The stream did not say his last name; confirm before you name him.
+- (Inference) This is Scott Hunter. The stream never said his last name, but all the on-stream facts fit him: first name Scott, "Mr. .NET", Mads's manager in the ASP.NET days, on the team that made .NET Core / Project K, at Microsoft 2007 until last year. Confirm before you name him.
 - Say: A short history break. One of the people who rebooted .NET as .NET Core looked back on it.
 - Why .NET Core: "because of Windows compatibility, you basically can't change .NET Framework anymore."
 - The quote (13:02): "The scary thing is most of the time when you reboot a tech, you lose half your audience ... it's amazing that we rebooted .NET. And not only did we reboot it, but we grew more customers. And we actually made a better product." He named Damian Edwards, David Fowler and Glenn Condron as part of that early team.
@@ -676,7 +676,7 @@ speakers: "Harshada Hole"
 # What's new in Visual Studio Diagnostics
 
 <!--
-- [session 05] Harshada Hole. The agenda title is "What's New in Visual Studio Debugging and Diagnostics".
+- [session 05] Harshada Hole, Visual Studio. Title card: "What's New in Visual Studio Diagnostics", subtitle "From a visible symptom to an evidence-backed fix" (shot 20261111/130551). The agenda title is "What's New in Visual Studio Debugging and Diagnostics".
 - Jason pointed here for the debugging and profiling agents: "the connected diagnostic experience ... the full experience with everything from start to finish".
 - Source: dotnetconf.net/agenda, Day 2, 1:00 PM ET; started about 1:05 PM ET.
 -->

@@ -3002,7 +3002,7 @@ He turned on memory safety v2. The build failed. An AI agent had added unsafe co
 - "None of this needs to be here ... there's better approaches, more modern approaches for all of these things. Ripped out all the unsafe code."
 - It was "preview 7 or something like that"; he now has the feature on in his app code. "So, quote, unquote, the feature works."
 - Also (Q&A): with v2, you can see when "the framework method you're using actually contains unsafe", because it's annotated
-- Why it matters: turn it on to audit what your agents (and dependencies) are writing.
+- Why it matters: turning it on catches unsafe code an agent added without you noticing.
 - Source: 18:58–19:00 ET, transcript 20261110-185800
 -->
 

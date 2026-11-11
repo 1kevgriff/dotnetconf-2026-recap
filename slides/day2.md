@@ -1779,8 +1779,9 @@ time: "18:14"
 - Say: Policies apply per caller identity, not to the whole pool: a monthly cost cap, token-per-minute limits, and content-safety filtering on models and even on an MCP server.
 - On screen, "Policies / Manage policies for models, tools, and agents": Balanced filtering (Content safety, scope Gateway); Balanced filtering (Content safety, Models GPT-6.1 Sol and gpt-5.4-mini, MCP server "GitHub repository digest"); "$10.00 / month per caller identity" (Cost limit, both models); "10,000 tokens / minute per caller identity" (Token rate limit, Gateway); "200,000 tokens / minute per caller identity" (Token rate limit, both models).
 - Paul (18:14): "it's not just a budget of like the whole pool. It's a budget for each client ... I can reallocate later." How the gateway knows the client: "We do it in an identity-based way ... a managed identity, an agent identity", or "you could do it with keys ... between your agent and the gateway". "those are at least two ways".
+- Agent hooks (18:16): "there's agent hooks ... pre and post hooks, and you would call Azure Functions with those." "People even use it for telemetry ... but guardrails, that's the number one ... That's kind of how you run guardrails outside of the reach of the agent." Routing changes: "you're not redeploying your agents. They're just getting that experience at runtime."
 - Image: the stream agent's crop of the portal (no URL bar).
-- Source: 18:14-18:15 ET, transcript 20261111-181401; cropped portal frame.
+- Source: 18:14-18:17 ET, transcripts 20261111-181401 and 20261111-181603; cropped portal frame.
 -->
 
 ---

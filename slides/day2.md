@@ -448,7 +448,7 @@ Next for AI in VS: code review, agent visibility, multi-agent workflows.
 - Rachel (11:54): "there's a lot more generated code to review, more activity to follow, and more tasks for agents to coordinate ... We know that we want to focus more on code review, agent visibility, multi-agent workflows, and more."
 - This matches Mads's keynote: review time is up, and the PR flow is now in VS.
 - No dates or versions were given for these.
-- Q&A (11:58), "Will Visual Studio expose an MCP server so that other agents can control Visual Studio?" Answer: "definitely something that's been in" the works; "We've been playing around with that concept starting with the debugger and the specific uniquely powerful tools that make Visual Studio Visual Studio." They ask which VS tools you want exposed first. Experiment only, no commitment.
+- Q&A (11:58), "Will Visual Studio expose an MCP server so that other agents can control Visual Studio?" Answer starts "That's a great question. That's definitely something that's been in ..." (cut at the chunk edge), then: "We've been playing around with that concept starting with the debugger and the specific uniquely powerful tools that make Visual Studio Visual Studio." They ask which VS tools you want exposed first. Experiment only, no commitment.
 - Why it matters: the bottleneck moves from writing code to reviewing and following agent work.
 - Source: 11:54-11:59 ET, transcripts 20261111-115402 and 20261111-115804; slide "Agentic development keeps evolving" (shot 20261111/115437, not in deck).
 -->

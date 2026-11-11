@@ -1549,6 +1549,21 @@ time: "17:32"
 -->
 
 ---
+layout: "statement"
+---
+
+The agent is the brain. Tools are the hands. Sandbox the tool, not the agent.
+
+<!--
+- Say: The ACA Sandboxes demo's main idea: an agent that reads untrusted documents is risky, so run the dangerous tool in an isolated sandbox.
+- Demo setup (17:34): an agent analyzes a loan document, which has "PII, banking kind of stuff". Two risks: "getting harmed by the data, and the second is like exfil or exfiltrating, sending away my goodies."
+- Paul (17:35): "think of your agent as the brain ... the brain wants what it wants, and then we decide what the hands let the agent reach out and do." "A lot of people are like, oh, I'm going to sandbox the agent. I'm actually going to sandbox the tool. So the tool is dangerous. The tool is the hand".
+- Also: "not everything has to be agents ... Agents are a little bit more dangerous, honestly."
+- Sample: github.com/paulyuk/aca-sandboxes-dotnet-demo (README on screen: .NET 10 SDK, Azure CLI, Copilot CLI; model calls go through an Azure AI Gateway connection). Screenshot not used: it shows the presenter's browser bookmarks.
+- Source: 17:34-17:36 ET, transcript 20261111-173404; shot 20261111/173544 (not in deck).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

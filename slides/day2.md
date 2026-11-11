@@ -794,7 +794,7 @@ time: "13:33"
   - QuickGrid code "looks exactly the same"; the page wraps it in the new CacheView component, with vary-by on the grid's query string parameters and about a 2-minute expiration.
   - A returns policy page uses the standard output cache attribute (whole HTTP response). Dan: CacheView caches "the component instances and also put them in memory or use the hybrid cache if one is configured".
   - A static support form shows validation feedback right away: "we're getting client-side validation, even though this is not an interactively rendered form ... in .NET 11, we added support for client-side validation".
-- Why it matters: many pages that needed interactive Blazor (and a circuit per user) can now be static SSR, which scales better.
+- Why it matters: (Inference) many pages that needed interactive Blazor (and a circuit per user) can now be static SSR, with no server state held per user.
 - Source: 13:33-13:39 ET, transcripts 20261111-133203 and 20261111-133804; slide shot 20261111/133353.
 -->
 

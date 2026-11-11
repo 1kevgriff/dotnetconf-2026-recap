@@ -510,6 +510,25 @@ time: "12:15"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/121712.jpg"
+time: "12:17"
+---
+
+# Review local code as a PR, then hand your comments to Copilot
+
+<!--
+- Say: VS can show your local changes as a PR: a multi-file diff with inline comments. Then you send all your comments to Copilot chat, and it makes the changes.
+- Jason (12:16): "We're going to be basically reviewing local code as a PR. So you'll see a very nice multi-file summary diff." You leave comments in the view, open files, get previews. "this is just going to be my new way of reviewing my local code".
+- Hand-off to chat: "it basically hands off the file context it uses my previous build context and it will give the specific line context over to chat so it can make those changes."
+- Change groups: "schema changes, version bumps, and things like that that kind of create a lot of noise. These groupings will allow you to get to the meat and the potatoes of the code much faster."
+- On screen: diff of AGENTS.md ("5 changes"), an inline comment "Clean this up and recover this work" (Active, 1 of 4 total), and the Copilot chat at left.
+- This is the "full code review and pull request flow" from Mads's keynote, shown live. More in the git session at 12:30 PM.
+- Why it matters: review comes before the PR, in the IDE, and the agent does the fix-ups from your comments.
+- Source: 12:15-12:17 ET, transcripts 20261111-121401 and 20261111-121602; shot 20261111/121712.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

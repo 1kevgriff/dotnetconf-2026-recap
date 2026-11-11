@@ -647,6 +647,41 @@ time: "12:52"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/125825.jpg"
+time: "12:58"
+---
+
+# "When you reboot a tech, you lose half your audience ... we grew more customers."
+
+<!--
+- [surprise guest, between sessions 04 and 05] Mads Kristensen with "Mr. .NET". Mads calls him "Scott"; no lower third was shown. He said: "I was here from 2007 until last year", and Mads said he was Mads's manager "back in your ASP.NET days".
+- (Inference) This is Scott Hunter, former head of .NET product at Microsoft. The stream did not say his last name; confirm before you name him.
+- Say: A short history break. One of the people who rebooted .NET as .NET Core looked back on it.
+- Why .NET Core: "because of Windows compatibility, you basically can't change .NET Framework anymore."
+- The quote (13:02): "The scary thing is most of the time when you reboot a tech, you lose half your audience ... it's amazing that we rebooted .NET. And not only did we reboot it, but we grew more customers. And we actually made a better product." He named Damian Edwards, David Fowler and Glenn Condron as part of that early team.
+- Velocity: "that original .NET framework really had four versions. And we're at version 11 of the new one."
+- History bits: Project Helios (ASP.NET off IIS); going "bare metal" for speed (Kestrel); project.json "had to happen to go convince the Visual Studio folks" to simplify csproj.
+- Why it matters: 11 releases in, the reboot worked. That context helps people who are still on .NET Framework.
+- Source: 12:58-13:05 ET, transcripts 20261111-125800, 20261111-130002, 20261111-130201, 20261111-130401; shot 20261111/125825.
+-->
+
+---
+layout: "session"
+num: 5
+time: "1:05 PM"
+speakers: "Harshada Hole"
+---
+
+# What's new in Visual Studio Diagnostics
+
+<!--
+- [session 05] Harshada Hole. The agenda title is "What's New in Visual Studio Debugging and Diagnostics".
+- Jason pointed here for the debugging and profiling agents: "the connected diagnostic experience ... the full experience with everything from start to finish".
+- Source: dotnetconf.net/agenda, Day 2, 1:00 PM ET; started about 1:05 PM ET.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

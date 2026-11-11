@@ -1910,7 +1910,7 @@ time: "18:53"
 - Say: In .NET 10 only build, restore, run and publish really understood file-based apps. In .NET 11 the team went through the SDK commands, so things like `dotnet format` and `dotnet package list --outdated` now work on a single .cs file.
 - Damian (18:51): "in .NET 11, we did a lot of work in the .NET SDK to go through all of the commands". "When we first launched our file-based apps in .NET 10 ... It was really only dotnet build, dotnet restore, dotnet run, and dotnet publish that really understood" them.
 - Demo: `dotnet format` on a file-based app; `dotnet package list --file packages.cs`, then `--outdated` → "Project `packages.cs` has the following updates to its packages [net11.0]: Humanizer.Core requested 2.14.1, resolved 2.14.1, latest 3.0.10"; then `--vulnerable`.
-- dotnet-outdated (18:54): "I updated dotnet outdated to support file-based apps": `dotnet outdated packages.cs`, or enable file-based apps and it "will do the entire workspace recursively". (dotnet-outdated is a community global tool; Damian contributed the support.)
+- dotnet-outdated (18:54): "I updated dotnet outdated to support file-based apps": `dotnet outdated packages.cs`, or enable file-based apps and it "will do the entire workspace recursively". ((Inference) dotnet-outdated is a community global tool, not part of the SDK.)
 - Why it matters: file-based apps get the same maintenance tools as projects: formatting, outdated and vulnerable package checks.
 - Source: 18:51-18:55 ET, transcripts 20261111-185001, 20261111-185204, 20261111-185400; shot 20261111/185354.
 -->

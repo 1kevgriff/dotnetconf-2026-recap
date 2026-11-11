@@ -299,6 +299,26 @@ speakers: "Rachel Kang, Barbara Boyajian"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/113328.jpg"
+time: "11:33"
+---
+
+# Same model, new harness: 103 → 124 C# tasks resolved
+
+<!--
+- Say: The VS team ran the old and the new agent harness on the same C# benchmark with the same model. The new harness solved 21 more tasks.
+- On screen: SWE-Bench-CSharp-General, 157 C# tasks, GPT-5.6 Sol, one run per experience. Previous 103, new 124, "+21 additional tasks resolved". "Resolved = failing tests pass without breaking previously passing tests."
+- Rachel (11:33): "the new agent harness resolved up to 21 additional tasks on the same exact model".
+- Her point: "oftentimes we focus on the model ... but it's only one part". An agent also needs context, memory and tools, and the harness brings them together.
+- The Copilot SDK harness is "common across all Copilot experiences on all of your favorite platforms", so improvements in one come to VS.
+- Caveat: one run per experience, Microsoft's own benchmark. Say it as their number.
+- (Inference) 103/157 ≈ 66%, 124/157 ≈ 79%.
+- Why it matters: the harness, not only the model, changes results. Same model, about 20% more tasks solved.
+- Source: 11:32-11:33 ET, transcript 20261111-113203; slide "Same model. More tasks resolved." (shot 20261111/113328).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

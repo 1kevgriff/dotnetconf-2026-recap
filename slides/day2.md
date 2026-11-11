@@ -964,8 +964,9 @@ time: "14:25"
 - Stephen (14:24): "we're using require authorization on MapMCP. So this should be very familiar to anyone who's used ASP.NET Core authorization. And it's even using AddJwtBearer." The one special call adds MCP to the authentication builder, "which gives the client the data that it needs to authenticate."
 - Flow: the client says you must sign in; a browser opens for Entra. In tool handlers "you'll have a claims principal where you can see what roles that user is in". "you don't need to put tokens inside of your environment and stuff and give access to secrets to the agent."
 - The sample is in the modelcontextprotocol C# SDK repo ("protected MCP sample").
+- Q&A (14:29), enterprise: third-party MCP clients usually register through "a client ID metadata document or dynamic client registration", so the enterprise can see it is "not just Stefan that's connecting. It's like Stefan through GitHub Copilot app." If you control the clients, "you can put any kind of ASP.NET Core auth handler in front of it" (bearer token, DPoP, ...).
 - Why it matters: remote MCP servers can use per-user identity and roles, not shared API keys in the agent's config.
-- Source: 14:24-14:25 ET, transcript 20261111-142400; shot 20261111/142500.
+- Source: 14:24-14:30 ET, transcripts 20261111-142400 and 20261111-143000; shot 20261111/142500.
 -->
 
 ---

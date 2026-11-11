@@ -856,6 +856,22 @@ Start with static SSR. Add interactive server where needed. WebAssembly for comp
 -->
 
 ---
+layout: "session"
+num: 7
+time: "2:00 PM"
+speakers: "Stephen Halter"
+---
+
+# What's new in the MCP C# SDK
+
+<!--
+- [session 07] Stephen Halter, a developer on the .NET team who worked a lot on ASP.NET Core with Dan Roth. A demo-heavy session.
+- His MCP intro (14:01): MCP is the Model Context Protocol, "essentially a way to plug in agents into your software in a reusable way." He said it became popular around the end of 2024.
+- First demo: a fireworks control tool.
+- Source: 14:00-14:02 ET, transcript 20261111-140003; dotnetconf.net/agenda (2:00 PM ET).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

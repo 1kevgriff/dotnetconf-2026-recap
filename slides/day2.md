@@ -1768,6 +1768,22 @@ time: "18:13"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/181401-policies-crop.jpg"
+time: "18:14"
+---
+
+# Gateway policies per caller: cost caps, token limits, content safety
+
+<!--
+- Say: Policies apply per caller identity, not to the whole pool: a monthly cost cap, token-per-minute limits, and content-safety filtering on models and even on an MCP server.
+- On screen, "Policies / Manage policies for models, tools, and agents": Balanced filtering (Content safety, scope Gateway); Balanced filtering (Content safety, Models GPT-6.1 Sol and gpt-5.4-mini, MCP server "GitHub repository digest"); "$10.00 / month per caller identity" (Cost limit, both models); "10,000 tokens / minute per caller identity" (Token rate limit, Gateway); "200,000 tokens / minute per caller identity" (Token rate limit, both models).
+- Paul (18:14): "it's not just a budget of like the whole pool. It's a budget for each client ... I can reallocate later." How the gateway knows the client: "We do it in an identity-based way ... a managed identity, an agent identity", or "you could do it with keys ... between your agent and the gateway". "those are at least two ways".
+- Image: the stream agent's crop of the portal (no URL bar).
+- Source: 18:14-18:15 ET, transcript 20261111-181401; cropped portal frame.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

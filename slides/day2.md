@@ -1056,7 +1056,7 @@ time: "14:51"
 - On screen: "The main delay is cached-data processing on the UI thread, including a redundant reload, not XAML rendering. `winapp perf` recorded a 1.53-second startup frame; layout/rendering accounted for only ~0.34 seconds." Timings: load cached account then save it 816 ms; fetch GitHub user 335 ms; reload and save the same account again 772 ms; initial refresh 1.80 s; AI availability check 158 ms. Cause: "SQLite's async calls execute synchronously, keeping this work on the UI thread." Fix: avoid saving unchanged data, move cache processing off the UI thread.
 - The agent noted: "Timings are approximate because debugger attachment adds overhead". Morten had run this before the session ("I kind of pre-did this already").
 - Follow-up: the recording stays on the machine, so you can ask more questions, e.g. the most expensive UI elements, with a WinUI performance-analysis skill.
-- The app itself (14:48): Morten's GitHub issues app uses "the Windows AI APIs that ship within the Windows App SDK" to summarize the latest unread comments locally. It also uses "the new table view that's currently experimental".
+- The app itself (14:48): Morten's GitHub issues app uses "the Windows AI APIs that ship within the Windows App SDK" to summarize the latest unread comments locally, "running on your NPU ... on your Copilot+ PC". It also uses "the new table view that's currently experimental".
 - Why it matters: profiling a desktop app becomes a chat question, with evidence the agent can show.
 - Source: 14:48-14:52 ET, transcripts 20261111-144804 and 20261111-145000; shot 20261111/145135.
 -->

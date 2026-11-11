@@ -1018,7 +1018,7 @@ time: "14:39"
 - Niels (14:36): the WinApp CLI (introduced "a few months ago") lets you "create and build and run and debug" apps from the command line, also for other frameworks such as Electron. A new WinApp VS Code extension (on the Marketplace) runs and debugs WinUI apps in VS Code: "This was not possible before". Visual Studio: improved project templates shipped "about an hour ago"; a new XAML previewer is an experiment.
 - Agents (14:38): the CLI "gives agents the hands they need to interact with Windows apps"; "with Windows Sandbox support, you can even do this in the background. So your app and agent run in their own container." The WinUI plugin gives "a dedicated WinUI agent and a collection of skills ... grounded in the right documentation".
 - Image: the stream slide, cropped to remove the speaker camera frames (a wall note was visible behind one speaker).
-- Why it matters: Windows desktop apps get the same CLI-plus-skills agent loop that web and MAUI got this week.
+- Why it matters: an agent can build, run and check a Windows desktop app from the command line, with WinUI-specific guidance.
 - Source: 14:36-14:39 ET, transcripts 20261111-143603 and 20261111-143803; crop of shot 20261111/143928.
 -->
 

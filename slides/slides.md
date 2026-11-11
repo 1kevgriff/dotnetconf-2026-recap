@@ -3145,7 +3145,7 @@ time: "19:35"
 - New "selecting" phase in .NET 11's run pipeline: "You might need to pick a target framework. You might need to pick a device. Then, of course, it builds, deploys, gets the run arguments." The iOS and Android workloads plug into it
 - Interactive: "an interactive prompt using a library called Spectre Console", choose with the up and down arrows
 - Scripts (stream slide): `-f net11.0-android` · `--list-devices` · `--device <id>` — "Interactive: choose. Non-interactive: supply enough information."
-- Why it matters: agents and CI can build, deploy and run a MAUI app on a real device without an IDE.
+- Why it matters: agents and scripts can build, deploy and run a MAUI app on a chosen device without an IDE.
 - Source: 19:34–19:36 ET, transcript 20261110-193404, /shots/193514.jpg
 -->
 

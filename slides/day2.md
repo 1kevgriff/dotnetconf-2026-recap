@@ -1327,7 +1327,7 @@ time: "16:37"
 - Gerald (16:34): the repo is github.com/dotnet/maui-labs; it "is set up as a marketplace", so you point your agent at it for the skills, or get them through the CLI.
 - DevFlow (16:36): the agent asks for the visual tree, "it doesn't have to guess based on a screenshot ... including things that might be invisible ... Or have a zero width." "this will save you tokens". "You can see this as Playwright for your mobile applications".
 - Status: "everything in MAUI Labs is a pre-release right now".
-- Why it matters: the same see-and-act loop as the web (Playwright) and WinUI (winapp), now for iOS and Android apps.
+- Why it matters: agents read the real UI state of iOS and Android apps instead of guessing from screenshots. (Inference) It parallels winapp for WinUI from earlier today.
 - Source: 16:34-16:38 ET, transcripts 20261111-163402 and 20261111-163604; shot 20261111/163719.
 -->
 

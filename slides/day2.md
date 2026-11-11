@@ -1501,6 +1501,23 @@ time: "17:27"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/172829.jpg"
+time: "17:28"
+---
+
+# Built with Reactor: OpenClaw ships it; Uno takes it cross-platform
+
+<!--
+- Say: Reactor is already used outside Microsoft: OpenClaw's Windows companion ships its chat window with Reactor in production, and Uno Platform ported Reactor to macOS, Linux, WebAssembly, Android and iOS. Try it with three commands.
+- On screen, "Built with Reactor / MIT licensed, built in the open": samples Reactor IDE, Monaco Editor, Chat. OpenClaw: "In production: its Windows companion app ships Reactor chat, on by default." Uno Platform: "Out now: Reactor on macOS, Linux, WebAssembly, Android and iOS." Prefer Rust?: "windows-reactor runs the same experiment in windows-rs."
+- Alexandre (17:28): OpenClaw "recently announced their Windows Companion app, and they are using Reactor in production for the chat window. It is all open source". Uno's port: "The same components, the same hooks, running also on macOS, Linux, WebAssembly, Android, and iOS. And it's, again, also experimental, just like Reactor."
+- Try it (17:29): "Install the WinApp CLI with WinGet. Run WinApp new with the new Reactor templates", then run it; "there are five" templates.
+- Why it matters: an experiment with real users already, and a path off Windows via Uno.
+- Source: 17:28-17:30 ET, transcript 20261111-172804; shot 20261111/172829.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

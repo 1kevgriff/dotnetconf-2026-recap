@@ -1618,6 +1618,22 @@ time: "17:46"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/175029.jpg"
+time: "17:50"
+---
+
+# A hosted skill is a `.agent.md` file: front matter = trigger, body = English
+
+<!--
+- Say: A hosted skill is just a markdown file. The front matter names it and sets the trigger and route; the body is a plain-English prompt. Several .agent.md files give you several routes in one Function App.
+- On screen (damage-check/hello-world.agent.md): front matter `name: Package damage check hello world`, `description: simple hello world`, `trigger: type: http_trigger, args: route: hello-world`; body: "say hello Paul 👋". The project also has abstract-check.agent.md, damage-check.agent.md, host.json, mcp.json, and a function_app.py (so this sample's host project is Python).
+- Matt (17:50): "it's just a name.agent.md file ... We're going to say it's an HTTP trigger. We're going to give it a route. And then our prompt." Paul: "that top metadata, front matter stuff, that's the trigger?" "And below is just English." "you can have multiples in the same one to find multiple routes".
+- Status: initial concept (canvas label).
+- Source: 17:50-17:51 ET, transcript 20261111-175004; shot 20261111/175029.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

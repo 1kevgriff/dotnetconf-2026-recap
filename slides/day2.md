@@ -242,8 +242,9 @@ layout: "statement"
 - Mads (11:19): "You can simply just in the chat window say, hey, can you make my app run faster? And it will figure out how to do that instrumentation, write the benchmark, run them, figure out where the slow paths are ... And then make the optimizations, run the benchmarks again". It works through sub-agents; "You don't have to select the profile[r]."
 - Perf tips: when you step through code, the "elapsed" PerfTip now has a button ("Click to suggest optimizations with Copilot", on screen). Copilot and the profiler work together to explain why the call was slow.
 - Dump files: the agent helps analyze a dump from the cloud or a customer machine. Mads: "Analyzing dump files is not easy and not that many people know how to do it", and he counts himself among those who are "not the best debuggers in the world".
+- Status, from Harshada's session (13:24): dumps now have a "Debug with Copilot" option that opens chat with a first analysis; from a PerfTip you can run a profiler analysis with a suggested fix and apply it with Hot Reload without stopping the debug session. She called these "newer, smaller features which we introduced in our recent Insiders release". So: Insiders.
 - Why it matters: profiling and dump analysis were expert-only work. Now you can ask in chat.
-- Source: 11:18-11:19 ET, transcript 20261111-111805; slide "Your running application" (shot 20261111/111935).
+- Source: 11:18-11:19 ET, transcript 20261111-111805; slide "Your running application" (shot 20261111/111935). Insiders status: 13:24 ET, transcript 20261111-132405.
 -->
 
 ---
@@ -755,6 +756,46 @@ time: "13:22"
 - Status: the CLI-to-VS connection is "not out yet"; she said "The AHP is still internal". So: demo of a coming feature.
 - Why it matters: the agent changed an algorithm in a real open-source library, measured it on two runtimes, and kept the tests green.
 - Source: 13:20-13:28 ET, transcripts 20261111-132003, 20261111-132204, 20261111-132600; shot 20261111/132254.
+-->
+
+---
+layout: "session"
+num: 6
+time: "1:31 PM"
+speakers: "Daniel Roth"
+---
+
+# Blazor Server in .NET 11: Fast, resilient, and scalable
+
+<!--
+- [session 06] Daniel Roth. Started about 1:31 PM ET.
+- His frame: render on the server to "deliver more with less": faster loads (HTML ready to display), logic close to data, efficient requests (complete them, cache public content). Slide "Render on the server: Deliver more with less" (shot 20261111/133141).
+- Blazor modes, his words: static SSR renders HTML "and then completes the HTTP request. There's no persistent connection." Interactive server keeps state in "a circuit" over "a persistent real-time connection". WebAssembly for client-side work and offline; it can be pre-rendered too.
+- Source: 13:31-13:33 ET, transcripts 20261111-133001 and 20261111-133203; dotnetconf.net/agenda (1:30 PM ET).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/133353.jpg"
+time: "13:33"
+---
+
+# Static SSR in .NET 11: dynamic pages, no circuit
+
+<!--
+- Say: .NET 11 makes static server-side rendering much more capable. You get sortable grids, client validation, state across requests, and caching, all without a live connection.
+- On screen, "Static SSR: more capable in .NET 11", NEW items:
+  - Smooth navigation: QuickGrid sort and page links (on top of enhanced navigation).
+  - Immediate feedback: client-side validation (on top of enhanced forms).
+  - State across requests: one-time TempData messages; continuing HTTP session.
+  - Cache safe output: CacheView (a public region); output cache (a public response).
+  - Footer: "Dynamic server-rendered experiences, without a live component tree."
+- Demo (13:38), a care site all in static SSR:
+  - QuickGrid code "looks exactly the same"; the page wraps it in the new CacheView component, with vary-by on the grid's query string parameters and about a 2-minute expiration.
+  - A returns policy page uses the standard output cache attribute (whole HTTP response). Dan: CacheView caches "the component instances and also put them in memory or use the hybrid cache if one is configured".
+  - A static support form shows validation feedback right away: "we're getting client-side validation, even though this is not an interactively rendered form ... in .NET 11, we added support for client-side validation".
+- Why it matters: many pages that needed interactive Blazor (and a circuit per user) can now be static SSR, which scales better.
+- Source: 13:33-13:39 ET, transcripts 20261111-133203 and 20261111-133804; slide shot 20261111/133353.
 -->
 
 ---

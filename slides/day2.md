@@ -211,6 +211,23 @@ time: "11:15"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/111730.jpg"
+time: "11:17"
+---
+
+# Copilot checks its own fix by driving your running app
+
+<!--
+- Say: Copilot in VS can now run your app, go to the bug, and check that its fix works. The slide calls it "UI Automation > hands free debugging".
+- Mads (11:17): "we can now have Copilot do UI automation, which means you can tell it to fix a bug, and it will automatically be able to verify the fix ... by loading and running your app and navigating to the place where this issue was". It can take screenshots and investigate dump files.
+- Autopilot, from the same minute: "bigger tasks that can run for hours and hours on end, spin up sub-agents". Chat sessions are now separate from the solution, so a session keeps going "even if the solution has to be reloaded or closed".
+- Mads's own use: "I've been using it for two, three months, and it's a complete game changer." And: "if you ... tried Visual Studio and Copilot in the past and thought ... it wasn't the best thing in the world, try it again."
+- Why it matters: the agent closes the loop itself: fix, run, check. This is where an IDE has an advantage over a CLI agent.
+- Source: 11:16-11:17 ET, transcript 20261111-111605; slide "Your running application" (shot 20261111/111730).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -68,6 +68,8 @@ speakers: "Mads Kristensen"
 - Say: Day 2 is the Microsoft product team day. Mads Kristensen (Principal Product Manager) opens it, and the morning is all Visual Studio: AI in VS, what's new, git, then debugging.
 - His framing, from the opening: "the role of development is changing faster than maybe it ever has. AI is becoming part of our everyday development. Our solutions are getting bigger." And developers "still need the fundamentals required to be fast, to be reliable and effortless".
 - Why it matters: the keynote sets up the pitch for the day: AI features in VS, but not at the cost of IDE speed and reliability.
+- Caveat for the whole morning, Mads (11:26): some presenters show things that "may not be out just yet. Maybe it's in the Insiders build ... but it's not in the stable release yet." Say "Insiders" when a feature is not in 18.12.
+- Mads has been on the VS team for 16 years: "this is probably one of the most exciting years in my time".
 - Questions during the day: #questions in chat, or dotnetconfquestions.com (on the stream lower third).
 - Source: 11:00-11:01 ET, transcript 20261111-110002; title card shot 20261111/110122.
 -->
@@ -76,14 +78,15 @@ speakers: "Mads Kristensen"
 layout: "statement"
 ---
 
-Code is an asset, not a byproduct.
+Code is an asset, not an artifact.
 
 <!--
 - Say: Mads's positioning for Visual Studio: it targets professional developers, and professionals treat code as an asset.
 - His words (11:02): "Visual Studio is a little bit unique in that it targets specifically professional developers." Professionals have "quality gates ... accessibility, security, privacy".
 - On vibe coding: "you might not care about your code that much, you might not even look at it. That's fine for ... your hobby projects". But for professionals, "You want to be able to review it ... maintain it for years to come ... It's not a byproduct of the app that you're building, but it has value in itself."
 - Why it matters: this is the frame for every AI feature shown today: AI in VS should give code you can review and maintain, not throwaway output.
-- Source: 11:02 ET, transcript 20261111-110200; slide "Visual Studio is for professional developers" (shot 20261111/110215).
+- Mads closed the keynote on the same line (11:26), on screen as "Code is an asset - not an artifact": "Visual Studio is a tool for professionals that sees code as an asset, not an artifact. But ... it doesn't have to be for every single project". VS should support you "whatever part of the AI journey you're on", including companies that limit AI "for security reasons or privacy".
+- Source: 11:02 ET, transcript 20261111-110200; slide "Visual Studio is for professional developers" (shot 20261111/110215); close at 11:26, transcript 20261111-112603 (shot 20261111/112613).
 -->
 
 ---
@@ -273,7 +276,7 @@ The full PR review flow is now inside Visual Studio.
 - Mads (11:25): "we're now at a point where we have all the major features that you typically would rely on GitHub.com or Azure DevOps to kind of do the last mile to get the PR just over the hump. That's now all in Visual Studio".
 - His reason: "when the agents are writing most of our code ... we are reading more code than we are writing it to a larger extent than ever before."
 - Agent tie-in: chat sessions you already have "can now participate in the review and in the PR creation", so you reuse that context.
-- He said "there's a lot more to come". No list of the PR features was shown.
+- He said "there's a lot more to come", and that Sebastian (the git session, 12:30 PM) "will show a whole lot there". No list of the PR features was shown in the keynote.
 - Why it matters: if most code comes from agents, review is the main job, and VS wants it to happen where the code and the agent context are.
 - Source: 11:24-11:25 ET, transcript 20261111-112403; bullet "Full code review and pull request flow" (shot 20261111/112553).
 -->

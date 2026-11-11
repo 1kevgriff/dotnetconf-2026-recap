@@ -921,8 +921,11 @@ time: "14:11"
   - Optional, transport-independent: Extensions.Apps (interactive UI in compatible MCP hosts); Extensions.Tasks (long-running tool operations, status polling + input requests); Extensions.Skills (serve/consume Agent Skills, verifiable file manifests). Badge: "SKILLS: NEW / EXPERIMENTAL". "Extensions do not require AspNetCore."
 - Stephen (14:10): "Right now we have six packages." For a remote MCP server "you have to use the model context protocol ASP.NET Core package". MapMcp takes route parameters: "you can host multiple MCP servers at different endpoints inside of your ASP.NET Core app."
 - Also: resources give "something a bit like a file directory through the MCP interface"; prompts are "parameterized instructions". Tip: the MCP Inspector "tends to get new features first".
+- Governance (14:12): MCP "was originally created by Anthropic, but they then donated it to the Linux foundation that spun off the agentic AI foundation". The C# SDK is "one of the official SDKs"; "We help maintain the C-sharp SDK here at Microsoft"; in the new tiering, "C-sharp SDK is a tier one." See modelcontextprotocol.io.
+- Tools look like MVC controller methods; "This is all AOT compatible." Parameters can come from DI, e.g. IHubContext for the SignalR sync (14:14).
+- Template (14:18): "You can use .NET new MCP server" (check the exact template short name). It makes a Celsius-to-Fahrenheit tool, with remote and local options. "installed if you have the latest .NET 11 SDK. Even the .NET 10 SDK has this."
 - Why it matters: pick only what you need; Skills over MCP is the new piece to watch, but it is experimental.
-- Source: 14:10-14:11 ET, transcript 20261111-141000; slide shot 20261111/141105.
+- Source: 14:10-14:18 ET, transcripts 20261111-141000, 20261111-141200, 20261111-141400, 20261111-141800; slide shot 20261111/141105.
 -->
 
 ---

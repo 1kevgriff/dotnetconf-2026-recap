@@ -212,7 +212,7 @@ time: "11:15"
 
 ---
 layout: "shot"
-image: "/shots/day2/111730.jpg"
+image: "/shots/day2/111935.jpg"
 time: "11:17"
 ---
 
@@ -224,7 +224,22 @@ time: "11:17"
 - Autopilot, from the same minute: "bigger tasks that can run for hours and hours on end, spin up sub-agents". Chat sessions are now separate from the solution, so a session keeps going "even if the solution has to be reloaded or closed".
 - Mads's own use: "I've been using it for two, three months, and it's a complete game changer." And: "if you ... tried Visual Studio and Copilot in the past and thought ... it wasn't the best thing in the world, try it again."
 - Why it matters: the agent closes the loop itself: fix, run, check. Mads ties it to the IDE: "what's really cool about an IDE is that it has all the tools that you need in the box."
-- Source: 11:16-11:17 ET, transcript 20261111-111605; slide "Your running application" (shot 20261111/111730).
+- Source: 11:16-11:17 ET, transcript 20261111-111605; slide "Your running application" (shot 20261111/111935, all four bullets shown).
+-->
+
+---
+layout: "statement"
+---
+
+"Hey, can you make my app run faster?"
+
+<!--
+- Say: In VS chat you can ask Copilot to make your app faster. The agent uses the profiler, writes benchmarks, optimizes, and runs the benchmarks again.
+- Mads (11:19): "You can simply just in the chat window say, hey, can you make my app run faster? And it will figure out how to do that instrumentation, write the benchmark, run them, figure out where the slow paths are ... And then make the optimizations, run the benchmarks again". It works through sub-agents; "You don't have to select the profile[r]."
+- Perf tips: when you step through code, the "elapsed" PerfTip now has a button ("Click to suggest optimizations with Copilot", on screen). Copilot and the profiler work together to explain why the call was slow.
+- Dump files: the agent helps analyze a dump from the cloud or a customer machine. Mads: "Analyzing dump files is not easy and not that many people know how to do it", and he counts himself among those who are "not the best debuggers in the world".
+- Why it matters: profiling and dump analysis were expert-only work. Now you can ask in chat.
+- Source: 11:18-11:19 ET, transcript 20261111-111805; slide "Your running application" (shot 20261111/111935).
 -->
 
 ---

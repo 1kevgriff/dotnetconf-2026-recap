@@ -1824,7 +1824,7 @@ speakers: "Damian Edwards"
 
 ---
 layout: "shot"
-image: "/shots/day2/183344.jpg"
+image: "/shots/day2/183539.jpg"
 time: "18:33"
 ---
 
@@ -1836,7 +1836,9 @@ time: "18:33"
 - On screen: hello.cs is two lines (127 bytes): `var name = args.Length == 0 ? ".NET Conf" : string.Join(" ", args);` and `Console.WriteLine($"Hello, {name}! One file. Real C#.");`. Then `dotnet run hello.cs`, `dotnet hello.cs`, and `dotnet hello.cs Damian` → "Hello, Damian! One file. Real C#." The prompt shows .NET 11.0.100.
 - "you don't have to say dotnet run. You can just say dotnet hello.cs, and that also works."
 - Prompt timings on screen (the prompt shows the previous command's time): `dotnet run hello.cs` 1.412 s, then `dotnet hello.cs` 131 ms. One run each; (Inference) the first includes a build and the second reuses it.
-- Source: 18:32-18:34 ET, transcript 20261111-183204; shot 20261111/183344.
+- Explicit form (18:34): `dotnet run --file hello.cs -- ".NET Conf 2026"` — "very explicitly saying, I want you to run this file ... I am telling you this is a C# file", and `--` separates app arguments. Useful in scripts.
+- From stdin: `'Console.WriteLine("hello from stdin");' | dotnet run -` → "hello from stdin". "you can actually execute C# code from standard in."
+- Source: 18:32-18:36 ET, transcripts 20261111-183204 and 20261111-183404; shot 20261111/183539 (shows all forms).
 -->
 
 ---

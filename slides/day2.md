@@ -1860,6 +1860,22 @@ time: "18:37"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/184157.jpg"
+time: "18:41"
+---
+
+# `#:include`: file-based apps can now span more than one file
+
+<!--
+- Say: New since .NET 10: `#:include` pulls other C# files into a file-based app, so a "single-file" app can grow without a project file. Directives also add NuGet packages, and a shebang makes it a script.
+- On screen (demos/02-tool/plan.cs, VS Code, status bar "plan (net11.0)"): line 1 `#!/usr/bin/env -S dotnet --`; line 2 `#:include SessionPlan.cs`; line 3 `#:package Spectre.Console@0.57.2 PrivateAssets=all`; then `using Spectre.Console;` and a table built from `SessionPlan.Load()`.
+- Damian (18:41): features that are "newer, thanks to the work that's happened since we released .NET 10. The big one here is this include directive. Now I can now include other C# files in my file."
+- Cache recap (18:40): a source-only change can "just do that recompilation phase"; with no changes you get down "to like 100 millisecond execution times".
+- Source: 18:40-18:42 ET, transcript 20261111-184002; shot 20261111/184157.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

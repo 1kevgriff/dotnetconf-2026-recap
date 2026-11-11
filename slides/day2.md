@@ -642,7 +642,7 @@ time: "12:52"
 - AI grouping: "kickstart your review with AI ... Can you bucket them into similar areas so that it's easier for the reviewer to review?" ("generate group").
 - Check out the PR: test your teammate's edge cases; or, as the author, "you can actually edit the files" in the PR view and respond to comments in place.
 - On screen: PR #805625 "[DO NOT REVIEW] Test", Changes (7) with checkboxes to mark files reviewed, and an AI review comment ("VSEng Copilot Code Reviewer ... Maintainability", model gpt-6-luna) asking for an extra test.
-- Why it matters: this is the "full code review and pull request flow" from the keynote. For many teams the browser is no longer needed for review.
+- Why it matters: this is the "full code review and pull request flow" from the keynote. Review, comments and fix-ups can all stay in the IDE.
 - Source: 12:50-12:53 ET, transcripts 20261111-125004 and 20261111-125205; shot 20261111/125235.
 -->
 

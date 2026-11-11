@@ -562,8 +562,12 @@ time: "12:24"
 - Jason (12:24): "those little magnifying glasses are basically those features that are not immediately on by default. So you will need to go find those in your tools options and enable them".
 - The six groups on the slide: Navigate & edit (File System View, drag files into chat, new Markdown file, drag files and images into Markdown, HTML-to-CSS navigation, CSS color preview); Copilot (customize chat defaults, new Copilot Chat experience); Build; Test Explorer (assertion string comparison, open test log, last run time); Tabs (move with keyboard, tool-window tab sizing, close tabs to the right, tab drag performance); Personalize (Fonts and Colors UI, Colorized Output, Keyboard Shortcuts UI, Zoom Reset, Hot Exit); Code review (local review, multi-file summary diff, address comments in chat, comment filters, change groups).
 - Pointers: Harshada's session (1:00 PM) for debugging and profiling agents; Mika's session (4:00 PM) on the modernization agent, for moving from .NET 8 or 9 to .NET 11. Feedback: developercommunity.visualstudio.com.
-- Why it matters: this is the slide to screenshot. The three best features need one settings change each.
-- Source: 12:24 ET, transcript 20261111-122404; slide "What we saw today" (shot 20261111/122414).
+- Q&A (12:26):
+  - All editions: "These are all available for all SKUs of Visual Studio" (Community, Pro, Enterprise).
+  - Recent: "I think 18.11 was the oldest feature that I showed." Mads: "we just released 18.12 yesterday ... We're releasing every month now." Jason: 18.13 "is even looking more jam-packed", and work on 18.14 has started.
+  - HTML-to-CSS go-to-definition also works in Razor (Mads tested it) and for SASS and LESS.
+- Why it matters: this is the slide to screenshot. Three of these features need one settings change each, and they are in every VS edition.
+- Source: 12:24-12:27 ET, transcripts 20261111-122404 and 20261111-122603; slide "What we saw today" (shot 20261111/122414).
 -->
 
 ---

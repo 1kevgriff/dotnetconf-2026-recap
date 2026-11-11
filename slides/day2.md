@@ -1703,6 +1703,23 @@ time: "18:02"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/180829.jpg"
+time: "18:08"
+---
+
+# 20 photos → 6 claims filed, 9 tagged OK, 5 retakes requested
+
+<!--
+- Say: The durable batch finished: 20 delivery photos analyzed 10 at a time, then routed: 6 damaged → claims filed and adjuster notified, 9 tagged OK, 5 sent back for a retake (blurry, dark, or partly visible).
+- On screen (Claims desk, a local ASP.NET Core-style web page at localhost): "Claims filed 6" (CLM-1001..., each "tagged" + "adjuster"), "Tagged ok 9", "Retake requested 5" (the blurry and dark photos).
+- Matt (18:08): "it has doing 10 at a time, doing 10 more at a time, got the results back, and then it's finally a claim for the bad ones. And then notifies the adjuster, tags the damage evidence." "These tags weren't there before, they're there now."
+- DTS hosting: "You can use it with AKS. You can use it with a web app." (not only Functions).
+- Why it matters: an agentic batch job with real side effects (claims, tags, notices), planned by the model and executed by a durable engine.
+- Source: 18:08-18:09 ET, transcript 20261111-180804; shot 20261111/180829.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -146,9 +146,10 @@ time: "11:08"
 - Chart: 4 runs, setting off 31/27/25/21 s, setting on 2/2/1/1 s. "Average: 26.0s → 1.5s (94% faster)".
 - Agent angle, his words: "whether you're the one building or if your agent building is part of a loop that you're running, you're going to see much faster inner loop."
 - Same release, also said: Live Unit Testing is 25% faster with xUnit.
+- Jason Chlus demoed it live at 12:06 on Orchard Core: "this does have 260 projects, so it does take maybe four or five minutes to build. And with this new feature, you will see that it will stop on the first error in around 10 seconds." He credited Mads for the feature.
 - Why it matters: a failed build in a big solution now fails in seconds, for people and for agents.
 - (Inference) The release is 18.12; Mads showed this right after the 18.12 performance list. Check the release notes for the exact option name.
-- Source: 11:08-11:09 ET, transcript 20261111-110804; shot 20261111/110839.
+- Source: 11:08-11:09 ET, transcript 20261111-110804; shot 20261111/110839. Live demo: 12:06 ET, transcript 20261111-120600.
 -->
 
 ---
@@ -468,6 +469,23 @@ speakers: "Jason Chlus"
 - Coming: "very soon you will be able to report a problem, suggest a feature directly in Visual Studio using the chat."
 - Say: this is the feature tour. I picked the ones that matter most for day-to-day work.
 - Source: 12:00 ET, transcript 20261111-120004; title card shot 20261111/120104.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/120910.jpg"
+time: "12:09"
+---
+
+# Test Explorer now diffs failed string assertions
+
+<!--
+- Say: When a string assertion fails, Test Explorer now shows Expected and Actual side by side, with the different characters marked.
+- Demo: the Turkish-I bug. A `ToSnakeCase` helper used `ToLower()`. Under the tr-TR culture, "I" lowercases to a dotless "ı", so the test `ToSnakeCase_DoesNotDependOnCurrentCulture ("tr-TR")` failed: Expected "is_enabled", Actual "ıs_enabled". The fix: `ToLowerInvariant()`.
+- Jason (12:08): "you will not get the dot above the i, and we are expecting that dot above the i. So we will have to add back to lower invariant." He credited the MSTest team; they have a testing session later.
+- Also on screen: "Last run: 11/11/2026 9:08:34 AM" on the test detail. Jason: last run shows for groups and single tests, so you see when a result is old.
+- Why it matters: the hardest string failures (one invisible character) are now visible at a glance.
+- Source: 12:08-12:09 ET, transcript 20261111-120800; shot 20261111/120910.
 -->
 
 ---

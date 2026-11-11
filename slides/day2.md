@@ -1683,6 +1683,23 @@ say what went wrong. Never guess a verdict.
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/180251.jpg"
+time: "18:02"
+---
+
+# AI writes the plan once; Durable Task Scheduler runs it durably
+
+<!--
+- Say: For a batch, the AI reads the Markdown skill once and writes a plan; the Durable Task Scheduler (DTS) then runs that plan, retrying failed steps and resuming after a restart. Here: 20 photos, 10 at a time, each routed by verdict.
+- On screen, "How DTS Runs the Image Batch": POST /api/batch-check → "AI reads the Markdown skill / Writes the plan once" → "Durable Task Scheduler (DTS) / Runs the plan durably" ("Retries failed steps • Resumes after restart") → list_photos (20 images) → analyze_photo × 20, "10 at a time" ("Each photo uses the vision model through the .NET Claims API") → sort_results → damaged → file_claim; ok → tag_photo; unclear → request_retake → write_summary → "Claims desk + DTS dashboard".
+- Matt (18:02): "what durable functions are is they're durable"; "DTS, the Durable Task Scheduler, is going to come through and say, all right, we're going to take all these photos and then make a plan off of them." "That's the durable part."
+- Why it matters: the model plans; the durable engine executes with retries and restarts, so a long agent job does not start over when something fails.
+- Status: same "initial concept" hosted-skills canvas.
+- Source: 18:02-18:03 ET, transcript 20261111-180201; shot 20261111/180251.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

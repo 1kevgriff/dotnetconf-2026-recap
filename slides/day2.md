@@ -607,6 +607,25 @@ time: "12:34"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/124514.jpg"
+time: "12:45"
+---
+
+# Merge conflicts: take all in one click, or Auto Resolve with Copilot
+
+<!--
+- Say: In a merge or rebase, you can now keep all current or take all incoming for the whole tree in one click. Or click Auto Resolve and Copilot resolves the conflicts in chat.
+- Sebastian (12:44): "if you right-click on the parent node and you're totally sure that you want to take all the changes from main, you can do that now. Before, you had to do one at a time." Same for all incoming changes. "Or over here in this auto-resolve button, if you want to let AI fully resolve your merge conflicts in the chat you can do that as well."
+- Works on the parent node or on a single file.
+- While Copilot resolves (12:46): "you won't be able to edit the files because AI is making sure that nothing is being touched at the moment".
+- On screen: Git Changes, "Rebase in progress with conflicts", Unmerged Changes (4); context menu: Merge..., Keep All Current, Take All Incoming, Auto Resolve, Stage.
+- He asked the audience: what do you let AI do in version control, and what not?
+- Why it matters: bulk resolve fixes a long-time pain; Auto Resolve is the first AI step inside the merge flow.
+- Source: 12:44-12:46 ET, transcripts 20261111-124404 and 20261111-124603; shot 20261111/124514.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

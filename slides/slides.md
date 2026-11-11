@@ -3111,6 +3111,8 @@ time: "19:14"
 - Hybrid ML-KEM in HPKE "isn't composite ML-KEM, it's hybrid ML-KEM like with TLS 1.3" — same idea, different spec
 - Why ship it this way: "make a lot of things work okay or a few things work really well. And we opted to make a few things work really well because we can fix it later."
 - Further out (19:22): much of the PQ API "has the good old experimental tag on it"; if a spec changes, "it will be a breaking change". "Last Friday the composite ML-KEM spec I think finally went full RFC" — "for .NET 12 we should be able to remove a lot of the experimentals"
+- Jeremy's ask (19:26): "all of these protocols need to start accepting multiple keys" (instead of more and more composite combinations)
+- Q&A on composites: "it doesn't matter that somebody can break the EC Diffie-Hellman. They would need to break that piece also" — "you take the two pieces and you merge them together in a way that they're inseparable"
 - Why it matters: use HPKE instead of wiring key exchange + AES-GCM + nonces by hand.
 - Source: 19:14–19:16 ET, transcript 20261110-191402, /shots/191402.jpg
 -->

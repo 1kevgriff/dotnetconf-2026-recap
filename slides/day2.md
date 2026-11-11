@@ -399,6 +399,23 @@ time: "11:43"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/114426.jpg"
+time: "11:44"
+---
+
+# AI in VS with no GitHub account: Foundry, OpenAI, Anthropic, Ollama
+
+<!--
+- Say: With BYOM you can use the VS agent while signed out of GitHub. You bring a provider: Microsoft Foundry, OpenAI, Anthropic, Ollama, or any OpenAI-compatible endpoint.
+- On screen, "Your model. Your IDE.", badge "GA in 18.12 stable": GitHub Copilot, Microsoft Foundry, OpenAI, Anthropic, Ollama, Custom Endpoint (e.g. OpenRouter). "No GitHub account required".
+- Barbara (11:44): "We support Microsoft Foundry, OpenAI, Anthropic, Olama [Ollama], and OpenAI-compatible custom endpoints ... this includes popular providers like Open Router and LM Studio." And: "if you don't have a GitHub account, that doesn't block you from using it. You can be signed out and configure your BYOM providers."
+- Demo: signed out of GitHub, the first-run choice was "sign in with GitHub", "use Foundry", or "continue with an API key for another provider". She added a Foundry connection named "work"; her deployed models loaded and chat turned on.
+- Why it matters: Copilot sign-in is no longer the gate to AI in VS. Shops on Foundry or a local Ollama box can use the same agent.
+- Source: 11:44-11:45 ET, transcript 20261111-114401; slide "Your model. Your IDE." (shot 20261111/114426).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

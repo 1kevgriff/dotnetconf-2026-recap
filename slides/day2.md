@@ -529,6 +529,24 @@ time: "12:17"
 -->
 
 ---
+layout: "statement"
+---
+
+Hot exit: close VS with unsaved changes. Reopen, nothing lost.
+
+<!--
+- Say: VS now has hot exit. Close it with unsaved changes, open it again, and the unsaved changes are still there. It works for solutions and Open Folder.
+- Jason (12:22): "now we have this first class experience where you can simply just leave Visual Studio with unsaved changes. This is called the hot exit feature." "There was a lot of intricacies ... with solutions and open folder".
+- His use cases: SQL queries, empty scratch files, "updating skills, agents, whatever it may be ... go grab your lunch and then come back, and you will not have lost anything."
+- Demo: unsaved MarkdownFile2.md in the Orchard Core solution came back after closing and reopening VS (shot 20261111/122334, not in deck).
+- SSMS: "This is also coming to SSMS ... I think that'll be in the next release." Say "planned", not "shipped".
+- Teaser: Jason is "working on a PR that will allow you to export your test results" from Test Explorer. In progress, no date.
+- Why it matters: a long-time request (other editors have had it for years) is now first class in VS.
+- (Inference) "other editors have had it for years" is my framing; Jason did not say it.
+- Source: 12:22-12:23 ET, transcript 20261111-122204.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

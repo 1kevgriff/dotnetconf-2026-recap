@@ -1676,6 +1676,7 @@ say what went wrong. Never guess a verdict.
 - Result on the canvas, "Agent digest · Manual http · Local function": "photo-02.jpg — damaged. The box has a torn, crushed corner."
 - Matt (17:57): "Photo 1, not damaged, must have been delivered to Paul. And if we go to the one that got delivered to me, Photo 02, invoke the trigger ... it is damaged".
 - Looser version (17:58; (Inference) likely abstract-check.agent.md from the file list): "now we're going to start relying on the metadata that the MCP" tools expose, and ask for "result, response, and photo in JSON. So we're really loosening it up." Paul: "how would I have known this kind of interesting long tail of cases would come in." "that's exactly the squishy part that I was talking about."
+- Closing advice (18:24): "you got to add value beyond what the AI gives you ... Don't let the AI replace you. We still have a job there".
 - Wrap (18:00): "a skill should contextualize and orchestrate other tools. It's not good when it's just a recipe ... let's wing it and let's build a server that does all these things. It's going to get it wrong. It's going to take forever. It's going to be expensive." Instead: "you're hosting in the cloud as an MCP, others can call it ... you're making little building blocks". "We can take our existing code and kind of supercharge it in the agentic world". The photo tool sends the blob to Azure (AI) Foundry for the vision analysis.
 - Next in the session: Durable Functions.
 - Why it matters: the rules live in plain English; the trusted actions live in C# tools; and the prompt tells the model to report an error instead of guessing.
@@ -1714,6 +1715,7 @@ time: "18:02"
 - Live run (18:06): 20 photos in the local blob store (Azurite); the DTS dashboard waits for the orchestration. Some live setup trouble; one speaker joked, "This is a failed usability study."
 - Why it matters: the model plans; the durable engine executes with retries and restarts, so a long agent job does not start over when something fails.
 - Status: (Inference) part of the same "initial concept" hosted-skills sample (the diagram is in its assets folder).
+- Q&A (18:24), "any news on durable functions for long running or multi-step tool calls?": "if you like Agent Framework ... there's a durable integration built in with that. I believe it just went GA." "durable is always very good at long running. You could even wait literally forever ... because it's journaling what happens." (He hedged on GA: "I believe".)
 - Source: 18:02-18:06 ET, transcripts 20261111-180201 and 20261111-180402; shots 20261111/180251 and 180542.
 -->
 

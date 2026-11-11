@@ -1310,6 +1310,28 @@ speakers: "Gerald Versluis"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/163719.jpg"
+time: "16:37"
+---
+
+# maui-labs: CLI, AI skills, DevFlow and Inspector give agents eyes and hands (pre-release)
+
+<!--
+- Say: The MAUI team's maui-labs repo has four tools so an AI agent can set up, see and drive a MAUI app: the MAUI CLI, AI skills, DevFlow ("Playwright for your mobile applications") and the Inspector. All pre-release.
+- On screen, "Four tools from maui-labs":
+  - MAUI CLI (`maui doctor`): finds and fixes environment issues; installs Android SDK, JDK and emulators; manages Xcode, simulators and runtimes; `--json` output for CI.
+  - AI skills (`maui ai init`): installs MAUI and DevFlow skills; adds Copilot agents and MCP config; targets VS Code, Copilot CLI and Claude; `--dry-run` previews every change.
+  - DevFlow (`maui devflow`): visual tree, taps and screenshots via an in-app agent; network monitoring and profiling; Blazor WebViews over Chrome DevTools; an MCP server lets AI agents test your app.
+  - Inspector (Browser · VS Code · Copilot): live screenshot, visual tree of every control, properties, layout and bindings, logs, network and diagnostics.
+- Gerald (16:34): the repo is github.com/dotnet/maui-labs; it "is set up as a marketplace", so you point your agent at it for the skills, or get them through the CLI.
+- DevFlow (16:36): the agent asks for the visual tree, "it doesn't have to guess based on a screenshot ... including things that might be invisible ... Or have a zero width." "this will save you tokens". "You can see this as Playwright for your mobile applications".
+- Status: "everything in MAUI Labs is a pre-release right now".
+- Why it matters: the same see-and-act loop as the web (Playwright) and WinUI (winapp), now for iOS and Android apps.
+- Source: 16:34-16:38 ET, transcripts 20261111-163402 and 20261111-163604; shot 20261111/163719.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

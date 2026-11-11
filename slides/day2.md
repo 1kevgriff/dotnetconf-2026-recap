@@ -1696,6 +1696,7 @@ time: "18:02"
 - Matt (18:02): "what durable functions are is they're durable"; "DTS, the Durable Task Scheduler, is going to come through and say, all right, we're going to take all these photos and then make a plan off of them." "That's the durable part."
 - How you turn it on (18:05, batch-check/batch-check.agent.md, shot 20261111/180542): front matter `name: Package batch check`, `trigger: type: http_trigger, args: route: batch-check`, plus `workflows: enabled: true`. Matt: "It's an HTTP trigger, but we're going to say you're using workflows now." The body has "## Inspection rules" (adds holes, water stains; `unclear` for blurry, dark or partly visible) and "## Routes".
 - Claims API (18:04): "what we have in the claims API is .NET again"; tag → tags the blob; adjuster notices → "I think that probably ... updates the queue ... Azure storage queue, and also updates the database" (his hedge). "I love the minimal ASP.NET".
+- Live run (18:06): 20 photos in the local blob store (Azurite); the DTS dashboard waits for the orchestration. Some live setup trouble; one speaker joked, "This is a failed usability study."
 - Why it matters: the model plans; the durable engine executes with retries and restarts, so a long agent job does not start over when something fails.
 - Status: (Inference) part of the same "initial concept" hosted-skills sample (the diagram is in its assets folder).
 - Source: 18:02-18:06 ET, transcripts 20261111-180201 and 20261111-180402; shots 20261111/180251 and 180542.

@@ -2987,7 +2987,23 @@ public static unsafe string PtrToStringAnsi(
 - Advice (Q&A, 18:56): "if you don't actually have a use case in mind, I would say don't reach for it" (unsafe)
 - Code copied from the stream slide "Unsafe is a contract"; the frame itself (/shots/184848.jpg) is NOT in the repo — it carries the "Microsoft Confidential" footer
 - Why it matters: you can see in code review which calls need care, instead of it hiding in a normal-looking API.
-- Source: 18:48–18:50 ET, transcript 20261110-184803
+- Source: 18:48–18:56 ET, transcripts 20261110-184803, 20261110-185000, 20261110-185204, 20261110-185404, 20261110-185603
+-->
+
+---
+layout: "statement"
+---
+
+He turned on memory safety v2. The build failed. An AI agent had added unsafe code.
+
+<!--
+- Say: Rich Lander turned on memory safety v2 in his own project and found unsafe code an AI agent had slipped in. None of it was needed.
+- Rich (18:58): "I flipped the memory safe v2 property ... As soon as I did that, my build failed. And it's like, oh, man, some AI agent brought in some unsafe code that I didn't realize."
+- "None of this needs to be here ... there's better approaches, more modern approaches for all of these things. Ripped out all the unsafe code."
+- It was "preview 7 or something like that"; he now has the feature on in his app code. "So, quote, unquote, the feature works."
+- Also (Q&A): with v2, you can see when "the framework method you're using actually contains unsafe", because it's annotated
+- Why it matters: turn it on to audit what your agents (and dependencies) are writing.
+- Source: 18:58–19:00 ET, transcript 20261110-185800
 -->
 
 ---

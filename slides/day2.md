@@ -1182,6 +1182,24 @@ speakers: "Manodasan Wignarajah, Sergio Pedri"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/153441.jpg"
+time: "15:34"
+---
+
+# CsWinRT 3.0: Microsoft Store app 16.6% smaller, generator 12.8x faster
+
+<!--
+- Say: Just moving the Microsoft Store client from CsWinRT 2 to CsWinRT 3 cut its Native AOT binary by about 22 MB (16.6%). The interop generator is 12.8x faster on a clean build and no longer runs in the IDE loop.
+- On screen, "Smaller AOT apps": Microsoft Store 129.34 MB → 107.86 MB (−16.61%); Contoso Camera 5.61 MB → 5.08 MB (−9.45%).
+- Sergio (Store client team, 15:34): the Store numbers are "on .NET 10 and Native AOT" both before and after; "This is just from updating from CSP2 to CSP3 [CsWinRT 2 to 3]". "this, again, is a production ready thing. And we're actually rolling it out to Windows Insiders experimental users right now." The size win "scales with" app complexity.
+- Next slide, "Faster IntelliSense builds / Microsoft Store: CsWinRT 3.0 generator vs 2.x": clean build (generator only) 115 s → 9 s, 12.8x; incremental build (generator only) 24 s → 4 s, 6x.
+- Why it's faster: CsWinRT 2 used source generators that analyze all your code for marshalling stubs, "very, very expensive". CsWinRT 3 "completely removed all of these generators" and moved to "a single native AOT compiled interop generator, which runs just when you actually are ready to deploy your app ... this is not part of the IDE loop."
+- Why it matters: smaller Windows apps, and VS loads and builds big WinRT projects faster.
+- Source: 15:33-15:36 ET, transcript 20261111-153401; shot 20261111/153441 (size slide); generator numbers from the next stream slide (stream agent crop 20261111-cswinrt3-numbers).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -3145,6 +3145,7 @@ time: "19:35"
 - New "selecting" phase in .NET 11's run pipeline: "You might need to pick a target framework. You might need to pick a device. Then, of course, it builds, deploys, gets the run arguments." The iOS and Android workloads plug into it
 - Interactive: "an interactive prompt using a library called Spectre Console", choose with the up and down arrows
 - Scripts (stream slide): `-f net11.0-android` · `--list-devices` · `--device <id>` — "Interactive: choose. Non-interactive: supply enough information."
+- Live demo (19:48–19:50): `dotnet run` shows the framework picker (you can type "Windows" to filter), then the device. Jonathan: "I actually have four Android devices connected for my AI agents to use."
 - `dotnet watch` (19:38) "sits on top of .NET Run" to make "an interactive hot reload session". Editor doesn't matter — "It could be Notepad." A file watcher sees the change; "dotnet watch is a server and your app is the client"; it compiles and "send[s] the diff over to your app, which will reload the change"
 - Why it matters: agents and scripts can build, deploy and run a MAUI app on a chosen device without an IDE.
 - Source: 19:34–19:40 ET, transcripts 20261110-193404, 20261110-193803, /shots/193514.jpg

@@ -1629,8 +1629,10 @@ time: "17:50"
 - Say: A hosted skill is just a markdown file. The front matter names it and sets the trigger and route; the body is a plain-English prompt. Several .agent.md files give you several routes in one Function App.
 - On screen (damage-check/hello-world.agent.md): front matter `name: Package damage check hello world`, `description: simple hello world`, `trigger: type: http_trigger, args: route: hello-world`; body: "say hello Paul 👋". The project also has abstract-check.agent.md, damage-check.agent.md, host.json, mcp.json, and a function_app.py (so this sample's host project is Python).
 - Matt (17:50): "it's just a name.agent.md file ... We're going to say it's an HTTP trigger. We're going to give it a route. And then our prompt." Paul: "that top metadata, front matter stuff, that's the trigger?" "And below is just English." "you can have multiples in the same one to find multiple routes".
+- Run (17:52): the HTTP call returned "Hello, Paul". Then he changed the prompt in the canvas to "tell me the current weather in Redmond" and ran it again.
+- Tools: "mcp.json, put this into your function. It's just ... you're defining it the same way you would do it in a Copilot or whatever else. It's that same JSON file you see everywhere". With that, "now we have tools involved".
 - Status: initial concept (canvas label).
-- Source: 17:50-17:51 ET, transcript 20261111-175004; shot 20261111/175029.
+- Source: 17:50-17:54 ET, transcripts 20261111-175004 and 20261111-175204; shot 20261111/175029.
 -->
 
 ---

@@ -1752,6 +1752,22 @@ time: "18:11"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/181321-crop.jpg"
+time: "18:13"
+---
+
+# AI Gateway: one endpoint, model aliases, budgets and policies without redeploys
+
+<!--
+- Say: Put an AI Gateway between your apps and your models and tools. Apps call one endpoint and an alias like gpt-latest; the gateway routes to models (with fallback) and applies budgets and safety policies, with no app redeploys.
+- On screen (AI Gateway portal, aigw-quickstart-12421): alias `gpt-latest`, "GPT-6.1 Sol primary; mini fallback." Backend models: GPT-6.1 Sol (Foundry Sol, priority 0, weight 100) and gpt-5.4-mini (Foundry, priority 1, weight 100). Left menu: Models, MCP servers, Policies, Monitoring, Access, Managed identities, Networking.
+- Paul (18:12): a gateway is "like an alias. You put an alias in between your model and your tools. And now, just by doing that, I can turn on features. I can turn on token budgets. I can turn on monetary budgets. I can turn on safety policies ... And I'll never redeploy my back ends or my front ends to do it." "It's just an endpoint. It's a well-known HTTP endpoint ... It's like DNS". "I'm going to lead with the highest priority to give people 6.1 Sol ... if we run out, I've got a backup." "this is model routing ... models from multiple vendors". Developers "are just thinking about that endpoint and that alias".
+- Image: cropped; the browser URL bar showed a subscription ID and bookmarks.
+- Source: 18:12-18:14 ET, transcript 20261111-181201; crop of shot 20261111/181321.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

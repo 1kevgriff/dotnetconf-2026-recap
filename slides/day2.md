@@ -838,6 +838,22 @@ time: "13:52"
 -->
 
 ---
+layout: "statement"
+---
+
+Start with static SSR. Add interactive server where needed. WebAssembly for compute and offline.
+
+<!--
+- Say: Dan Roth's advice for a fast, scalable Blazor app in .NET 11: static SSR first, then interactive server, then WebAssembly, and set the render mode per part of the app.
+- Dan (13:56): "you'll start first with static server side rendering. That's your bread and butter. You download almost nothing to the browser". Then "if you feel like you have an experience that really requires additional interactivity, that's when I would start flipping on interactive server rendering". WebAssembly when you need to be "heavy on compute", "offline scenarios or UI interactions that are very low latency".
+- "different parts of your app might have different characteristics ... you can set up the render modes for each part of your app".
+- Where paused-circuit state goes (13:54): no browser connection (eviction after a disconnect) → on the server, in-memory cache by default, or HybridCache if enabled, so it can scale out. With a connection (graceful shutdown, Auto Pause) → "persist down to the client ... nicely protected", in the browser's local storage.
+- On Aspire: "I would never build another ASP.NET Core Blazor app without wiring up Aspire." The demos used the Aspire dashboard for circuit metrics.
+- Why it matters: a clear default for new Blazor apps, with less server state per user.
+- Source: 13:54-13:57 ET, transcripts 20261111-135402 and 20261111-135602.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

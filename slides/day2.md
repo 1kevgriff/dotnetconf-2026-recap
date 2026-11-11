@@ -1694,9 +1694,11 @@ time: "18:02"
 - Say: For a batch, the AI reads the Markdown skill once and writes a plan; the Durable Task Scheduler (DTS) then runs that plan, retrying failed steps and resuming after a restart. Here: 20 photos, 10 at a time, each routed by verdict.
 - On screen, "How DTS Runs the Image Batch": POST /api/batch-check → "AI reads the Markdown skill / Writes the plan once" → "Durable Task Scheduler (DTS) / Runs the plan durably" ("Retries failed steps • Resumes after restart") → list_photos (20 images) → analyze_photo × 20, "10 at a time" ("Each photo uses the vision model through the .NET Claims API") → sort_results → damaged → file_claim; ok → tag_photo; unclear → request_retake → write_summary → "Claims desk + DTS dashboard".
 - Matt (18:02): "what durable functions are is they're durable"; "DTS, the Durable Task Scheduler, is going to come through and say, all right, we're going to take all these photos and then make a plan off of them." "That's the durable part."
+- How you turn it on (18:05, batch-check/batch-check.agent.md, shot 20261111/180542): front matter `name: Package batch check`, `trigger: type: http_trigger, args: route: batch-check`, plus `workflows: enabled: true`. Matt: "It's an HTTP trigger, but we're going to say you're using workflows now." The body has "## Inspection rules" (adds holes, water stains; `unclear` for blurry, dark or partly visible) and "## Routes".
+- Claims API (18:04): "what we have in the claims API is .NET again"; tag → tags the blob; adjuster notices → "I think that probably ... updates the queue ... Azure storage queue, and also updates the database" (his hedge). "I love the minimal ASP.NET".
 - Why it matters: the model plans; the durable engine executes with retries and restarts, so a long agent job does not start over when something fails.
 - Status: (Inference) part of the same "initial concept" hosted-skills sample (the diagram is in its assets folder).
-- Source: 18:02-18:03 ET, transcript 20261111-180201; shot 20261111/180251.
+- Source: 18:02-18:06 ET, transcripts 20261111-180201 and 20261111-180402; shots 20261111/180251 and 180542.
 -->
 
 ---

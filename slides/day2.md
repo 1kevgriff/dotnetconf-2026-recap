@@ -1560,7 +1560,8 @@ The agent is the brain. Tools are the hands. Sandbox the tool, not the agent.
 - Speaker (17:35; (Inference) Paul Yuknewicz, the demo repo is his): "think of your agent as the brain ... the brain wants what it wants, and then we decide what the hands let the agent reach out and do." "A lot of people are like, oh, I'm going to sandbox the agent. I'm actually going to sandbox the tool. So the tool is dangerous. The tool is the hand".
 - Also: "not everything has to be agents ... Agents are a little bit more dangerous, honestly."
 - Sample: github.com/paulyuk/aca-sandboxes-dotnet-demo (README on screen: .NET 10 SDK, Azure CLI, Copilot CLI; model calls go through an Azure AI Gateway connection). Screenshot not used: it shows the presenter's browser bookmarks.
-- Source: 17:34-17:36 ET, transcript 20261111-173404; shot 20261111/173544 (not in deck).
+- Live run (17:36): `dotnet restore` and run, then the tool starts "a sandbox group". "We, by the way, have great SDKs for the sandboxes, including for .NET." The speaker called the spin-up "super fast"; no time was measured on stream (sub-second is the general product claim from 17:33).
+- Source: 17:34-17:38 ET, transcripts 20261111-173404 and 20261111-173604; shot 20261111/173544 (not in deck).
 -->
 
 ---

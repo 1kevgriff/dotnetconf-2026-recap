@@ -448,8 +448,26 @@ Next for AI in VS: code review, agent visibility, multi-agent workflows.
 - Rachel (11:54): "there's a lot more generated code to review, more activity to follow, and more tasks for agents to coordinate ... We know that we want to focus more on code review, agent visibility, multi-agent workflows, and more."
 - This matches Mads's keynote: review time is up, and the PR flow is now in VS.
 - No dates or versions were given for these.
+- Q&A (11:58), "Will Visual Studio expose an MCP server so that other agents can control Visual Studio?" Answer: "definitely something that's been in" the works; "We've been playing around with that concept starting with the debugger and the specific uniquely powerful tools that make Visual Studio Visual Studio." They ask which VS tools you want exposed first. Experiment only, no commitment.
 - Why it matters: the bottleneck moves from writing code to reviewing and following agent work.
-- Source: 11:54 ET, transcript 20261111-115402; slide "Agentic development keeps evolving" (shot 20261111/115437, not in deck).
+- Source: 11:54-11:59 ET, transcripts 20261111-115402 and 20261111-115804; slide "Agentic development keeps evolving" (shot 20261111/115437, not in deck).
+-->
+
+---
+layout: "session"
+num: 3
+time: "12:00 PM"
+speakers: "Jason Chlus"
+---
+
+# What's new in Visual Studio
+
+<!--
+- [session 03] Jason Chlus, Product Manager, Visual Studio. A fast demo of new VS features.
+- Jason (12:00): "I have roughly 25, maybe 26 features that I'm going to be showing." "Most of these features come from developer community."
+- Coming: "very soon you will be able to report a problem, suggest a feature directly in Visual Studio using the chat."
+- Say: this is the feature tour. I picked the ones that matter most for day-to-day work.
+- Source: 12:00 ET, transcript 20261111-120004; title card shot 20261111/120104.
 -->
 
 ---

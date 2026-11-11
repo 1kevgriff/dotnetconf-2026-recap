@@ -1881,6 +1881,22 @@ time: "18:41"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/184644.jpg"
+time: "18:46"
+---
+
+# A web app in one file: `dotnet web.cs`, with `web.settings.json` and `web.run.json`
+
+<!--
+- Say: File-based apps can be web apps. Settings and launch settings are sidecar files named after the app: web.cs reads web.settings.json (like appsettings.json) and web.run.json (like launchSettings.json).
+- On screen (demos/03-reuse): assembly.cs, web.cs (541 bytes), web.run.json, web.settings.json; `dotnet web.cs` → "Using launch settings from ...\web.run.json ..." and "Now listening on: http://webfba.dev.localhost:5111" and http://localhost:5111.
+- Damian (18:46): "You can absolutely build web applications". The settings file is "just named after your application. So if my application was called foo.cs, this would be called foo.settings.json ... That will be implicitly read by the web host". "my web.run.json file here is just my launch settings file", which in a project "would be called launchSettings.json".
+- This app also reuses functionality from the earlier CLI app ("an application that reuses some of those functionalities").
+- Source: 18:46-18:47 ET, transcript 20261111-184604; shot 20261111/184644.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

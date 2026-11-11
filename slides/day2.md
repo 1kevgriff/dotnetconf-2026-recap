@@ -1077,6 +1077,20 @@ WinUI: monthly releases in the open, modern .NET workflow, ready for agents.
 -->
 
 ---
+layout: "session"
+num: 9
+time: "3:01 PM"
+speakers: "Daniel Roth"
+---
+
+# Building the future of agentic UI with Blazor
+
+<!--
+- [session 09] Daniel Roth, his second session today (after Blazor Server at 1:31 PM). Started about 3:01 PM ET.
+- Source: dotnetconf.net/agenda (3:00 PM ET); stream agent session marker at 3:01 PM ET.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

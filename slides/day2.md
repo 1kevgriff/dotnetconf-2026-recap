@@ -589,6 +589,24 @@ speakers: "Sebastian Hernandez"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/123404.jpg"
+time: "12:34"
+---
+
+# Worktrees and submodules in the Git Repository window
+
+<!--
+- Say: The Git Repository window now manages worktrees and submodules. Right-click a branch to make a worktree; open it here or in a new VS window.
+- Worktrees, Sebastian (12:33): right-click a branch, "you'll see that at the bottom we have those commands that allow you to create a new work tree". Name it, then open it in the current window or "perform the task in the background". Right-click a worktree to open it in the current window or a new window, or delete it.
+- On screen, branch context menu: "New Worktree From...", "Open Worktree in Current Window", "Open Worktree in New Window", "Delete Worktree"; also "Add to Chat" and "New Pull Request". Demo repo: TypeScript (main).
+- Agent angle: worktrees are "very popular nowadays, especially in this agentic AI world". You can "kick off multiple parallel sessions at the same time within different Visual Studios with different work trees".
+- Submodules: a Submodules node in the Git Repository window. Click one to see its checked-out commit; right-click to update or delete it.
+- Why it matters: one repo, several agents, each in its own worktree and VS window, with no file conflicts.
+- Source: 12:33-12:35 ET, transcripts 20261111-123204 and 20261111-123404; shot 20261111/123404.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

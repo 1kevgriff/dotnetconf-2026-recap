@@ -873,6 +873,23 @@ speakers: "Stephen Halter"
 
 ---
 layout: "shot"
+image: "/shots/day2/140353.jpg"
+time: "14:03"
+---
+
+# MCP Apps: a tool call returns live, interactive UI in the chat
+
+<!--
+- Say: MCP Apps (formerly MCP-UI) lets an MCP tool return a small interactive app that shows inline in the chat. The C# SDK supports it.
+- Demo: in VS Code Copilot Chat, "launch fireworks" called the `launch_fireworks` tool of the fireworks MCP server. The reply was an inline panel "A little celebration / BUILD SOMETHING BRILLIANT" with show title, theme, intensity, finale message and a "LAUNCH SHOW" button.
+- Stephen (14:03): "it shows in line this iframe, which is returned from MCP. So this is using a feature that used to be called MCP-UI, is now called MCP apps."
+- The panel is tagged "MCP / SIGNALR / LIVE": the same show runs on a second screen kept in sync with SignalR.
+- Why it matters: tools can return UI, not only text, so an agent chat can host small apps from your .NET server.
+- Source: 14:02-14:04 ET, transcripts 20261111-140203 and 20261111-140404; shot 20261111/140353.
+-->
+
+---
+layout: "shot"
 image: "/shots/day2/140549.jpg"
 time: "14:05"
 ---

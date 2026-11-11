@@ -1328,9 +1328,27 @@ time: "16:37"
 - DevFlow (16:36): the agent asks for the visual tree, "it doesn't have to guess based on a screenshot ... including things that might be invisible ... Or have a zero width." "this will save you tokens". "You can see this as Playwright for your mobile applications".
 - Status: "everything in MAUI Labs is a pre-release right now".
 - Also in maui-labs (README "At a glance", 16:43, shot 20261111/164314): Comet ("Experimental MVU UI framework for .NET MAUI with C# fluent UI, signals, and reactive state"), Go (single-file Comet app server), AI Extensions (source-generated Microsoft.Extensions.AI tool bindings), a macOS AppKit backend ("running MAUI apps as macOS apps without Mac Catalyst"), a WPF backend, Essentials.AI (on-device chat, embeddings, tool calling), AppProjectReference, MAUI Testing (MTP-based device tests). Gerald also said "we have a Linux backend in here".
-- MAUI Sherpa (16:38), not in maui-labs: a visual tool "built by Jonathan on our team" (Jonathan Peppers is (Inference) the Jonathan meant). It sets up Android SDK and Xcode, checks .NET SDKs, handles certificates, builds, uploads to app stores, manages secrets: "mission control for mobile development". Not only for MAUI apps.
+- MAUI Sherpa (16:38), not in maui-labs: a visual tool "built by Jonathan on our team" (last name not said; the MAUI team has more than one Jonathan, so do not guess). It sets up Android SDK and Xcode, checks .NET SDKs, handles certificates, builds, uploads to app stores, manages secrets: "mission control for mobile development". Not only for MAUI apps.
 - Why it matters: agents read the real UI state of iOS and Android apps instead of guessing from screenshots. (Inference) It parallels winapp for WinUI from earlier today.
 - Source: 16:34-16:43 ET, transcripts 20261111-163402, 20261111-163604, 20261111-163803, 20261111-164204; shots 20261111/163719 and 164314.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/165242.jpg"
+time: "16:52"
+---
+
+# Mobile Canvas: you and Copilot drive the same simulator, inside the editor
+
+<!--
+- Say: Mobile Canvas mirrors the iOS simulator or Android emulator inside your editor or the GitHub Copilot app, so you watch Copilot drive the same device you use. It reads the accessibility tree, not just pixels. It is a community tool.
+- On screen: "A live simulator or emulator inside your editor. You and Copilot drive the same device. Reads the accessibility tree, not just pixels." VS Code: Mobile Canvas extension; `/plugin install mobile-canvas`; github.com/Redth/mobile-canvas-ghcp; "Community tool by Redth (Jonathan Dick)".
+- Gerald (16:52): "if you're working with the GitHub Copilot app like I am daily, then you can now bring up these canvases on the right side". "It's just a mirror of the iOS simulator or the Android emulator, and it will show you in live, real time, what is going on with your application".
+- Inspector (16:50): runs as a web app in VS Code, in Copilot CLI, or as a GitHub Copilot app canvas; live property inspector: "you can change every property on that control it will show up live in your application".
+- DevFlow point (slide "The visual tree beats a screenshot", 16:45): screenshot only "Guesses coordinates from pixels ... Breaks when the layout shifts"; DevFlow visual tree "Taps controls by name ... Knows properties and state".
+- Name note: the stream agent called the canvas author Jonathan Peppers; the slide says Redth (Jonathan Dick). Use the slide.
+- Source: 16:45-16:53 ET, transcripts 20261111-164405, 20261111-165002, 20261111-165202; shots 20261111/164505 and 165242.
 -->
 
 ---

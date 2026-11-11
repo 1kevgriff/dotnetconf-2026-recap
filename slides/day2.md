@@ -1874,8 +1874,10 @@ time: "18:41"
 - Transitive (18:42): "we support transitive directive processing." plan.cs includes SessionPlan.cs, which includes helpers/DurationLabel.cs, which has its own `#:package Humanizer.Core@2.14.1` (shot 20261111/184228).
 - Package versions: "I can put a star here ... That's the float syntax ... 2.14.* and that will float to the latest patch"; central package management works too.
 - Includes: Dev Kit gives "completion for file paths", and "you can do globs in here. They don't have to be specific files."
+- CAVEAT (18:44): a glob in `#:include` "invalidates our build cache ... We don't at the moment support expanding that glob before we pass it to MSBuild ... do note that it will disable the build caching". Use explicit file names if run speed matters.
+- New in .NET 11: metadata on directives. "up until 11, we didn't support metadata on directives." Now `#:package Spectre.Console@0.57.2 PrivateAssets=all` works, as in a project file; important for some packages such as analyzers or build tools ((Inference) the examples he alluded to).
 - Cache recap (18:40): a source-only change can "just do that recompilation phase"; with no changes you get down "to like 100 millisecond execution times".
-- Source: 18:40-18:44 ET, transcripts 20261111-184002 and 20261111-184203; shots 20261111/184157 and 184228.
+- Source: 18:40-18:45 ET, transcripts 20261111-184002, 20261111-184203, 20261111-184404; shots 20261111/184157 and 184228.
 -->
 
 ---

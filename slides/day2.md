@@ -696,9 +696,27 @@ time: "13:08"
   - Manual: you reproduce and verify with your own judgment.
   - Test-driven: "The agent will actually use the existing test suite, even create a new test if needed".
   - UI Automation: "recently added ... in our latest insiders", for UI and WPF bugs. Insiders only.
-- Demo next: eShopOnWeb running locally, a bug when buying a .NET sweatshirt (product name unclear in the transcript).
+- Demo next: eShopOnWeb running locally, a wrong cart total for the ".NET Bot Black Sweatshirt" (name from the screen, next slide).
 - Why it matters: the agent works from the runtime state, not just the source, and proves the fix.
 - Source: 13:08-13:09 ET, transcript 20261111-130801; slide "The investigation loop" (shot 20261111/130801).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/131523.jpg"
+time: "13:15"
+---
+
+# Debugger Agent found the bug under the debugger, fixed it, proved it: $58.50
+
+<!--
+- Say: Hands-free debugging demo. The agent ran eShopOnWeb, reproduced a wrong cart total through the UI, confirmed the cause under the debugger, fixed it, ran tests, and checked the UI again.
+- The bug: with quantity 3, the cart total was wrong. Agent's finding on screen: "Cause: src\Web\Pages\Basket\BasketViewModel.cs:11 summed unit prices without multiplying by quantity. Runtime values were correctly 19.50 × 3, but the total expression returned 19.50."
+- "Reproduced and confirmed under the debugger before editing." "With your approval, changed the total to include quantity." "Verified: build succeeded, all four targeted tests passed, and the storefront now shows 58.50 for both line cost and grand total."
+- The tool log shows debugger tools: debugger_ui_tree, debugger_ui_interact, "Debugger evaluated expressions", "Removed breakpoints", debugger_continue. Chat mode: Debugger, Interactive (Manual), GPT-6.1 Sol.
+- Harshada (13:14): it relaunched the app, redid the repro steps, and confirmed "the update cart total is now correct". "this feature is available in our latest Insider". Insiders only.
+- Why it matters: the agent shows evidence (runtime values, tests, UI result), not just a diff. That is the subtitle of the talk: "From a visible symptom to an evidence-backed fix".
+- Source: 13:10-13:15 ET, transcripts 20261111-131003, 20261111-131203, 20261111-131403; shot 20261111/131523.
 -->
 
 ---

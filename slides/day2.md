@@ -432,7 +432,7 @@ time: "11:53"
 - Rachel (11:53): "Admins can now define and distribute the supported controls through GitHub Server, MDM managed settings, cloud-based settings, and managed settings are available in Visual Studio Insiders today, starting with Autopilot and more on its way soon." (She said "cloud-based"; the slide says "File-based settings".)
 - Demo video: one account has full Autopilot; in the other, the admin restricted it.
 - Context: the mode menu on screen shows Interactive, Autopilot ("End-to-end execution without interruption"), Plan, and Tool permissions "Allow all".
-- Why it matters: the answer to "can we let devs run Autopilot?" for enterprises. MCP server allow/deny lists are next, and those matter more for supply-chain risk.
+- Why it matters: the answer to "can we let devs run Autopilot?" for enterprises. (Inference) The MCP server allow/deny lists that come next may matter more, because they control which tools an agent can reach.
 - Source: 11:52-11:53 ET, transcript 20261111-115200; slide "Managed settings" (shot 20261111/115345).
 -->
 

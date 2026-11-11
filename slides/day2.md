@@ -1594,8 +1594,25 @@ LLMs take the soft, squishy input. Deterministic code enforces the hard rules.
 <!--
 - Say: The design rule behind the sandbox demo: let the model handle the messy input, then hand it to plain, deterministic code where you write the hard rules.
 - Speaker (17:45; (Inference) Paul Yuknewicz): "the agents, the LLM stuff, is what I like to think of as the soft, squishy stuff. It takes your inputs, the soft stuff that is hard to handle in deterministic code ... it turns it over to your deterministic code, which is good at handling what makes it deterministic, and then we can write our hard rules against it." Earlier: "boring code that can't do scary stuff ... paired with deterministic safe code, that is the key."
-- Next (17:46): Matt Soucoup switched to the GitHub Copilot app and opened "the Azure Functions Hosted Skills Canvas" to build "an Azure Function Hosted Skill" (Functions as "an event-driven programming model"). Details on the next slides.
-- Source: 17:44-17:47 ET, transcripts 20261111-174403 and 20261111-174603. Frame 174643 not used (it shows a local user path).
+- Next (17:46): Matt Soucoup switched to the GitHub Copilot app and opened "the Azure Functions Hosted Skills Canvas" to build "an Azure Function Hosted Skill" (Functions as "an event-driven programming model"). Details on the next slide.
+- Source: 17:44-17:47 ET, transcripts 20261111-174403 and 20261111-174603.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/174643-clean.jpg"
+time: "17:46"
+---
+
+# Azure Functions Hosted Skills: AI skills as `.agent.md` in a Function App (concept)
+
+<!--
+- Say: Hosted Skills put AI skills, defined in .agent.md files, inside an Azure Function App, so they run on Functions triggers. Matt demoed it from a canvas in the GitHub Copilot app. The canvas is labeled "INITIAL CONCEPT".
+- On screen (Azure Functions Hosted Skills canvas): "Build and run Hosted Skills in a local Function App, or select an existing Azure Function App to invoke remotely." "Open an existing local Function App only when it contains host.json and at least one valid .agent.md Hosted Skill". Model endpoint: existing gpt-6-sol. Buttons: Open in VS Code, Refresh, Stop local function, Deploy to Azure. TRIGGER: Timer, HTTP, Queue; Blob, Connector, Cosmos DB marked "NYI" (not yet implemented). Badges: "INITIAL CONCEPT", Target: Local, Trigger: HTTP.
+- Matt (17:46): "this is the Azure Functions Hosted Skills Canvas ... we're going to build an Azure Function Hosted Skill." Functions is "an event-driven programming model".
+- Status: initial concept; say so. Blob/Connector/Cosmos triggers are not implemented yet.
+- Image: a copy of frame 174643 with a local user path blanked out by the stream agent; nothing else changed.
+- Source: 17:46-17:47 ET, transcript 20261111-174603; frame 20261111/174643 (cleaned copy).
 -->
 
 ---

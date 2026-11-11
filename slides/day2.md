@@ -1253,8 +1253,9 @@ time: "15:57"
 - On screen, "What's next / From preview to stable": "Moving CsWinRT 3.0 from preview to stable"; "Try it out with the .1 TFM and provide feedback"; partner projections: "WinAppSDK will multi-target their projections for CsWinRT 2.x and 3.0". Links: github.com/microsoft/CsWinRT/releases/tag/3.0.0-preview.261104.1 and nuget.org/packages/Microsoft.Windows.CsWinRT/3.0.0-preview.261104.1.
 - Manu (15:56): "If you don't now have any dependencies today and just using the Windows SDK projections itself, you can go try it out right now with the .1 TFM." Then try the Windows App SDK previews when they ship. "Based on the feedback that we get, we'll be looking at moving CsWinRT 3.0 from preview to stable."
 - Migration (15:54): "In general, it's all like mechanical changes". The Store code base had "almost a thousand" [DynamicWindowsRuntimeCast] attributes, now not needed. Point, Rect and Size are now float, not double, to match the WinRT ABI ("more efficient", no implicit conversions).
+- Q&A (15:59): WinRT components can be written in any language, including C# published as Native AOT. "In fact, that's also how we're now shipping several components within Windows. They're just implemented in C Sharp, shipped as native AOT, and then they're just exposed through WinRT." No component names were given.
 - Demo (15:52): the Contoso Camera app moved to 3.0 by changing the TFM to .1 and updating the preview Windows SDK package.
-- Source: 15:52-15:57 ET, transcripts 20261111-155201, 20261111-155401, 20261111-155602; shot 20261111/155722.
+- Source: 15:52-16:00 ET, transcripts 20261111-155201, 20261111-155401, 20261111-155602, 20261111-155802; shot 20261111/155722.
 -->
 
 ---

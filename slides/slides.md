@@ -3056,6 +3056,41 @@ time: "19:09"
 -->
 
 ---
+layout: "default"
+codeSize: "18"
+---
+
+# Composite ML-KEM in code
+
+```csharp
+// 1. Import the recipient key
+using (var recipientKey = CompositeMLKem.ImportEncapsulationKey(recip.Alg, recip.EncapsKeyBytes))
+{
+  // 2. Invoke the Key Encapsulation Mechanism
+  recipientKey.Encapsulate(out ciphertext, out sharedSecret);
+}
+
+// 3. Send the ciphertext to the recipient.
+Send(recip, ciphertext);
+
+// 4. Derive a key (out of scope here)
+byte[] aesKey = SomehowDeriveKey(sharedSecret);
+
+// 5. Both sides share a key now.
+using (AesGcm aesGcm = new AesGcm(aesKey, tagSizeInBytes: 16);
+```
+
+<!--
+- Say: The initiator imports the recipient's encapsulation key, encapsulates to get a ciphertext and a shared secret, sends the ciphertext, and both sides derive the same AES-GCM key.
+- Code copied from the stream slide "Composite ML-KEM - Initiator" (/shots/191123.jpg); `SomehowDeriveKey` is a placeholder on the slide ("out of scope here")
+- Composite = an ML-KEM key plus "a thing that we call a traditional key, which will be RSA or" another classic algorithm; example algorithm "ML-KEM 1024 with RSA 4096"
+- "Since it's called the key encapsulation mechanism, the public key is called the encapsulation key."
+- Why composites: we don't fully trust ML-KEM yet, "but also at the same time we know that at some point we're going to completely stop trusting RSA" — "the composites are a bit of a stopgap"
+- Why it matters: you can start post-quantum key establishment now without betting everything on a brand-new algorithm.
+- Source: 19:10–19:12 ET, transcript 20261110-191003, /shots/191123.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

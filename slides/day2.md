@@ -1002,6 +1002,27 @@ time: "14:35"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/143928-crop.jpg"
+time: "14:39"
+---
+
+# WinUI for agents: WinApp CLI gives hands, the WinUI plugin gives knowledge
+
+<!--
+- Say: WinUI wants agents to build Windows apps well. The WinApp CLI lets an agent create, run, inspect and package an app; the WinUI Copilot plugin gives it a WinUI agent and skills grounded in the docs. Three installs.
+- On screen, "Installing the required tools":
+  - `dotnet new install Microsoft.WindowsAppSDK.WinUI.CSharp.Templates`
+  - `winget install Microsoft.winappcli`
+  - `copilot plugin install winui@awesome-copilot`
+- Niels (14:36): the WinApp CLI (introduced "a few months ago") lets you "create and build and run and debug" apps from the command line, also for other frameworks such as Electron. A new WinApp VS Code extension (on the Marketplace) runs and debugs WinUI apps in VS Code: "This was not possible before". Visual Studio: improved project templates shipped "about an hour ago"; a new XAML previewer is an experiment.
+- Agents (14:38): the CLI "gives agents the hands they need to interact with Windows apps"; "with Windows Sandbox support, you can even do this in the background. So your app and agent run in their own container." The WinUI plugin gives "a dedicated WinUI agent and a collection of skills ... grounded in the right documentation".
+- Image: the stream slide, cropped to remove the speaker camera frames (a wall note was visible behind one speaker).
+- Why it matters: Windows desktop apps get the same CLI-plus-skills agent loop that web and MAUI got this week.
+- Source: 14:36-14:39 ET, transcripts 20261111-143603 and 20261111-143803; crop of shot 20261111/143928.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -244,7 +244,7 @@ layout: "statement"
 
 ---
 layout: "shot"
-image: "/shots/day2/112109.jpg"
+image: "/shots/day2/112359.jpg"
 time: "11:21"
 ---
 
@@ -252,10 +252,14 @@ time: "11:21"
 
 <!--
 - Say: You can move a Copilot chat session from the CLI, VS Code or the Copilot app into Visual Studio, and keep going with VS tools.
-- On screen: "Roundtrip chat sessions from CLI, VS Code, Copilot App".
+- On screen (slide "Your workflow understood"): "Roundtrip chat sessions from CLI, VS Code, Copilot App", "Create tests – profile them – debug – fix", "Worktrees and sub modules".
 - Mads (11:20): "we know that you're not always using Visual Studio for everything and that's totally fine." If you started in the CLI and find "you need a debugger or you need a profiler", you can "take that session that you have in the Copilot CLI and simply move it into Visual Studio and continue with it there", and add "that debugger, that UI automation".
-- Why it matters: this works because of the shared Copilot SDK (two slides back). VS becomes one stop in a session, not the only place you work.
-- Source: 11:20-11:21 ET, transcript 20261111-112004; slide "Your workflow understood" (shot 20261111/112109).
+- Why roundtrip works, Mads (11:22): "all because we're using the same copilot SDK harness."
+- Tests in any order: "A lot of people do tests first, like TDD". Some "write their own tests ... and then they might say, okay, agent, run loose and build the feature, but I want to control the tests." Test Explorer has new features for this.
+- VS tool calls make the agent faster; his example: the stop-on-first-failed-build switch, "you get that only in Visual Studio".
+- Worktrees and submodules: "We got the full support." He said users kept telling the team that agents use worktrees.
+- Why it matters: VS becomes one stop in a session, not the only place you work.
+- Source: 11:20-11:23 ET, transcripts 20261111-112004 and 20261111-112204; slide "Your workflow understood" (shot 20261111/112359).
 -->
 
 ---

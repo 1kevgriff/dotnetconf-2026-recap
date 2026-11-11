@@ -1200,6 +1200,25 @@ time: "15:34"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/154425.jpg"
+time: "15:44"
+---
+
+# CsWinRT 3.0: no more `partial`, attributes or casts just for AOT
+
+<!--
+- Say: With CsWinRT 2, AOT-safe WinRT code needed odd changes: make the class partial, add [DynamicWindowsRuntimeCast], add explicit casts on collection expressions. With CsWinRT 3, the first version you would naturally write just works. And apps no longer wait for every dependency to update CsWinRT.
+- On screen, "Why 3.0? Pain point: AOT friction": `public partial class TaggedButton : Button` with `[DynamicWindowsRuntimeCast(typeof(FrameworkElement))]` on a method and `return (object[])[Tag, .. tags];`.
+- Sergio (15:43): partial "because we need our generators to be able to inject marshaling code"; the attribute so "trimming doesn't remove types that we actually might be relying on"; the cast because a collection expression "might result in a compiler-generated type that we cannot see". "So the whole thing in general is just not really developer-friendly."
+- CsWinRT 3: "no need to mark anything as partial, no need to add attributes anywhere, no need to add casts anywhere. The code is just working as is".
+- Versioning pain fixed (15:42): before, packages built against an older CsWinRT kept old bugs, so "you would have to wait for all of your dependencies to actually go and update". Now "You can just reference the latest version of CsWinRT in your app, and then you get all the bug fixes and all the improvements".
+- Root cause: CsWinRT started in .NET 5, before trimming and AOT support, so AOT was added later without breaking changes.
+- Why it matters: WinUI and Windows App SDK apps can go Native AOT with ordinary C#.
+- Source: 15:42-15:45 ET, transcripts 20261111-154200 and 20261111-154400; shot 20261111/154425.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

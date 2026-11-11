@@ -3039,6 +3039,23 @@ time: "19:07"
 -->
 
 ---
+layout: "shot"
+image: "/shots/190953.jpg"
+time: "19:09"
+---
+
+# New in .NET 11: Composite ML-KEM
+
+<!--
+- Say: .NET 10 already shipped post-quantum signatures and ML-KEM. .NET 11 adds Composite ML-KEM — a post-quantum key exchange paired with a traditional one.
+- Composite ML-KEM (stream slide): "Uses ML-KEM along with a 'traditional' algorithm"; "Both must be compromised to reveal the secret"; "Like the TLS 1.3 Hybrid KEM, but different"
+- Already in .NET 10 (19:08): three signature algorithms — ML-DSA, SLH-DSA ("which stands for something"), and Composite ML-DSA ("ML-DSA with something else") — plus ML-KEM; "our underlying providers that have TLS 1.3 added the TLS 1.3 hybrid KEM"
+- "In 10, we added the composite ML-DSA algorithm, and in 11 we're now adding composite ML-KEM."
+- Why it matters: belt and suspenders — if either the new or the old algorithm turns out weak, the secret still holds.
+- Source: 19:08–19:10 ET, transcript 20261110-190803, /shots/190953.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

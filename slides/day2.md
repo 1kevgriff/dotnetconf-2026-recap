@@ -294,7 +294,8 @@ speakers: "Rachel Kang, Barbara Boyajian"
 - [session 02] Rachel Kang and Barbara Boyajian, both Microsoft. The agenda lists only Rachel; the title card shows both.
 - Headline of the session, Rachel (11:30): "The new agent harness powered by the Copilot SDK is now generally available in Visual Studio."
 - "New Brain" = the new agent harness on the Copilot SDK (the one Mads introduced in the keynote). (Inference) "More Choice" = more ways to pick models and agents; Rachel said only "a whole lot more choice that we now offer in Visual Studio to put your AI to work".
-- Why it matters: the keynote's Copilot SDK rebuild is GA, not a preview.
+- Version: the slide "Introducing the new agent harness" has a badge "GA in 18.12 stable" (shot 20261111/113233). So it shipped in the release from Nov 10.
+- Why it matters: the keynote's Copilot SDK rebuild is GA in the stable channel, not a preview.
 - Source: 11:30 ET, transcript 20261111-113000; title card shot 20261111/113025.
 -->
 
@@ -310,7 +311,7 @@ time: "11:33"
 - Say: The VS team ran the old and the new agent harness on the same C# benchmark with the same model. The new harness solved 21 more tasks.
 - On screen: SWE-Bench-CSharp-General, 157 C# tasks, GPT-5.6 Sol, one run per experience. Previous 103, new 124, "+21 additional tasks resolved". "Resolved = failing tests pass without breaking previously passing tests."
 - Rachel (11:33): "the new agent harness resolved up to 21 additional tasks on the same exact model".
-- Her point: "oftentimes we focus on the model ... but it's only one part". An agent also needs context, memory and tools, and the harness brings them together.
+- Her point: "oftentimes we focus on the model ... but it's only one part". An agent also needs context, memory and tools, and the harness brings them together. The harness diagram (shot 20261111/113233) shows Context, Memory, Tools, Execution around the Model, with the badge "GA in 18.12 stable".
 - The Copilot SDK harness is "common across all Copilot experiences on all of your favorite platforms", so improvements in one come to VS.
 - Caveat: one run per experience, Microsoft's own benchmark. Say it as their number.
 - (Inference) 103/157 ≈ 66%, 124/157 ≈ 79%.

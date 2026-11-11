@@ -3096,17 +3096,20 @@ image: "/shots/191402.jpg"
 time: "19:14"
 ---
 
-# New in .NET 11: HPKE, the hard parts done for you
+# New in .NET 11: HPKE (post-quantum suites in 11.0.x)
 
 <!--
-- Say: .NET 11 also adds HPKE — Hybrid Public Key Encryption — which bundles the pieces people usually get wrong.
+- Say: .NET 11 also adds HPKE — Hybrid Public Key Encryption — which bundles the pieces people usually get wrong. Its post-quantum suites arrive in an 11.0.x servicing update, not in 11.0.0.
 - HPKE = IRTF RFC 9180 and updates (stream slide). "Combines pieces so you don't have to": public key establishment, nonce/IV management, AE tag verification, message ordering enforcement
 - Jeremy (19:14): it handles the things "that people tend to get wrong"; "nonce management, which is really important for something like GCM"; message ordering — "if you get them out of order ... it says it's been tampered with and then it fails"
 - "Designed as a message stream"; "also supports 'one-shot' operations" for people who "only want to send just one message"
 - Keys come together in "a thing called a suite" (the notes agent: KEM + KDF + AEAD)
 - Receiver side (19:18): open the message — "If any part of it was tampered with, this will fail. If you send it back in the wrong order, this will fail. So by the time that you get it now, you know it's trustworthy."
 - Also: EnvelopedCms ("we've had that for now, I want to say 21 years. It can drink.") now supports ML-KEM. You need an ML-KEM key as the subject key of a certificate (e.g. an email cert, not a CA); address it to their cert and "we'll do all the plumbing inside for you"
-- Not verified in transcript: the notes agent says Composite ML-KEM in EnvelopedCms is "coming soon" (NotSupportedException in 11.0.0) — check before quoting
+- ⚠ HPKE in 11.0.0 is NOT post-quantum yet (19:20): support for the PQ HPKE draft — "the PRs up for main, I didn't finish reviewing it before we went into schedule lockdown. We'll get it in servicing."
+- "The Near Future — Expected in 11.0.x, x > 0" (stream slide /shots/192033.jpg): ML-KEM in HPKE and Hybrid ML-KEM + Traditional in HPKE (draft-ietf-hpke-pq); Composite ML-KEM in EnvelopedCms (draft-ietf-lamps-cms-composite-kem)
+- Hybrid ML-KEM in HPKE "isn't composite ML-KEM, it's hybrid ML-KEM like with TLS 1.3" — same idea, different spec
+- Why ship it this way: "make a lot of things work okay or a few things work really well. And we opted to make a few things work really well because we can fix it later."
 - Why it matters: use HPKE instead of wiring key exchange + AES-GCM + nonces by hand.
 - Source: 19:14–19:16 ET, transcript 20261110-191402, /shots/191402.jpg
 -->

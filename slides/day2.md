@@ -1274,6 +1274,27 @@ speakers: "Mika Dumont"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/160738-crop.jpg"
+time: "16:07"
+---
+
+# Upgrade agent: Web Forms eShop → ASP.NET Core on .NET 11, build green
+
+<!--
+- Say: Mika ran the GitHub Copilot upgrade agent on a legacy ASP.NET Web Forms eShop with the prompt "Upgrade my project to .NET 11". It assessed the app, planned, executed task by task with commits, and finished with a passing build and zero errors.
+- On screen, "Upgrade Agent Dashboard / Assessment": 1 project, 0/1 TFM upgraded; 41 incidents, 29 mandatory, 41 effort points; 13 incompatible packages, 0 version drift. By category: NuGet 33, Binding 5, Project 2, Feature 1. Example issues: "NuGet package is incompatible", "Convert application initialization code from Global.asax.cs to .NET Core", "Project file needs to be converted to SDK-style".
+- Modes (16:06): "automatic mode" end to end, or "guided where I pause after each stage for review"; commit strategy "after each task".
+- It is "a side by side upgrade": the new ASP.NET Core app sits next to the old one. Mid-run (16:16) the dashboard showed "681 files changed, seven commits created".
+- End (16:20): "there are zero errors. The upgrade is complete and the build did pass."
+- Available in Visual Studio, VS Code, GitHub Copilot CLI, Copilot cloud agent, the GitHub Copilot app (today's demo), and "Modernize CLI ... for portfolio scale modernization". Get started: aka.ms/upgrade-agent, github.com/microsoft/upgrade-agent-plugins (closing slide).
+- Not verified here: total run time and final file/commit counts from the stream agent (about 1h21m, 698 files, 12 commits). Do not quote them unless you check the recording.
+- Image: dashboard panel only; the full frame shows a worktree path with a personal name.
+- Why it matters: the hardest .NET migration (Web Forms) gets an agent that plans, commits per step, and drives to a green build.
+- Source: 16:06-16:21 ET, transcripts 20261111-160603 to 20261111-162000; crop of shot 20261111/160738; closing slide via stream agent crop 20261111-upgrade-agent.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

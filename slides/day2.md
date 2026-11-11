@@ -417,6 +417,26 @@ time: "11:44"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/115345.jpg"
+time: "11:53"
+---
+
+# Managed settings: admins can turn off Autopilot (18.13 Insiders)
+
+<!--
+- Say: Admins can now push AI controls to Visual Studio. The first control locks down Autopilot. It is a preview in 18.13 Insiders, not in stable yet.
+- On screen, "Managed settings": "Admins define and distribute AI controls." Channels: GitHub server, MDM managed, file-based settings.
+  - Available now: Autopilot permissions, `disableBypassPermissionsMode`, badge "Preview in 18.13 Insiders".
+  - Coming soon: `allowedMcpServers`, `deniedMcpServers`, "And more controls".
+- Rachel (11:53): "Admins can now define and distribute the supported controls through GitHub Server, MDM managed settings, cloud-based settings, and managed settings are available in Visual Studio Insiders today, starting with Autopilot and more on its way soon." (She said "cloud-based"; the slide says "File-based settings".)
+- Demo video: one account has full Autopilot; in the other, the admin restricted it.
+- Context: the mode menu on screen shows Interactive, Autopilot ("End-to-end execution without interruption"), Plan, and Tool permissions "Allow all".
+- Why it matters: the answer to "can we let devs run Autopilot?" for enterprises. MCP server allow/deny lists are next, and those matter more for supply-chain risk.
+- Source: 11:52-11:53 ET, transcript 20261111-115200; slide "Managed settings" (shot 20261111/115345).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

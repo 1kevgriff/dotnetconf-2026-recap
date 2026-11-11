@@ -128,6 +128,27 @@ time: "11:06"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/110839.jpg"
+time: "11:08"
+---
+
+# Stop build on first failed project: 26 s → 1.5 s
+
+<!--
+- Say: A long-standing request is in: a Tools > Options switch that stops the build at the first project that fails.
+- Mads (11:08): "you can now flip a switch in the tools options to have it stop the build the first project that fails."
+- The problem: VS and MSBuild keep going after a project fails, and most other projects then fail too because they depend on it.
+- His test: Orchard Core, "an open source .NET project or solution with hundreds of projects", with a syntax error in one project.
+- Chart: 4 runs, setting off 31/27/25/21 s, setting on 2/2/1/1 s. "Average: 26.0s → 1.5s (94% faster)".
+- Agent angle, his words: "whether you're the one building or if your agent building is part of a loop that you're running, you're going to see much faster inner loop."
+- Same release, also said: Live Unit Testing is 25% faster with xUnit.
+- Why it matters: a failed build in a big solution now fails in seconds, for people and for agents.
+- (Inference) The release is 18.12; Mads showed this right after the 18.12 performance list. Check the release notes for the exact option name.
+- Source: 11:08-11:09 ET, transcript 20261111-110804; shot 20261111/110839.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

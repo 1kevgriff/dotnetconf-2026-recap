@@ -1886,16 +1886,16 @@ image: "/shots/day2/184850.jpg"
 time: "18:46"
 ---
 
-# A web app in one file: `dotnet web.cs`, with `web.settings.json` and `web.run.json`
+# A web app in one file, plus new `#:ref` to reuse another file-based app (.NET 11)
 
 <!--
 - Say: File-based apps can be web apps. Settings and launch settings are sidecar files named after the app: web.cs reads web.settings.json (like appsettings.json) and web.run.json (like launchSettings.json).
 - Damian (18:46): "You can absolutely build web applications". The settings file is "just named after your application. So if my application was called foo.cs, this would be called foo.settings.json ... That will be implicitly read by the web host". "my web.run.json file here is just my launch settings file", which in a project "would be called launchSettings.json".
 - web.cs directives (on screen, shot 20261111/184850): `#!/usr/bin/env -S dotnet --`, `#:sdk Microsoft.NET.Sdk.Web`, `#:ref ../02-tool/plan.cs`, `#:project ../../projects/ConferenceBrand/ConferenceBrand.csproj`; then `WebApplication.CreateSlimBuilder(args)` and a `MapGet("/")` that prints Brand.Name, SessionPlan.Summary() and "The CLI's Main did not run. Its public types are reusable."
 - `#:sdk` (18:48): "This allows you to reference an MSBuild SDK", here "Microsoft.NET.Sdk.Web". "You can also do NuGet-based SDK", e.g. a Cake build script with the Cake SDK, which brings in "implicit references that you don't have to see".
-- `#:ref` reuses another file-based app's public types (plan.cs from the CLI demo) without running its Main; `#:project` references a normal .csproj.
+- `#:ref` is NEW IN .NET 11 (18:50): "Here is a new directive in .NET 11. This is an app-to-app reference directive ... Hash colon ref lets me reference another file-based app." plan.cs "will get imported into the virtual project"; its public types are usable, its Main does not run. `#:project` references a normal .csproj. And "I can build my own SDKs like we saw for Cake here. And then you can distribute those on NuGet".
 - Earlier run (shot 20261111/184644): `dotnet web.cs` → "Using launch settings from ...web.run.json" and "Now listening on: http://webfba.dev.localhost:5111".
-- Source: 18:46-18:49 ET, transcripts 20261111-184604 and 20261111-184800; shots 20261111/184644 and 184850.
+- Source: 18:46-18:51 ET, transcripts 20261111-184604, 20261111-184800, 20261111-185001; shots 20261111/184644 and 184850.
 -->
 
 ---

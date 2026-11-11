@@ -1091,6 +1091,27 @@ speakers: "Daniel Roth"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/150736.jpg"
+time: "15:07"
+---
+
+# New official AG-UI SDK for .NET: connect an agent to your app's UI
+
+<!--
+- Say: AG-UI is the protocol between an agent and the app where the user works. There is now an official .NET SDK, from the .NET team with CopilotKit: MIT, on NuGet, stable, and it plugs into IChatClient.
+- Dan (15:06): "AGUI stands for the Agent-User Interaction Protocol. It's an open, event-driven protocol for agent-human interactions through an application." The app sends messages, its current state, front-end tools the agent can use, and user decisions; the agent streams text, tool activity, state updates, and requests for input.
+- Where it fits: MCP is "like the agent to tools protocol"; A2A is "the agent to agent protocol"; "The AGUI protocol allows us to connect the agent to the application where the person is working."
+- On screen, "Official AG-UI SDK for .NET / Open-source protocol SDK. First-class MAF integration.":
+  - AGUI.Client: consume endpoints as IChatClient. AGUI.Server: expose IChatClient as AG-UI. "Stable SDK / MIT / NuGet / No MAF required".
+  - Microsoft Agent Framework: "Built on the official AGUI.* packages": `builder.Services.AddAGUIServer();` `app.MapAGUIServer("/agent", agent);` "ASP.NET Core adapter / AIAgent / Preview".
+  - "C# / Python / TypeScript. One interaction contract."
+- Teaser demo (15:04): an agent next to a normal support UI looked into a delayed docking-station order and recommended an upgraded replacement with 12 units available.
+- Why it matters: the agent can read and act on the screen the user already has, instead of living only in a chat box.
+- Source: 15:04-15:07 ET, transcripts 20261111-150400 and 20261111-150601; slide shot 20261111/150736.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -535,7 +535,7 @@ layout: "statement"
 Hot exit: close VS with unsaved changes. Reopen, nothing lost.
 
 <!--
-- Say: VS now has hot exit. Close it with unsaved changes, open it again, and the unsaved changes are still there. It works for solutions and Open Folder.
+- Say: VS now has hot exit. Close it with unsaved changes, open it again, and the unsaved changes are still there. It works for solutions and Open Folder. It is OFF by default: turn on "Reopen unsaved documents on solution load or empty environment" in Tools > Options (from Jason's recap slide, next).
 - Jason (12:22): "now we have this first class experience where you can simply just leave Visual Studio with unsaved changes. This is called the hot exit feature." "There was a lot of intricacies ... with solutions and open folder".
 - His use cases: SQL queries, empty scratch files, "updating skills, agents, whatever it may be ... go grab your lunch and then come back, and you will not have lost anything."
 - Demo: unsaved MarkdownFile2.md in the Orchard Core solution came back after closing and reopening VS (shot 20261111/122334, not in deck).
@@ -543,6 +543,27 @@ Hot exit: close VS with unsaved changes. Reopen, nothing lost.
 - Teaser: Jason is "working on a PR that will allow you to export your test results" from Test Explorer. In progress, no date.
 - Why it matters: you can close VS at any time, also with agent and skill files half edited, and lose nothing.
 - Source: 12:22-12:23 ET, transcript 20261111-122204.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/122414.jpg"
+time: "12:24"
+---
+
+# ~26 VS features. Three are off by default: turn them on.
+
+<!--
+- Say: Jason's recap slide lists everything he showed. The ones with a magnifier are off by default; search Tools > Options for the term shown.
+- Off by default (on-screen search terms):
+  - Stop build on first failure: "Stop solution build after the first project fails".
+  - Colorized Output: "Enable colorized output".
+  - Hot Exit: "Reopen unsaved documents on solution load or empty environment".
+- Jason (12:24): "those little magnifying glasses are basically those features that are not immediately on by default. So you will need to go find those in your tools options and enable them".
+- The six groups on the slide: Navigate & edit (File System View, drag files into chat, new Markdown file, drag files and images into Markdown, HTML-to-CSS navigation, CSS color preview); Copilot (customize chat defaults, new Copilot Chat experience); Build; Test Explorer (assertion string comparison, open test log, last run time); Tabs (move with keyboard, tool-window tab sizing, close tabs to the right, tab drag performance); Personalize (Fonts and Colors UI, Colorized Output, Keyboard Shortcuts UI, Zoom Reset, Hot Exit); Code review (local review, multi-file summary diff, address comments in chat, comment filters, change groups).
+- Pointers: Harshada's session (1:00 PM) for debugging and profiling agents; Mika's session (4:00 PM) on the modernization agent, for moving from .NET 8 or 9 to .NET 11. Feedback: developercommunity.visualstudio.com.
+- Why it matters: this is the slide to screenshot. The three best features need one settings change each.
+- Source: 12:24 ET, transcript 20261111-122404; slide "What we saw today" (shot 20261111/122414).
 -->
 
 ---

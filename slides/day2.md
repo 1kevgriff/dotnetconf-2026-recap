@@ -942,8 +942,12 @@ time: "14:21"
 - Demo, a "release-planner" MCP server: "Release controls for source.dot.net 2.0" with Target environment (production), Rollout strategy (canary), Initial rollout percentage (10), Rollback error-rate threshold (1); buttons Cancel / Decline / Accept.
 - Then "a second elicitation where my server said that before we make any action, we need to approve a release plan."
 - Code: the tool sets up "elicit request params" with "a request schema that took various enums" and numbers with ranges (percent 1 to 100).
-- Why it matters: a clean human-in-the-loop gate for risky agent actions, enforced by the server.
-- Source: 14:18-14:21 ET, transcripts 20261111-141800 and 20261111-142004; shot 20261111/142114.
+- New in the latest SDK, stateless elicitation (14:22; slide "How multi-round tool requests work", label "NATIVE MRTR • 2026-07-28"): 1 Return: InputRequiredResult ends this request. 2 Ask: host gathers structured input. 3 Retry: new request with answers + state.
+  - Stephen: before, it "required doing a server-to-client request. And that required sticky sessions". Now the server returns "an error which says, hey, we require more input ... Send us the input along with the entire new request." "You don't need a sticky session. If your server dies, you can restart."
+  - Caveat he gave: the demo round-trips state as base64, "that's not secure. You should use data protection".
+  - A "mixed mode" (from an internal Microsoft team) supports older clients too.
+- Why it matters: a clean human-in-the-loop gate for risky agent actions, enforced by the server, and it now scales without sticky sessions.
+- Source: 14:18-14:23 ET, transcripts 20261111-141800, 20261111-142004, 20261111-142201; shots 20261111/142114 and 142241.
 -->
 
 ---

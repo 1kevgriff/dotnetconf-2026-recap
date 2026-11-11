@@ -1112,6 +1112,25 @@ time: "15:07"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/151720.jpg"
+time: "15:17"
+---
+
+# Blazor AI components: the agent works in your form, you accept or discard
+
+<!--
+- Say: The experimental Blazor AI components give you chat, tool rendering, shared state and proposed changes as Razor components. In the demo the agent filled the case form, saw the user's edits, and proposed a customer reply that the user could accept or discard.
+- Dan (15:08): "the experimental Blazor AI components give us building blocks for building agentic UI using familiar Razor components" (a chat page, message list, message input). Basic chat "can actually work with any IChatClient from Microsoft.Extensions.AI"; here they connect over AG-UI.
+- Front-end tools: the agent calls into the UI. "it was able to make a call into the front end using a front end tool." Tool calls from front end and back end render with a block renderer you can customize.
+- Shared state "keeps us working with the same information". Proposed state: call the "set predictive state API", then the change "can either be accepted or rejected"; the components provide rollback.
+- On screen (eShop returns case): agent panel "Work the case together", buttons Investigate / Show review / Request approval; "Review reply edits ... Accepting edits does not send the reply or confirm the resolution." Discard reply edits / Accept reply edits. The reply offers a compatible upgrade dock or a full refund of $149.
+- Dan apologized for some flaky "preview features" during the demo. Say "experimental".
+- Why it matters: agent help lives inside the real app UI, with the human approving each change.
+- Source: 15:08-15:17 ET, transcripts 20261111-150804, 20261111-151004, 20261111-151204, 20261111-151404/151605; shot 20261111/151720.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -320,6 +320,23 @@ time: "11:33"
 -->
 
 ---
+layout: "statement"
+---
+
+Same prompt, same model: repro in chat in 8 s vs. manual steps in 48 s.
+
+<!--
+- Say: Side by side, same prompt, same model. The new harness reproduced the bug right in chat in 8 seconds. The old one took 48 seconds and gave a list of manual repro steps.
+- The bug: long multiple-choice options cut off in a narrow Copilot Chat window (a real bug on the Copilot team).
+- On-screen captions: "Provided manual steps in 48 seconds / The issue wasn't reproduced in chat" vs. "Reproduced the issue in 8 seconds / Right here in chat". The old side shows "Claude Opus 5.5" as the model.
+- Rachel (11:34): "Same exact prompt, same exact model, only difference here being this new awesome harness." The new side "already reproduced the issue directly for us right in the chat in a matter of seconds".
+- New capabilities she listed: steer the agent mid-task; "follow the work that it delegates to the various sub-agents"; "work beyond the scope of the existing solution by choosing a working folder".
+- Screenshot not used: the demo frame shows a presenter's local user path.
+- Why it matters: the harness changes what the agent does (it acts in the IDE), not only how fast it answers.
+- Source: 11:34 ET, transcript 20261111-113402; shot 20261111/113452 (not in repo).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

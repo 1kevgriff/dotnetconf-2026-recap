@@ -947,6 +947,24 @@ time: "14:21"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/142500.jpg"
+time: "14:25"
+---
+
+# Protect an MCP server with normal ASP.NET Core auth. No tokens for the agent.
+
+<!--
+- Say: MCP auth uses the ASP.NET Core auth you know: RequireAuthorization on MapMcp, JWT bearer, and an Entra sign-in. Your tools get the user's ClaimsPrincipal, and the agent never holds a token.
+- On screen (ProtectedMcpServer sample, Program.cs): `app.UseAuthentication(); app.UseAuthorization(); app.MapMcp().RequireAuthorization("McpTools")...`. The HTTP transport sets `options.SessionMode = HttpServerSessionMode.Stateless;` with a comment that stateless is the default and recommended.
+- Stephen (14:24): "we're using require authorization on MapMCP. So this should be very familiar to anyone who's used ASP.NET Core authorization. And it's even using AddJwtBearer." The one special call adds MCP to the authentication builder, "which gives the client the data that it needs to authenticate."
+- Flow: the client says you must sign in; a browser opens for Entra. In tool handlers "you'll have a claims principal where you can see what roles that user is in". "you don't need to put tokens inside of your environment and stuff and give access to secrets to the agent."
+- The sample is in the modelcontextprotocol C# SDK repo ("protected MCP sample").
+- Why it matters: remote MCP servers can use per-user identity and roles, not shared API keys in the agent's config.
+- Source: 14:24-14:25 ET, transcript 20261111-142400; shot 20261111/142500.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -1561,7 +1561,11 @@ The agent is the brain. Tools are the hands. Sandbox the tool, not the agent.
 - Also: "not everything has to be agents ... Agents are a little bit more dangerous, honestly."
 - Sample: github.com/paulyuk/aca-sandboxes-dotnet-demo (README on screen: .NET 10 SDK, Azure CLI, Copilot CLI; model calls go through an Azure AI Gateway connection). Screenshot not used: it shows the presenter's browser bookmarks.
 - Live run (17:36): `dotnet restore` and run, then the tool starts "a sandbox group". "We, by the way, have great SDKs for the sandboxes, including for .NET." The speaker called the spin-up "super fast"; no time was measured on stream (sub-second is the general product claim from 17:33).
-- Source: 17:34-17:38 ET, transcripts 20261111-173404 and 20261111-173604; shot 20261111/173544 (not in deck).
+- Redaction (17:37): "part of what the tool did is it redacted the data. I don't want the model having social security numbers." On screen: `redactions: {paymentCard:0, email:1, ssn:1, phone:1}`, "Contact details and SSN were redacted", "verdict":"approved".
+- Security run (17:38, `dotnet run -- security`): a document with injected instructions came back `"verdict":"rejected","reason":"untrusted-instructions"`. An egress probe to example.com got HTTP 403: "the sandbox infrastructure itself is already configured by default to reject all egress." You can allow "one and only one place you're allowed to talk to", "but it starts kind of secure by default". The sandbox log shows `"egress":"Deny"` and no host credentials inside the sandbox.
+- On-screen timings for two sandbox starts in this run: elapsedMs 1836 and 888 (one demo run; not a benchmark).
+- Screenshots not used: they show the presenter's browser bookmarks and terminal prompt.
+- Source: 17:34-17:39 ET, transcripts 20261111-173404, 20261111-173604, 20261111-173804; shots 20261111/173544 and 173859 (not in deck).
 -->
 
 ---

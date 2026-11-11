@@ -1232,9 +1232,10 @@ time: "15:48"
 - Libraries: "you're able to multi-target" with 2.x projections in one folder and 3.0 projections in the .1 TFM folder, so consumers move "at their own pace". The define CSWINRT3_0 lets you branch code.
 - On screen, "Multi-target with CSWINRT3_0": `#if CSWINRT3_0` → `System.EventHandler<Watcher, Info> h = OnAdded;` `#else` → `Windows.Foundation.TypedEventHandler<Watcher, Info> h = OnAdded;`. "TargetFramework picks CsWinRT 2.x (.0) or 3.0 (.1)".
 - Example of an API change: TypedEventHandler becomes System.EventHandler in 3.0 projections.
-- (Inference) A TFM then looks like net11.0-windows10.0.<build>.1; no full TFM string was shown.
+- Full TFM, from the build output on the "Application build" slide (15:46): `net11.0-windows10.0.26100.1`.
+- How 3.0 works (15:46, shot 20261111/154635): libraries ship "reference projections ... assemblies that are reference DLLs". When the app builds, CsWinRT gathers all WinMD files into one merged `WinRT.Projection.dll` (demo: 26 .winmd references) and scans modules to generate `WinRT.Interop.dll` (demo: 407 modules). So the app, not each library, decides the CsWinRT version.
 - Why it matters: you control when you take the breaking change, and package authors can support both.
-- Source: 15:47-15:49 ET, transcript 20261111-154800; shot 20261111/154850.
+- Source: 15:46-15:49 ET, transcripts 20261111-154600 and 20261111-154800; shots 20261111/154635 and 154850.
 -->
 
 ---

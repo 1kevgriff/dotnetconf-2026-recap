@@ -169,6 +169,28 @@ time: "11:10"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/111341.jpg"
+time: "11:13"
+---
+
+# More PRs from agents → VS navigation for review
+
+<!--
+- Say: Developers spend more time on code review, much of it on agent PRs. VS added navigation to make review faster.
+- Mads (11:11): "we're seeing a significant increase in the time people are spending reviewing code. Because you're getting more PRs now, usually from agents".
+- The five items on the slide:
+  - Folder view in Solution Explorer: see files outside the solution (readme.md, workflows, Dockerfiles).
+  - More image types in hover previews, "more modern ones like WebP".
+  - HTML class names and IDs: F12 goes to the CSS, LESS or SASS rule. With several rules, you pick one.
+  - Markdown links: Go To / Peek Definition to the linked file; links in the preview work; fragment URLs go to the right spot.
+  - Test Explorer: easier to go to failed tests and export logs.
+- On tests and agents: "when we're letting agents loose on our code base, having those guardrails that the tests provide is absolutely crucial". More Test Explorer work is on the roadmap.
+- Why it matters: VS frames review, not only code writing, as the daily job in an agent workflow.
+- Source: 11:11-11:13 ET, transcripts 20261111-111004 and 20261111-111201; slide "Navigation and references" (shot 20261111/111341).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

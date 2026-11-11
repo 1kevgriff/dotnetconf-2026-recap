@@ -3147,6 +3147,7 @@ time: "19:35"
 - Scripts (stream slide): `-f net11.0-android` · `--list-devices` · `--device <id>` — "Interactive: choose. Non-interactive: supply enough information."
 - Live demo (19:48–19:50): `dotnet run` shows the framework picker (you can type "Windows" to filter), then the device. Jonathan: "I actually have four Android devices connected for my AI agents to use."
 - On a Pixel 10 (19:50): "this is what Android Logcat output looks like. So you get your console write line messages right here in the terminal. And so I can Ctrl+C and the app stops." `dotnet watch` then launched the same way; a C# hot reload edit misbehaved ("I have nightly builds from before today"), so he showed a XAML change instead
+- Result (19:52): XAML change went through — "hello .NET Conf" on the phone — and the C# change "worked that time" on a retry
 - `dotnet watch` (19:38) "sits on top of .NET Run" to make "an interactive hot reload session". Editor doesn't matter — "It could be Notepad." A file watcher sees the change; "dotnet watch is a server and your app is the client"; it compiles and "send[s] the diff over to your app, which will reload the change"
 - Why it matters: agents and scripts can build, deploy and run a MAUI app on a chosen device without an IDE.
 - Source: 19:34–19:40 ET, transcripts 20261110-193404, 20261110-193803, /shots/193514.jpg
@@ -3167,7 +3168,8 @@ time: "19:43"
 - How watch talks to the app (19:42): over WebSockets — a project capability named "Hot Reload WebSockets"; on Android it uses ADB (Android Debug Bridge) to reach the device
 - New templates (19:46): `dotnet new androidtest -n MyAndroidTests`, `dotnet new iostest -n MyiOSTests` ("We actually have tvOS and Mac Catalyst test" too). Each makes an executable test app using the platform's startup model (Android instrumentation → MTP; iOS UIKit scene lifecycle → MTP)
 - Coming from dotnet/maui-labs (experimental/prerelease): `dotnet new mauitest -n MyApp.Tests` (/shots/194729.jpg)
-- Not verified in transcript: the notes agent's list of supported frameworks (MSTest, NUnit, xUnit, TUnit)
+- Test frameworks (19:52): the template "configures MTP for you and sets up an instrumentation class ... we've configured MSTest. You could switch that to NUnit or whatever test framework you would like." (The notes agent also listed xUnit and TUnit — not named on stream in what I checked.)
+- Demo on the Pixel 10: `dotnet test` ran; "Nothing actually appears on the screen because this is an instrumentation project that doesn't have an app icon"
 - Why it matters: device tests become a plain CLI command that CI and agents can run.
 - Source: 19:42–19:44 ET, transcript 20261110-194203, /shots/194348.jpg
 -->

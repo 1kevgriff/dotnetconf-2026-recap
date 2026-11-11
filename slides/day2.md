@@ -1149,6 +1149,39 @@ time: "15:25"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/152620.jpg"
+time: "15:26"
+---
+
+# Agentic UI in .NET: AG-UI SDK + Agent Framework + Blazor AI components
+
+<!--
+- Say: Dan's summary of the stack: the AG-UI .NET SDK for the protocol, Agent Framework to expose agents over AG-UI, and Blazor AI components for the UI. Get started at aka.ms/blazor/ai-components. The components are experimental.
+- On screen, "Build agentic UI with .NET / Useful agents. Shared context. People in control.": AG-UI .NET SDK ("Official .NET support for the AG-UI protocol"; messages, tool calls, shared state); Microsoft Agent Framework ("Expose your agents over AG-UI"; application tools + approval workflows); Blazor AI components ("Build agentic UI with AG-UI"; rich interaction, previews, user control).
+- Dan (15:26): "You can get started today by going to aka.ms slash Blazor slash AI dash components. Again, these components are currently experimental, and some of these features are preview."
+- Fun fact: the Q&A board on the stream is a Blazor app that James Montemagno built.
+- Q&A (15:28-15:30):
+  - Models: the demo used Microsoft Foundry, but Microsoft.Extensions.AI abstractions let you plug in other models.
+  - Generative UI is a spectrum: AG-UI state deltas that update a dynamic UI ("very restrictive"); A2UI on top of AG-UI, where the app offers "a catalog of widgets and components" and the agent picks them via a JSON payload; up to "here's an iframe ... Render whatever you want." CopilotKit "authored the AG-UI spec" and has React components.
+- Source: 15:26-15:31 ET, transcripts 20261111-152600, 20261111-152804, 20261111-153004; slide shot 20261111/152620.
+-->
+
+---
+layout: "session"
+num: 10
+time: "3:31 PM"
+speakers: "Manodasan Wignarajah, Sergio Pedri"
+---
+
+# CsWinRT 3.0: Modernizing the Windows Projections for .NET
+
+<!--
+- [session 10] Manodasan Wignarajah and Sergio Pedri. Started about 3:31 PM ET.
+- Source: dotnetconf.net/agenda (3:30 PM ET); stream agent session marker.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

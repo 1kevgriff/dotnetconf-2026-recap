@@ -1241,6 +1241,23 @@ time: "15:48"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/155722.jpg"
+time: "15:57"
+---
+
+# CsWinRT 3.0 preview: try it now with the `.1` TFM
+
+<!--
+- Say: CsWinRT 3.0 is in preview (3.0.0-preview.261104.1). If your app uses only the Windows SDK projections, you can try it today with the .1 TFM. Windows App SDK multi-target previews come next; stable after feedback.
+- On screen, "What's next / From preview to stable": "Moving CsWinRT 3.0 from preview to stable"; "Try it out with the .1 TFM and provide feedback"; partner projections: "WinAppSDK will multi-target their projections for CsWinRT 2.x and 3.0". Links: github.com/microsoft/CsWinRT/releases/tag/3.0.0-preview.261104.1 and nuget.org/packages/Microsoft.Windows.CsWinRT/3.0.0-preview.261104.1.
+- Manu (15:56): "If you don't now have any dependencies today and just using the Windows SDK projections itself, you can go try it out right now with the .1 TFM." Then try the Windows App SDK previews when they ship. "Based on the feedback that we get, we'll be looking at moving CsWinRT 3.0 from preview to stable."
+- Migration (15:54): "In general, it's all like mechanical changes". The Store code base had "almost a thousand" [DynamicWindowsRuntimeCast] attributes, now not needed. Point, Rect and Size are now float, not double, to match the WinRT ABI ("more efficient", no implicit conversions).
+- Demo (15:52): the Contoso Camera app moved to 3.0 by changing the TFM to .1 and updating the preview Windows SDK package.
+- Source: 15:52-15:57 ET, transcripts 20261111-155201, 20261111-155401, 20261111-155602; shot 20261111/155722.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -1563,9 +1563,10 @@ The agent is the brain. Tools are the hands. Sandbox the tool, not the agent.
 - Live run (17:36): `dotnet restore` and run, then the tool starts "a sandbox group". "We, by the way, have great SDKs for the sandboxes, including for .NET." The speaker called the spin-up "super fast"; no time was measured on stream (sub-second is the general product claim from 17:33).
 - Redaction (17:37): "part of what the tool did is it redacted the data. I don't want the model having social security numbers." On screen: `redactions: {paymentCard:0, email:1, ssn:1, phone:1}`, "Contact details and SSN were redacted", "verdict":"approved".
 - Security run (17:38, `dotnet run -- security`): a document with injected instructions came back `"verdict":"rejected","reason":"untrusted-instructions"`. An egress probe to example.com got HTTP 403: "the sandbox infrastructure itself is already configured by default to reject all egress." You can allow "one and only one place you're allowed to talk to", "but it starts kind of secure by default". The sandbox log shows `"egress":"Deny"` and no host credentials inside the sandbox.
-- On-screen timings for two sandbox starts in this run: elapsedMs 1836 and 888 (one demo run; not a benchmark).
+- Identity run (17:40, `dotnet run -- identity`): with the sandbox group's managed identity off, the token call got HTTP 401, tokenIssued false; with it on, HTTP 200, tokenIssued true, value shown as [REDACTED]; in both, host credentials present = 0. Speaker: the identity headers and endpoint "are present", but "the credential is actually not present ... you can't even get into trouble if you wanted to". Turning it on is "a config knob".
+- On-screen sandbox start times in these runs: elapsedMs 1836, 888, 1863, 1082, 935 (demo runs; not a benchmark). So roughly 0.9-1.9 s here.
 - Screenshots not used: they show the presenter's browser bookmarks and terminal prompt.
-- Source: 17:34-17:39 ET, transcripts 20261111-173404, 20261111-173604, 20261111-173804; shots 20261111/173544 and 173859 (not in deck).
+- Source: 17:34-17:41 ET, transcripts 20261111-173404 to 20261111-174004; shots 20261111/173544, 173859, 174029 (not in deck).
 -->
 
 ---

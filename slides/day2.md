@@ -437,6 +437,22 @@ time: "11:53"
 -->
 
 ---
+layout: "statement"
+---
+
+Next for AI in VS: code review, agent visibility, multi-agent workflows.
+
+<!--
+- Say: Rachel closed with where VS goes next, based on user feedback: more code review, more visibility into what agents do, and multi-agent workflows.
+- On screen, "Agentic development keeps evolving / What we're hearing": "More generated code to assess", "Hard to follow the agent's work", "More agents to coordinate".
+- Rachel (11:54): "there's a lot more generated code to review, more activity to follow, and more tasks for agents to coordinate ... We know that we want to focus more on code review, agent visibility, multi-agent workflows, and more."
+- This matches Mads's keynote: review time is up, and the PR flow is now in VS.
+- No dates or versions were given for these.
+- Why it matters: the bottleneck moves from writing code to reviewing and following agent work.
+- Source: 11:54 ET, transcript 20261111-115402; slide "Agentic development keeps evolving" (shot 20261111/115437, not in deck).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

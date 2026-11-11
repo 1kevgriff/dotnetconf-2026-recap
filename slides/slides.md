@@ -3118,6 +3118,20 @@ time: "19:14"
 -->
 
 ---
+layout: "session"
+num: 17
+time: "7:30 PM"
+speakers: "Jonathan Peppers"
+---
+
+# Bringing `dotnet run`, `test`, and `watch` to .NET MAUI
+
+<!--
+[Session 17] Last session of Day 1.
+- Session 7 (MAUI) already mentioned this: `dotnet run`, `test`, `watch` work for MAUI with an interactive platform prompt; add only new details here.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

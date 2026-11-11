@@ -48,6 +48,7 @@ npm install-scripts approve playwright-chromium
 | 14 | How Aspire uses .NET to build an agent-first toolchain for any language | Maddy Montaquila, Jose Perez Rodriguez |
 | 15 | .NET Runtime vNext: Memory Safety and Runtime Async | Richard Lander, Andy Gocke |
 | 16 | Post-Quantum Cryptography with .NET 11 | Jeremy Barton |
+| 17 | Bringing `dotnet run`, `test`, and `watch` to .NET MAUI | Jonathan Peppers |
 
 Later sessions are added as the stream continues.
 

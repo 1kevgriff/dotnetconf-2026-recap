@@ -1586,6 +1586,19 @@ layout: "statement"
 -->
 
 ---
+layout: "statement"
+---
+
+LLMs take the soft, squishy input. Deterministic code enforces the hard rules.
+
+<!--
+- Say: The design rule behind the sandbox demo: let the model handle the messy input, then hand it to plain, deterministic code where you write the hard rules.
+- Speaker (17:45; (Inference) Paul Yuknewicz): "the agents, the LLM stuff, is what I like to think of as the soft, squishy stuff. It takes your inputs, the soft stuff that is hard to handle in deterministic code ... it turns it over to your deterministic code, which is good at handling what makes it deterministic, and then we can write our hard rules against it." Earlier: "boring code that can't do scary stuff ... paired with deterministic safe code, that is the key."
+- Next (17:46): Matt Soucoup switched to the GitHub Copilot app and opened "the Azure Functions Hosted Skills Canvas" to build "an Azure Function Hosted Skill" (Functions as "an event-driven programming model"). Details on the next slides.
+- Source: 17:44-17:47 ET, transcripts 20261111-174403 and 20261111-174603. Frame 174643 not used (it shows a local user path).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -330,10 +330,32 @@ Same prompt, same model: repro in chat in 8 s vs. manual steps in 48 s.
 - The bug: long multiple-choice options cut off in a narrow Copilot Chat window (a real bug on the Copilot team).
 - On-screen captions: "Provided manual steps in 48 seconds / The issue wasn't reproduced in chat" vs. "Reproduced the issue in 8 seconds / Right here in chat". The old side shows "Claude Opus 5.5" as the model.
 - Rachel (11:34): "Same exact prompt, same exact model, only difference here being this new awesome harness." The new side "already reproduced the issue directly for us right in the chat in a matter of seconds".
-- New capabilities she listed: steer the agent mid-task; "follow the work that it delegates to the various sub-agents"; "work beyond the scope of the existing solution by choosing a working folder".
+- New agent controls: next slide.
 - Screenshot not used: the demo frame shows a presenter's local user path.
 - Why it matters: the harness changes what the agent does (it acts in the IDE), not only how fast it answers.
 - Source: 11:34 ET, transcript 20261111-113402; shot 20261111/113452 (not in repo).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/113507.jpg"
+time: "11:35"
+---
+
+# Six new agent controls in VS
+
+<!--
+- Say: The new harness also brings six new ways to guide and check the agent in VS.
+- The six tiles on screen:
+  - Steer mid-task: add instructions; cancel while pending.
+  - Inspect tool results: open tool results; copy exact commands.
+  - Watch subagents: see each model and its live steps.
+  - Resume local chats: find chats across local solutions and folders.
+  - Work beyond a solution: choose a working folder; attach folders as context.
+  - Get a second opinion: critique a plan; review security risks.
+- Rachel (11:34): "we can do things like steer the agent mid-task, we can follow the work that it delegates to the various sub-agents, and we can work beyond the scope of the existing solution by choosing a working folder". The other three tiles are from the slide only; she did not talk about them in this part.
+- Why it matters: you can see what the agent did (tool results, subagents) and correct it while it runs, not only after.
+- Source: 11:34-11:35 ET, transcript 20261111-113402; slide "What's new in the agent experience" (shot 20261111/113507).
 -->
 
 ---

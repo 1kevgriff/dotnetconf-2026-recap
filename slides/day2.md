@@ -1871,8 +1871,11 @@ time: "18:41"
 - Say: New since .NET 10: `#:include` pulls other C# files into a file-based app, so a "single-file" app can grow without a project file. Directives also add NuGet packages, and a shebang makes it a script.
 - On screen (demos/02-tool/plan.cs, VS Code, status bar "plan (net11.0)"): line 1 `#!/usr/bin/env -S dotnet --`; line 2 `#:include SessionPlan.cs`; line 3 `#:package Spectre.Console@0.57.2 PrivateAssets=all`; then `using Spectre.Console;` and a table built from `SessionPlan.Load()`.
 - Damian (18:41): features that are "newer, thanks to the work that's happened since we released .NET 10. The big one here is this include directive. Now I can now include other C# files in my file."
+- Transitive (18:42): "we support transitive directive processing." plan.cs includes SessionPlan.cs, which includes helpers/DurationLabel.cs, which has its own `#:package Humanizer.Core@2.14.1` (shot 20261111/184228).
+- Package versions: "I can put a star here ... That's the float syntax ... 2.14.* and that will float to the latest patch"; central package management works too.
+- Includes: Dev Kit gives "completion for file paths", and "you can do globs in here. They don't have to be specific files."
 - Cache recap (18:40): a source-only change can "just do that recompilation phase"; with no changes you get down "to like 100 millisecond execution times".
-- Source: 18:40-18:42 ET, transcript 20261111-184002; shot 20261111/184157.
+- Source: 18:40-18:44 ET, transcripts 20261111-184002 and 20261111-184203; shots 20261111/184157 and 184228.
 -->
 
 ---

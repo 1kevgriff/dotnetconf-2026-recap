@@ -1835,7 +1835,7 @@ time: "18:33"
 - Damian (18:32): "there's no slides. We're just going to look at code today." He covers file-based apps from .NET 10, through "the feature band releases, like 10.0.300 and 10.0.400, and then some of the brand new stuff that has now landed in 11.0.100."
 - On screen: hello.cs is two lines (127 bytes): `var name = args.Length == 0 ? ".NET Conf" : string.Join(" ", args);` and `Console.WriteLine($"Hello, {name}! One file. Real C#.");`. Then `dotnet run hello.cs`, `dotnet hello.cs`, and `dotnet hello.cs Damian` → "Hello, Damian! One file. Real C#." The prompt shows .NET 11.0.100.
 - "you don't have to say dotnet run. You can just say dotnet hello.cs, and that also works."
-- Prompt timings on screen: the `dotnet hello.cs` run shows 1.412 s, the next one 131 ms (one run each; (Inference) the first includes a build, the second reuses it).
+- Prompt timings on screen (the prompt shows the previous command's time): `dotnet run hello.cs` 1.412 s, then `dotnet hello.cs` 131 ms. One run each; (Inference) the first includes a build and the second reuses it.
 - Source: 18:32-18:34 ET, transcript 20261111-183204; shot 20261111/183344.
 -->
 

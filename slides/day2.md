@@ -1131,6 +1131,24 @@ time: "15:17"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/152535.jpg"
+time: "15:25"
+---
+
+# Approval-required tools: rejected means the tool never runs
+
+<!--
+- Say: For risky actions, wrap the tool in ApprovalRequiredAIFunction. AG-UI tells the Blazor client, which shows an approval block. If the user says no, the tool is never called.
+- Dan (15:24): "Instead of it just being an AI function, you make it an approval-required AI function. And so if you have one of those, then the AGUI protocol implementation will detect that and let the client know." The user accepts or rejects, "And that will actually prevent the tool from even being invoked ... It'll literally stop it from happening." Render it with "a function approval block".
+- On screen (AgentHosting.cs, eShopCustomerService.AgentServer): `new ApprovalRequiredAIFunction(AIFunctionFactory.Create(tools.ConfirmResolutionAsync, "confirm_resolution", ...))` next to a plain `AIFunctionFactory.Create(tools.GetCaseContextAsync, "get_case_...")`; then `app.MapAGUIServer("/api/agents/returns/{orderId:int}", new CaseStateAgent(...)).WithMetadata(new AGUIStreamOptions().MapResult("confirm_resolution", MapWorkspaceStateSnapshot)).RequireAuthorization("CustomerService")`. Also `AllowMultipleToolCalls = false`.
+- Demo: he asked the agent to request approval; the approval prompt appeared; he said yes; "the replacement confirmed with one unit allocated".
+- The app: Blazor front end, Agent Framework agent server, Aspire AppHost (solution eShopCustomerService, 8 projects).
+- Why it matters: human-in-the-loop is enforced at the tool, not just suggested in the prompt, and the endpoint uses normal ASP.NET Core authorization.
+- Source: 15:20-15:25 ET, transcripts 20261111-152000/152200/152400; shot 20261111/152535.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

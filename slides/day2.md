@@ -621,7 +621,7 @@ time: "12:45"
 - While Copilot resolves (12:46): "you won't be able to edit the files because AI is making sure that nothing is being touched at the moment".
 - On screen: Git Changes, "Rebase in progress with conflicts", Unmerged Changes (4); context menu: Merge..., Keep All Current, Take All Incoming, Auto Resolve, Stage.
 - He asked the audience: what do you let AI do in version control, and what not?
-- Why it matters: bulk resolve fixes a long-time pain; Auto Resolve is the first AI step inside the merge flow.
+- Why it matters: bulk resolve removes the one-file-at-a-time step; Auto Resolve puts Copilot inside the merge flow, with the files locked while it works.
 - Source: 12:44-12:46 ET, transcripts 20261111-124404 and 20261111-124603; shot 20261111/124514.
 -->
 

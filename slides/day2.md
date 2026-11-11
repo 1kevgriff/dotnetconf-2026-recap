@@ -1610,9 +1610,11 @@ time: "17:46"
 - Say: Hosted Skills put AI skills, defined in .agent.md files, inside an Azure Function App, so they run on Functions triggers. Matt demoed it from a canvas in the GitHub Copilot app. The canvas is labeled "INITIAL CONCEPT".
 - On screen (Azure Functions Hosted Skills canvas): "Build and run Hosted Skills in a local Function App, or select an existing Azure Function App to invoke remotely." "Open an existing local Function App only when it contains host.json and at least one valid .agent.md Hosted Skill". Model endpoint: existing gpt-6-sol. Buttons: Open in VS Code, Refresh, Stop local function, Deploy to Azure. TRIGGER: Timer, HTTP, Queue; Blob, Connector, Cosmos DB marked "NYI" (not yet implemented). Badges: "INITIAL CONCEPT", Target: Local, Trigger: HTTP.
 - Matt (17:46): "this is the Azure Functions Hosted Skills Canvas ... we're going to build an Azure Function Hosted Skill." Functions is "an event-driven programming model".
+- What a hosted skill is, Matt (17:48): it "adds that squishy, squishy layer" to an event-driven function: "what we can do now is not have to write any code to it, but rather we can just kind of give it a LLM prompt. So that's what a hosted skill is."
+- The canvas: "Paul, you made this canvas, I believe, and it's really, really good for testing and debugging. It's going through the Azure Function hosted skills lifecycle as you develop. So you don't have to leave your GitHub Copilot app". Paul: "It's literally my daily driver ... Canvases are worth the price of admission to the Copilot app."
 - Status: initial concept; say so. Blob/Connector/Cosmos triggers are not implemented yet.
 - Image: a copy of frame 174643 with a local user path blanked out by the stream agent; nothing else changed.
-- Source: 17:46-17:47 ET, transcript 20261111-174603; frame 20261111/174643 (cleaned copy).
+- Source: 17:46-17:49 ET, transcripts 20261111-174603 and 20261111-174800; frame 20261111/174643 (cleaned copy).
 -->
 
 ---

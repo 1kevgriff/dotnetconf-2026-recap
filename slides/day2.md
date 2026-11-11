@@ -354,8 +354,9 @@ time: "11:35"
   - Work beyond a solution: choose a working folder; attach folders as context.
   - Get a second opinion: critique a plan; review security risks.
 - Rachel (11:34): "we can do things like steer the agent mid-task, we can follow the work that it delegates to the various sub-agents, and we can work beyond the scope of the existing solution by choosing a working folder". The other three tiles are from the slide only; she did not talk about them in this part.
+- Demo (11:36), CareDesk sample clinic app: a one-click reschedule made a double booking (two patients at 10 AM with the same doctor). Rachel asked Copilot to block that and remove the suggested reply. While it worked, she changed her mind and steered it: keep a reply, but tell the patient the time is unavailable. No stop button needed.
 - Why it matters: you can see what the agent did (tool results, subagents) and correct it while it runs, not only after.
-- Source: 11:34-11:35 ET, transcript 20261111-113402; slide "What's new in the agent experience" (shot 20261111/113507).
+- Source: 11:34-11:37 ET, transcripts 20261111-113402 and 20261111-113603; slide "What's new in the agent experience" (shot 20261111/113507).
 -->
 
 ---

@@ -1432,6 +1432,22 @@ Button(label, () => dispatch(new Reveal(x, y)))
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/171729.jpg"
+time: "17:17"
+---
+
+# Reactor keys: insert one row, update one control, not five
+
+<!--
+- Say: In Reactor, give list items a key with `.WithKey(item.Id)`. Without keys the diff matches by position and rewrites every row after an insert; with keys it creates one and keeps the rest.
+- On screen, "Why keys matter / Insert X at the top of A, B, C, D": without keys ("matched by position") → "4 rewritten, 1 created"; with keys `.WithKey(item.Id)` → "1 created, 4 kept".
+- Alexandre (17:16): the Minesweeper board is "256 interactive buttons, and every cell gets a key ... the key gives each cell a stable identity". "Without the keys, the diff can only compare by position ... With keys, Reactor matches the rows by the identity."
+- (Inference) Same idea as keys in React and other virtual-DOM UIs; it matters for lists and grids.
+- Source: 17:16-17:17 ET, transcript 20261111-171604; shot 20261111/171729.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

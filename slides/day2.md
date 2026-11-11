@@ -149,6 +149,26 @@ time: "11:08"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/111009.jpg"
+time: "11:10"
+---
+
+# Editor rulers from `.editorconfig`
+
+<!--
+- Say: VS now draws vertical rulers from .editorconfig. `max_line_length` gives one ruler; the proposed `rulers` property gives several.
+- Mads (11:10): with max line length "We'll now insert a vertical ruler." And `rulers` is "a proposal to add a property to EditorConfig ... It is not just yet standardized, but we're adding it here."
+- On screen: `[*]`, `max_line_length = 80`, `rulers = 50, 80`.
+- He said it is used most for Markdown, where teams want a set column width.
+- Also in this part, for code review: "we're seeing a significant increase in the time people are spending reviewing code. Because you're getting more PRs now, usually from agents". To help:
+  - Solution Explorer switches between folder view and solution view, so you see files outside the solution (readme.md, GitHub Actions workflows, Dockerfiles).
+  - Hover over an image reference (HTML, C#, ...) shows it rendered, with more image types supported.
+- Why it matters: `rulers` is not standard yet. It can work in VS and fail in other editors.
+- Source: 11:10-11:11 ET, transcript 20261111-111004; shot 20261111/111009.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

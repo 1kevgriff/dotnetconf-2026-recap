@@ -907,6 +907,25 @@ time: "14:05"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/141105.jpg"
+time: "14:11"
+---
+
+# MCP C# SDK: 6 packages. Skills is new and experimental.
+
+<!--
+- Say: The MCP C# SDK is now six packages: three base layers, and three optional extensions for Apps, Tasks, and the new experimental Skills.
+- On screen, "MCP C# SDK packages" (arrows = depends on):
+  - Base: ModelContextProtocol.AspNetCore (ASP.NET Core HTTP integration) → ModelContextProtocol (hosting, DI + attribute discovery) → ModelContextProtocol.Core (client + low-level server APIs, protocol + transport primitives).
+  - Optional, transport-independent: Extensions.Apps (interactive UI in compatible MCP hosts); Extensions.Tasks (long-running tool operations, status polling + input requests); Extensions.Skills (serve/consume Agent Skills, verifiable file manifests). Badge: "SKILLS: NEW / EXPERIMENTAL". "Extensions do not require AspNetCore."
+- Stephen (14:10): "Right now we have six packages." For a remote MCP server "you have to use the model context protocol ASP.NET Core package". MapMcp takes route parameters: "you can host multiple MCP servers at different endpoints inside of your ASP.NET Core app."
+- Also: resources give "something a bit like a file directory through the MCP interface"; prompts are "parameterized instructions". Tip: the MCP Inspector "tends to get new features first".
+- Why it matters: pick only what you need; Skills over MCP is the new piece to watch, but it is experimental.
+- Source: 14:10-14:11 ET, transcript 20261111-141000; slide shot 20261111/141105.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

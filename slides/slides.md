@@ -3017,6 +3017,8 @@ speakers: "Jeremy Barton"
 
 <!--
 [Session 16] Agenda time 7:00 PM ET; started ~7:02.
+- Jeremy Barton owns the cryptography layer in .NET (joked he owns a big share of "the unsafe code in .NET" because of it)
+- Why PQC (19:02): "cryptography is just math"; the worry is "asymmetric cryptography, where you have a private key" and a public key — "you don't want anyone with the public key to be able to compute the private key". "Quantum computers change what problems we consider to be hard in mathematics."
 -->
 
 ---

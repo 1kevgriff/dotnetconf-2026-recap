@@ -812,8 +812,29 @@ time: "13:49"
 - Demo (13:48): he cut the network in browser dev tools. Aspire metrics went to "zero active circuits" (eviction shortened from the normal two minutes for the demo). Back online, the form state (delivery address, choices) came back: "none of that was lost because all of it got persisted."
 - Planned shutdown, NEW IN .NET 11 (slide "Ask a circuit to pause"): `var accepted = await circuit.RequestCircuitPauseAsync(ct);` A CircuitHandler gives your app access to circuits; "Wait for pause completion within a shutdown budget."
 - Dan: the paused state "can actually be stored client side instead of storing it on the server". And "an accepted request to pause the circuit does not mean the circuit is actually fully paused yet", so allow a short delay.
+- Shutdown demo (13:50): he asked all circuits to pause, the app stopped ("It's not actually even running anymore"), then restarted; the paused clients reconnected with their state.
 - Why it matters: deploys and node replacements no longer have to wipe in-progress user work in Blazor Server apps.
-- Source: 13:46-13:50 ET, transcripts 20261111-134601 and 20261111-134801; slide "Ask a circuit to pause" (shot 20261111/134926).
+- Source: 13:46-13:52 ET, transcripts 20261111-134601, 20261111-134801 and 20261111-135002; slide "Ask a circuit to pause" (shot 20261111/134926).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/135237.jpg"
+time: "13:52"
+---
+
+# Auto Pause: hidden tab → circuit released → state back on return
+
+<!--
+- Say: New in .NET 11, Auto Pause frees the server circuit when a user's tab is hidden, and resumes it with saved state when the tab comes back. It is opt-in: one package and one line of config.
+- On screen, "Auto Pause: opt in, set the policy / Release eligible circuits when a browser tab is hidden":
+  - `dotnet add package Microsoft.AspNetCore.Components.Server.AutoPause`
+  - `app.MapRazorComponents<App>().AddInteractiveServerRenderMode().WithBrowserOptions(options => options.AddAutoPause(pause => pause.HiddenDelay = TimeSpan.FromSeconds(8)));`
+  - "Default: 2 minutes | Demo: 8 seconds | Selected state uses [PersistentState]."
+- Dan (13:52): an idle circuit "just stays on the server and uses server resources without helping them. In .NET 11, we added a new auto-pause feature that can release eligible circuits". When the user returns, "their persisted pause circuit can be resumed ... without even noticing the interruption."
+- Demo: minimized the tab; after about 8 s the active circuit count dropped (it "automatically got paused"); restoring the tab made a new circuit "and again we didn't lose any of our state".
+- Why it matters: Blazor Server's main scaling cost (one circuit per open tab) drops for users who leave tabs open in the background.
+- Source: 13:52-13:54 ET, transcript 20261111-135202; slide shot 20261111/135237.
 -->
 
 ---

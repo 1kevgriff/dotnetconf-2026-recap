@@ -68,8 +68,22 @@ speakers: "Mads Kristensen"
 - Say: Day 2 is the Microsoft product team day. Mads Kristensen (Principal Product Manager) opens it, and the morning is all Visual Studio: AI in VS, what's new, git, then debugging.
 - His framing, from the opening: "the role of development is changing faster than maybe it ever has. AI is becoming part of our everyday development. Our solutions are getting bigger." And developers "still need the fundamentals required to be fast, to be reliable and effortless".
 - Why it matters: the keynote sets up the pitch for the day: AI features in VS, but not at the cost of IDE speed and reliability.
-- Questions during the day: the chat, or a questions site. The transcript has ".netconfquestions.com". Confirm the URL before you say it.
+- Questions during the day: #questions in chat, or dotnetconfquestions.com (on the stream lower third).
 - Source: 11:00-11:01 ET, transcript 20261111-110002; title card shot 20261111/110122.
+-->
+
+---
+layout: "statement"
+---
+
+Code is an asset, not a byproduct.
+
+<!--
+- Say: Mads's positioning for Visual Studio: it targets professional developers, and professionals treat code as an asset.
+- His words (11:02): "Visual Studio is a little bit unique in that it targets specifically professional developers." Professionals have "quality gates ... accessibility, security, privacy".
+- On vibe coding: "you might not care about your code that much, you might not even look at it. That's fine for ... your hobby projects". But for professionals, "You want to be able to review it ... maintain it for years to come ... It's not a byproduct of the app that you're building, but it has value in itself."
+- Why it matters: this is the frame for every AI feature shown today: AI in VS should give code you can review and maintain, not throwaway output.
+- Source: 11:02 ET, transcript 20261111-110200; slide "Visual Studio is for professional developers" (shot 20261111/110215).
 -->
 
 ---

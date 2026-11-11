@@ -1808,6 +1808,21 @@ time: "18:19"
 -->
 
 ---
+layout: "session"
+num: 16
+time: "6:32 PM"
+speakers: "Damian Edwards"
+---
+
+# C# File-based apps turned up to 11!
+
+<!--
+- [session 16] Damian Edwards. Started about 6:32 PM ET.
+- Context: Reactor (session 13) already showed a whole WinUI app as one C# file run with `dotnet run`.
+- Source: dotnetconf.net/agenda (6:30 PM ET); stream agent session marker.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

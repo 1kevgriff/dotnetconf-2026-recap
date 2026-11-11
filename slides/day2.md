@@ -1288,7 +1288,7 @@ time: "16:07"
 - It is "a side by side upgrade": the new ASP.NET Core app sits next to the old one. Mid-run (16:16) the dashboard showed "681 files changed, seven commits created".
 - End (16:20): "there are zero errors. The upgrade is complete and the build did pass."
 - Available in Visual Studio, VS Code, GitHub Copilot CLI, Copilot cloud agent, the GitHub Copilot app (today's demo), and "Modernize CLI ... for portfolio scale modernization". Get started: aka.ms/upgrade-agent, github.com/microsoft/upgrade-agent-plugins (closing slide).
-- Not verified here: total run time and final file/commit counts from the stream agent (about 1h21m, 698 files, 12 commits). Do not quote them unless you check the recording.
+- Near the end (dashboard at 16:20, shot 20261111/162000, not in deck because it shows a personal repo name): "Upgrading to .NET 11 · 93% · 1h 21m elapsed · Started 07:55 AM · 13 of 14 tasks done"; 698 files changed (+626,463 / −114), 12 commits; build status still "Failing" at that moment. Seconds later Mika said the build passed. So say "the run took about 1h20m, about 700 files, 12 commits". (Inference) The run was recorded earlier in the day and replayed on stream; that was not said.
 - Image: dashboard panel only; the full frame shows a worktree path with a personal name.
 - Why it matters: the hardest .NET migration (Web Forms) gets an agent that plans, commits per step, and drives to a green build.
 - Source: 16:06-16:21 ET, transcripts 20261111-160603 to 20261111-162000; crop of shot 20261111/160738; closing slide via stream agent crop 20261111-upgrade-agent.

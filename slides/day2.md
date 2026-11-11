@@ -1823,6 +1823,23 @@ speakers: "Damian Edwards"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/183344.jpg"
+time: "18:33"
+---
+
+# One C# file, no project: `dotnet hello.cs` (no `run` needed)
+
+<!--
+- Say: File-based apps let you run a single .cs file with no project. You don't even need `run`: `dotnet hello.cs` works.
+- Damian (18:32): "there's no slides. We're just going to look at code today." He covers file-based apps from .NET 10, through "the feature band releases, like 10.0.300 and 10.0.400, and then some of the brand new stuff that has now landed in 11.0.100."
+- On screen: hello.cs is two lines (127 bytes): `var name = args.Length == 0 ? ".NET Conf" : string.Join(" ", args);` and `Console.WriteLine($"Hello, {name}! One file. Real C#.");`. Then `dotnet run hello.cs`, `dotnet hello.cs`, and `dotnet hello.cs Damian` → "Hello, Damian! One file. Real C#." The prompt shows .NET 11.0.100.
+- "you don't have to say dotnet run. You can just say dotnet hello.cs, and that also works."
+- Prompt timings on screen: the `dotnet hello.cs` run shows 1.412 s, the next one 131 ms (one run each; (Inference) the first includes a build, the second reuses it).
+- Source: 18:32-18:34 ET, transcript 20261111-183204; shot 20261111/183344.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

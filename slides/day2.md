@@ -1797,7 +1797,9 @@ time: "18:19"
 - Paul (18:18): "we're spending way too many hours ... we set out to build an SRE agent. I think that was about 2024." "the point of a great SRE agent, I think, is it's going to, at 2 a.m., do something reliable that you trust ... by the time you get in front of your incident or you get on a bridge, it will have added value, maybe even mitigated an issue." Safety: "if this has access to the control plane of Azure, it can be turning things off, it can reconfigure, it can mess with data. So you have to really be thoughtful."
 - Canvas in the GitHub Copilot app (he built it): "the chat is where I'm doing dynamic things, but the canvas is where I'm doing more deterministic things ... It's like it's an app."
 - On screen (Azure SRE Agent / demo1-dt-snow): tabs Threads, Approvals, Connectors, Incidents, Automation; Operations Hub, Live Reports, Releases, S360 marked NYI. Incidents: Active 0, Mitigated 3; agent status: Pending user input 2, In progress 0, Completed 21; "23 of 23 incidents loaded". Example: INC0007001 "Employee payroll application server is down" (priority 1, new, pending).
-- Source: 18:18-18:20 ET, transcript 20261111-181804; shot 20261111/181954.
+- How it works (18:20): "It's literally hooked up to ServiceNow. And there's like PagerDuty". An alert becomes an incident; the agent picks "workflows or plans or runbooks"; "is it the app or is it the infrastructure?" If infra can fix it quickly ("a little bit more capacity"), "it can do those mitigations very fast, and then in parallel ... start ... diagnosing the problem."
+- "we use this ourselves inside of Azure." Advice: check "what did it query to come to that triage decision? And it's good to look at those queries and second guess the agent ... that's how you kind of get your learning loop."
+- Source: 18:18-18:22 ET, transcripts 20261111-181804 and 20261111-182000; shot 20261111/181954.
 -->
 
 ---

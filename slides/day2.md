@@ -104,6 +104,30 @@ time: "11:04"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/110631.jpg"
+time: "11:06"
+---
+
+# VS 18.12 shipped yesterday: faster everywhere
+
+<!--
+- Say: Visual Studio 18.12 came out yesterday (Nov 10), and the theme is performance across the IDE.
+- Mads (11:06): "the one we released yesterday, version 18.12, if you haven't gotten it, go get it."
+- What got faster, per Mads:
+  - UI responsiveness: less work on the UI thread, more on background threads.
+  - Solution Explorer and version control: updates in batches, less UI lag. Error List: batch updates too, "much snappier and less hangs".
+  - Designers (WinForms and XAML): faster startup and use.
+  - Add New Item templates load faster.
+  - Close solution / close VS is faster.
+  - Copilot: loads all sessions, or one session, faster.
+  - Test Explorer: loads the test hierarchy faster.
+- No numbers were given for these. Do not quote a percentage.
+- Why it matters: performance is the top request about VS; this release goes after the everyday lag.
+- Source: 11:06-11:07 ET, transcript 20261111-110601; slide "Faster everywhere / Smarter UI updates" (shot 20261111/110631).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

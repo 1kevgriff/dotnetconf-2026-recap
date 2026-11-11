@@ -3091,6 +3091,24 @@ using (AesGcm aesGcm = new AesGcm(aesKey, tagSizeInBytes: 16);
 -->
 
 ---
+layout: "shot"
+image: "/shots/191402.jpg"
+time: "19:14"
+---
+
+# New in .NET 11: HPKE, the hard parts done for you
+
+<!--
+- Say: .NET 11 also adds HPKE — Hybrid Public Key Encryption — which bundles the pieces people usually get wrong.
+- HPKE = IRTF RFC 9180 and updates (stream slide). "Combines pieces so you don't have to": public key establishment, nonce/IV management, AE tag verification, message ordering enforcement
+- Jeremy (19:14): it handles the things "that people tend to get wrong"; "nonce management, which is really important for something like GCM"; message ordering — "if you get them out of order ... it says it's been tampered with and then it fails"
+- "Designed as a message stream"; "also supports 'one-shot' operations" for people who "only want to send just one message"
+- Keys come together in "a thing called a suite" (the notes agent: KEM + KDF + AEAD)
+- Why it matters: use HPKE instead of wiring key exchange + AES-GCM + nonces by hand.
+- Source: 19:14–19:16 ET, transcript 20261110-191402, /shots/191402.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

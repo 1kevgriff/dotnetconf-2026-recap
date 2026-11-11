@@ -1683,6 +1683,21 @@ say what went wrong. Never guess a verdict.
 -->
 
 ---
+layout: "session"
+num: 15
+time: "6:00 PM"
+speakers: "Matt Soucoup, Paul Yuknewicz"
+---
+
+# Azure's new lineup for .NET developers (Part 2)
+
+<!--
+- [session 15] Same speakers; the stream ran straight on from Part 1 with no break or announcement. This divider sits at the agenda time (6:00 PM ET), just before the Durable Task Scheduler part.
+- Part 2 topics so far: Durable Task Scheduler running a hosted-skill plan, the claims desk result, and AI Gateway.
+- Source: dotnetconf.net/agenda (6:00 PM ET); no "Part 2" marker in transcripts 20261111-175804 to 20261111-181005.
+-->
+
+---
 layout: "shot"
 image: "/shots/day2/180251.jpg"
 time: "18:02"

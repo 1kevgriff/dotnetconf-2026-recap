@@ -244,7 +244,7 @@ layout: "statement"
 
 ---
 layout: "shot"
-image: "/shots/day2/112359.jpg"
+image: "/shots/day2/112553.jpg"
 time: "11:21"
 ---
 
@@ -252,14 +252,30 @@ time: "11:21"
 
 <!--
 - Say: You can move a Copilot chat session from the CLI, VS Code or the Copilot app into Visual Studio, and keep going with VS tools.
-- On screen (slide "Your workflow understood"): "Roundtrip chat sessions from CLI, VS Code, Copilot App", "Create tests – profile them – debug – fix", "Worktrees and sub modules".
+- On screen (slide "Your workflow understood"): "Roundtrip chat sessions from CLI, VS Code, Copilot App", "Create tests – profile them – debug – fix", "Worktrees and sub modules", "Full code review and pull request flow" (next slide).
 - Mads (11:20): "we know that you're not always using Visual Studio for everything and that's totally fine." If you started in the CLI and find "you need a debugger or you need a profiler", you can "take that session that you have in the Copilot CLI and simply move it into Visual Studio and continue with it there", and add "that debugger, that UI automation".
 - Why roundtrip works, Mads (11:22): "all because we're using the same copilot SDK harness."
 - Tests in any order: "A lot of people do tests first, like TDD". Some "write their own tests ... and then they might say, okay, agent, run loose and build the feature, but I want to control the tests." Test Explorer has new features for this.
 - VS tool calls make the agent faster; his example: the stop-on-first-failed-build switch, "you get that only in Visual Studio".
-- Worktrees and submodules: "We got the full support." He said users kept telling the team that agents use worktrees.
+- Worktrees and submodules: "We got the full support." He said users kept telling the team that agents use worktrees. With worktrees, "we can have multiple agents work in the same code base without stepping on each other's toes". With submodules, you can open, commit and send PRs across them.
 - Why it matters: VS becomes one stop in a session, not the only place you work.
-- Source: 11:20-11:23 ET, transcripts 20261111-112004 and 20261111-112204; slide "Your workflow understood" (shot 20261111/112359).
+- Source: 11:20-11:23 ET, transcripts 20261111-112004 and 20261111-112204; slide "Your workflow understood" (shot 20261111/112553).
+-->
+
+---
+layout: "statement"
+---
+
+The full PR review flow is now inside Visual Studio.
+
+<!--
+- Say: VS now has the main PR and code review features that you used to go to GitHub.com or Azure DevOps for.
+- Mads (11:25): "we're now at a point where we have all the major features that you typically would rely on GitHub.com or Azure DevOps to kind of do the last mile to get the PR just over the hump. That's now all in Visual Studio".
+- His reason: "when the agents are writing most of our code ... we are reading more code than we are writing it to a larger extent than ever before."
+- Agent tie-in: chat sessions you already have "can now participate in the review and in the PR creation", so you reuse that context.
+- He said "there's a lot more to come". No list of the PR features was shown.
+- Why it matters: if most code comes from agents, review is the main job, and VS wants it to happen where the code and the agent context are.
+- Source: 11:24-11:25 ET, transcript 20261111-112403; bullet "Full code review and pull request flow" (shot 20261111/112553).
 -->
 
 ---

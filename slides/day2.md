@@ -252,10 +252,11 @@ image: "/shots/day2/112553.jpg"
 time: "11:21"
 ---
 
-# Start in the CLI, move the session into VS for the debugger
+# Start in the CLI, move the session into VS for the debugger (coming)
 
 <!--
-- Say: You can move a Copilot chat session from the CLI, VS Code or the Copilot app into Visual Studio, and keep going with VS tools.
+- Say: Microsoft is building a way to move a Copilot chat session from the CLI, VS Code or the Copilot app into Visual Studio, to keep going with VS tools. Say "coming", not "shipped".
+- Status conflict: Mads (11:22) said "now you can. So you can actually round trip these sessions". But Rachel (11:59) said "we're definitely investing more in this area ... seamless access to all of your co-pilot sessions", and Harshada (13:17) said of the CLI-to-VS hand-off: "this particular experience is not out yet. It is coming soon." Treat it as coming.
 - On screen (slide "Your workflow understood"): "Roundtrip chat sessions from CLI, VS Code, Copilot App", "Create tests – profile them – debug – fix", "Worktrees and sub modules", "Full code review and pull request flow" (next slide).
 - Mads (11:20): "we know that you're not always using Visual Studio for everything and that's totally fine." If you started in the CLI and find "you need a debugger or you need a profiler", you can "take that session that you have in the Copilot CLI and simply move it into Visual Studio and continue with it there", and add "that debugger, that UI automation".
 - Why roundtrip works, Mads (11:22): "all because we're using the same copilot SDK harness."
@@ -717,6 +718,23 @@ time: "13:15"
 - Harshada (13:14): it relaunched the app, redid the repro steps, and confirmed "the update cart total is now correct". "this feature is available in our latest Insider". Insiders only.
 - Why it matters: the agent shows evidence (runtime values, tests, UI result), not just a diff. That is the subtitle of the talk: "From a visible symptom to an evidence-backed fix".
 - Source: 13:10-13:15 ET, transcripts 20261111-131003, 20261111-131203, 20261111-131403; shot 20261111/131523.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/131728.jpg"
+time: "13:17"
+---
+
+# Connected diagnostics: start in Copilot CLI, continue in VS (coming soon)
+
+<!--
+- Say: For people who like other AI clients: start a performance investigation in Copilot CLI, then connect Visual Studio and continue with its profiler. Not shipped yet.
+- Harshada (13:16): "you can bring in Visual Studio along with your existing client and have that connected diagnostics experience." "I'm going to use the AHP to connect the Visual Studio to the client". (Agent Host Protocol per the stream agent; she said "AHP".)
+- Demo: SharpZipLib, benchmark Adler32LargeUpdate. The CLI did a static analysis first (on screen: "measures a single checksum pass over 256 MiB", call path Update(byte[]) → Update(ArraySegment...)). Then a `launch-vs` prompt from a CLI plugin connects VS.
+- Status: "this particular experience is not out yet. It is coming soon."
+- Why it matters: VS's profiler and debugger become tools any agent client can call, not only the VS chat.
+- Source: 13:16-13:17 ET, transcript 20261111-131603; shot 20261111/131728.
 -->
 
 ---

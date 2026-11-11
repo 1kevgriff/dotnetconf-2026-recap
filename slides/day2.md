@@ -1369,6 +1369,37 @@ time: "16:55"
 -->
 
 ---
+layout: "session"
+num: 13
+time: "5:01 PM"
+speakers: "Alexandre Zollinger Chohfi"
+---
+
+# No XAML Required: Native Windows Apps in Pure C#
+
+<!--
+- [session 13] Alexandre Zollinger Chohfi. Started about 5:01 PM ET.
+- Source: dotnetconf.net/agenda (5:00 PM ET); transcript 20261111-170019.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/170204.jpg"
+time: "17:02"
+---
+
+# Microsoft.UI.Reactor: a WinUI app in one C# file, no XAML (experimental)
+
+<!--
+- Say: Microsoft.UI.Reactor is an experimental MVU framework for WinUI. No XAML, no code-behind, no view models; a whole app can be one C# file you run with `dotnet run`. It uses real WinUI controls.
+- On screen, "Microsoft.UI.Reactor / An experimental C# framework for WinUI": MVU for WinUI ("your UI is a function of your state. The counterpart to MVVM, on the same platform"); Real WinUI controls ("No new renderer, no fork. Button is a real WinUI Button, with the same theming and tools"); An open experiment ("MIT and built in the open. No API guarantees yet, so your feedback still changes the design").
+- Alexandre (17:00): "an experimental way to build native Windows applications ... There are no XAML files. There are no code behind. There's no view models. And I mean experimental as an invitation." "What if a complete application could be just a single C-sharp file? No project file, no app.xaml, no code behind ... And if you run that file with a plain dotnet run, it just runs your full UI."
+- Say "experimental": no API guarantees yet.
+- Why it matters: C# file-based apps (from Day 1) now reach native Windows UI, with an MVU style like MAUI's Comet experiment.
+- Source: 17:00-17:02 ET, transcript 20261111-170019; shot 20261111/170204.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

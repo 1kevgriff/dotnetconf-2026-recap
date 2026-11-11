@@ -849,9 +849,10 @@ Start with static SSR. Add interactive server where needed. WebAssembly for comp
 - "different parts of your app might have different characteristics ... you can set up the render modes for each part of your app".
 - Where paused-circuit state goes (13:54): no browser connection (eviction after a disconnect) → on the server, in-memory cache by default, or HybridCache if enabled, so it can scale out. With a connection (graceful shutdown, Auto Pause) → "persist down to the client ... nicely protected", in the browser's local storage.
 - On Aspire: "I would never build another ASP.NET Core Blazor app without wiring up Aspire." The demos used the Aspire dashboard for circuit metrics.
+- Scale baseline (Q&A, 13:59): "We have done very basic load balancing tests with Blazor server where it's like a single VM ... you can easily get tens of thousands of concurrent users on like a single simple VM on Azure as a baseline for Blazor server performance. And that's without doing a lot of the other tricks that I'm showing you." No exact numbers or VM size were given.
 - Download: "Go ahead and download .NET 11 at get.net slash 11" (Dan, 13:54). Say: get.net/11.
 - Why it matters: a clear default for new Blazor apps, with less server state per user.
-- Source: 13:54-13:57 ET, transcripts 20261111-135402 and 20261111-135602.
+- Source: 13:54-13:59 ET, transcripts 20261111-135402, 20261111-135602 and 20261111-135802.
 -->
 
 ---

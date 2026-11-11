@@ -1032,14 +1032,14 @@ time: "14:47"
 
 <!--
 - Say: Live demo: Morten left a comment on the running WinUI app's UI. Copilot CLI read it, changed the heading, built a GitHub issues page, launched the app, and inspected the UI to check its own work.
-- How the comments work: they are stored in the app project "as a little JSON file ... persisted until they're like resolved" (DevTools overlay in the app).
+- How it works (14:42): `winapp run` launches the app with "dev tools on". From the in-app dev tools you can switch to dark mode, inspect elements and "tweak with them", and "actually add comments to my UI". The comments are stored in the app project "as a little JSON file ... persisted until they're like resolved".
 - Prompt (14:44): find the comment, add an issues page with "the last seven days of closed issues on GitHub", then launch the app.
 - On screen: Copilot: "Your comment asks for the Home heading to read 'Welcome to .NET Conf!' ... add an Issues page that filters by closure date, excludes pull requests, and handles pagination." The app shows "Recently closed issues / Microsoft/microsoft-ui-xaml - Past 7 days / 25 issues closed in the past 7 days". The CLI runs `winapp ui ...` commands; model GPT-6.1 Sol.
 - Self-check (14:46): "it's actually using the inspects now, so it can actually inspect these and say, oh, I didn't find this, and I don't see the navigation, so that didn't work. So it's actually able to check itself".
 - Skills: the WinUI skill "pulls in our documentation, but also things like the WinUI gallery", so the agent grounds controls in sample code. You can also run the app in Windows Sandbox and keep working.
 - Live demo, not a recording: it was slow and had a few failed edits on screen before it worked.
 - Why it matters: UI feedback goes straight from the app to the agent, and the agent checks the result itself.
-- Source: 14:44-14:48 ET, transcripts 20261111-144403 and 20261111-144603; shot 20261111/144748.
+- Source: 14:42-14:48 ET, transcripts 20261111-144200, 20261111-144403, 20261111-144603; shot 20261111/144748.
 -->
 
 ---

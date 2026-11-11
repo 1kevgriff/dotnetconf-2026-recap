@@ -1843,19 +1843,20 @@ time: "18:33"
 
 ---
 layout: "shot"
-image: "/shots/day2/183750.jpg"
+image: "/shots/day2/183806.jpg"
 time: "18:37"
 ---
 
-# Full C#, virtual project, and the SDK caches the build
+# Full C#, virtual project, cached build: 973 ms → 107 ms
 
 <!--
 - Say: A file-based app is real C# with a project that is just virtual, so you get IntelliSense. And the .NET SDK caches the build, so a re-run skips work it does not need.
 - Damian (18:36): "It's not C# scripting. It is not C# interactive ... CSX. This is full-fat C#. It's just that the project is virtual." "Yes, I get IntelliSense here."
 - Caching: "we've actually done a bunch of work in file-based apps in the .NET SDK to implement build caching." His measure-launch.ps1 script ran hello.cs in different cache states. "for an uncached build, you can actually disable the cache by passing --no-cache".
-- On screen (Mode / Run / Milliseconds, 5 runs each): uncached build 953.6-988.3 ms; fresh output 349.4-377.4 ms; directive change 1040.8-1050.7 ms (3 runs visible). So roughly: uncached about 970 ms, cached ("fresh output") about 370 ms, changing a #: directive about 1045 ms. He said the table at the bottom gives the median; it was not captured.
-- (Inference) "fresh output" = the build output is current, so the build step is skipped.
-- Source: 18:36-18:38 ET, transcript 20261111-183600; shot 20261111/183750.
+- On screen, median table (5 runs each, .NET 11.0.100): uncached build 972.9 ms; fresh output 370.6 ms; directive change 1048.4 ms; source change 353.6 ms; no changes 106.7 ms. Footer: "Same SDK and command, different source/output/cache state. Build servers are pre-warmed; packages may already be cached."
+- What the modes mean (18:38): uncached = `--no-cache`, "the equivalent of a dotnet build or a dotnet run on a traditional csproj", "about a second on this machine". Fresh output = hello.cs copied to a new folder each time, which "breaks our build cache key" (a hash of the entry file path plus the SDK version, etc.). It is still fast because the file has no directives: "We actually completely skip invoking MSBuild if it's just C# ... we just run the compiler." Directive change = a #: directive changed, so MSBuild runs again.
+- Say: a re-run with no changes is about 107 ms; editing plain C# about 354 ms; only directive changes pay the full ~1 s.
+- Source: 18:36-18:39 ET, transcripts 20261111-183600 and 20261111-183801; shot 20261111/183806.
 -->
 
 ---

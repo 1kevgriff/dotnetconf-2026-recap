@@ -3129,6 +3129,7 @@ speakers: "Jonathan Peppers"
 <!--
 [Session 17] Last session of Day 1.
 - Session 7 (MAUI) already mentioned this: `dotnet run`, `test`, `watch` work for MAUI with an interactive platform prompt; add only new details here.
+- Why (19:30): "MAUI released in, like, May 2022, and the CLI wasn't really a focus back then" — you "would hit F5 in an IDE like Visual Studio". Now VS Code ("a small editor that is on top of terminal commands") and "AI agents writing code for us ... need to make sure their code works in some way"
 -->
 
 ---

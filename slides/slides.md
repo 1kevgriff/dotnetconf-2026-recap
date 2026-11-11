@@ -3022,6 +3022,23 @@ speakers: "Jeremy Barton"
 -->
 
 ---
+layout: "shot"
+image: "/shots/190709.jpg"
+time: "19:07"
+---
+
+# "Harvest Now, Decrypt Later"
+
+<!--
+- Say: The urgent problem isn't signatures — it's key establishment. Traffic recorded today can be decrypted once a quantum computer exists.
+- Two asymmetric buckets (stream slide): Signing (integrity, accountability) — "No significant retroactive threat", but "Erodes trust on 'Q day'". Key establishment (confidentiality) — "Harvest Now, Decrypt Later", "Old secrets revealed"
+- "In crypto land we talk about Q-Day, which is the day that there's a ... cryptographically" relevant quantum computer
+- Key establishment "is so big of a problem it has a pithy name now, which is Harvest Now, Decrypt Later": anything sent with a key establishment message can be recorded now and opened later
+- Why it matters: data with a long secrecy life needs post-quantum key establishment before Q-Day, not after.
+- Source: 19:06–19:08 ET, transcript 20261110-190604, /shots/190709.jpg
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

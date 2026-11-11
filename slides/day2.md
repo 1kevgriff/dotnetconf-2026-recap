@@ -220,10 +220,10 @@ image: "/shots/day2/111935.jpg"
 time: "11:17"
 ---
 
-# Copilot checks its own fix by driving your running app
+# Copilot checks its own fix by driving your running app (Insiders)
 
 <!--
-- Say: Copilot in VS can now run your app, go to the bug, and check that its fix works. The slide calls it "UI Automation > hands free debugging".
+- Say: Copilot in VS can now run your app, go to the bug, and check that its fix works. The slide calls it "UI Automation > hands free debugging". It is in the latest VS Insiders, not stable: Harshada (13:08) said "we recently added a UI automation in our latest insiders of Visual Studio". Mads had warned that some keynote items are Insiders-only.
 - Mads (11:17): "we can now have Copilot do UI automation, which means you can tell it to fix a bug, and it will automatically be able to verify the fix ... by loading and running your app and navigating to the place where this issue was". It can take screenshots and investigate dump files.
 - Autopilot, from the same minute: "bigger tasks that can run for hours and hours on end, spin up sub-agents". Chat sessions are now separate from the solution, so a session keeps going "even if the solution has to be reloaded or closed".
 - Mads's own use: "I've been using it for two, three months, and it's a complete game changer." And: "if you ... tried Visual Studio and Copilot in the past and thought ... it wasn't the best thing in the world, try it again."
@@ -679,6 +679,26 @@ speakers: "Harshada Hole"
 - [session 05] Harshada Hole, Visual Studio. Title card: "What's New in Visual Studio Diagnostics", subtitle "From a visible symptom to an evidence-backed fix" (shot 20261111/130551). The agenda title is "What's New in Visual Studio Debugging and Diagnostics".
 - Jason pointed here for the debugging and profiling agents: "the connected diagnostic experience ... the full experience with everything from start to finish".
 - Source: dotnetconf.net/agenda, Day 2, 1:00 PM ET; started about 1:05 PM ET.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/130801.jpg"
+time: "13:08"
+---
+
+# Debugger Agent: give it a bug URL. It reproduces, fixes, verifies.
+
+<!--
+- Say: The Debugger Agent takes a GitHub or Azure DevOps bug URL and runs an "investigation loop": reproduce, investigate, correct, verify, all in VS.
+- Harshada (13:08): the Debugger Agent "not just reads your logs, but it actually has a full runtime context. It understands your breakpoint, your call stack". With the bug URL, "it will actually reproduce ... investigate it, actually correct it, even create hypotheses if needed, and then verify the fix".
+- On screen, "The investigation loop / A bug fix is more than a code change": Reproduce > Investigate > Correct > Verify. Three modes: Manual investigation | Test-driven investigation | UI Automation.
+  - Manual: you reproduce and verify with your own judgment.
+  - Test-driven: "The agent will actually use the existing test suite, even create a new test if needed".
+  - UI Automation: "recently added ... in our latest insiders", for UI and WPF bugs. Insiders only.
+- Demo next: eShopOnWeb running locally, a bug when buying the ".NET Bot" sweatshirt.
+- Why it matters: the agent works from the runtime state, not just the source, and proves the fix.
+- Source: 13:08-13:09 ET, transcript 20261111-130801; slide "The investigation loop" (shot 20261111/130801).
 -->
 
 ---

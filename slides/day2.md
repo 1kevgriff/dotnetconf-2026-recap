@@ -1495,7 +1495,7 @@ time: "17:27"
 - Say: Everything Reactor shows in its DevTools is also a CLI an agent can call: the component tree with the C# file and line for each node, and every hook's state, which it can also set. Passwords are redacted.
 - On screen, "What DevTools sees": `winapp devtools inspect -a RxE2E` → `<App> root Program.cs:7`, `<Counter> Program.cs:17`, `Button #incrementButton Program.cs:33`. `winapp devtools get-state "<Counter>" -a RxE2E` → Hooks: `[0] count state int = 0 settable`, `[1] password state string = <redacted>`.
 - Alexandre (17:26): "all the capabilities that are exposed by Reactor to the DevTools are also exposed ... from a command line tool that an LLM can call." "it also gives you the C-sharp file and the line for every node. So the agent will actually have that context and know which line of code actually matches". get-state shows "each hook with its name, the types, the values, and we also have a set state that lets you change it. Passwords are redacted".
-- Status: preview (same build as the --watch demo, not in WinApp CLI 0.8 stable).
+- Status: (Inference) preview, like the --watch demo just before; this chunk did not restate it.
 - Why it matters: the agent can jump from what it sees on screen straight to the exact line of C# that made it.
 - Source: 17:26-17:28 ET, transcript 20261111-172603; shot 20261111/172728.
 -->

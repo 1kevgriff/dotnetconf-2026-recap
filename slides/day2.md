@@ -282,6 +282,23 @@ The full PR review flow is now inside Visual Studio.
 -->
 
 ---
+layout: "session"
+num: 2
+time: "11:30 AM"
+speakers: "Rachel Kang, Barbara Boyajian"
+---
+
+# The State of AI in Visual Studio: New Brain. More Choice.
+
+<!--
+- [session 02] Rachel Kang and Barbara Boyajian, both Microsoft. The agenda lists only Rachel; the title card shows both.
+- Headline of the session, Rachel (11:30): "The new agent harness powered by the Copilot SDK is now generally available in Visual Studio."
+- "New Brain" = the new agent harness on the Copilot SDK (the one Mads introduced in the keynote). "More Choice" = more ways to pick and run models and agents.
+- Why it matters: the keynote's Copilot SDK rebuild is GA, not a preview.
+- Source: 11:30 ET, transcript 20261111-113000; title card shot 20261111/113025.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

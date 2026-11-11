@@ -3171,7 +3171,21 @@ time: "19:43"
 - Test frameworks (19:52): the template "configures MTP for you and sets up an instrumentation class ... we've configured MSTest. You could switch that to NUnit or whatever test framework you would like." (The notes agent also listed xUnit and TUnit — not named on stream in what I checked.)
 - Demo on the Pixel 10: `dotnet test` ran; "Nothing actually appears on the screen because this is an instrumentation project that doesn't have an app icon"
 - Why it matters: device tests become a plain CLI command that CI and agents can run.
-- Source: 19:42–19:44 ET, transcript 20261110-194203, /shots/194348.jpg
+- Source: 19:42–19:54 ET, transcripts 20261110-194203, 20261110-194604, 20261110-195204, /shots/194348.jpg, /shots/194729.jpg
+-->
+
+---
+layout: "statement"
+---
+
+"If your agent can run tests on Android, imagine the bugs that it can fix."
+
+<!--
+- Say: The point of run, watch and test for MAUI: mobile gets the same CLI as everything else, so agents can drive it.
+- Jonathan Peppers (19:54), after the device demo ("three tests passed"): "really our focus here is to get parity for mobile ... And AI agents can call these commands"
+- The three commands: `dotnet run` (pick framework + device, logs in the terminal), `dotnet watch` (hot reload to the device), `dotnet test` (on-device tests via MTP)
+- Why it matters: mobile no longer needs an IDE in the loop — humans, CI and agents use the same commands.
+- Source: 19:54–19:56 ET, transcript 20261110-195404
 -->
 
 ---

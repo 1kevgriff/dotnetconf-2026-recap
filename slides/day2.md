@@ -1513,8 +1513,9 @@ time: "17:28"
 - On screen, "Built with Reactor / MIT licensed, built in the open": samples Reactor IDE, Monaco Editor, Chat. OpenClaw: "In production: its Windows companion app ships Reactor chat, on by default." Uno Platform: "Out now: Reactor on macOS, Linux, WebAssembly, Android and iOS." Prefer Rust?: "windows-reactor runs the same experiment in windows-rs."
 - Alexandre (17:28): OpenClaw "recently announced their Windows Companion app, and they are using Reactor in production for the chat window. It is all open source". Uno's port: "The same components, the same hooks, running also on macOS, Linux, WebAssembly, Android, and iOS. And it's, again, also experimental, just like Reactor."
 - Try it (17:29): "Install the WinApp CLI with WinGet. Run WinApp new with the new Reactor templates", then run it; "there are five" templates.
+- Wrap (17:30): they are bringing "the new functionalities from C# 15 into Reactor". Repo: github.com/microsoft/microsoft-ui-reactor; guide: microsoft.github.io/microsoft-ui-reactor (closing slide, shot 20261111/173018). Q&A: the Reactor WinUI Gallery code listings are MIT: "just copy and paste".
 - Why it matters: an experiment with real users already, and a path off Windows via Uno.
-- Source: 17:28-17:30 ET, transcript 20261111-172804; shot 20261111/172829.
+- Source: 17:28-17:31 ET, transcripts 20261111-172804 and 20261111-173003; shots 20261111/172829 and 173018.
 -->
 
 ---

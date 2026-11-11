@@ -1652,6 +1652,34 @@ time: "17:54"
 -->
 
 ---
+layout: "code"
+---
+
+# The whole skill is this prompt. "Never guess a verdict."
+
+```text
+You check delivery photos for package damage.
+The request has a `photo` field. It is the name of a photo in Blob Storage.
+1. Call `analyze_photo` with the photo name and these instructions:
+   > Look at the package in the photo. Dents, tears, or crushed corners
+   > mean `damaged`. An intact box means `not_damaged`. Tape seams and
+   > shadows are not damage. Give one short sentence about what you see.
+2. Call `send_result` with the photo name, the verdict, and the reason.
+3. Reply with the photo name, the verdict, and the reason.
+If `analyze_photo` fails, call `send_result` with the verdict `error` and
+say what went wrong. Never guess a verdict.
+```
+
+<!--
+- Say: The whole damage-check skill is this English prompt in damage-check.agent.md. It calls the C# analyze_photo tool, then send_result. Result: photo-01 not damaged, photo-02 "damaged. The box has a torn, crushed corner."
+- Prompt text is from the canvas "SKILL INSTRUCTIONS" (Package damage check · damage-check.agent.md), stream agent crop 20261111-hosted-skill-damage-check (escape characters in the original removed here).
+- Result on the canvas, "Agent digest · Manual http · Local function": "photo-02.jpg — damaged. The box has a torn, crushed corner."
+- Matt (17:57): "Photo 1, not damaged, must have been delivered to Paul. And if we go to the one that got delivered to me, Photo 02, invoke the trigger ... it is damaged".
+- Why it matters: the rules live in plain English; the trusted actions live in C# tools; and the prompt tells the model to report an error instead of guessing.
+- Source: 17:56-17:58 ET, transcript 20261111-175602; canvas text from the stream agent's crop of the frame (path removed).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

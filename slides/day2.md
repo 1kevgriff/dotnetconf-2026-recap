@@ -1518,6 +1518,20 @@ time: "17:28"
 -->
 
 ---
+layout: "session"
+num: 14
+time: "5:31 PM"
+speakers: "Matt Soucoup, Paul Yuknewicz"
+---
+
+# Azure's new lineup for .NET developers (Part 1)
+
+<!--
+- [session 14] Matt Soucoup and Paul Yuknewicz. Part 1 of 2; Part 2 follows at 6:00 PM ET.
+- Source: dotnetconf.net/agenda (5:30 PM ET); stream agent session marker 5:31 PM ET.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -872,6 +872,24 @@ speakers: "Stephen Halter"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/140549.jpg"
+time: "14:05"
+---
+
+# An MCP server is a few lines in ASP.NET Core. Stateless is now the default.
+
+<!--
+- Say: The MCP C# SDK plugs into ASP.NET Core like any other service: AddMcpServer, then add tools, prompts, resources and MCP Apps. HTTP transport is stateless by default now.
+- On screen (Program.cs, FireworksServer): `builder.Services.AddSignalR();` then `builder.Services.AddMcpServer(options => { ServerInfo ... ServerInstructions ... }).WithTools<FireworksTools>().WithPrompts<FireworksPrompts>().WithResources<FireworksResources>().WithMcpApps();`
+- Stephen (14:04): the server "supports either Standard I.O. or HTTP, but by default it is using HTTP". "we're using the stateless mode, which we recently made the default. And this is useful for scalability if you don't have sticky sessions and just like general reliability so your server lasts past a restart."
+- MCP Apps: the chat showed an inline iframe returned from MCP: "a feature that used to be called MCP-UI, is now called MCP apps."
+- SignalR in the same app keeps a second browser tab in sync with the same fireworks show.
+- Why it matters: an MCP server is just ASP.NET Core, so it gets DI, SignalR, hosting and scale-out like any web app.
+- Source: 14:04-14:06 ET, transcript 20261111-140404; shot 20261111/140549.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

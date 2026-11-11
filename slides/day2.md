@@ -191,6 +191,26 @@ time: "11:13"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/111555.jpg"
+time: "11:15"
+---
+
+# Copilot in VS now runs on the Copilot SDK, same as CLI and VS Code
+
+<!--
+- Say: VS removed its old Copilot harness and rebuilt Copilot on the Copilot SDK, the same engine as Copilot CLI and VS Code.
+- Mads (11:14): "We've ripped out the old harness ... and replaced it with the Copilot SDK. This is the same SDK that the CLI is using and VS Code as well." "for the first time, we now have a shared foundation" and "you can move things around between them".
+- What comes with it (the five bullets on screen):
+  - Steering: redirect a running chat "without having to hit the stop button first". Mads: steering "has always been missing in Visual Studio".
+  - Skills, agents, MCP servers "and a lot more", the same customizations as the SDK.
+  - BYOK: "any OpenAI compatible endpoint", cloud, open models, or "local behind your firewall, on-prem". He said "with a few caveats"; the next session covers them.
+  - Autopilot, as known from the CLI and VS Code.
+- Why it matters: one set of skills, agents and MCP config can work across VS, VS Code and the CLI. And BYOK with local models helps teams that cannot send code to the cloud.
+- Source: 11:14-11:15 ET, transcript 20261111-111400; slide "Stronger foundation" (shot 20261111/111555).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

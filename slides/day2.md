@@ -1533,6 +1533,22 @@ speakers: "Matt Soucoup, Paul Yuknewicz"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/173214.jpg"
+time: "17:32"
+---
+
+# Azure's cast: ACA Sandboxes, hosted skills, AI Gateway, SRE Agent
+
+<!--
+- Say: Part 1 of the Azure session is all demos of four services: Azure Container Apps Sandboxes for running risky code in a microVM, hosted skills, AI Gateway, and SRE Agent.
+- On screen, "Meet the cast": ACA Sandboxes ("The stunt double. Takes the risky code, in an isolated microVM."); Hosted skills ("The specialist. Event-driven AI skills, defined in an .agent.md file."); AI Gateway ("The producer. Keeps tabs on every model and tool your app calls."); SRE Agent ("The one who answers the pager at 2 AM: triage, root cause, fix."). "Co-starring: Copilot canvases put Azure in your development workflow. Shot live on stream".
+- Opening (17:32): "We have no slides, we have all demos today." SRE Agent only "if we have the time".
+- ACA Sandboxes: "Think micro VMs. This is for production workloads, and you want them to run really fast, like sub-second, spin-up, but also have that Hyper-V-like protections." "It's not the little kid version of sandbox."
+- Source: 17:32-17:33 ET, transcript 20261111-173204; shot 20261111/173214.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

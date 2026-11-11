@@ -3147,7 +3147,24 @@ time: "19:35"
 - Scripts (stream slide): `-f net11.0-android` · `--list-devices` · `--device <id>` — "Interactive: choose. Non-interactive: supply enough information."
 - `dotnet watch` (19:38) "sits on top of .NET Run" to make "an interactive hot reload session". Editor doesn't matter — "It could be Notepad." A file watcher sees the change; "dotnet watch is a server and your app is the client"; it compiles and "send[s] the diff over to your app, which will reload the change"
 - Why it matters: agents and scripts can build, deploy and run a MAUI app on a chosen device without an IDE.
-- Source: 19:34–19:36 ET, transcript 20261110-193404, /shots/193514.jpg
+- Source: 19:34–19:40 ET, transcripts 20261110-193404, 20261110-193803, /shots/193514.jpg
+-->
+
+---
+layout: "shot"
+image: "/shots/194348.jpg"
+time: "19:43"
+---
+
+# `dotnet test` on a device reuses the run pipeline
+
+<!--
+- Say: `dotnet test` for MAUI reuses everything `dotnet run` does — select, build, deploy, launch — then runs the tests on the device and collects the results.
+- Pipeline (stream slide): Select → Build → Deploy → Run test application → Collect results, on Microsoft.Testing.Platform (MTP). "The test project must run tests on the device."
+- "The main difference is at the end, you want some kind of test results to happen." (19:43)
+- How watch talks to the app (19:42): over WebSockets — a project capability named "Hot Reload WebSockets"; on Android it uses ADB (Android Debug Bridge) to reach the device
+- Why it matters: device tests become a plain CLI command that CI and agents can run.
+- Source: 19:42–19:44 ET, transcript 20261110-194203, /shots/194348.jpg
 -->
 
 ---

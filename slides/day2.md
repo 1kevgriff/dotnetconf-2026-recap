@@ -1675,7 +1675,7 @@ say what went wrong. Never guess a verdict.
 - Prompt text is from the canvas "SKILL INSTRUCTIONS" (Package damage check · damage-check.agent.md), stream agent crop 20261111-hosted-skill-damage-check (escape characters in the original removed here).
 - Result on the canvas, "Agent digest · Manual http · Local function": "photo-02.jpg — damaged. The box has a torn, crushed corner."
 - Matt (17:57): "Photo 1, not damaged, must have been delivered to Paul. And if we go to the one that got delivered to me, Photo 02, invoke the trigger ... it is damaged".
-- Looser version (17:58, abstract-check.agent.md per the file list): "now we're going to start relying on the metadata that the MCP" tools expose, and ask for "result, response, and photo in JSON. So we're really loosening it up." Paul: "how would I have known this kind of interesting long tail of cases would come in." "that's exactly the squishy part that I was talking about."
+- Looser version (17:58; (Inference) likely abstract-check.agent.md from the file list): "now we're going to start relying on the metadata that the MCP" tools expose, and ask for "result, response, and photo in JSON. So we're really loosening it up." Paul: "how would I have known this kind of interesting long tail of cases would come in." "that's exactly the squishy part that I was talking about."
 - Why it matters: the rules live in plain English; the trusted actions live in C# tools; and the prompt tells the model to report an error instead of guessing.
 - Source: 17:56-18:00 ET, transcripts 20261111-175602 and 20261111-175804; canvas text from the stream agent's crop of the frame (path removed).
 -->

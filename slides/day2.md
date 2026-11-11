@@ -1799,7 +1799,9 @@ time: "18:19"
 - On screen (Azure SRE Agent / demo1-dt-snow): tabs Threads, Approvals, Connectors, Incidents, Automation; Operations Hub, Live Reports, Releases, S360 marked NYI. Incidents: Active 0, Mitigated 3; agent status: Pending user input 2, In progress 0, Completed 21; "23 of 23 incidents loaded". Example: INC0007001 "Employee payroll application server is down" (priority 1, new, pending).
 - How it works (18:20): "It's literally hooked up to ServiceNow. And there's like PagerDuty". An alert becomes an incident; the agent picks "workflows or plans or runbooks"; "is it the app or is it the infrastructure?" If infra can fix it quickly ("a little bit more capacity"), "it can do those mitigations very fast, and then in parallel ... start ... diagnosing the problem."
 - "we use this ourselves inside of Azure." Advice: check "what did it query to come to that triage decision? And it's good to look at those queries and second guess the agent ... that's how you kind of get your learning loop."
-- Source: 18:18-18:22 ET, transcripts 20261111-181804 and 20261111-182000; shot 20261111/181954.
+- Transparency (18:22): "I can actually see the runbook that it went through, and I can see the actual Kusto queries that it ran". "it runs its own Kusto queries. You don't have to touch a Kusto query."
+- Scale: "you're using this today for real work production. For literally hundreds of thousands of incidents." "We used it ourselves before we productized it." (Recap said by the other speaker, (Inference) Matt, and confirmed.)
+- Source: 18:18-18:23 ET, transcripts 20261111-181804, 20261111-182000, 20261111-182201; shot 20261111/181954. Frame 182221 not used (it shows a subscription ID).
 -->
 
 ---

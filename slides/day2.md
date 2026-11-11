@@ -87,6 +87,23 @@ Code is an asset, not a byproduct.
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/110443.jpg"
+time: "11:04"
+---
+
+# ~27 user bugs fixed per workday. ~2 feature requests shipped.
+
+<!--
+- Say: The VS team fixes about 27 user-reported bugs and ships about 2 feature requests every workday, and both lines still go up.
+- Mads (11:04): "we're actually fixing about 27 user-reported bugs per workday. That's pretty remarkable." And: "we're implementing about two feature requests per workday."
+- The chart is monthly user bug reports, Oct 25 to Sep 26 (409 to 795 a month; trend line up). Mads said the September numbers are not all in yet.
+- He showed the same kind of chart at .NET Conf a year ago. He gave credit to user feedback and votes, "partly because of AI" too.
+- Why it matters: if you file a bug or vote on Developer Community, it has a real chance to get fixed.
+- Source: 11:04-11:05 ET, transcript 20261111-110403; shot 20261111/110443.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -378,6 +378,27 @@ time: "11:41"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/114311.jpg"
+time: "11:43"
+---
+
+# Bring your own model: local servers, gateways, proxies. GA in 18.12.
+
+<!--
+- Say: "More Choice" starts with models. Bring your own model (BYOM) is GA in 18.12 stable (badge on the slide), and it now connects to more kinds of endpoints.
+- Barbara (11:42): BYOM is for "regulated industries think healthcare defense", where it "can be what enables the usage of AI coding tools", and for "air-gapped environments". It is for teams that want "their prompts and their code [to stay] within their boundaries".
+- On screen, "More ways to connect your models":
+  - Multiple connections: keep named connections to the same provider. Barbara: "let's say you have three OpenAI compatible custom endpoints ... you can add them all".
+  - Custom endpoints: OpenAI-compatible gateways and local model servers.
+  - API format: Completions, Responses, Messages.
+  - Optional API keys, model settings (edit in the UI), proxy-aware connections (uses the VS proxy settings).
+- Mads said in the keynote that BYOK has "a few caveats". Listen for them; this part did not name any.
+- Why it matters: teams that cannot send code to a cloud model can now use the VS agent with their own approved model.
+- Source: 11:42-11:43 ET, transcript 20261111-114201; slide "More ways to connect your models" (shot 20261111/114311).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

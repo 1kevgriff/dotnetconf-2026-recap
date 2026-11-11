@@ -1580,7 +1580,7 @@ layout: "statement"
 - Speaker (17:42): "So it made five .NET 10 micro VMs, just like that, sub-second, and then it already deleted them, too." "container apps used to be known as slow ... That's not slow." "we're building a lot of our major workloads on this". Then: "let's do 100 in bursts of 10 ... We can actually do this all day long ... we want you to do this."
 - What the screen showed (be precise): the 5-sandbox run (`dotnet run -- scale 5 5`) logged per-sandbox elapsedMs of 1532-2027 and a summary of 5 requested, 5 verified, 0 failed in 2832 ms total. In the 100-in-10s run (`scale 100 10`) the visible entries were about 850-970 ms each. So "about a second", sub-second in the bigger run. The final summary of the 100 run was not captured.
 - Screenshots not used: they show the presenter's terminal prompt and bookmarks.
-- Why it matters: per-call isolated microVMs are cheap and fast enough to use for every risky agent tool call.
+- Why it matters: (Inference) isolated microVMs start fast enough to use one per risky agent tool call. No cost numbers were given.
 - Source: 17:42-17:44 ET, transcript 20261111-174204; shots 20261111/174249 and 174349 (not in deck).
 -->
 

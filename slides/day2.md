@@ -1327,8 +1327,10 @@ time: "16:37"
 - Gerald (16:34): the repo is github.com/dotnet/maui-labs; it "is set up as a marketplace", so you point your agent at it for the skills, or get them through the CLI.
 - DevFlow (16:36): the agent asks for the visual tree, "it doesn't have to guess based on a screenshot ... including things that might be invisible ... Or have a zero width." "this will save you tokens". "You can see this as Playwright for your mobile applications".
 - Status: "everything in MAUI Labs is a pre-release right now".
+- Also in maui-labs (README "At a glance", 16:43, shot 20261111/164314): Comet ("Experimental MVU UI framework for .NET MAUI with C# fluent UI, signals, and reactive state"), Go (single-file Comet app server), AI Extensions (source-generated Microsoft.Extensions.AI tool bindings), a macOS AppKit backend ("running MAUI apps as macOS apps without Mac Catalyst"), a WPF backend, Essentials.AI (on-device chat, embeddings, tool calling), AppProjectReference, MAUI Testing (MTP-based device tests). Gerald also said "we have a Linux backend in here".
+- MAUI Sherpa (16:38), not in maui-labs: a visual tool "built by Jonathan on our team" (Jonathan Peppers is (Inference) the Jonathan meant). It sets up Android SDK and Xcode, checks .NET SDKs, handles certificates, builds, uploads to app stores, manages secrets: "mission control for mobile development". Not only for MAUI apps.
 - Why it matters: agents read the real UI state of iOS and Android apps instead of guessing from screenshots. (Inference) It parallels winapp for WinUI from earlier today.
-- Source: 16:34-16:38 ET, transcripts 20261111-163402 and 20261111-163604; shot 20261111/163719.
+- Source: 16:34-16:43 ET, transcripts 20261111-163402, 20261111-163604, 20261111-163803, 20261111-164204; shots 20261111/163719 and 164314.
 -->
 
 ---

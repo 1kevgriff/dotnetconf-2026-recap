@@ -2057,6 +2057,21 @@ time: "19:21"
 -->
 
 ---
+layout: "statement"
+---
+
+An agent doesn't need an LLM every time. A decision model can route the ticket.
+
+<!--
+- Say: A custom .NET agent can use a fast decision model instead of an LLM for a routing step. Bruno's support agent classifies "I was charged twice" as billing, with confidence scores, and still runs hosted in Foundry with traces and guardrails.
+- Bruno (19:26): "the agent doesn't need to use an LLM all the time ... If we code the agent, we can use different LLMs, or we can even use a decision model" to route to "billing, technical support, account access, and more." "I override the RunCoreAsync ... I am going to use a decision model here to do my decisions."
+- Demo: "I was charged twice to my subscription" → the trace shows "a billing issue, and we have probabilities, confidence, and more." "because we are also in Foundry, we can start to take advantage of Foundry on the traces, on the monitor, guardrails".
+- The Foundry agent list on screen mixes Prompt and Hosted agents (e.g. better-together-decisions: Hosted, Running). Screenshot not used: the URL bar shows resource names and IDs.
+- The model is Microsoft Decision 1 (see previous slide notes; MEAI support in progress).
+- Source: 19:26-19:28 ET, transcript 20261111-192605; shot 20261111/192710 (not in deck).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

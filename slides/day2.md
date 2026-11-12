@@ -2141,6 +2141,23 @@ db.Posts.VectorSearch(p => p.Embedding, question, "cosine")
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/193828.jpg"
+time: "19:38"
+---
+
+# Generated SQL: `VECTOR_SEARCH`, and a warning when you forget the index
+
+<!--
+- Say: The LINQ becomes SQL Server's VECTOR_SEARCH. With WithApproximate() it adds WITH APPROXIMATE so the index is used. If you leave it off, EF Core 11 warns you that the query is an exact brute-force search.
+- On screen (generated SQL): exact = `SELECT TOP(@p1) ... FROM VECTOR_SEARCH(TABLE = [Posts] AS [p], COLUMN = [Embedding], SIMILAR_TO = @p, METRIC = 'cosine') AS [v] ORDER BY [v].[Distance]`; approximate = `SELECT TOP(@p1) WITH APPROXIMATE ...` with the same VECTOR_SEARCH.
+- The warning (on screen): "The query uses 'VectorSearch' on property 'Embedding' of entity type 'Post', but 'WithApproximate()' was not specified. The query will perform an exact brute-force search instead of using a vector index. Call 'WithApproximate()' after 'Take()' to use the vector index for better performance." To find the code: `ConfigureWarnings(w => w.Throw(SqlServerEventId.VectorSearchWithoutApproximateIndexWarning))`.
+- Jiri (19:38): "It might be what you want, probably not because it's not using an index ... you can make this warning an error or you can hide it in case you know what you are doing."
+- Full-text search (next demo): use the full-text table functions, "join it as I would do in a normal SQL using the key and then I will be ordering it by the rank itself and selecting just 10 items."
+- Source: 19:38-19:40 ET, transcript 20261111-193803; shot 20261111/193828.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

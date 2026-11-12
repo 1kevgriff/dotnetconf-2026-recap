@@ -2107,6 +2107,40 @@ time: "19:35"
 -->
 
 ---
+layout: "code"
+---
+
+# EF Core 11 vector search in LINQ: exact, approximate (index), and hybrid
+
+```csharp
+var question = new SqlVector<float>(new float[] { 0.12f, -0.40f, 0.91f });
+
+// Exact (kNN): checks every distance
+db.Posts.VectorSearch(p => p.Embedding, question, "cosine")
+    .OrderBy(r => r.Distance).Take(5);
+
+// Approximate (ANN): uses the vector index (e.g. DiskANN)
+db.Posts.VectorSearch(p => p.Embedding, question, "cosine")
+    .OrderBy(r => r.Distance).Take(5)
+    .WithApproximate();
+
+// Hybrid: vector similarity + normal filters
+db.Posts.VectorSearch(p => p.Embedding, question, "cosine")
+    .Where(r => r.Value.PublishedOn >= new DateTime(2026, 1, 1))
+    .OrderBy(r => r.Distance)
+    .Select(r => new { r.Value.Title, r.Distance })
+    .Take(5).WithApproximate();
+```
+
+<!--
+- Say: Vector search is plain LINQ in EF Core 11. VectorSearch gives exact k-nearest-neighbor; add WithApproximate() and the database uses its vector index; and you can combine it with normal Where filters.
+- Code is from the demo (VectorSearch.cs, 19:37, shot 20261111/193742); `.ToQueryString()` calls removed for space.
+- Jiri (19:36): the Embedding property "is configured as a vector index". Without approximate, it is "checking every single distance, not using the index". "The next one has this special clause with approximate ... And now this will use the index on the database side." Then "what we would call a hybrid search or combined search, where I'm combining my vector search, my similarity search, and filtering on columns ... here I'm filtering on the published on."
+- Why it matters: RAG-style similarity search with no hand-written SQL.
+- Source: 19:36-19:38 ET, transcript 20261111-193602; shot 20261111/193742.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

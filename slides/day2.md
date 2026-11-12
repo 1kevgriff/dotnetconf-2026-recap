@@ -2153,8 +2153,24 @@ time: "19:38"
 - On screen (generated SQL): exact = `SELECT TOP(@p1) ... FROM VECTOR_SEARCH(TABLE = [Posts] AS [p], COLUMN = [Embedding], SIMILAR_TO = @p, METRIC = 'cosine') AS [v] ORDER BY [v].[Distance]`; approximate = `SELECT TOP(@p1) WITH APPROXIMATE ...` with the same VECTOR_SEARCH.
 - The warning (on screen): "The query uses 'VectorSearch' on property 'Embedding' of entity type 'Post', but 'WithApproximate()' was not specified. The query will perform an exact brute-force search instead of using a vector index. Call 'WithApproximate()' after 'Take()' to use the vector index for better performance." To find the code: `ConfigureWarnings(w => w.Throw(SqlServerEventId.VectorSearchWithoutApproximateIndexWarning))`.
 - Jiri (19:38): "It might be what you want, probably not because it's not using an index ... you can make this warning an error or you can hide it in case you know what you are doing."
-- Full-text search (next demo): use the full-text table functions, "join it as I would do in a normal SQL using the key and then I will be ordering it by the rank itself and selecting just 10 items."
-- Source: 19:38-19:40 ET, transcript 20261111-193803; shot 20261111/193828.
+- Full-text search (next demo): with a full-text catalog and index on Title and Content, the LINQ query is "translated nicely into the calls for the SQL Server. So there's a FREETEXTTABLE, and here is my CONTAINSTABLE". You join "using the key" and order "by the rank". Before, "you definitely could use this ... but it was like a stored procedure or something like that. Now you can do it directly from your LINQ statement."
+- Source: 19:38-19:41 ET, transcripts 20261111-193803 and 20261111-194004; shot 20261111/193828.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/194054.jpg"
+time: "19:40"
+---
+
+# .NET's new LINQ operators now translate: `FullJoin` → FULL OUTER JOIN, `MaxBy`, `MinBy`
+
+<!--
+- Say: LINQ recently got LeftJoin, RightJoin and FullJoin, plus MaxBy and MinBy. EF Core 11 translates them to SQL, so the same query works in memory and against the database.
+- On screen (FullJoin.cs): `db.Invoices.FullJoin(db.Payments, i => i.Reference, p => p.Reference, (i, p) => new { Reference = ..., Invoiced = ..., Paid = ..., Status = i == null ? "Unexpected payment" : p == null ? "Unpaid" : i.Amount == p.Amount ? "OK" : "Amount mismatch" })`, printed as "FullJoin => FULL OUTER JOIN".
+- Jiri (19:40): "recently, in last versions, the left join, right join, and now full join were introduced. Also the MaxBy and MinBy functions and a few others. And we do support those now. So if you are using these, for example, LINQ to objects and you want to switch into the database and you want to have the same query, you can". Before, "you need to do a little bit of dance with a bunch of calls".
+- Also new: JSON functions on EF.Functions: JsonContains and JsonPathExists.
+- Source: 19:40-19:41 ET, transcript 20261111-194004; shot 20261111/194054.
 -->
 
 ---

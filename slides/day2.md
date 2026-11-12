@@ -2315,7 +2315,7 @@ image: "/shots/day2/200130-crop.jpg"
 time: "20:01"
 ---
 
-# Cosmos `AutoTransactionBehavior`: EF 10's default could lose $100 in a race
+# Cosmos `AutoTransactionBehavior`: EF 10's behavior could lose 100 in a race
 
 <!--
 - Say: The Cosmos demo shows why transactional batches matter. With the old behavior (Never: one request per document, what EF Core 10 did), a concurrent interest job caused an ETag conflict on savings after checking was already written, and 100 "vanished". WhenNeeded uses one transactional batch per partition and detects it; Always forces one transaction and fails across partitions.

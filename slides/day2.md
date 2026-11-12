@@ -2091,6 +2091,22 @@ speakers: "Jiri Cincura"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/193526.jpg"
+time: "19:35"
+---
+
+# EF Core 11: vector search with DiskANN, full-text search, smarter SQL
+
+<!--
+- Say: EF Core 11 ships with .NET 11 (and targets .NET 11). The focus was vector search, AI and search in general, plus the usual LINQ-to-SQL improvements for faster, lighter queries.
+- Jiri (19:34): "EF Core 11 ships with .NET 11 as expected, and also targets .NET 11. The main areas of focus for us were obviously vector search, AI, and search in general." Also "improved the LINQ translation and SQL translations to hopefully provide better queries that will be faster and less resource hungry", plus runtime, migrations, tooling and modeling, and "a lot of community contributions".
+- Vector search: "able to do searches in databases that do support vector search, both the kind of brute force and also the indexed usage, which is usually using something like DiskANN."
+- On screen, "LINQ and SQL improvements": vector search and DiskANN; full-text search; translation for FullJoin, MaxBy, MinBy, List<T>.Exists; unnecessary joins pruned; EF.Functions.JsonContains; simpler CASE; SqlVector properties not loaded by default; ValueTuple/Tuple member access through constructor-bound projections; GroupBy aggregates over reference navigations lifted into a single join; "And a lot more...".
+- Source: 19:34-19:36 ET, transcript 20261111-193401; shot 20261111/193526.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

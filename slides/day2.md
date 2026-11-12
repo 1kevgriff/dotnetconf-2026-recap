@@ -2222,6 +2222,41 @@ time: "19:47"
 -->
 
 ---
+layout: "code"
+---
+
+# Indexes into complex properties, and `CREATE JSON INDEX` from a model
+
+```csharp
+modelBuilder.Entity<Customer>(customer =>
+{
+    customer.ComplexProperty(c => c.Address);
+    customer.ComplexProperty(c => c.Contact);
+
+    // New: indexes and keys can reach into complex properties
+    customer.HasIndex(c => new { c.Address.Country, c.Address.ZipCode });
+    customer.HasAlternateKey(c => c.Contact.Email);
+});
+
+modelBuilder.Entity<Vehicle>(vehicle =>
+{
+    // New: complex types (and JSON columns) on TPT/TPC hierarchies
+    vehicle.UseTptMappingStrategy();
+    vehicle.ComplexProperty(v => v.Registration, r => r.ToJson());
+
+    // New: an index on a property inside a JSON column => CREATE JSON INDEX
+    vehicle.HasIndex(v => v.Registration.Plate);
+});
+```
+
+<!--
+- Say: Complex properties now work like first-class columns for indexes and keys, complex types work with TPT/TPC, and an index on a property inside a JSON column generates SQL Server's CREATE JSON INDEX.
+- Code is from the demo (Modeling/Program.cs, OnModelCreating, 19:48, shot 20261111/194840), with its own comments. The context also sets `UseCompatibilityLevel(170)`.
+- Jiri (19:48): "I'm saying, hey, use the TPT mapping strategy. And what I can now define is an index. So first of all, I can index into a complex property ... But also, I can have a JSON index, because my complex property for registration ... is mapped into a JSON". "HasIndex and kind of dot into my complex property, in this case, registration and plate." The generated DDL then has the normal index and "the JSON index, where we correctly index" the JSON path.
+- Source: 19:48-19:50 ET, transcript 20261111-194805; shot 20261111/194840. Frame 194955 not used (console shows a local user path).
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -1984,6 +1984,22 @@ time: "19:08"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/191149-crop.jpg"
+time: "19:11"
+---
+
+# Foundry prompt agents: model + instructions + tools, versioned
+
+<!--
+- Say: A Foundry prompt agent is a model plus instructions, tools, memory and knowledge, configured in the portal. Each change can be saved as a version and one version marked active. Without tools, the agent can't answer "how is the weather in Toronto?"; add web search and it can.
+- Bruno (19:10): "in what we call a prompt agent, the first step is to choose the model" (his list: GPT models, Grok, and more); "Then I can define my system instructions. I can work here with my tools ... connect this to a memory, knowledge". "Foundry also gives us the chance to support versions ... we can flag that version as the active one."
+- Demo: version 2, GPT-5 mini with "no instructions, no tools" — "just a big LLM answering questions" — for "how is the weather in Toronto?". Then version 3 with the Web search tool (on screen: agent NetConf-01, "Version: 3", Tools: Web search; tabs Playground, Details, Traces, Insights (Preview), Monitor, Evaluation, Optimize; "Continue in code", "Publish").
+- Image: cropped (the URL bar showed resource names and IDs).
+- Source: 19:10-19:12 ET, transcript 20261111-191004; crop of shot 20261111/191149.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

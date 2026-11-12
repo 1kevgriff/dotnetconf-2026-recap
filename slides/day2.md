@@ -2076,6 +2076,20 @@ time: "19:28"
 -->
 
 ---
+layout: "session"
+num: 18
+time: "7:33 PM"
+speakers: "Jiri Cincura"
+---
+
+# EF Core 11: Vector Search, Smarter LINQ, and a Friendlier dotnet ef
+
+<!--
+- [session 18] Jiri Cincura. The last Day 2 session; started about 7:33 PM ET.
+- Source: dotnetconf.net/agenda (7:30 PM ET); stream agent session marker.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

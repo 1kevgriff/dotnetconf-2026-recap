@@ -2030,7 +2030,8 @@ time: "19:17"
 - Bruno (19:16): "we can do azd ai agent init, and there are AI agent deploy or provision and more." In the azure.yaml ("if you've been working with container apps, you probably know this format") you "choose our platform, which is going to be Linux, AMD64, register a protocol, add a couple of environment variables, and we can deploy this."
 - Testing: plain `dotnet run` exposes port 8088, but "I need to create literally kind of a client in another terminal or use Aspire". Instead: "azd ai agent run, which is going to start my agent, host my agents locally, and then also open ... a client interface ... where I am going to be able to chat with my agent."
 - On screen: "Agent Inspector — Connected http://localhost:8088 — Responses Protocol"; tabs Overview, Tokens, Events, Tools; "Latency Waterfall", "Run Timeline 1 Run (In progress)". The browser tab is "Foundry Toolkit".
-- Source: 19:16-19:18 ET, transcript 20261111-191602; shot 20261111/191757.
+- After deploy (19:18): unlike a prompt agent, in the portal "we can't change in the agent ... not the model, not the tools. That's everything that we code." It ships as "a code asset that is going to be registered here in a container registry", so "we can set up a very nice and clean CI/CD deployment pipeline". And it still gets Foundry traces.
+- Source: 19:16-19:20 ET, transcripts 20261111-191602 and 20261111-191804; shot 20261111/191757.
 -->
 
 ---

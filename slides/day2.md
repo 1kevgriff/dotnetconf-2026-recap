@@ -2050,8 +2050,10 @@ time: "19:21"
 - Jailbreak (19:22): "everything that we have here that is detected as jailbreak is going to be blocked."
 - Network rules: "if the agent tries to get to my personal blog or my personal website, I am going to deny that action. And I also ... enable access to Microsoft.com because that's where the .NET blog is." On screen (shot 20261111/192335): "Rules are evaluated in order from top to bottom. The first matching rule applies. If no rules match, the previously chosen default action applies." Rule 1 *brunocapuano.wordpress... Deny; rule 2 *elbruno.com* (deny).
 - Before the rules, the agent answered with posts from both the .NET blog and his personal blog.
+- Result (19:24): "the agent tried to go to these blocked URLs"; in "one of the latest traces ... We can see here how it was denied a couple of actions". Traces can also go to Azure Monitor.
+- Next: evals on agents from the Monitor/Evaluations area; and "Microsoft Decision 1", "a fast model, focus on decisions"; "We are working on the Microsoft Extensions for AI support for this model" (not done yet).
 - Image: dialog cropped (the URL bar showed resource names and IDs).
-- Source: 19:20-19:24 ET, transcripts 20261111-192004 and 20261111-192205; crop of shot 20261111/192134; shot 20261111/192335.
+- Source: 19:20-19:26 ET, transcripts 20261111-192004, 20261111-192205, 20261111-192400; crop of shot 20261111/192134; shot 20261111/192335.
 -->
 
 ---

@@ -1,0 +1,1012 @@
+---
+theme: default
+title: .NET Conf 2026 Recap - Visual Studio and tooling
+info: |
+  ## .NET Conf 2026 Recap - Visual Studio and tooling
+  Kevin Griffin - Microsoft MVP
+  Visual Studio, C# Dev Kit, diagnostics, Git: highlights from Day 1 (2026-11-10) and Day 2 (2026-11-11), captured live.
+author: Kevin Griffin
+class: text-left
+lineNumbers: false
+drawings:
+  persist: false
+transition: fade
+mdc: true
+fonts:
+  sans: Source Sans 3
+  mono: JetBrains Mono
+  provider: none
+layout: "cover"
+variant: "title"
+image: "/cast-kevin.jpg"
+---
+
+# .NET Conf 2026 Recap
+
+- Visual Studio and tooling
+- Kevin Griffin
+- Microsoft MVP
+
+<!--
+- [title]
+- Say: This is a .NET Conf 2026 recap on one topic: Visual Studio, C# Dev Kit, diagnostics, Git. It pulls the highlights from Day 1 (2026-11-10) and Day 2 (2026-11-11), captured live from the stream.
+- Sessions in this deck:
+  - 01 From the keynote: your machine has company (Day 1, 11:00 AM)
+  - 02 C# Dev Kit 11: Faster Foundations for .NET Development — and What Comes Next (Day 1, 3:00 PM)
+  - 03 Keynote: Visual Studio Now and Next (Day 2, 11:00 AM)
+  - 04 The State of AI in Visual Studio: New Brain. More Choice. (Day 2, 11:30 AM)
+  - 05 What's new in Visual Studio (Day 2, 12:00 PM)
+  - 06 Get the most out of Version Control in Visual Studio 2026 (Day 2, 12:30 PM)
+  - 07 What's new in Visual Studio Diagnostics (Day 2, 1:05 PM)
+- Every number on these slides came from a speaker or an on-screen slide. Experimental and preview items are marked as such.
+- Source: dotnetconf.net/agenda; stream transcripts and screenshots from both days.
+-->
+
+---
+layout: "cover"
+variant: "bio"
+transition: slide-up
+image: "/kevin-griffin.png"
+---
+
+# Kevin Griffin
+
+- Independent Consultant
+- CTO, Shows On Sale
+- Microsoft MVP
+- consultwithgriff.com  ·  @1kevgriff
+
+<!--
+- [about me] 30 seconds max.
+- Say: I'm Kevin Griffin: independent consultant, CTO at Shows On Sale, and a Microsoft MVP. Find me at consultwithgriff.com or @1kevgriff.
+- Keep it short. Use only what is on the slide.
+- Transition: I watched both main days live so you don't have to. Here's what shipped.
+-->
+
+---
+layout: "session"
+num: 1
+time: "Day 1 · 11:00 AM"
+speakers: "Scott Hanselman, Damian Edwards + guests"
+---
+
+# From the keynote: your machine has company
+
+<!--
+- [Session 01 · part of the Day 1 keynote] 11:00 AM ET, 2026-11-10.
+- Say: The Day 1 keynote was a one-hour tour of .NET 11. These slides are the keynote parts about Visual Studio, C# Dev Kit, diagnostics, Git.
+- Next slides: Agents and people share one machine; C# Dev Kit 11 numbers.
+-->
+
+---
+layout: "statement"
+---
+
+Your machine has company.
+
+<!--
+- With agents running, dev tools can't own the whole machine
+- C# Dev Kit 11 re-architected for performance
+- Say: Tools were built for one person in one IDE. Now agents edit, build, and test on the same machine at the same time.
+- Verbatim (Drew): "But now your machine has company."
+- Verbatim: "So our tools can't act like they own the whole machine anymore. The fewer resources each one needs, the more room there is for you and your agents to work side by side."
+- Why it matters: if you run agents locally, tool memory and CPU use now directly limit how much work you get done.
+- Source: 11:51 ET, 20261110-115003.txt; shot 115143.jpg.
+-->
+
+---
+layout: "shot"
+image: "/shots/115215.jpg"
+time: "Day 1 · 11:52"
+---
+
+# C# Dev Kit 11: incremental build 36s → 2s
+
+<!--
+- ~77% lower workspace load times
+- 80%+ less server memory: Roslyn repo 2 GB → ~300 MB
+- 36s → 2s incremental build on Aspire's 407 projects
+- Pre-release channel today, stable "really soon"
+- Agents warm the build for your other tools
+- Say: Drew measured on three large test solutions. The headline: a one-change incremental build on Aspire dropped from 36 seconds to 2.
+- Verbatim (Drew): "you make just one change and build just that change across the whole solution, dropping from 36 seconds down to just two."
+- Also: faster worktree initialization; exploring an agent-oriented mode that detects agent callers.
+- Source: 11:52-11:53 ET, 20261110-115200.txt; shot 115215.jpg.
+-->
+
+---
+layout: "session"
+num: 2
+time: "Day 1 · 3:00 PM"
+speakers: "Drew Noakes, Emanuel Fernandez Dell'Oca"
+---
+
+# C# Dev Kit 11: Faster Foundations for .NET Development — and What Comes Next
+
+<!--
+[Session 02 · Day 1] Keynote already has the Dev Kit 11 numbers slide (77% / 80% / 36s → 2s); add only new details here.
+- Say: Three people from the Dev Kit team explain how one unhappy team with many agents led to a rewrite of C# Dev Kit.
+- Time: 3:00 PM ET slot (started ~15:01). On stage: Drew (Noakes), Jake (not on the agenda; last name not given on stream), Emanuel (Fernandez Dell'Oca).
+- Drew (15:01): "it's not really an incremental update. We've rewritten almost all of it. It's a completely new architecture, a completely new approach."
+- Drew: the ideas are "more broadly applicable than even in just C# IDE"; they help when you run many copies of tools at once with agents.
+- Coming up: the "VS Code is terrible" origin story · .lscache · Roslyn/Orleans/Aspire load times · BuildX · MSBuild Coordinator · `dotnet buildx` on OrchardCore · the 20–40% agent-loop stat.
+- Why it matters: the fixes start in Dev Kit but move into Roslyn, MSBuild, and the SDK, so every .NET tool gets them.
+- Source: 15:00–15:03 ET, transcripts 20261110-150002.txt, 20261110-150204.txt
+-->
+
+---
+layout: "statement"
+---
+
+"VS Code is terrible." It was 15 agents and hundreds of MSBuild workers.
+
+<!--
+- Say: A team said VS Code was terrible. The real cause: up to 15 agents, each kicking off builds, ate all the memory on the machine.
+- 15:03 ET. Dev Kit 11 origin story
+- An internal team kept saying VS Code + C# Dev Kit "were terrible"; their VP escalated; "crashing on their machine"
+- Timeline (15:02): "about nine months ago". Dumps and the usual diagnosis found nothing, so Jake went to sit with the team.
+- Reality: "5, 10, 15" agents solving GitHub issues on Macs with 256 GB RAM, and "hundreds and hundreds of MSBuild workers"
+- Jake (15:04): "there was no resources available on their machine to do VS Code, to do Teams, to do Chrome, to do anything". Later (15:10): "their screen was completely locking up".
+- Why Dev Kit 11 was re-architected for many agents on one machine
+- The fix (15:04): a build queue that runs the agents' builds serially. Build throughput for all agents went UP — "the oversaturation of build nodes was actually hindering throughput."
+- Why it matters: with agents, your tools run many times in parallel; tool overhead becomes the bottleneck.
+- Source: 15:02–15:05 ET, transcripts 20261110-150204.txt, 20261110-150401.txt, 20261110-151002.txt
+-->
+
+---
+layout: "statement"
+---
+
+The trick: cache the build's project info. `.lscache`.
+
+<!--
+- Say: Builds already compute everything an IDE needs to know about a project. Dev Kit 11 saves that to a cache file and reads it back in milliseconds.
+- 15:06 ET. The build's pre-compile step (evaluate + resolve inputs, globs, disk scans) is written to a .lscache file
+- What is in that step (15:06): find source files from globs, resolve package references (and which target), language version, target frameworks.
+- "Not really that revolutionary to write a cache file to disk"
+- Cheap to write: "we've got all that information during the build anyway."
+- Reading it: "a few milliseconds". Asking MSBuild: "hundreds, maybe thousands of milliseconds"
+- Who needs it: the IDE (Roslyn language services, IntelliSense), dotnet watch, dotnet test. Jake (15:08): one build "can be dozens of things", scaling with project count, and tools were not sharing.
+- (My inference, not stated on stream: likely a big part of the keynote's ~77% faster workspace load)
+- Next (15:16): reading/writing .lscache lives in the Roslyn repo (open source) and is going into the SDK, so "every build is capable of writing these files" and all tools benefit. "From a faster Dev Kit to a faster development loop."
+- Why it matters: one build can feed the IDE, tests, and agents, instead of each tool asking MSBuild again.
+- Source: 15:06–15:17 ET, transcripts 20261110-150603.txt, 20261110-150800.txt, 20261110-151605.txt
+-->
+
+---
+layout: "shot"
+image: "/shots/150930.jpg"
+time: "Day 1 · 15:09"
+---
+
+# Opening the Roslyn repo: 89 s → 16 s
+
+<!--
+- Say: Opening the Roslyn repo in VS Code went from 89 seconds to 16. Orleans and Aspire show the same drop, about 77%.
+- Dev Kit v3 → v11, warm load, lower is better
+- dotnet/roslyn (398 projects): 89.0 → 15.9 s
+- dotnet/orleans (155 projects): 62.0 → 17.1 s
+- microsoft/aspire (407 projects): 87.9 → 19.9 s
+- ~77% faster. Intel Xeon Platinum 8370C, 8 cores, Windows 11 x64
+- Numbers from the stream chart
+- Drew (15:09): the difference between "making a cup of tea or checking your email" and "just getting straight on with your work". Smaller solutions "will feel much closer to instant".
+- Memory (15:10): "80% less memory ... you can fit five C# Dev Kits in the space of one from before"
+- Drew (15:10): "one human and four agents on your machine, you're now using roughly the same resources" as one user before.
+- Why it matters: big solutions open fast enough to jump between an agent session and the editor.
+- Source: 15:08–15:11 ET, transcripts 20261110-150800.txt, 20261110-151002.txt; shot /shots/150930.jpg
+-->
+
+---
+layout: "shot"
+image: "/shots/151107.jpg"
+time: "Day 1 · 15:11"
+---
+
+# BuildX: skip, copy, or build
+
+<!--
+- Say: BuildX is a new incremental build in Dev Kit 11. It builds only what changed, skips the rest, and copies outputs without full MSBuild work.
+- New build integration in Dev Kit 11
+- In Dev Kit today; the team wants to bring it to the command line and other places (15:10).
+- Implementation-only edit, public API unchanged: build only H, skip unchanged projects, copy outputs where needed
+- How (15:12): the per-project "does this need a build?" check takes "a couple of milliseconds"; file copies happen "without having to invoke any of the machinery of MSBuild".
+- Confirmed (15:12): BuildX is behind the keynote number. Aspire.slnx, 407 projects: single change 36.1 → 2.1 s (−94%), median of 5
+- No-op build: 34.4 → 0.9 s (−97%); the old 34.4 s was "almost entirely overhead"
+- Alt chart slide: /shots/151239.jpg
+- Demo (15:14): the agent's build already wrote the cache files, so VS Code opens with tests discovered and IntelliSense ready; the test re-run uses BuildX; ".lscaches are also shared across worktrees"
+- Demo setup (15:13): Emanuel started in the GitHub Copilot app on the dotnet/eShop repo.
+- Why it matters: most of a typical incremental build is overhead; BuildX removes it.
+- Source: 15:10–15:16 ET, transcripts 20261110-151002.txt, 20261110-151204.txt, 20261110-151401.txt; shots /shots/151107.jpg, /shots/151239.jpg, /shots/151344.jpg
+-->
+
+---
+layout: "shot"
+image: "/shots/151821.jpg"
+time: "Day 1 · 15:18"
+---
+
+# MSBuild Coordinator: one build budget per machine
+
+<!--
+- Say: Even lighter builds still fight for CPU when many agents run. The MSBuild Coordinator gives the whole machine one shared node budget.
+- 5, 10, 20 agent builds each asking for N nodes = more than the machine has
+- Coordinator: a shared node budget; some builds run, the rest queue
+- "Cheaper instances help. Growing concurrency still needs a budget."
+- Opt-in, not default; participating builds only
+- Credits (15:18 + slide footer "Dustin & Ema"): implemented by Dustin (Campbell, from the 12:00 PM C# session with Mads); Emanuel is improving it.
+- This is the product version of the origin story's build queue
+- Also (15:20): "we want to prioritize the human" — the coordinator decides which builds go first. If an agent's build already produced the .lscache, the IDE can skip its own "design-time build".
+- Priority idea (15:19–15:20): if you are in VS Code, "you probably care about that build over others"; the team could infer focus from "what app you're looking at". Still work in progress.
+- BuildX CLI demo on OrchardCore follows
+- Why it matters: agent builds should not freeze the machine you are typing on.
+- Source: 15:18–15:21 ET, transcripts 20261110-151801.txt, 20261110-152004.txt; shot /shots/151821.jpg
+-->
+
+---
+layout: "default"
+codeSize: "20"
+---
+
+# `dotnet buildx` on OrchardCore
+
+```text
+$ dotnet buildx src/OrchardCore.Cms.Web/OrchardCore.Cms.Web.csproj
+buildx: all 215 projects up-to-date (388 ms). Nothing to build.
+
+# edit OrchardCoreConstants.cs (a core project), build again
+buildx: done in 13378 ms: 2 built, 201 accelerated (612 files copied), 12 skipped.
+```
+
+<!--
+- Say: From the command line, buildx confirmed 215 projects up to date in under half a second. After a core change, it built 2 projects and copied outputs for 201.
+- Output, in plain words: first run, nothing changed, so buildx checks all 215 projects and stops in 388 ms. Second run, after an edit to a core abstractions project: it compiles only 2 projects, copies outputs to 201 dependents ("accelerated"), and skips 12.
+- 15:22 ET. No-op build of 215 projects: 388 ms
+- One change in a core project: 2 projects built, 201 "accelerated" (outputs copied), 12 skipped
+- Demo (15:22): the dependents "were not built"; "we copy the binaries that abstractions produced" to them.
+- Caveat: that 13.4 s run included a NuGet restore and starting the buildx server
+- Q&A (15:28): buildx sits next to `dotnet build`, like `docker buildx` next to `docker build`. Starts as a separate tool, being moved into the SDK; "I do have a dream that it replaces it."
+- On the "X" (15:28): "Could mean experimental, could mean extended" — "a playground for us to do new stuff".
+- Output copied from the stream terminal (/shots/152232.jpg); a line with a local user path left out
+- Exploring, not committed (15:24): agents are trained on `dotnet build` / `dotnet test`, so if an agent is detected those commands could use the faster paths. Optimizations that might surprise a human are fine for an agent if a log message says "this optimization has been applied" — the agent will read the docs.
+- Why it matters: a change deep in the graph no longer means recompiling every dependent project.
+- Source: 15:20–15:30 ET, transcripts 20261110-152004.txt, 20261110-152202.txt, 20261110-152404.txt, 20261110-152803.txt; shot /shots/152232.jpg
+-->
+
+---
+layout: "statement"
+---
+
+20–40% of your agent loop is running .NET tools.
+
+<!--
+- Say: The team says 20 to 40 percent of an agent's loop is spent waiting on .NET tools. Shrink that, and the agent spends more time on the actual work.
+- 15:26 ET: "in your agent loop, 20 to 40% of that time is actually running .NET tools"
+- Ideas to shrink it: infer which tests actually need to run; get errors from a background LSP instead of a build
+- Why rules alone fail (15:26): repo instructions for agents are "one compact away"; then the agent goes back to plain build and test. So the tools should take the agent's intent and do it the cheaper way.
+- Side benefit (15:26): "Saving your battery life if you're working on a laptop."
+- Worktrees: "Don't make the next person start over." A new worktree reuses the project data (and maybe binaries) an agent's build already wrote. Broader reuse is "direction", not shipped (/shots/152736.jpg)
+- Scale (15:28): worktree creation now happens "dozens, potentially hundreds of times a day".
+- Also floated (15:30): a "TestX" that builds with BuildX and maybe optimizes test discovery. Idea only.
+- Why it matters: faster tools mean faster agent iterations and less waiting for you.
+- Source: 15:26–15:31 ET, transcripts 20261110-152601.txt, 20261110-152803.txt, 20261110-153000.txt; shot /shots/152736.jpg
+-->
+
+---
+layout: "session"
+num: 3
+time: "Day 2 · 11:00 AM"
+speakers: "Mads Kristensen"
+---
+
+# Keynote: Visual Studio Now and Next
+
+<!--
+- [Session 03 · Day 2] Day 2 opens with the Visual Studio keynote. The slide title on stream was "Visual Studio Now and Next".
+- Say: Day 2 is the Microsoft product team day. Mads Kristensen (Principal Product Manager) opens it, and the morning is all Visual Studio: AI in VS, what's new, git, then debugging.
+- His framing, from the opening: "the role of development is changing faster than maybe it ever has. AI is becoming part of our everyday development. Our solutions are getting bigger." And developers "still need the fundamentals required to be fast, to be reliable and effortless".
+- Why it matters: the keynote sets up the pitch for the day: AI features in VS, but not at the cost of IDE speed and reliability.
+- Caveat for the whole morning, Mads (11:26): some presenters show things that "may not be out just yet. Maybe it's in the Insiders build ... but it's not in the stable release yet." Say "Insiders" when a feature is not in 18.12.
+- Mads has been on the VS team for 16 years: "this is probably one of the most exciting years in my time".
+- Questions during the day: #questions in chat, or dotnetconfquestions.com (on the stream lower third).
+- Source: 11:00-11:01 ET, transcript 20261111-110002; title card shot 20261111/110122.
+-->
+
+---
+layout: "statement"
+---
+
+Code is an asset, not an artifact.
+
+<!--
+- Say: Mads's positioning for Visual Studio: it targets professional developers, and professionals treat code as an asset.
+- His words (11:02): "Visual Studio is a little bit unique in that it targets specifically professional developers." Professionals have "quality gates ... accessibility, security, privacy".
+- On vibe coding: "you might not care about your code that much, you might not even look at it. That's fine for ... your hobby projects". But for professionals, "You want to be able to review it ... maintain it for years to come ... It's not a byproduct of the app that you're building, but it has value in itself."
+- Why it matters: this is the frame for every AI feature shown today: AI in VS should give code you can review and maintain, not throwaway output.
+- Mads closed the keynote on the same line (11:26), on screen as "Code is an asset - not an artifact": "Visual Studio is a tool for professionals that sees code as an asset, not an artifact. But ... it doesn't have to be for every single project". VS should support you "whatever part of the AI journey you're on", including companies that limit AI "for security reasons or privacy".
+- Source: 11:02 ET, transcript 20261111-110200; slide "Visual Studio is for professional developers" (shot 20261111/110215); close at 11:26, transcript 20261111-112603 (shot 20261111/112613).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/110443.jpg"
+time: "Day 2 · 11:04"
+---
+
+# ~27 user bugs fixed per workday. ~2 feature requests shipped.
+
+<!--
+- Say: The VS team fixes about 27 user-reported bugs and ships about 2 feature requests every workday, and both lines still go up.
+- Mads (11:04): "we're actually fixing about 27 user-reported bugs per workday. That's pretty remarkable." And: "we're implementing about two feature requests per workday."
+- The chart is monthly user bug reports, Oct 25 to Sep 26 (311 to 795 a month; trend line up). Mads said the September numbers are not all in yet.
+- He showed the same kind of chart at .NET Conf a year ago. He gave credit to user feedback and votes, "partly because of AI" too.
+- Why it matters: if you file a bug or vote on Developer Community, it has a real chance to get fixed.
+- Source: 11:04-11:05 ET, transcript 20261111-110403; shot 20261111/110443.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/110631.jpg"
+time: "Day 2 · 11:06"
+---
+
+# VS 18.12 shipped yesterday: faster everywhere
+
+<!--
+- Say: Visual Studio 18.12 came out yesterday (Nov 10), and the theme is performance across the IDE.
+- Mads (11:06): "the one we released yesterday, version 18.12, if you haven't gotten it, go get it."
+- What got faster, per Mads:
+  - UI responsiveness: less work on the UI thread, more on background threads.
+  - Solution Explorer and version control: updates in batches, less UI lag. Error List: batch updates too, "much snappier and less hangs".
+  - Designers (WinForms and XAML): faster startup and use.
+  - Add New Item templates load faster.
+  - Close solution / close VS is faster.
+  - Copilot: loads all sessions, or one session, faster.
+  - Test Explorer: loads the test hierarchy faster.
+- No numbers were given for these. Do not quote a percentage.
+- Why it matters: performance is the top request about VS; this release goes after the everyday lag.
+- Source: 11:06-11:07 ET, transcript 20261111-110601; slide "Faster everywhere / Smarter UI updates" (shot 20261111/110631).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/110839.jpg"
+time: "Day 2 · 11:08"
+---
+
+# Stop build on first failed project: 26 s → 1.5 s
+
+<!--
+- Say: A long-standing request is in: a Tools > Options switch that stops the build at the first project that fails.
+- Mads (11:08): "you can now flip a switch in the tools options to have it stop the build the first project that fails."
+- The problem: VS and MSBuild keep going after a project fails, and most other projects then fail too because they depend on it.
+- His test: Orchard Core, "an open source .NET project or solution with hundreds of projects", with a syntax error in one project.
+- Chart: 4 runs, setting off 31/27/25/21 s, setting on 2/2/1/1 s. "Average: 26.0s → 1.5s (94% faster)".
+- Agent angle, his words: "whether you're the one building or if your agent building is part of a loop that you're running, you're going to see much faster inner loop."
+- Same release, also said: Live Unit Testing is 25% faster with xUnit.
+- Jason Chlus demoed it live at 12:06 on Orchard Core: "this does have 260 projects, so it does take maybe four or five minutes to build. And with this new feature, you will see that it will stop on the first error in around 10 seconds." He credited Mads for the feature. At 12:14 he added: "the stop on first failure is also opt in", so turn it on in settings.
+- Why it matters: a failed build in a big solution now fails in seconds, for people and for agents.
+- (Inference) The release is 18.12; Mads showed this right after the 18.12 performance list. Check the release notes for the exact option name.
+- Source: 11:08-11:09 ET, transcript 20261111-110804; shot 20261111/110839. Live demo: 12:06 ET, transcript 20261111-120600.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/111009.jpg"
+time: "Day 2 · 11:10"
+---
+
+# Editor rulers from `.editorconfig`
+
+<!--
+- Say: VS now draws vertical rulers from .editorconfig. `max_line_length` gives one ruler; the proposed `rulers` property gives several.
+- Mads (11:10): with max line length "We'll now insert a vertical ruler." And `rulers` is "a proposal to add a property to EditorConfig ... It is not just yet standardized, but we're adding it here."
+- On screen: `[*]`, `max_line_length = 80`, `rulers = 50, 80`.
+- He said it is used most for Markdown, where teams want a set column width.
+- Also in this part, for code review: "we're seeing a significant increase in the time people are spending reviewing code. Because you're getting more PRs now, usually from agents". To help:
+  - Solution Explorer switches between folder view and solution view, so you see files outside the solution (readme.md, GitHub Actions workflows, Dockerfiles).
+  - Hover over an image reference (HTML, C#, ...) shows it rendered, with more image types supported.
+- Why it matters: `rulers` is not standard yet. It can work in VS and fail in other editors.
+- Source: 11:10-11:11 ET, transcript 20261111-111004; shot 20261111/111009.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/111341.jpg"
+time: "Day 2 · 11:13"
+---
+
+# More PRs from agents → VS navigation for review
+
+<!--
+- Say: Developers spend more time on code review, much of it on agent PRs. VS added navigation to make review faster.
+- Mads (11:11): "we're seeing a significant increase in the time people are spending reviewing code. Because you're getting more PRs now, usually from agents".
+- The five items on the slide:
+  - Folder view in Solution Explorer: see files outside the solution (readme.md, workflows, Dockerfiles).
+  - More image types in hover previews, "more modern ones like WebP".
+  - HTML class names and IDs: F12 goes to the CSS, LESS or SASS rule. With several rules, you pick one.
+  - Markdown links: Go To / Peek Definition to the linked file; links in the preview work; fragment URLs go to the right spot.
+  - Test Explorer: easier to go to failed tests and export logs.
+- On tests and agents: "when we're letting agents loose on our code base, having those guardrails that the tests provide is absolutely crucial". More Test Explorer work is on the roadmap.
+- Why it matters: VS frames review, not only code writing, as the daily job in an agent workflow.
+- Source: 11:11-11:13 ET, transcripts 20261111-111004 and 20261111-111201; slide "Navigation and references" (shot 20261111/111341).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/111555.jpg"
+time: "Day 2 · 11:15"
+---
+
+# Copilot in VS now runs on the Copilot SDK, same as CLI and VS Code
+
+<!--
+- Say: VS removed its old Copilot harness and rebuilt Copilot on the Copilot SDK, the same engine as Copilot CLI and VS Code.
+- Mads (11:14): "We've ripped out the old harness ... and replaced it with the Copilot SDK. This is the same SDK that the CLI is using and VS Code as well." "for the first time, we now have a shared foundation" and "you can move things around between them".
+- What comes with it (the five bullets on screen):
+  - Steering: redirect a running chat "without having to hit the stop button first". Mads: steering "has always been missing in Visual Studio".
+  - Skills, agents, MCP servers "and a lot more", the same customizations as the SDK.
+  - BYOK: "any OpenAI compatible endpoint", cloud, open models, or "local behind your firewall, on-prem". He said "with a few caveats"; the next session covers them.
+  - Autopilot, as known from the CLI and VS Code.
+- Why it matters: one set of skills, agents and MCP config can work across VS, VS Code and the CLI. And BYOK with local models helps teams that cannot send code to the cloud.
+- Source: 11:14-11:15 ET, transcript 20261111-111400; slide "Stronger foundation" (shot 20261111/111555).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/111935.jpg"
+time: "Day 2 · 11:17"
+---
+
+# Copilot checks its own fix by driving your running app (Insiders)
+
+<!--
+- Say: Copilot in VS can now run your app, go to the bug, and check that its fix works. The slide calls it "UI Automation > hands free debugging". It is in the latest VS Insiders, not stable: Harshada (13:08) said "we recently added a UI automation in our latest insiders of Visual Studio". Mads had warned that some keynote items are Insiders-only.
+- Mads (11:17): "we can now have Copilot do UI automation, which means you can tell it to fix a bug, and it will automatically be able to verify the fix ... by loading and running your app and navigating to the place where this issue was". It can take screenshots and investigate dump files.
+- Autopilot, from the same minute: "bigger tasks that can run for hours and hours on end, spin up sub-agents". Chat sessions are now separate from the solution, so a session keeps going "even if the solution has to be reloaded or closed".
+- Mads's own use: "I've been using it for two, three months, and it's a complete game changer." And: "if you ... tried Visual Studio and Copilot in the past and thought ... it wasn't the best thing in the world, try it again."
+- Why it matters: the agent closes the loop itself: fix, run, check. Mads ties it to the IDE: "what's really cool about an IDE is that it has all the tools that you need in the box."
+- Source: 11:16-11:17 ET, transcript 20261111-111605; slide "Your running application" (shot 20261111/111935, all four bullets shown).
+-->
+
+---
+layout: "statement"
+---
+
+"Hey, can you make my app run faster?"
+
+<!--
+- Say: In VS chat you can ask Copilot to make your app faster. The agent uses the profiler, writes benchmarks, optimizes, and runs the benchmarks again.
+- Mads (11:19): "You can simply just in the chat window say, hey, can you make my app run faster? And it will figure out how to do that instrumentation, write the benchmark, run them, figure out where the slow paths are ... And then make the optimizations, run the benchmarks again". It works through sub-agents; "You don't have to select the profile[r]."
+- Perf tips: when you step through code, the "elapsed" PerfTip now has a button ("Click to suggest optimizations with Copilot", on screen). Copilot and the profiler work together to explain why the call was slow.
+- Dump files: the agent helps analyze a dump from the cloud or a customer machine. Mads: "Analyzing dump files is not easy and not that many people know how to do it", and he counts himself among those who are "not the best debuggers in the world".
+- Status, from Harshada's session (13:24): dumps now have a "Debug with Copilot" option that opens chat with a first analysis; from a PerfTip you can run a profiler analysis with a suggested fix and apply it with Hot Reload without stopping the debug session. She called these "newer, smaller features which we introduced in our recent Insiders release". So: Insiders.
+- Why it matters: profiling and dump analysis were expert-only work. Now you can ask in chat.
+- Source: 11:18-11:19 ET, transcript 20261111-111805; slide "Your running application" (shot 20261111/111935). Insiders status: 13:24 ET, transcript 20261111-132405.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/112553.jpg"
+time: "Day 2 · 11:21"
+---
+
+# Start in the CLI, move the session into VS for the debugger (coming)
+
+<!--
+- Say: Microsoft is building a way to move a Copilot chat session from the CLI, VS Code or the Copilot app into Visual Studio, to keep going with VS tools. Say "coming", not "shipped".
+- Status conflict: Mads (11:22) said "now you can. So you can actually round trip these sessions". But Rachel (11:59) said "we're definitely investing more in this area ... seamless access to all of your co-pilot sessions", and Harshada (13:17) said of the CLI-to-VS hand-off: "this particular experience is not out yet. It is coming soon." Treat it as coming.
+- On screen (slide "Your workflow understood"): "Roundtrip chat sessions from CLI, VS Code, Copilot App", "Create tests – profile them – debug – fix", "Worktrees and sub modules", "Full code review and pull request flow" (next slide).
+- Mads (11:20): "we know that you're not always using Visual Studio for everything and that's totally fine." If you started in the CLI and find "you need a debugger or you need a profiler", you can "take that session that you have in the Copilot CLI and simply move it into Visual Studio and continue with it there", and add "that debugger, that UI automation".
+- Why roundtrip works, Mads (11:22): "all because we're using the same copilot SDK harness."
+- Tests in any order: "A lot of people do tests first, like TDD". Some "write their own tests ... and then they might say, okay, agent, run loose and build the feature, but I want to control the tests." Test Explorer has new features for this.
+- VS tool calls make the agent faster; his example: the stop-on-first-failed-build switch, "you get that only in Visual Studio".
+- Worktrees and submodules: "We got the full support." He said users kept telling the team that agents use worktrees. With worktrees, "we can have multiple agents work in the same code base without stepping on each other's toes". With submodules, you can open, commit and send PRs across them.
+- Why it matters: VS becomes one stop in a session, not the only place you work.
+- Source: 11:20-11:23 ET, transcripts 20261111-112004 and 20261111-112204; slide "Your workflow understood" (shot 20261111/112553).
+-->
+
+---
+layout: "statement"
+---
+
+The full PR review flow is now inside Visual Studio.
+
+<!--
+- Say: VS now has the main PR and code review features that you used to go to GitHub.com or Azure DevOps for.
+- Mads (11:25): "we're now at a point where we have all the major features that you typically would rely on GitHub.com or Azure DevOps to kind of do the last mile to get the PR just over the hump. That's now all in Visual Studio".
+- His reason: "when the agents are writing most of our code ... we are reading more code than we are writing it to a larger extent than ever before."
+- Agent tie-in: chat sessions you already have "can now participate in the review and in the PR creation", so you reuse that context.
+- He said "there's a lot more to come", and that Sebastian (the git session, 12:30 PM) "will show a whole lot there". No list of the PR features was shown in the keynote.
+- Why it matters: if most code comes from agents, review is the main job, and VS wants it to happen where the code and the agent context are.
+- Source: 11:24-11:25 ET, transcript 20261111-112403; bullet "Full code review and pull request flow" (shot 20261111/112553).
+-->
+
+---
+layout: "session"
+num: 4
+time: "Day 2 · 11:30 AM"
+speakers: "Rachel Kang, Barbara Boyajian"
+---
+
+# The State of AI in Visual Studio: New Brain. More Choice.
+
+<!--
+- [Session 04 · Day 2] Rachel Kang and Barbara Boyajian, both Microsoft. The agenda lists only Rachel; the title card shows both.
+- Headline of the session, Rachel (11:30): "The new agent harness powered by the Copilot SDK is now generally available in Visual Studio."
+- "New Brain" = the new agent harness on the Copilot SDK (the one Mads introduced in the keynote). (Inference) "More Choice" = more ways to pick models and agents; Rachel said only "a whole lot more choice that we now offer in Visual Studio to put your AI to work".
+- Version: the slide "Introducing the new agent harness" has a badge "GA in 18.12 stable" (shot 20261111/113233). So it shipped in the release from Nov 10.
+- Why it matters: the keynote's Copilot SDK rebuild is GA in the stable channel, not a preview.
+- Source: 11:30 ET, transcript 20261111-113000; title card shot 20261111/113025.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/113328.jpg"
+time: "Day 2 · 11:33"
+---
+
+# Same model, new harness: 103 → 124 C# tasks resolved
+
+<!--
+- Say: The VS team ran the old and the new agent harness on the same C# benchmark with the same model. The new harness solved 21 more tasks.
+- On screen: SWE-Bench-CSharp-General, 157 C# tasks, GPT-5.6 Sol, one run per experience. Previous 103, new 124, "+21 additional tasks resolved". "Resolved = failing tests pass without breaking previously passing tests."
+- Rachel (11:33): "the new agent harness resolved up to 21 additional tasks on the same exact model".
+- Her point: "oftentimes we focus on the model ... but it's only one part". An agent also needs context, memory and tools, and the harness brings them together. The harness diagram (shot 20261111/113233) shows Context, Memory, Tools, Execution around the Model, with the badge "GA in 18.12 stable".
+- The Copilot SDK harness is "common across all Copilot experiences on all of your favorite platforms", so improvements in one come to VS.
+- Caveat: one run per experience, Microsoft's own benchmark. Say it as their number.
+- (Inference) 103/157 ≈ 66%, 124/157 ≈ 79%.
+- Why it matters: the harness, not only the model, changes results. Same model, about 20% more tasks solved.
+- Source: 11:32-11:33 ET, transcript 20261111-113203; slide "Same model. More tasks resolved." (shot 20261111/113328).
+-->
+
+---
+layout: "statement"
+---
+
+Same prompt, same model: repro in chat in 8 s vs. manual steps in 48 s.
+
+<!--
+- Say: Side by side, same prompt, same model. The new harness reproduced the bug right in chat in 8 seconds. The old one took 48 seconds and gave a list of manual repro steps.
+- The bug: long multiple-choice options cut off in a narrow Copilot Chat window (a real bug on the Copilot team).
+- On-screen captions: "Provided manual steps in 48 seconds / The issue wasn't reproduced in chat" vs. "Reproduced the issue in 8 seconds / Right here in chat". The old side shows "Claude Opus 5.5" as the model.
+- Rachel (11:34): "Same exact prompt, same exact model, only difference here being this new awesome harness." The new side "already reproduced the issue directly for us right in the chat in a matter of seconds".
+- New agent controls: next slide.
+- Screenshot not used: the demo frame shows a presenter's local user path.
+- Why it matters: the harness changes what the agent does (it acts in the IDE), not only how fast it answers.
+- Source: 11:34 ET, transcript 20261111-113402; shot 20261111/113452 (not in repo).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/113507.jpg"
+time: "Day 2 · 11:35"
+---
+
+# Six new agent controls in VS
+
+<!--
+- Say: The new harness also brings six new ways to guide and check the agent in VS.
+- The six tiles on screen:
+  - Steer mid-task: add instructions; cancel while pending.
+  - Inspect tool results: open tool results; copy exact commands.
+  - Watch subagents: see each model and its live steps.
+  - Resume local chats: find chats across local solutions and folders.
+  - Work beyond a solution: choose a working folder; attach folders as context.
+  - Get a second opinion: critique a plan; review security risks.
+- Rachel (11:34): "we can do things like steer the agent mid-task, we can follow the work that it delegates to the various sub-agents, and we can work beyond the scope of the existing solution by choosing a working folder". The other three tiles are from the slide only; she did not talk about them in this part.
+- Demo (11:36), CareDesk sample clinic app: a one-click reschedule made a double booking (two patients at 10 AM with the same doctor). Rachel asked Copilot to block that and remove the suggested reply. While it worked, she changed her mind and steered it: keep a reply, but tell the patient the time is unavailable. No stop button needed.
+- Why it matters: you can see what the agent did (tool results, subagents) and correct it while it runs, not only after.
+- Source: 11:34-11:37 ET, transcripts 20261111-113402 and 20261111-113603; slide "What's new in the agent experience" (shot 20261111/113507).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/114110.jpg"
+time: "Day 2 · 11:41"
+---
+
+# Agent added 10 tests, saw 1 fail, fixed itself: 50/50 pass
+
+<!--
+- Say: The agent wrote regression tests for the double booking, ran them, saw one fail, and fixed its own code without being asked. All 50 tests pass.
+- Before: 40 tests, all passing. Rachel (11:38): "we clearly don't have tests that accounted for this". She asked it to add tests, run them, then build and relaunch.
+- Rachel (11:40): "We have 10 additional ones now that are automatically being run by the agent ... One of them is failing". "Back in the day ... I would have had to ask Copilot to please acknowledge that this test failed and fix it." Then: "now we're seeing that all 50 tests are passing."
+- On screen: chat log "Ran 37 test(s). 36 Passed, 1 Failed", then edits to MessagingWorkflowTests.cs and SchedulingViewModel.cs; Test Explorer "50 Passed". The chat footer shows Agent, "Autopilot (Allow all)", model GPT-6.1 Sol. The agent also read a SKILL.md.
+- After relaunch, the faulty reschedule action to double book was gone.
+- Why it matters: this is the "tests are the guardrails" point from the keynote, done by the agent inside VS.
+- Source: 11:38-11:41 ET, transcripts 20261111-113805 and 20261111-114000; shot 20261111/114110.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/114311.jpg"
+time: "Day 2 · 11:43"
+---
+
+# Bring your own model: local servers, gateways, proxies. GA in 18.12.
+
+<!--
+- Say: "More Choice" starts with models. Bring your own model (BYOM) is GA in 18.12 stable (badge on the slide), and it now connects to more kinds of endpoints.
+- Barbara (11:42): BYOM is for "regulated industries think healthcare defense", where it "can be what enables the usage of AI coding tools", and for "air-gapped environments". It is for teams that want "their prompts and their code [to stay] within their boundaries".
+- On screen, "More ways to connect your models":
+  - Multiple connections: keep named connections to the same provider. Barbara: "let's say you have three OpenAI compatible custom endpoints ... you can add them all".
+  - Custom endpoints: OpenAI-compatible gateways and local model servers.
+  - API format: Completions, Responses, Messages.
+  - Optional API keys, model settings (edit in the UI), proxy-aware connections (uses the VS proxy settings).
+- Mads said in the keynote that BYOK has "a few caveats". Listen for them; this part did not name any.
+- Why it matters: teams that cannot send code to a cloud model can now use the VS agent with their own approved model.
+- Source: 11:42-11:43 ET, transcript 20261111-114201; slide "More ways to connect your models" (shot 20261111/114311).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/114426.jpg"
+time: "Day 2 · 11:44"
+---
+
+# AI in VS with no GitHub account: Foundry, OpenAI, Anthropic, Ollama
+
+<!--
+- Say: With BYOM you can use the VS agent while signed out of GitHub. You bring a provider: Microsoft Foundry, OpenAI, Anthropic, Ollama, or any OpenAI-compatible endpoint.
+- On screen, "Your model. Your IDE.", badge "GA in 18.12 stable": GitHub Copilot, Microsoft Foundry, OpenAI, Anthropic, Ollama, Custom Endpoint (e.g. OpenRouter). "No GitHub account required".
+- Barbara (11:44): "We support Microsoft Foundry, OpenAI, Anthropic, Olama [Ollama], and OpenAI-compatible custom endpoints ... this includes popular providers like Open Router and LM Studio." And: "if you don't have a GitHub account, that doesn't block you from using it. You can be signed out and configure your BYOM providers."
+- Demo: signed out of GitHub, the first-run choice was "sign in with GitHub", "use Foundry", or "continue with an API key for another provider". She added a Foundry connection named "work"; her deployed models loaded and chat turned on.
+- Demo, part 2 (11:48): she added LM Studio, running on her machine, as a custom OpenAI-compatible endpoint, with no API key ("I didn't configure it that way"). The model picker then lists the models of every provider with the provider name next to each (Microsoft Foundry, OpenAI, ...); pinned models stay on top (shot 20261111/114942, not in deck).
+- Why it matters: Copilot sign-in is no longer the gate to AI in VS. Shops on Foundry or a local Ollama box can use the same agent.
+- Source: 11:44-11:49 ET, transcripts 20261111-114401 and 20261111-114802; slide "Your model. Your IDE." (shot 20261111/114426).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/115345.jpg"
+time: "Day 2 · 11:53"
+---
+
+# Managed settings: admins can turn off Autopilot (18.13 Insiders)
+
+<!--
+- Say: Admins can now push AI controls to Visual Studio. The first control locks down Autopilot. It is a preview in 18.13 Insiders, not in stable yet.
+- On screen, "Managed settings": "Admins define and distribute AI controls." Channels: GitHub server, MDM managed, file-based settings.
+  - Available now: Autopilot permissions, `disableBypassPermissionsMode`, badge "Preview in 18.13 Insiders".
+  - Coming soon: `allowedMcpServers`, `deniedMcpServers`, "And more controls".
+- Rachel (11:53): "Admins can now define and distribute the supported controls through GitHub Server, MDM managed settings, cloud-based settings, and managed settings are available in Visual Studio Insiders today, starting with Autopilot and more on its way soon." (She said "cloud-based"; the slide says "File-based settings".)
+- Demo video: one account has full Autopilot; in the other, the admin restricted it.
+- Context: the mode menu on screen shows Interactive, Autopilot ("End-to-end execution without interruption"), Plan, and Tool permissions "Allow all".
+- Why it matters: the answer to "can we let devs run Autopilot?" for enterprises. (Inference) The MCP server allow/deny lists that come next may matter more, because they control which tools an agent can reach.
+- Source: 11:52-11:53 ET, transcript 20261111-115200; slide "Managed settings" (shot 20261111/115345).
+-->
+
+---
+layout: "statement"
+---
+
+Next for AI in VS: code review, agent visibility, multi-agent workflows.
+
+<!--
+- Say: Rachel closed with where VS goes next, based on user feedback: more code review, more visibility into what agents do, and multi-agent workflows.
+- On screen, "Agentic development keeps evolving / What we're hearing": "More generated code to assess", "Hard to follow the agent's work", "More agents to coordinate".
+- Rachel (11:54): "there's a lot more generated code to review, more activity to follow, and more tasks for agents to coordinate ... We know that we want to focus more on code review, agent visibility, multi-agent workflows, and more."
+- This matches Mads's keynote: review time is up, and the PR flow is now in VS.
+- No dates or versions were given for these.
+- Q&A (11:58), "Will Visual Studio expose an MCP server so that other agents can control Visual Studio?" Answer starts "That's a great question. That's definitely something that's been in ..." (cut at the chunk edge), then: "We've been playing around with that concept starting with the debugger and the specific uniquely powerful tools that make Visual Studio Visual Studio." They ask which VS tools you want exposed first. Experiment only, no commitment.
+- Why it matters: the bottleneck moves from writing code to reviewing and following agent work.
+- Source: 11:54-11:59 ET, transcripts 20261111-115402 and 20261111-115804; slide "Agentic development keeps evolving" (shot 20261111/115437, not in deck).
+-->
+
+---
+layout: "session"
+num: 5
+time: "Day 2 · 12:00 PM"
+speakers: "Jason Chlus"
+---
+
+# What's new in Visual Studio
+
+<!--
+- [Session 05 · Day 2] Jason Chlus, Product Manager, Visual Studio. A fast demo of new VS features.
+- Jason (12:00): "I have roughly 25, maybe 26 features that I'm going to be showing." "Most of these features come from developer community."
+- Coming: "very soon you will be able to report a problem, suggest a feature directly in Visual Studio using the chat."
+- Say: this is the feature tour. I picked the ones that matter most for day-to-day work.
+- Source: 12:00 ET, transcript 20261111-120004; title card shot 20261111/120104.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/120910.jpg"
+time: "Day 2 · 12:09"
+---
+
+# Test Explorer now diffs failed string assertions
+
+<!--
+- Say: When a string assertion fails, Test Explorer now shows Expected and Actual side by side, with the different characters marked.
+- Demo: the Turkish-I bug. A `ToSnakeCase` helper used `ToLower()`. Under the tr-TR culture, "I" lowercases to a dotless "ı", so the test `ToSnakeCase_DoesNotDependOnCurrentCulture ("tr-TR")` failed: Expected "is_enabled", Actual "ıs_enabled". The fix: `ToLowerInvariant()`.
+- Jason (12:08): "you will not get the dot above the i, and we are expecting that dot above the i. So we will have to add back to lower invariant." He credited the MSTest team; they have a testing session later.
+- Also on screen: "Last run: 11/11/2026 9:08:34 AM" on the test detail. Jason: last run shows for groups and single tests, so you see when a result is old.
+- Why it matters: the hardest string failures (one invisible character) are now visible at a glance.
+- Source: 12:08-12:09 ET, transcript 20261111-120800; shot 20261111/120910.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/121506.jpg"
+time: "Day 2 · 12:15"
+---
+
+# Colorized Output window (ANSI colors). Opt-in.
+
+<!--
+- Say: The Output window now shows ANSI colors, so warnings and errors in a messy build stand out. It is off by default; turn it on in settings.
+- Jason (12:14): "we have colorized output in VS ... especially when your builds get messy and you're looking to quickly scan find warnings infos errors". "this is not on by default so that is one of those features that you will have to opt in on". You can edit all the colors.
+- On screen: Output "Show output from: Colorized Output", the 16 ANSI foreground colors (30-37 standard, 90-97 bright), and the new Fonts and Colors page in Tools > Options with search and live preview.
+- Other quality-of-life items in the same tour (12:12-12:14):
+  - Move tabs with the keyboard; "close all tabs to the right"; a new option for tighter tabs.
+  - New keyboard shortcuts UI: search commands (e.g. Zoom Reset), "record your steps" to find a binding, pick standard schemes. Reset zoom with Ctrl+Num0.
+  - New Fonts and Colors UI: search an item, edit in place, see a preview.
+  - Git: from your repo view you see history and PRs; "We have the complete end-to-end in VS now. You can go from coding to code review to creating a PR." Review changes since any commit.
+- Why it matters: many small DevCom requests closed at once. Two of the best (colorized output, stop on first failure) are opt-in, so tell people to turn them on.
+- Source: 12:12-12:15 ET, transcripts 20261111-121201 and 20261111-121401; shot 20261111/121506.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/121712.jpg"
+time: "Day 2 · 12:17"
+---
+
+# Review local code as a PR, then hand your comments to Copilot
+
+<!--
+- Say: VS can show your local changes as a PR: a multi-file diff with inline comments. Then you send all your comments to Copilot chat, and it makes the changes.
+- Jason (12:16): "We're going to be basically reviewing local code as a PR. So you'll see a very nice multi-file summary diff." You leave comments in the view, open files, get previews. "this is just going to be my new way of reviewing my local code".
+- Hand-off to chat: "it basically hands off the file context it uses my previous build context and it will give the specific line context over to chat so it can make those changes."
+- Change groups: "schema changes, version bumps, and things like that that kind of create a lot of noise. These groupings will allow you to get to the meat and the potatoes of the code much faster."
+- On screen: diff of AGENTS.md ("5 changes"), an inline comment "Clean this up and recover this work" (Active, 1 of 4 total), and the Copilot chat at left.
+- This is the "full code review and pull request flow" from Mads's keynote, shown live. More in the git session at 12:30 PM.
+- Why it matters: review comes before the PR, in the IDE, and the agent does the fix-ups from your comments.
+- Source: 12:15-12:17 ET, transcripts 20261111-121401 and 20261111-121602; shot 20261111/121712.
+-->
+
+---
+layout: "statement"
+---
+
+Hot exit: close VS with unsaved changes. Reopen, nothing lost.
+
+<!--
+- Say: VS now has hot exit. Close it with unsaved changes, open it again, and the unsaved changes are still there. It works for solutions and Open Folder. It is OFF by default: turn on "Reopen unsaved documents on solution load or empty environment" in Tools > Options (from Jason's recap slide, next).
+- Jason (12:22): "now we have this first class experience where you can simply just leave Visual Studio with unsaved changes. This is called the hot exit feature." "There was a lot of intricacies ... with solutions and open folder".
+- His use cases: SQL queries, empty scratch files, "updating skills, agents, whatever it may be ... go grab your lunch and then come back, and you will not have lost anything."
+- Demo: unsaved MarkdownFile2.md in the Orchard Core solution came back after closing and reopening VS (shot 20261111/122334, not in deck).
+- SSMS: "This is also coming to SSMS ... I think that'll be in the next release." Say "planned", not "shipped".
+- Teaser: Jason is "working on a PR that will allow you to export your test results" from Test Explorer. In progress, no date.
+- Why it matters: you can close VS at any time, also with agent and skill files half edited, and lose nothing.
+- Source: 12:22-12:23 ET, transcript 20261111-122204.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/122414.jpg"
+time: "Day 2 · 12:24"
+---
+
+# ~26 VS features. Three are off by default: turn them on.
+
+<!--
+- Say: Jason's recap slide lists everything he showed. The ones with a magnifier are off by default; search Tools > Options for the term shown.
+- Off by default (on-screen search terms):
+  - Stop build on first failure: "Stop solution build after the first project fails".
+  - Colorized Output: "Enable colorized output".
+  - Hot Exit: "Reopen unsaved documents on solution load or empty environment".
+- Jason (12:24): "those little magnifying glasses are basically those features that are not immediately on by default. So you will need to go find those in your tools options and enable them".
+- The six groups on the slide: Navigate & edit (File System View, drag files into chat, new Markdown file, drag files and images into Markdown, HTML-to-CSS navigation, CSS color preview); Copilot (customize chat defaults, new Copilot Chat experience); Build; Test Explorer (assertion string comparison, open test log, last run time); Tabs (move with keyboard, tool-window tab sizing, close tabs to the right, tab drag performance); Personalize (Fonts and Colors UI, Colorized Output, Keyboard Shortcuts UI, Zoom Reset, Hot Exit); Code review (local review, multi-file summary diff, address comments in chat, comment filters, change groups).
+- Pointers: Harshada's session (1:00 PM) for debugging and profiling agents; Mika's session (4:00 PM) on the modernization agent, for moving from .NET 8 or 9 to .NET 11. Feedback: developercommunity.visualstudio.com.
+- Q&A (12:26):
+  - All editions: "These are all available for all SKUs of Visual Studio" (Community, Pro, Enterprise).
+  - Recent: "I think 18.11 was the oldest feature that I showed." Mads: "we just released 18.12 yesterday ... We're releasing every month now." Jason: 18.13 "is even looking more jam-packed", and work on 18.14 has started.
+  - HTML-to-CSS go-to-definition also works in Razor (Mads tested it) and for SASS and LESS.
+  - Accessibility (12:29): a viewer must set a 17 pt minimum font again after each fresh install. Jason: "It's not as simple as you would think ... but we are looking into a few features that you can increase font size very fluidly, as well as icons and potentially even being able to customize icons." "Coming soon" was said, but no version; say "they are looking into it".
+- Why it matters: this is the slide to screenshot. Three of these features need one settings change each, and they are in every VS edition.
+- Source: 12:24-12:27 ET, transcripts 20261111-122404, 20261111-122603 and 20261111-123003; slide "What we saw today" (shot 20261111/122414).
+-->
+
+---
+layout: "session"
+num: 6
+time: "Day 2 · 12:30 PM"
+speakers: "Sebastian Hernandez"
+---
+
+# Get the most out of Version Control in Visual Studio 2026
+
+<!--
+- [Session 06 · Day 2] Sebastian Hernandez, Software Engineer. Title on the title card; the agenda calls it "Get the most out of git in Visual Studio".
+- Goal, Sebastian (12:30): do "your entire developer workflow from start to finish, all within Visual Studio without having to leave the IDE."
+- Agenda slide: Version Control Environment, Create a new Feature, Local Code Review, Version Control with AI, Create Pull Request, Review Pull Request.
+- This is the deep dive Mads promised in the keynote ("Sebastian will show a whole lot there").
+- Source: 12:30-12:31 ET, transcript 20261111-123003; title card shot 20261111/123138; agenda shot 20261111/123153.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/123404.jpg"
+time: "Day 2 · 12:34"
+---
+
+# Worktrees and submodules in the Git Repository window
+
+<!--
+- Say: The Git Repository window now manages worktrees and submodules. Right-click a branch to make a worktree; open it here or in a new VS window.
+- Worktrees, Sebastian (12:33): right-click a branch, "you'll see that at the bottom we have those commands that allow you to create a new work tree". Name it, then open it in the current window or "perform the task in the background". Right-click a worktree to open it in the current window or a new window, or delete it.
+- On screen, branch context menu: "New Worktree From...", "Open Worktree in Current Window", "Open Worktree in New Window", "Delete Worktree"; also "Add to Chat" and "New Pull Request". Demo repo: TypeScript (main).
+- Agent angle: worktrees are "very popular nowadays, especially in this agentic AI world". You can "kick off multiple parallel sessions at the same time within different Visual Studios with different work trees".
+- Submodules: a Submodules node in the Git Repository window. Click one to see its checked-out commit; right-click to update or delete it.
+- Why it matters: one repo, several agents, each in its own worktree and VS window, with no file conflicts.
+- Source: 12:33-12:35 ET, transcripts 20261111-123204 and 20261111-123404; shot 20261111/123404.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/124514.jpg"
+time: "Day 2 · 12:45"
+---
+
+# Merge conflicts: take all in one click, or Auto Resolve with Copilot
+
+<!--
+- Say: In a merge or rebase, you can now keep all current or take all incoming for the whole tree in one click. Or click Auto Resolve and Copilot resolves the conflicts in chat.
+- Sebastian (12:44): "if you right-click on the parent node and you're totally sure that you want to take all the changes from main, you can do that now. Before, you had to do one at a time." Same for all incoming changes. "Or over here in this auto-resolve button, if you want to let AI fully resolve your merge conflicts in the chat you can do that as well."
+- Works on the parent node or on a single file.
+- While Copilot resolves (12:46): "you won't be able to edit the files because AI is making sure that nothing is being touched at the moment".
+- On screen: Git Changes, "Rebase in progress with conflicts", Unmerged Changes (4); context menu: Merge..., Keep All Current, Take All Incoming, Auto Resolve, Stage.
+- Result (12:48): Copilot resolved the conflicts, then built "the necessary or adequate projects to make sure that the merge conflicts resolutions are working properly". Build succeeded. Sebastian checked the merge editor: "what we would have done manually is it took the right hand side and then it kept the left hand side for the new property ... I'm happy with this."
+- Escape hatch: "if for some reason AI totally went sideways", use the Accept Merge dropdown to "restart the resolution completely" and handle it yourself, or let AI try again. "we all know that AI is not perfect."
+- He asked the audience: what do you let AI do in version control, and what not?
+- Why it matters: bulk resolve removes the one-file-at-a-time step; Auto Resolve puts Copilot inside the merge flow, with the files locked while it works.
+- Source: 12:44-12:49 ET, transcripts 20261111-124404, 20261111-124603 and 20261111-124803; shot 20261111/124514.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/125235.jpg"
+time: "Day 2 · 12:52"
+---
+
+# Full PR review in VS, for GitHub and Azure DevOps
+
+<!--
+- Say: The pull request experience is now fully in the IDE, for GitHub and Azure DevOps. Vote, complete, comment, and edit the code right in the PR diff.
+- Sebastian (12:50): "this pull request experience is now fully in the IDE. It's very similar to what we have on Azure DevOps or on GitHub. It works for both."
+- What you can do: publish or abandon your PR; vote on others (approve, wait for author, reject); complete or set auto-complete. The overview shows the description with images and GIFs, iterations, global comments; reply, resolve, and filter comments by status or author.
+- AI grouping: "kickstart your review with AI ... Can you bucket them into similar areas so that it's easier for the reviewer to review?" ("generate group").
+- Check out the PR: test your teammate's edge cases; or, as the author, "you can actually edit the files" in the PR view and respond to comments in place.
+- On screen: PR #805625 "[DO NOT REVIEW] Test", Changes (7) with checkboxes to mark files reviewed, and an AI review comment ("VSEng Copilot Code Reviewer ... Maintainability", model gpt-6-luna) asking for an extra test.
+- Why it matters: this is the "full code review and pull request flow" from the keynote. Review, comments and fix-ups can all stay in the IDE.
+- Source: 12:50-12:53 ET, transcripts 20261111-125004 and 20261111-125205; shot 20261111/125235.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/125825.jpg"
+time: "Day 2 · 12:58"
+---
+
+# "When you reboot a tech, you lose half your audience ... we grew more customers."
+
+<!--
+- [surprise guest, between sessions 04 and 05] Mads Kristensen with "Mr. .NET". Mads calls him "Scott"; no lower third was shown. He said: "I was here from 2007 until last year", and Mads said he was Mads's manager "back in your ASP.NET days".
+- (Inference) This is Scott Hunter. The stream never said his last name, but all the on-stream facts fit him: first name Scott, "Mr. .NET", Mads's manager in the ASP.NET days, on the team that made .NET Core / Project K, at Microsoft 2007 until last year. Confirm before you name him.
+- Say: A short history break. One of the people who rebooted .NET as .NET Core looked back on it.
+- Why .NET Core: "because of Windows compatibility, you basically can't change .NET Framework anymore."
+- The quote (13:02): "The scary thing is most of the time when you reboot a tech, you lose half your audience ... it's amazing that we rebooted .NET. And not only did we reboot it, but we grew more customers. And we actually made a better product." He named Damian Edwards, David Fowler and Glenn Condron as part of that early team.
+- Velocity: "that original .NET framework really had four versions. And we're at version 11 of the new one."
+- History bits: Project Helios (ASP.NET off IIS); going "bare metal" for speed (Kestrel); project.json "had to happen to go convince the Visual Studio folks" to simplify csproj.
+- Why it matters: 11 releases in, the reboot worked. That context helps people who are still on .NET Framework.
+- Source: 12:58-13:05 ET, transcripts 20261111-125800, 20261111-130002, 20261111-130201, 20261111-130401; shot 20261111/125825.
+-->
+
+---
+layout: "session"
+num: 7
+time: "Day 2 · 1:05 PM"
+speakers: "Harshada Hole"
+---
+
+# What's new in Visual Studio Diagnostics
+
+<!--
+- [Session 07 · Day 2] Harshada Hole, Visual Studio. Title card: "What's New in Visual Studio Diagnostics", subtitle "From a visible symptom to an evidence-backed fix" (shot 20261111/130551). The agenda title is "What's New in Visual Studio Debugging and Diagnostics".
+- Jason pointed here for the debugging and profiling agents: "the connected diagnostic experience ... the full experience with everything from start to finish".
+- Source: dotnetconf.net/agenda, Day 2, 1:00 PM ET; started about 1:05 PM ET.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/130801.jpg"
+time: "Day 2 · 13:08"
+---
+
+# Debugger Agent: give it a bug URL. It reproduces, fixes, verifies.
+
+<!--
+- Say: The Debugger Agent takes a GitHub or Azure DevOps bug URL and runs an "investigation loop": reproduce, investigate, correct, verify, all in VS.
+- Harshada (13:08): the Debugger Agent "not just reads your logs, but it actually has a full runtime context. It understands your breakpoint, your call stack". With the bug URL, "it will actually reproduce ... investigate it, actually correct it, even create hypotheses if needed, and then verify the fix".
+- On screen, "The investigation loop / A bug fix is more than a code change": Reproduce > Investigate > Correct > Verify. Three modes: Manual investigation | Test-driven investigation | UI Automation.
+  - Manual: you reproduce and verify with your own judgment.
+  - Test-driven: "The agent will actually use the existing test suite, even create a new test if needed".
+  - UI Automation: "recently added ... in our latest insiders", for UI and WPF bugs. Insiders only.
+- Demo next: eShopOnWeb running locally, a wrong cart total for the ".NET Bot Black Sweatshirt" (name from the screen, next slide).
+- Why it matters: the agent works from the runtime state, not just the source, and proves the fix.
+- Source: 13:08-13:09 ET, transcript 20261111-130801; slide "The investigation loop" (shot 20261111/130801).
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/131523.jpg"
+time: "Day 2 · 13:15"
+---
+
+# Debugger Agent found the bug under the debugger, fixed it, proved it: $58.50
+
+<!--
+- Say: Hands-free debugging demo. The agent ran eShopOnWeb, reproduced a wrong cart total through the UI, confirmed the cause under the debugger, fixed it, ran tests, and checked the UI again.
+- The bug: with quantity 3, the cart total was wrong. Agent's finding on screen: "Cause: src\Web\Pages\Basket\BasketViewModel.cs:11 summed unit prices without multiplying by quantity. Runtime values were correctly 19.50 × 3, but the total expression returned 19.50."
+- "Reproduced and confirmed under the debugger before editing." "With your approval, changed the total to include quantity." "Verified: build succeeded, all four targeted tests passed, and the storefront now shows 58.50 for both line cost and grand total."
+- The tool log shows debugger tools: debugger_ui_tree, debugger_ui_interact, "Debugger evaluated expressions", "Removed breakpoints", debugger_continue. Chat mode: Debugger, Interactive (Manual), GPT-6.1 Sol.
+- Harshada (13:14): it relaunched the app, redid the repro steps, and confirmed "the update cart total is now correct". "this feature is available in our latest Insider". Insiders only.
+- Why it matters: the agent shows evidence (runtime values, tests, UI result), not just a diff. That is the subtitle of the talk: "From a visible symptom to an evidence-backed fix".
+- Source: 13:10-13:15 ET, transcripts 20261111-131003, 20261111-131203, 20261111-131403; shot 20261111/131523.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/131728.jpg"
+time: "Day 2 · 13:17"
+---
+
+# Connected diagnostics: start in Copilot CLI, continue in VS (coming soon)
+
+<!--
+- Say: For people who like other AI clients: start a performance investigation in Copilot CLI, then connect Visual Studio and continue with its profiler. Not shipped yet.
+- Harshada (13:16): "you can bring in Visual Studio along with your existing client and have that connected diagnostics experience." "I'm going to use the AHP to connect the Visual Studio to the client". (Agent Host Protocol per the stream agent; she said "AHP".)
+- Demo: SharpZipLib, benchmark Adler32LargeUpdate. The CLI did a static analysis first (on screen: "measures a single checksum pass over 256 MiB", call path Update(byte[]) → Update(ArraySegment...)). Then a `launch-vs` prompt from a CLI plugin connects VS.
+- Status: "this particular experience is not out yet. It is coming soon." Later (13:27): "The AHP is still internal".
+- Why it matters: VS's profiler and debugger become tools any agent client can call, not only the VS chat.
+- Source: 13:16-13:17 ET, transcript 20261111-131603; shot 20261111/131728.
+-->
+
+---
+layout: "shot"
+image: "/shots/day2/132254.jpg"
+time: "Day 2 · 13:22"
+---
+
+# Profiler agent result: Adler32 27.9% faster on .NET 6, 13.0% on .NET Framework
+
+<!--
+- Say: The connected demo ended with the VS profiler agent finding and fixing a hot loop in SharpZipLib. Same Release benchmark: 27.9% less time on .NET 6, 13.0% on .NET Framework 4.8.1.
+- On screen (Copilot CLI, after VS profiling):
+  - .NET 6.0.36: 159.385 ms → 114.965 ms, 27.9% time reduction.
+  - .NET Framework 4.8.1, net462 target: 149.235 ms → 129.858 ms, 13.0%.
+  - The change: accumulate four byte-position sums, then apply weighted arithmetic once per 3,800-byte block instead of per group. "The block limit, tail handling, and public API remain unchanged." "All four focused correctness tests passed".
+- Harshada (13:21): "after the profiler agent ... we are able to see almost 27 percent of optimization for the .NET 6 and then for the other .NET framework ... 13 percent".
+- Status: the CLI-to-VS connection is "not out yet"; she said "The AHP is still internal". So: demo of a coming feature.
+- Why it matters: the agent changed an algorithm in a real open-source library, measured it on two runtimes, and kept the tests green.
+- Source: 13:20-13:28 ET, transcripts 20261111-132003, 20261111-132204, 20261111-132600; shot 20261111/132254.
+-->
+
+---
+layout: "cover"
+variant: "thanks"
+image: "/kevin-griffin.png"
+---
+
+# Let's keep talking.
+
+- consultwithgriff.com
+- X · LinkedIn · GitHub: @1kevgriff
+- Bluesky: @consultwithgriff.com
+
+<!--
+[thanks] Leave this up through Q&A.
+-->

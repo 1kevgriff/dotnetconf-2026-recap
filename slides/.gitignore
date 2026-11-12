@@ -12,3 +12,4 @@ slides-export.pptx
 *.png
 !public/**/*.png
 day2-export.pdf
+*-export.pdf

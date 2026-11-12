@@ -26,3 +26,7 @@ processes:
     command: npm run build:day2
     working_dir: ./slides
     auto_start: false
+  Build topics:
+    command: npm run build:topics
+    working_dir: ./slides
+    auto_start: false

@@ -1,8 +1,10 @@
 # .NET Conf 2026 Recap
 
-Two [Slidev](https://sli.dev) decks of highlights from .NET Conf 2026,
-by Kevin Griffin: Day 1 (`slides/slides.md`, 2026-11-10) and Day 2
-(`slides/day2.md`, 2026-11-11). It was built live while the stream ran.
+[Slidev](https://sli.dev) decks of highlights from .NET Conf 2026, by
+Kevin Griffin. Seven topic decks (`slides/topic-*.md`) are the ones to
+present. Two full-day archives stay as built live while the stream ran:
+Day 1 (`slides/slides.md`, 2026-11-10) and Day 2 (`slides/day2.md`,
+2026-11-11).
 Each session from the agenda has its own part, with short headlines on the
 slides and the details in the presenter notes.
 
@@ -20,6 +22,9 @@ npm run export   # PDF, needs playwright-chromium
 npm run dev:day2     # Day 2 deck, http://localhost:3031
 npm run build:day2   # static SPA in slides/dist/day2
 npm run export:day2  # Day 2 PDF
+
+npm run dev:ai        # one topic deck (see the table below for ports)
+npm run build:topics  # all seven topic decks, into slides/dist/<topic>
 ```
 
 For `npm run export`, approve the Playwright install script first:
@@ -30,10 +35,34 @@ npm install-scripts approve playwright-chromium
 
 ### Solo
 
-`solo.yml` defines five commands: `Slidev` and `Slidev Day 2` (dev
-servers, auto-start), `Build`, `Build Day 2`, and `Export PDF`. Trust them in the Solo UI before the first run.
+`solo.yml` defines six commands: `Slidev` and `Slidev Day 2` (dev
+servers, auto-start), `Build`, `Build Day 2`, `Build topics`, and `Export PDF`. Trust them in the Solo UI before the first run.
 
-## What is in the deck
+## Topic decks
+
+Each topic deck pulls its sessions from both days, in order: Day 1, then
+Day 2. Session dividers show the day and time. Where the Day 1 keynote
+touched a topic, those keynote slides open the deck under a "From the
+keynote" divider. Every slide from the two day decks is in one topic deck,
+except the keynote section headers.
+
+| Deck | File | Sessions | Slides | Dev port |
+|---|---|---|---|---|
+| C# and the .NET 11 runtime | `topic-csharp.md` | Keynote part, C# 15, Numerics, Runtime vNext | 41 | 3032 |
+| The SDK, build and security | `topic-sdk.md` | Keynote part, CLI on AOT, MSBuild `-mt`, Security, Post-quantum crypto, File-based apps | 39 | 3033 |
+| Visual Studio and tooling | `topic-tools.md` | Keynote part, C# Dev Kit 11, VS keynote, AI in VS, What's new in VS, Version control, Diagnostics | 51 | 3034 |
+| ASP.NET Core and Blazor | `topic-web.md` | Keynote part, ASP.NET Core and Blazor, Blazor Server | 23 | 3035 |
+| Desktop and mobile | `topic-client.md` | Keynote part, WinForms, MAUI 11, MAUI `dotnet run`, WinUI and agents, CsWinRT 3.0, MAUI eyes and hands, Reactor | 51 | 3036 |
+| AI and agents | `topic-ai.md` | Keynote part, .NET AI stack, Copilot for .NET, MCP C# SDK, Agentic UI with Blazor, Copilot modernization, .NET + Foundry | 47 | 3037 |
+| Aspire, Azure and data | `topic-cloud.md` | Aspire, Aspire agent-first toolchain, Azure lineup parts 1 and 2, EF Core 11 | 48 | 3038 |
+
+Run one with `npm run dev:<deck>`, `npm run build:<deck>`, or
+`npm run export:<deck>`, where `<deck>` is `csharp`, `sdk`, `tools`,
+`web`, `client`, `ai`, or `cloud`.
+
+## What is in the day decks
+
+### Day 1 (2026-11-10): `slides/slides.md`
 
 | # | Session | Speakers |
 |---|---|---|
@@ -138,6 +167,7 @@ Day 2 caveats (details in the notes):
 slides/
   slides.md      Day 1 deck (159 slides)
   day2.md        Day 2 deck (127 slides)
+  topic-*.md     seven topic decks (300 slides in all)
   layouts/       cover, session, section, statement, shot, default, code, ...
   components/    Badge, BigNum, Caption, Card, Panel, ...
   public/shots/  stream screenshots used on slides

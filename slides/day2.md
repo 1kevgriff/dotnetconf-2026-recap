@@ -1963,7 +1963,8 @@ time: "19:04"
 - Say: There are three ways to use Foundry from .NET: call a model with IChatClient, run your own AIAgent with Foundry models and tools, or call an agent that Foundry hosts. You do not have to move your agent runtime into Foundry.
 - On screen, "Foundry supports three .NET paths / Model calls, app-owned agents and service-managed agents": Direct model call: IChatClient → Foundry model deployment. App-owned agent: AIAgent in your process → Foundry model deployment + tools. Service-managed agent: .NET client → Foundry prompt or hosted agent. "Your code can call Foundry services without moving the agent runtime into Foundry."
 - Bruno (19:04): the foundation is "Microsoft Extensions for AI that allows us to interact with embeddings or with chat clients or do data ingestion"; "frameworks like the Microsoft Agent Framework to build and create agents"; "the MCP C# SDK". Foundry helps when "you are super happy with your agent working locally, and then you find, hey, I want to run this ... I want to move to production". A Foundry project (ai.azure.com) gives "deploy models, create agents, apply security, work with tools, and evals".
-- Source: 19:04-19:05 ET, transcript 20261111-190400; shot 20261111/190450.
+- Demo 1, path 1 (19:06): one Microsoft.Extensions.AI code path asks "the same question to different models" in the Foundry catalog ("Mistral, we have Anthropic, OpenAI") and reports tokens and elapsed time. "I am using managed identity, so I don't need to use an API key." On screen: gpt-6-luna, "Elapsed: 12.21 seconds", input 22, output 106, total 128 tokens; then grok-4.7 with the same prompt. Bruno: "GPT-6 Luna is kind of a small and super powerful model."
+- Source: 19:04-19:08 ET, transcripts 20261111-190400 and 20261111-190602; shots 20261111/190450 and 190757.
 -->
 
 ---

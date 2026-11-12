@@ -1931,8 +1931,9 @@ time: "18:55"
 - Extensionless (18:58): "we did do the work to support extension-less files ... if you have a file and it has a shebang at the front of it, you can invoke it directly even if it doesn't end in .cs ... we will look inside of it, verify it has the shebang".
 - What's next: C# Dev Kit "ships every month"; file-based apps update with SDK feature bands: "look for 11.0.200 to come out early next year, and we may be polishing this experience even further".
 - Q&A: stdin mode (`dotnet run -`) "by design is fully isolated ... we don't pick up on NuGet config. We don't pick up on Directory.Build.props or Directory.Build.targets" — which normal file-based apps do support "as long as they're in ... the file system scope". (Inference) So for private feeds, use a file on disk, not stdin.
+- How it works (Q&A, 19:01): for every command the SDK runs shared logic: "synthesize a virtual project", "parse the directives", "look at the build cache", "make a decision about whether I invoke MSBuild". Output goes "to a temporary location": "we create a folder under temp based on that hash" of the file path "plus a few other things ... as a cache key". Directory.Build.props/targets are included in the build cache too.
 - Chat aside: Mattias said Cake 7.0 just came out.
-- Source: 18:54-18:59 ET, transcripts 20261111-185400, 20261111-185600, 20261111-185801; shot 20261111/185525.
+- Source: 18:54-19:02 ET, transcripts 20261111-185400 to 20261111-190002; shot 20261111/185525.
 -->
 
 ---

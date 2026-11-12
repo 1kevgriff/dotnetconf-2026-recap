@@ -2174,6 +2174,21 @@ time: "19:40"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/194259.jpg"
+time: "19:42"
+---
+
+# JSON in SQL Server: `.Contains()` on JSON collections becomes `JSON_CONTAINS`
+
+<!--
+- Say: EF Core 11 adds EF.Functions.JsonContains and JsonPathExists, and on SQL Server compatibility level 170 a plain `.Contains()` on a JSON-stored list becomes JSON_CONTAINS instead of expanding the JSON into a table.
+- On screen (generated SQL): `WHERE JSON_CONTAINS([p].[Details], 5, N'$.Rating') = 1` (EF.Functions.JsonContains); `WHERE JSON_PATH_EXISTS([p].[Details], N'$.Editor') = 1` (JsonPathExists); and for LINQ `p.Tags.Contains("efcore") && p.CategoryIds.Contains(categoryId)`: `WHERE JSON_CONTAINS([p].[Tags], N'efcore') = 1 AND JSON_CONTAINS([p].[CategoryIds], @categoryId) = 1`.
+- Jiri (19:42): "if I set my compatibility level to high enough value, in my case, 170 for the SQL Server, and when I am using these contains calls on my collections that are stored as complex properties or primitive arrays ... [it translates] into this, let's say, better way instead of expanding into a table and filtering in a table". "I just use .Contains and we use the JSON_CONTAINS function on the proper column".
+- Source: 19:41-19:43 ET, transcripts 20261111-194004 and 20261111-194204; shot 20261111/194259.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

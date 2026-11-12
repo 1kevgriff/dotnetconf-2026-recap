@@ -2276,17 +2276,20 @@ time: "19:52"
 -->
 
 ---
-layout: "statement"
+layout: "shot"
+image: "/shots/day2/195704.jpg"
+time: "19:57"
 ---
 
-EF Core 11 on SQL Server defaults to compatibility level 160 (SQL Server 2022). Older server? Set it lower.
+# EF Core 11 on SQL Server: default compatibility level 160 (SQL Server 2022). Older server? Set it lower.
 
 <!--
 - Say: Check this before you upgrade: the SQL Server provider now assumes compatibility level 160, which means SQL Server 2022. On an older SQL Server, set a lower level; on SQL Server 2025, set 170 to get the new features (like JSON_CONTAINS and vector search shown earlier).
 - Jiri (19:56): "in SQL Server, the new compatibility level is now 160, which means SQL Server 2022. If you are using SQL Server that's before 2022, you need to or you should change this to a compatibility level" that matches. "And if you are using SQL Server 2025, for example, then definitely set it to 170 so you can use all the new features in 2025."
 - Also: the provider now uses Microsoft.Data.SqlClient version 7. More SQL translations, "a lot of those translations were contributed by community", e.g. int.Parse in a query now translates.
 - How (from the demos): `sql => sql.UseCompatibilityLevel(170)` in the provider options.
-- Source: 19:56-19:58 ET, transcript 20261111-195604.
+- On screen, "SQL Server": Default compatibility level is now 160 (SQL Server 2022); Microsoft.Data.SqlClient moves to 7.0; More SQL translations (int.Parse, etc.).
+- Source: 19:56-19:58 ET, transcript 20261111-195604; shot 20261111/195704.
 -->
 
 ---

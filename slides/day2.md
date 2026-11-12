@@ -2018,6 +2018,22 @@ time: "19:15"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/191757.jpg"
+time: "19:17"
+---
+
+# `azd ai agent run`: test a hosted agent locally with Agent Inspector
+
+<!--
+- Say: Deploy a hosted agent with azd ("azd ai agent init", deploy, provision), described in azure.yaml like a container app. To test locally, `azd ai agent run` starts the agent and opens Agent Inspector, a chat UI with tokens, events, tools and a run timeline.
+- Bruno (19:16): "we can do azd ai agent init, and there are AI agent deploy or provision and more." In the azure.yaml ("if you've been working with container apps, you probably know this format") you "choose our platform, which is going to be Linux, AMD64, register a protocol, add a couple of environment variables, and we can deploy this."
+- Testing: plain `dotnet run` exposes port 8088, but "I need to create literally kind of a client in another terminal or use Aspire". Instead: "azd ai agent run, which is going to start my agent, host my agents locally, and then also open ... a client interface ... where I am going to be able to chat with my agent."
+- On screen: "Agent Inspector — Connected http://localhost:8088 — Responses Protocol"; tabs Overview, Tokens, Events, Tools; "Latency Waterfall", "Run Timeline 1 Run (In progress)". The browser tab is "Foundry Toolkit".
+- Source: 19:16-19:18 ET, transcript 20261111-191602; shot 20261111/191757.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

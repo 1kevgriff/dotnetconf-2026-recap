@@ -2258,6 +2258,23 @@ modelBuilder.Entity<Vehicle>(vehicle =>
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/195241.jpg"
+time: "19:52"
+---
+
+# Migrations and `dotnet ef`: smaller fixes, file-based apps, `.config/dotnet-ef.json`
+
+<!--
+- Say: EF Core 11 migrations got many smaller fixes, and `dotnet ef` now reads a `.config/dotnet-ef.json` file and works with file-based apps.
+- On screen, "Migrations": Migrations in one step; ExcludeForeignKeyFromMigrations(true); Skip ALTER COLUMN when only CLR type changes; -NoBuild for PMC; Migration bundles work with Central Package Management; Migrate and EnsureCreated now retry via the execution strategy.
+- Jiri (19:52): Package Manager Console gets "a no-build switch similar to what we have for dotnet ef". If only the CLR type changes and the database type is the same, "We are not doing the ALTER COLUMN, because the ALTER COLUMN was kind of useless." Migrate and EnsureCreated now use "the retry execution strategy, the normal one that you configure, for example, for your SaveChanges".
+- `dotnet ef`: "new support for a specific file in .config dotnet-ef.json and support for file-based apps. So even if you are using file-based apps ... you can generate migrations, apply them, and so on."
+- Unconstrained FKs recap: the inner join with customers stays when needed, "even though there is no foreign key".
+- Source: 19:52-19:54 ET, transcript 20261111-195201; shot 20261111/195241.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

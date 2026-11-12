@@ -57,8 +57,32 @@ servers, auto-start), `Build`, `Build Day 2`, and `Export PDF`. Trust them in th
 
 Day 1 is complete: all 17 agenda sessions, 159 slides.
 
-Day 2 (Microsoft product team day, 18 sessions from 11:00 AM ET) is in
-progress in `slides/day2.md`. Its screenshots are in `public/shots/day2/`.
+### Day 2 (2026-11-11, Microsoft product team day): `slides/day2.md`
+
+| # | Session | Speakers |
+|---|---|---|
+| 01 | Keynote: Visual Studio Now and Next | Mads Kristensen |
+| 02 | The State of AI in Visual Studio: New Brain. More Choice. | Rachel Kang, Barbara Boyajian |
+| 03 | What's new in Visual Studio | Jason Chlus |
+| 04 | Get the most out of Version Control in Visual Studio 2026 | Sebastian Hernandez |
+| 05 | What's New in Visual Studio Diagnostics | Harshada Hole |
+| 06 | Blazor Server in .NET 11: Fast, resilient, and scalable | Daniel Roth |
+| 07 | What's new in the MCP C# SDK | Stephen Halter |
+| 08 | Building great Windows apps with WinUI and agents | Niels Laute, Morten Nielsen |
+| 09 | Building the future of agentic UI with Blazor | Daniel Roth |
+| 10 | CsWinRT 3.0: Modernizing the Windows Projections for .NET | Manodasan Wignarajah, Sergio Pedri |
+| 11 | GitHub Copilot modernization | Mika Dumont |
+| 12 | Beyond Code Generation: Give AI Eyes and Hands for .NET MAUI | Gerald Versluis |
+| 13 | No XAML Required: Native Windows Apps in Pure C# | Alexandre Zollinger Chohfi |
+| 14 | Azure's new lineup for .NET developers (Part 1) | Matt Soucoup, Paul Yuknewicz |
+| 15 | Azure's new lineup for .NET developers (Part 2) | Matt Soucoup, Paul Yuknewicz |
+| 16 | C# File-based apps turned up to 11! | Damian Edwards |
+| 17 | .NET + Foundry: Better Together | Bruno Capuano |
+| 18 | EF Core 11: Vector Search, Smarter LINQ, and a Friendlier dotnet ef | Jiri Cincura |
+
+Day 2 is complete: all 18 agenda sessions, 127 slides. Its screenshots are
+in `public/shots/day2/`. A surprise guest segment (likely Scott Hunter;
+the name was not said on stream) sits between sessions 04 and 05.
 
 ## How it was made
 
@@ -91,12 +115,29 @@ check first:
 - Some stream frames carry a "Microsoft Confidential" footer. Those frames
   are not in this repo.
 
+Day 2 caveats (details in the notes):
+
+- Several VS features shown are Insiders-only, not in 18.12 stable: UI
+  automation for Copilot/Debugger Agent, PerfTip and dump analysis with
+  Copilot, managed settings (18.13 Insiders).
+- "Roundtrip sessions from the CLI into VS" and connected diagnostics are
+  coming, not shipped (speakers disagreed; the notes quote both).
+- Three VS features are off by default: stop build on first failure,
+  colorized output, hot exit.
+- Experimental or preview: CsWinRT 3.0, Microsoft.UI.Reactor, maui-labs
+  tools, Blazor AI components, MCP Skills package, Azure Functions Hosted
+  Skills ("initial concept").
+- EF Core 11 on SQL Server defaults to compatibility level 160; set it
+  lower for older servers.
+- Some demo frames showed user paths, subscription IDs, bookmarks or a
+  password manager. Those frames were cropped or left out.
+
 ## Layout
 
 ```text
 slides/
-  slides.md      Day 1 deck
-  day2.md        Day 2 deck
+  slides.md      Day 1 deck (159 slides)
+  day2.md        Day 2 deck (127 slides)
   layouts/       cover, session, section, statement, shot, default, code, ...
   components/    Badge, BigNum, Caption, Card, Panel, ...
   public/shots/  stream screenshots used on slides

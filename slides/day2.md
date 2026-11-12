@@ -1937,6 +1937,20 @@ time: "18:55"
 -->
 
 ---
+layout: "session"
+num: 17
+time: "7:03 PM"
+speakers: "Bruno Capuano"
+---
+
+# .NET + Foundry: Better Together
+
+<!--
+- [session 17] Bruno Capuano. Started about 7:03 PM ET.
+- Source: dotnetconf.net/agenda (7:00 PM ET); stream agent session marker.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

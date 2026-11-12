@@ -2328,6 +2328,23 @@ time: "20:01"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/200410.jpg"
+time: "20:04"
+---
+
+# New EF analyzers, and "check the breaking changes document"
+
+<!--
+- Say: EF Core 11 adds analyzer checks, so you may see new warnings after you upgrade. And read the What's New and Breaking Changes docs before you ship; "nothing super critical", but test first.
+- On screen, "Analyzers": "EF1003 now catches string.Format/string.Concat in queries in raw SQL APIs"; "EF1004 warns about ToAsyncEnumerable (replace with AsAsyncEnumerable)".
+- Jiri (20:04): "we detect more abuse in raw SQL APIs. We also catch some incorrect usage around async enumerables ... So you might see some new warnings and new fixes ... So don't be surprised." Docs: "what's new in EF Core 11 ... in greater details", and "some breaking changes in EF Core 11, some small, some slightly bigger. We don't have anything super critical, but still check our breaking changes document ... Test your application before deploying into production."
+- (Inference) EF1003 matters for SQL injection: string.Format/Concat in FromSqlRaw-style APIs is the classic hole.
+- After this, the host closed the live studio sessions for Day 2; an after-show of pre-recorded sessions followed (more Bruno, more Gerald, testing with AI).
+- Source: 20:04-20:05 ET, transcript 20261111-200400; shot 20261111/200410.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

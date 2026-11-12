@@ -2057,18 +2057,22 @@ time: "19:21"
 -->
 
 ---
-layout: "statement"
+layout: "shot"
+image: "/shots/day2/192835-crop.jpg"
+time: "19:28"
 ---
 
-An agent doesn't need an LLM every time. A decision model can route the ticket.
+# An agent doesn't need an LLM every time. A decision model can route the ticket.
 
 <!--
 - Say: A custom .NET agent can use a fast decision model instead of an LLM for a routing step. Bruno's support agent classifies "I was charged twice" as billing, with confidence scores, and still runs hosted in Foundry with traces and guardrails.
 - Bruno (19:26): "the agent doesn't need to use an LLM all the time ... If we code the agent, we can use different LLMs, or we can even use a decision model" to route to "billing, technical support, account access, and more." "I override the RunCoreAsync ... I am going to use a decision model here to do my decisions."
 - Demo: "I was charged twice to my subscription" → the trace shows "a billing issue, and we have probabilities, confidence, and more." "because we are also in Foundry, we can start to take advantage of Foundry on the traces, on the monitor, guardrails".
-- The Foundry agent list on screen mixes Prompt and Hosted agents (e.g. better-together-decisions: Hosted, Running). Screenshot not used: the URL bar shows resource names and IDs.
+- The Foundry agent list on screen mixes Prompt and Hosted agents (e.g. better-together-decisions: Hosted, Running).
+- Voice (19:28): one toggle, "Voice mode — Switch to a voice-first experience". He said "I was charged twice for my subscription" aloud; the result: `"team": "billing", "confidence": 0.9979...` (agent episode02-support-routing, version 2, with sections Code asset, Protocols, Guardrail (Preview)). "my agent supports voice". On top of that "we can take advantage of toolboxes, memory, tracings, guardrails, identity."
+- Q&A: Foundry Local was covered in a Day 1 session ("yesterday ... 30 minutes").
 - (Inference) The decision model is the Microsoft Decision 1 model he introduced just before (MEAI support in progress).
-- Source: 19:26-19:28 ET, transcript 20261111-192605; shot 20261111/192710 (not in deck).
+- Source: 19:26-19:29 ET, transcripts 20261111-192605 and 20261111-192800; crop of shot 20261111/192835 (URL bar removed).
 -->
 
 ---

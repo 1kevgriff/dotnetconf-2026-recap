@@ -2002,6 +2002,22 @@ time: "19:11"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/191555.jpg"
+time: "19:15"
+---
+
+# From local AIAgent to Foundry hosted agent: a few lines of hosting code
+
+<!--
+- Say: Two ways to run agents in Foundry: a prompt agent (configured in the portal) or a hosted agent (your own .NET agent code, packed and deployed). To host an Agent Framework AIAgent, you wrap it in an AgentHost that speaks the Responses protocol.
+- Bruno (19:14): "One way is what we've just seen, which is called a prompt agent, and the other way is to create a hosted agent." "We get an AI agent from a deployment name ... I can pack this agent and deploy it to Foundry." You can also call a prompt agent "that is already hosted in Foundry" from .NET.
+- On screen: `.AsAIAgent(model: deployment, name: "BetterTogetherHello", instructions: "You are a friendly .NET assistant ...")`; "// Step 3: Replace the console RunAsync call with the Responses ..."; `var builder = AgentHost.CreateBuilder();` `builder.WebApplicationBuilder.AddFoundryResponses(agent);` `builder.RegisterProtocol("responses", endpoints => endpoints.Map...);` `var app = builder.Build(); app.Run();`.
+- Memory demo result just before (19:14): the version with memory answered "Your name is Bruno".
+- Source: 19:14-19:16 ET, transcript 20261111-191405; shot 20261111/191555.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

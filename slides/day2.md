@@ -1932,8 +1932,9 @@ time: "18:55"
 - What's next: C# Dev Kit "ships every month"; file-based apps update with SDK feature bands: "look for 11.0.200 to come out early next year, and we may be polishing this experience even further".
 - Q&A: stdin mode (`dotnet run -`) "by design is fully isolated ... we don't pick up on NuGet config. We don't pick up on Directory.Build.props or Directory.Build.targets" — which normal file-based apps do support "as long as they're in ... the file system scope". (Inference) So for private feeds, use a file on disk, not stdin.
 - How it works (Q&A, 19:01): for every command the SDK runs shared logic: "synthesize a virtual project", "parse the directives", "look at the build cache", "make a decision about whether I invoke MSBuild". Output goes "to a temporary location": "we create a folder under temp based on that hash" of the file path "plus a few other things ... as a cache key". Directory.Build.props/targets are included in the build cache too.
+- Close (19:02): file-based apps honor the artifacts output setting ("all my projects to output to a folder at the root called artifacts"). His measure script: "I asked Copilot before we came in here to create it in C#, and it did in one shot, and that meant I could run it from Linux as well." The demo repo will be "just under my GitHub".
 - Chat aside: Mattias said Cake 7.0 just came out.
-- Source: 18:54-19:02 ET, transcripts 20261111-185400 to 20261111-190002; shot 20261111/185525.
+- Source: 18:54-19:02 ET, transcripts 20261111-185400 to 20261111-190203; shot 20261111/185525.
 -->
 
 ---

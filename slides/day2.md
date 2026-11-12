@@ -2206,6 +2206,22 @@ time: "19:45"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/194710.jpg"
+time: "19:47"
+---
+
+# EF Core 11 modeling: complex types in TPC/TPT, temporal CLR properties, unconstrained FKs
+
+<!--
+- Say: Modeling gaps closed in EF Core 11: complex types and JSON columns work with TPC and TPT inheritance; temporal period columns can map to normal CLR properties; complex properties can have indexes; and you can declare a foreign key that is not enforced in the database.
+- On screen, "Modeling": Complex types and JSON columns supported for TPC and TPT; Temporal period properties can be mapped to CLR properties; Indexes in complex properties; IsConstrained(false).
+- Jiri (19:47): "complex types and JSON columns are now supported for TPC and TPT hierarchies"; with temporal tables "you can use these temporal properties" as CLR properties; "You can now introduce indexes on complex properties." "we can also define that some ... foreign key between entities is not constrained. So it's there, but it's not constrained on the database side."
+- Also (19:46): SqlVector properties are no longer loaded by default — "rarely you need the SQL vector to be fetched onto the client side. It's purely for the vector search ... on the server side." And join pruning is a specific case: "Obviously, there are queries ... where it is needed."
+- Source: 19:46-19:48 ET, transcript 20261111-194600; shot 20261111/194710.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

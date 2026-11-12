@@ -1928,7 +1928,11 @@ time: "18:55"
 - On screen (demos/05-unix/session.cs): line 1 `#!/usr/bin/env -S dotnet --`; `--help` prints "session [name] - a C# source command on your PATH"; otherwise "Hello from Linux, {name}. This command is C# source."
 - Damian (18:55): "a shebang is a shell instruction that is supported on Unix or Unix-like systems ... Mac and ... Linux", or a Linux-like shell on Windows; "if this file is marked as executable", the shell uses the `env` command to start `dotnet` with the file. Demo in WSL.
 - Demo (18:56): the file was "not currently executable"; `chmod +x`, then run it directly: "I didn't have to say dotnet." An extensionless `session` file is "a symlink to session.cs ... they're both marked executable", so with that folder on PATH you type `session`. The live PATH step failed on stream ("that one's not going to work today"); say it is the intended setup, not what was shown working.
-- Source: 18:54-18:58 ET, transcripts 20261111-185400 and 20261111-185600; shot 20261111/185525.
+- Extensionless (18:58): "we did do the work to support extension-less files ... if you have a file and it has a shebang at the front of it, you can invoke it directly even if it doesn't end in .cs ... we will look inside of it, verify it has the shebang".
+- What's next: C# Dev Kit "ships every month"; file-based apps update with SDK feature bands: "look for 11.0.200 to come out early next year, and we may be polishing this experience even further".
+- Q&A: stdin mode (`dotnet run -`) "by design is fully isolated ... we don't pick up on NuGet config. We don't pick up on Directory.Build.props or Directory.Build.targets" — which normal file-based apps do support "as long as they're in ... the file system scope". So private feeds need a file on disk, not stdin.
+- Chat aside: Mattias said Cake 7.0 just came out.
+- Source: 18:54-18:59 ET, transcripts 20261111-185400, 20261111-185600, 20261111-185801; shot 20261111/185525.
 -->
 
 ---

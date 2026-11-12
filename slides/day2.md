@@ -2293,6 +2293,23 @@ time: "19:57"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/195815.jpg"
+time: "19:58"
+---
+
+# EF Core 11 Cosmos DB: transactional batches, bulk, System.Text.Json
+
+<!--
+- Say: The Cosmos DB provider gets transactional batches, bulk execution and session token management, and it moves from Newtonsoft.Json to System.Text.Json. Watch out: the __jObject backing property is gone.
+- On screen, "CosmosDB": Support for transactional batches; Support for bulk execution; Support for session token management; Materialization now uses Utf8JsonReader (Newtonsoft.Json replaced by System.Text.Json); __jObject backing property is gone.
+- Jiri (19:58): "transactional batches, bulk execution, and a new session token management. On the inner side ... We rewrote the materialization using the UTF-8 JSON reader that allowed us to switch from Newtonsoft JSON into System.Text.Json. And finally, also the __jObject backing property is now gone."
+- Demo: a transfer of 100 units from a checking account to a savings account as a transactional batch, "Obviously, you want this to be transactionally consistent."
+- (Inference) If your code read __jObject (raw JSON of a Cosmos document), that is a breaking change; check the EF Core 11 breaking-changes doc.
+- Source: 19:58-20:00 ET, transcript 20261111-195805; shot 20261111/195815.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -2070,9 +2070,10 @@ time: "19:28"
 - Demo: "I was charged twice to my subscription" → the trace shows "a billing issue, and we have probabilities, confidence, and more." "because we are also in Foundry, we can start to take advantage of Foundry on the traces, on the monitor, guardrails".
 - The Foundry agent list on screen mixes Prompt and Hosted agents (e.g. better-together-decisions: Hosted, Running).
 - Voice (19:28): one toggle, "Voice mode — Switch to a voice-first experience". He said "I was charged twice for my subscription" aloud; the result: `"team": "billing", "confidence": 0.9979...` (agent episode02-support-routing, version 2, with sections Code asset, Protocols, Guardrail (Preview)). "my agent supports voice". On top of that "we can take advantage of toolboxes, memory, tracings, guardrails, identity."
+- Close (19:32): "everything new is one week later came to Foundry, and hey, there it is, ready to use ... and two weeks later, we have an official SDK to use it." His after-show pre-recorded session "Beyond localhost: .NET agents in Foundry" goes "from zero to production".
 - Q&A: Foundry Local was covered in a Day 1 session ("yesterday ... 30 minutes"). Bruno (19:30): "we did kind of bring your own model to Foundry Local"; it "manage[s] the download of the model, the hosting of the model, the cache of the model". "next week is going to be bigger. There are a couple of big announcements about Foundry Local" (no details). On new video models: "there are no standards about how to use video models" yet — no JSON standard for input or output.
 - (Inference) The decision model is the Microsoft Decision 1 model he introduced just before (MEAI support in progress).
-- Source: 19:26-19:31 ET, transcripts 20261111-192605, 20261111-192800, 20261111-193000; crop of shot 20261111/192835 (URL bar removed).
+- Source: 19:26-19:31 ET, transcripts 20261111-192605 to 20261111-193200; crop of shot 20261111/192835 (URL bar removed).
 -->
 
 ---

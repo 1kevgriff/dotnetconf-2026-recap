@@ -2269,10 +2269,24 @@ time: "19:52"
 - Say: EF Core 11 migrations got many smaller fixes, and `dotnet ef` now reads a `.config/dotnet-ef.json` file and works with file-based apps.
 - On screen, "Migrations": Migrations in one step; ExcludeForeignKeyFromMigrations(true); Skip ALTER COLUMN when only CLR type changes; -NoBuild for PMC; Migration bundles work with Central Package Management; Migrate and EnsureCreated now retry via the execution strategy.
 - Jiri (19:52): Package Manager Console gets "a no-build switch similar to what we have for dotnet ef". If only the CLR type changes and the database type is the same, "We are not doing the ALTER COLUMN, because the ALTER COLUMN was kind of useless." Migrate and EnsureCreated now use "the retry execution strategy, the normal one that you configure, for example, for your SaveChanges".
-- `dotnet ef`: "new support for a specific file in .config dotnet-ef.json and support for file-based apps. So even if you are using file-based apps ... you can generate migrations, apply them, and so on."
+- `dotnet ef` (slide "dotnet ef", shot 20261111/195629): "New support for .config/dotnet-ef.json", "Support for file-based apps" with `--file` and `--startup-file`. Jiri: "new support for a specific file in .config dotnet-ef.json and support for file-based apps. So even if you are using file-based apps ... you can generate migrations, apply them, and so on."
 - dotnet-ef.json demo (19:54): without it, `dotnet ef` says "no project found" when data and web are separate projects; you must type `--project src/Blog.Data` and `--startup-project` "every time", "kind of boring ... or more people in your team need to type it every time". Now: "go into .config, create a dotnet-ef.json file" with `{ "project": "src/Blog.Data", "startupProject": "src/Blog.Web" }` (on screen), and plain `dotnet ef` commands work.
 - Unconstrained FKs recap: the inner join with customers stays when needed, "even though there is no foreign key".
 - Source: 19:52-19:56 ET, transcripts 20261111-195201 and 20261111-195403; shots 20261111/195241 and 195543.
+-->
+
+---
+layout: "statement"
+---
+
+EF Core 11 on SQL Server defaults to compatibility level 160 (SQL Server 2022). Older server? Set it lower.
+
+<!--
+- Say: Check this before you upgrade: the SQL Server provider now assumes compatibility level 160, which means SQL Server 2022. On an older SQL Server, set a lower level; on SQL Server 2025, set 170 to get the new features (like JSON_CONTAINS and vector search shown earlier).
+- Jiri (19:56): "in SQL Server, the new compatibility level is now 160, which means SQL Server 2022. If you are using SQL Server that's before 2022, you need to or you should change this to a compatibility level" that matches. "And if you are using SQL Server 2025, for example, then definitely set it to 170 so you can use all the new features in 2025."
+- Also: the provider now uses Microsoft.Data.SqlClient version 7. More SQL translations, "a lot of those translations were contributed by community", e.g. int.Parse in a query now translates.
+- How (from the demos): `sql => sql.UseCompatibilityLevel(170)` in the provider options.
+- Source: 19:56-19:58 ET, transcript 20261111-195604.
 -->
 
 ---

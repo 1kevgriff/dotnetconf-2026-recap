@@ -2345,6 +2345,22 @@ time: "20:04"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/200735-crop.jpg"
+time: "20:07"
+---
+
+# .NET 11: over 7,000 contributors. 589,000+ NuGet packages. 1.1 trillion downloads.
+
+<!--
+- Say: The host closed Day 2 with the ".NET 11" announcement blog: over 7,000 contributors built it, and the ecosystem has more than 589,000 unique NuGet packages and over 1.1 trillion package downloads. Days 3 and 4 belong to the community.
+- On screen (devblogs.microsoft.com "Announcing .NET 11", section "Thank you for building .NET with us"): ".NET 11 is the work of over 7,000 contributors." "more than 589,000 unique packages on NuGet and over 1.1 trillion package downloads." The image is a mosaic of contributor avatars.
+- Host (20:06-20:07): the avatars are "some of the folks that helped build out .NET 11 ... I work with the dev team ... they pulled down a list of all the contributors." Days 3 and 4 "are run completely by the community", reachable from the .NET Conf site or dotnetconf.net. The Day 1 and Day 2 "mega streams" will be "chopped up" into per-session videos in the .NET YouTube playlist; some pre-records are already there.
+- Image: the blog page, cropped (browser tabs and taskbar removed).
+- Source: 20:06-20:08 ET, transcript 20261111-200600; crop of shot 20261111/200735.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

@@ -2310,6 +2310,22 @@ time: "19:58"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/200130-crop.jpg"
+time: "20:01"
+---
+
+# Cosmos `AutoTransactionBehavior`: EF 10's default could lose $100 in a race
+
+<!--
+- Say: The Cosmos demo shows why transactional batches matter. With the old behavior (Never: one request per document, what EF Core 10 did), a concurrent interest job caused an ETag conflict on savings after checking was already written, and 100 "vanished". WhenNeeded uses one transactional batch per partition and detects it; Always forces one transaction and fails across partitions.
+- On screen: "1. Never: one request per document (what EF Core 10 did)". "Alice moves 100 from checking to savings. Meanwhile, the interest job credits 1 to savings, so the copy of savings we loaded is stale (ETag mismatch)." Result: "Conflict on savings, but checking had already been written: checking 900, savings 1, total 901 — should be 1,001: 100 has vanished". The code sets `app.Database.AutoTransactionBehavior = behavior;`.
+- Jiri (20:00): three modes: "never, which is exactly what the EF10 executed it before. Then I will do when needed. Basically, it will be one transaction per partition." When documents "are in different partitions ... with when needed, it will be two operations. If I do always ... [it can't be done in a] consistent way because it's between different partitions." On Never: "the job that was running the interest kind of won, and the other one was lost because there was an ETag mismatch". With the new mode "we still have the mismatch, but at least I detected" it.
+- Image: console cropped (the window title showed a local user path).
+- Source: 19:59-20:02 ET, transcripts 20261111-195805 and 20261111-200005; crop of shot 20261111/200130.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

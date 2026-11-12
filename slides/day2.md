@@ -2305,6 +2305,7 @@ time: "19:58"
 - On screen, "CosmosDB": Support for transactional batches; Support for bulk execution; Support for session token management; Materialization now uses Utf8JsonReader (Newtonsoft.Json replaced by System.Text.Json); __jObject backing property is gone.
 - Jiri (19:58): "transactional batches, bulk execution, and a new session token management. On the inner side ... We rewrote the materialization using the UTF-8 JSON reader that allowed us to switch from Newtonsoft JSON into System.Text.Json. And finally, also the __jObject backing property is now gone."
 - Demo: a transfer of 100 units from a checking account to a savings account as a transactional batch, "Obviously, you want this to be transactionally consistent."
+- SQLite provider (20:03, slide "SQLite"): "Added support for Half CLR type"; "No longer targets .NET Standard 2.0, only .NET 10+". Jiri: "That does not mean you cannot use the previous versions ... if you are on older versions of .NET or you need .NET Standard."
 - (Inference) If your code read __jObject (raw JSON of a Cosmos document), that is a breaking change; check the EF Core 11 breaking-changes doc.
 - Source: 19:58-20:00 ET, transcript 20261111-195805; shot 20261111/195815.
 -->
@@ -2321,8 +2322,9 @@ time: "20:01"
 - Say: The Cosmos demo shows why transactional batches matter. With the old behavior (Never: one request per document, what EF Core 10 did), a concurrent interest job caused an ETag conflict on savings after checking was already written, and 100 "vanished". WhenNeeded uses one transactional batch per partition and detects it; Always forces one transaction and fails across partitions.
 - On screen: "1. Never: one request per document (what EF Core 10 did)". "Alice moves 100 from checking to savings. Meanwhile, the interest job credits 1 to savings, so the copy of savings we loaded is stale (ETag mismatch)." Result: "Conflict on savings, but checking had already been written: checking 900, savings 1, total 901 — should be 1,001: 100 has vanished". The code sets `app.Database.AutoTransactionBehavior = behavior;`.
 - Jiri (20:00): three modes: "never, which is exactly what the EF10 executed it before. Then I will do when needed. Basically, it will be one transaction per partition." When documents "are in different partitions ... with when needed, it will be two operations. If I do always ... [it can't be done in a] consistent way because it's between different partitions." On Never: "the job that was running the interest kind of won, and the other one was lost because there was an ETag mismatch". With the new mode "we still have the mismatch, but at least I detected" it.
+- WhenNeeded result (20:02): "the change was rolled back" — "The transfer between checking and savings account did not happen, but I detected it", then a retry: "now I have 900 and 101, which together is correct." Always: fails "because it's on different partitions" (Alice and Bob).
 - Image: console cropped (the window title showed a local user path).
-- Source: 19:59-20:02 ET, transcripts 20261111-195805 and 20261111-200005; crop of shot 20261111/200130.
+- Source: 19:59-20:03 ET, transcripts 20261111-195805, 20261111-200005, 20261111-200200; crop of shot 20261111/200130.
 -->
 
 ---

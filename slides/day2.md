@@ -1968,6 +1968,22 @@ time: "19:04"
 -->
 
 ---
+layout: "shot"
+image: "/shots/day2/190848.jpg"
+time: "19:08"
+---
+
+# Same prompt, three Foundry models, one `IChatClient`: compare time and tokens
+
+<!--
+- Say: With one Microsoft.Extensions.AI code path you can send the same prompt to several Foundry models and compare speed and token use, then pick per task.
+- Results on screen (same prompt): gpt-6-luna 12.21 s, 128 tokens (22 in / 106 out); grok-4.7 70 tokens total (54 out) — Bruno: "This one was faster and it used less tokens"; Kimi-K3.1-Pro 6.15 s, 499 tokens (118 in / 381 out).
+- Bruno (19:08): Kimi "is kind of the big guns ... faster, but it used ... around 500 tokens. I use Kimi for planning or for deep reasoning activities". Grok can review other models' answers: "ask Grok, hey, Grok, analyze and give me your opinion". Foundry's monitor shows tokens used per model over time: "There is full traceability".
+- One run each; not a benchmark. The Grok elapsed time was not captured.
+- Source: 19:06-19:09 ET, transcripts 20261111-190602 and 20261111-190803; shots 20261111/190757 and 190848.
+-->
+
+---
 layout: "cover"
 variant: "thanks"
 image: "/kevin-griffin.png"

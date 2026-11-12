@@ -2199,7 +2199,7 @@ time: "19:45"
 <!--
 - Say: If a query has joins but the projection only uses columns from the main table, EF Core 11 removes the joins it doesn't need. In EF Core 10 both joins stayed in the SQL.
 - On screen: "Full report: both joins are needed" → `SELECT [o].[Id], [o].[Total], [c].[Name], [c0].[Code] FROM [Orders] AS [o] INNER JOIN [Customers] AS [c] ... LEFT JOIN [Coupons] AS [c0] ...`. "Narrowed: no joins left" → `SELECT [o].[Id], [o].[Total] FROM [Orders] AS [o]`.
-- Jiri (19:44): orders, customers and coupons; "when I use just order ... I don't need customer, I don't need coupon ... So it could be removed. In previous EF version, both of those queries ... contain the joins". The database optimizer may still need to do the join ("the optimizer will say, no, no, no, I need to do the join"); now "we don't need the inner join and left join".
+- Jiri (19:44): orders, customers and coupons; "when I use just order ... I don't need customer, I don't need coupon ... So it could be removed. In previous EF version, both of those queries ... contain the joins". Before, unused joins meant "the database needs to do extra work for nothing. If you're lucky, the database optimizer will figure it out ... You are relying on the optimizer", and with real-world complexity it may still do the join. In EF Core 11, "we don't need the inner join and left join".
 - (Inference) This helps when you reuse one base query and project different columns from it.
 - Image: crop of the console output; the full frame showed a local user path.
 - Source: 19:44-19:46 ET, transcript 20261111-194400; crop of frame 20261111/194550.

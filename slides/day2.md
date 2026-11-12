@@ -2040,10 +2040,10 @@ image: "/shots/day2/192134-crop.jpg"
 time: "19:21"
 ---
 
-# Guardrails are assigned in the Foundry portal, even for a code-hosted agent
+# Assign a guardrail to an agent in the Foundry portal; it creates a new version
 
 <!--
-- Say: The hosted agent's code is fixed, but you can still assign a guardrail to it in the Foundry portal; that creates a new agent version.
+- Say: In the Foundry portal you can assign a guardrail to an agent; that creates a new agent version. (Inference) This was the blog-tools agent from the hosted-agent part; the stream did not say clearly whether it was the hosted or a prompt agent.
 - Demo (19:20): the hosted agent has blog tools that read RSS ("my personal feed, with the DevBlogs teams") to answer "show me the last blog that Bruno writes". Traces have a "conversational view".
 - Guardrail: "let's reassign and let's put Microsoft Default guardrail ... There it is. We have a new version."
 - On screen, "Assign guardrail": options Guardrails861, EBGuardrail, Microsoft.Default (selected), Microsoft.DefaultV2. Microsoft.Default, Content safety (4): Hate, Self-harm, Sexual, Violence — medium blocking — on user input and output, action Block.
